@@ -1,0 +1,30 @@
+%%%
+\subsection{Handling Data Imbalance and Building Models}
+
+In the Literature Review section we enumerated many methods for dealing with data imbalance, most of which are relevant to our problem.  In the code \verb|CRSS_06_Build_Model_01_15_22.ipynb| we implemented these methods.  We tried all of them, individually and in combinations, to see which combinations of methods give the most effective model.  
+
+\begin{itemize}
+	\item Ensure that the training and test sets have the same proportion of positive and negative class samples
+	\item Tomek Links, both once and twice
+	\item Balanced Metrics
+	\begin{itemize}
+		\item Balanced Accuracy
+		\item Balanced F1
+		\item Balanced Precision
+	\end{itemize}
+	\item Loss Functions
+	\begin{itemize}
+		\item $\alpha$-weighted Binary Crossentropy
+		\item Focal Loss
+	\end{itemize}
+	\item Model Algorithms
+	\begin{itemize}
+		\item Keras Simple Neural Network
+		\item AdaBoost Classifier
+		\item Balanced Bagging Classifier
+		\item Balanced Random Forest Classifier
+	\end{itemize}
+\end{itemize}
+
+
+

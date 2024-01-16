@@ -1,0 +1,37 @@
+\begin{thebibliography}{1}
+\providecommand{\url}[1]{#1}
+\csname url@rmstyle\endcsname
+\providecommand{\newblock}{\relax}
+\providecommand{\bibinfo}[2]{#2}
+\providecommand\BIBentrySTDinterwordspacing{\spaceskip=0pt\relax}
+\providecommand\BIBentryALTinterwordstretchfactor{4}
+\providecommand\BIBentryALTinterwordspacing{\spaceskip=\fontdimen2\font plus
+\BIBentryALTinterwordstretchfactor\fontdimen3\font minus
+  \fontdimen4\font\relax}
+\providecommand\BIBforeignlanguage[2]{{%
+\expandafter\ifx\csname l@#1\endcsname\relax
+\typeout{** WARNING: IEEEtran.bst: No hyphenation pattern has been}%
+\typeout{** loaded for the language `#1'. Using the pattern for}%
+\typeout{** the default language instead.}%
+\else
+\language=\csname l@#1\endcsname
+\fi
+#2}}
+
+\bibitem{Miculescu_Mizil_2005}
+A.~Niculescu-Mizil and R.~Caruana, ``Predicting good probabilities with
+  supervised learning.'' in \emph{Proceedings of the 22 nd International
+  Conference on Machine Learning}, 2005, pp. 625 -- 632, two questions arise:
+  where does the sigmoid train set come from? and how to avoid overfitting to
+  this training set? If we use the same data set that was used to train the
+  model we want to calibrate, we introduce unwanted bias. For example, if the
+  model learns to discriminate the train set perfectly and orders all the
+  negative examples before the positive examples, then the sigmoid
+  transformation will output just a 0,1 function. So we need to use an
+  independent calibration set in order to get good posterior probabilities.
+  This, however, is not a draw back, since the same set can be used for model
+  and parameter selection. To avoid overfitting to the sigmoid train set, an
+  out-ofsample model is used.
+
+
+\end{thebibliography}

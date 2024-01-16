@@ -1,0 +1,23 @@
+A Gentle Introduction to Threshold-Moving for Imbalanced Classification
+
+by Jason Brownlee on February 10, 2020 in Imbalanced Classification
+
+https://machinelearningmastery.com/threshold-moving-for-imbalanced-classification/
+
+The default threshold for interpreting probabilities to class labels is 0.5, and tuning this hyperparameter is called threshold moving.
+
+The decision for converting a predicted probability or scoring into a class label is governed by a parameter referred to as the “decision threshold,” “discrimination threshold,” or simply the “threshold.” The default value for the threshold is 0.5 for normalized predicted probabilities or scores in the range between 0 or 1.
+
+ROC Curves:  The false-positive rate is plotted on the x-axis and the true positive rate is plotted on the y-axis and the plot is referred to as the Receiver Operating Characteristic curve, or ROC curve. A diagonal line on the plot from the bottom-left to top-right indicates the “curve” for a no-skill classifier (predicts the majority class in all cases), and a point in the top left of the plot indicates a model with perfect skill.
+
+The author refers to y_proba as yhat.
+
+Note: Your results may vary given the stochastic nature of the algorithm or evaluation procedure, or differences in numerical precision. Consider running the example a few times and compare the average outcome.
+
+https://www.scikit-yb.org/en/latest/api/classifier/threshold.html
+
+YellowBrick has a tool for visualizing the precision, recall, and f1 as the decision threshold increases from 0 to 1.  
+
+
+
+

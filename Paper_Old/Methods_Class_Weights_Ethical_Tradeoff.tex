@@ -1,0 +1,108 @@
+%%%%%
+\subsection{Class Weights as Ethical Tradeoff Rate}
+%I made a [perhaps paper-worthy?] connection between the loss function I want and the $\alpha$-weighted binary cross-entropy loss function, which is widely known and widely implemented, but, according to Yu's paper, not before used in crash-related modeling.  
+
+We can use the class weight hyperparameter to incorporate into the model our value judgement about, at the margin, how many ambulances we are willing to send on a wild goose chase in order to send one that is needed, which is a judgement about how many dollars a life is worth.  
+
+Many loss functions incorporate a class weight hyperparameter, here given by $\alpha$.  One of its uses is to accommodate class imbalance, described above, where we let $1/r$ be the proportion of samples in the minority class.
+
+$$\text{Let } r = \frac{ \text{Total number of samples}}{\text{Number of minority samples}} \qquad  \text{Let } \alpha = \frac{r}{r+1} \qquad 1-\alpha = \frac{1}{r+1}$$
+
+The loss function for each sample is given by $L$, and the total loss is the sum of those sample losses, $J$.  
+
+$$L(y,p,\alpha) = - 
+	\left( 
+		\alpha y \log \left( p \right) + 
+		\left( 1-\alpha \right) \left( 1-y \right) \log \left( 1-p \right) 
+	\right) 
+$$
+$$J(y,p,\alpha) = - \sum_{i=1}^N 
+	\left( 
+		\alpha y_i \log \left( p_i \right) + 
+		\left( 1-\alpha \right) \left( 1-y_i \right) \log \left( 1-p_i \right) 
+	\right) 
+$$
+
+Let us recall the confusion matrix, in terms of $y_i$ and $p_i$.  We will use it to switch between binary and continuous versions of the loss functions.
+
+\begin{center}
+\begin{tabular}{r|c|c|c|}
+	& Do Not Send & Send \cr
+	& Ambulance & Ambulance \cr
+	& $p_i \le 0.5$ & $p_i>0.5$  \vrule width 0pt height 0 pt depth 5pt \cr \hline
+	Ambulance Not Needed \  $y_i=0$ & TN & FP \vrule width 0pt height 11pt depth 5pt \cr \hline
+	Ambulance Needed \   $y_i=1$ & FN & TP \vrule width 0pt height 11pt depth 5pt \cr\hline
+\end{tabular}
+\end{center}
+
+In the (unweighted) binary cross-entropy loss function, 
+
+$$J = -\sum_{i=1}^N y_i \log( p_i) + (1-y_i) \log( 1 - p_i)$$
+
+the $y_i$ are binary, $y_i \in \{0,1\}$, but the model predictions, $p_i$, are a probability, $p_i \in (0,1)$.  
+
+
+\
+
+If we treat the model predictions as binary, replacing 
+
+$$
+\log ( p_i) \to 
+\begin{cases}
+	0 & \text{if } p_i \le 0.5 \cr
+	1 & \text{if } p_i > 0.5 \cr
+\end{cases}
+\qquad
+\text{ and }
+\qquad
+\log ( 1 -  p_i) \to 
+\begin{cases}
+	0 & \text{if } 1 - p_i \le 0.5 \cr
+	1 & \text{if } 1 - p_i > 0.5 \cr
+\end{cases}
+$$
+
+then 
+
+$$ TP = \sum_{i=1}^N y_i \log( p_i)
+\qquad
+\text{ and }
+\qquad
+TN = \sum_{i=1}^N  (1-y_i) \log( 1 - p_i)$$
+
+and the loss function becomes $J = -(TP+TN)$.
+
+We use the continuous version when building the model, because we want the predictions to be robust, so that when we use the model on unseen data we can be more certain that it will correctly classify new instances.  We use the binary when we evaluate the model on unseen data, because then we only care about whether the model gets the classification right or wrong.  The binary is also easier to explain.
+
+%Why do we use the continuous instead of the binary in the loss function?  Because we want the predictions to be robust, so that when we use the model on unseen data, we can be more certain that it will correctly classify new instances.  The binary, however, are much easier to explain to non-technical people, or even technical people in other fields.  
+
+If the medical ethicists and politicians decide on a tradeoff threshold, $r$ such that, at the margin, we are willing to automatically dispatch $r$ ambulances when they aren't needed in order to send one ambulance when it is needed, then we want $$\frac{\Delta FP}{\Delta TP} \le r$$
+which makes the binary version of our loss function $FP - r\cdot TP$, and the continuous version equivalent to the $\alpha$-weighted cross-entropy loss function.
+
+$$J = -\sum_{i=1}^N \alpha y_i \log( p_i) + (1-\alpha)(1-y_i) \log( 1 - p_i), \quad \alpha = \frac{r}{r+1}$$
+
+Why are these equivalent?
+
+Adding a constant to the loss function, or multiplying it by a positive constant, does not change its effect, because in comparing one iteration of the model to another, the algorithm is only concerned with which has the smaller loss.
+
+The binary loss function $FP - r \cdot TP$ is equivalent to $FP - r \cdot TP - (TN+FP)$, because $TN+FP$ is the number of negative samples in the dataset (thus constant), so as a loss function,
+$FP - r \cdot TP$ is equivalent to $-(r \cdot TP+ TP)$.
+
+
+$$FP - r \cdot TP$$
+$$-(r \cdot TP + TN)$$
+Multiplying by $\frac{1}{r+1}$ gives an equivalent loss function, because $\frac{1}{r+1}>0$.
+$$-\frac{r \cdot TP + TN}{r+1}$$
+$$- \left( \frac{r}{r+1} TP + \frac{1}{r+1} TN\right)$$
+$$- \left( \frac{r}{r+1} TP + \left( 1 - \frac{r}{r+1} \right) TN \right)$$
+$$- (\alpha TP + (1 - \alpha) TN) $$
+
+The continuous versions of $TP$ and $TN$ are 
+$ \displaystyle \sum_{i=1}^N y_i \log( p_i)$
+and
+$ \displaystyle \sum_{i=1}^N (1-y_i) \log( 1 - p_i)$, so we get the $\alpha$-weighted binary cross-entropy loss function, 
+
+$$J = -\sum_{i=1}^N \alpha y_i \log( p_i) + (1-\alpha)(1-y_i) \log( 1 - p_i), \quad \alpha = \frac{r}{r+1}$$
+
+In training our models we will consider different values for the ethical tradeoff rate $r$.  A very small rate, like $r=1$ may be ethically justifiable, since our model is recommending whether to send an ambulance {\it now}, without waiting for more information from eyewitnesses, and police can reassess when they have more information.  We will test $r=1$, $r=10$, and the rate of class imbalance in the data, about $r=5$.  
+

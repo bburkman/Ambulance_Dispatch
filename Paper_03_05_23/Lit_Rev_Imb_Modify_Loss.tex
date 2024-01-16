@@ -1,0 +1,95 @@
+%%%
+\subsection{Modifying the Loss Function}
+
+Machine learning algorithms generally work iteratively by picking a starting point for the constants in the model (often a random guess), measuring the error, making a small perturbation in the model constants, measuring the new error in the candidate model, and comparing the two.  If the new error is less, use the candidate model; if not, go back to the old one.  Repeat.  
+
+A common way to measure the error in binary classification is log loss (binary cross-entropy loss, logistic loss).  For each sample in the training set we have the answer to the question (the {\it label}), 0 for ``no ambulance,'' 1 for ``ambulance,'' and the candidate model gives a probability $p \in (0,1)$ that this sample will need an ambulance.  The log loss is the sum over the samples of the log of the error.  If the sample is in the majority class, the true value is 0, and if the model gives a value of $p$, then $\log(1-p)$ gives $\log(1)=0$ if the model is perfectly correct and $\log(0) = -\infty$ if the model is perfectly wrong on this sample.  Similarly, for a sample in the minority class, $\log(p)$ gives $\log(1) = 0$ if the model correctly classifies the sample.  If $y$ is the label, then the log loss for each sample is \citep{scikit-learn}
+
+$$L(y,p) = -
+	\left( 
+		y \log \left( p \right) + \left( 1-y \right) \log \left( 1-p \right) 
+	\right) 
+$$
+
+Note that if $y=0$, then the first term is 0 for any value of $p$, so only the second term (majority class) is relevant; correspondingly, if $y=1$, then only the first term is relevant, so a clearer expression might be
+
+$$L(y,p) = - 
+	\left( 
+		\left[ 
+			\text{Loss if minority class } (y=1) 
+		\right] + 
+		\left[
+			\text{Loss if majority class } (y=0)
+		\right]
+	\right) 
+$$
+
+
+ Since the logs of $p \in (0,1)$ will be negative, the negative in front makes the loss positive, and the iterations of the algorithm will seek to minimize it.  
+
+%%%
+\subsubsection{Class Weights (Sample Weights, Cost Sensitive Analysis)}
+
+Class weights change the error metric, giving more weight to misclassification of minority class samples \citep{edsjsr.2579163720010401}.  Giving double weight to misclassified minority class samples would have the same effect as duplicating all of the negative class samples in oversampling.  To achieve balance in the contribution of the two classes to the loss function,  
+
+$$\text{Let } r = \frac{ \text{Total number of samples}}{\text{Number of minority samples}} \qquad  \text{Let } \alpha = \frac{r}{r+1} \qquad 1-\alpha = \frac{1}{r+1}$$
+
+
+
+$$L(y,p,\alpha) = - 
+	\left( 
+		\alpha y \log \left( p \right) + 
+		\left( 1-\alpha \right) \left( 1-y \right) \log \left( 1-p \right) 
+	\right) 
+$$
+
+
+%%%
+\subsubsection{Focal Loss}
+
+This method is recent, but has appeared in the crash analysis (see \cite{YU2020102740} referenced below).  Focal loss \citep{lin2017focal} adds another factor to the loss function that gives more weight to samples that are badly misclassified, and less weight to samples that are slightly misclassified.  
+
+$$L(y,p,\alpha, \gamma) = - 
+	\left( 
+		\alpha y \log \left( p \right)  \left( 1-p \right)^\gamma
+		+ 
+		\left( 1-\alpha \right) \left( 1-y \right) \log \left(1-p \right) p^\gamma 
+	\right) 
+$$
+
+The paper by Lin et al. tested values of $\gamma \in [0.0, 5.0]$, and found that $\gamma = 2.0$ gives good balance, but the best value depends on the dataset and the goals.  Yu et al's paper using focal loss for real-time crash prediction allowed the $\gamma$ for minority and majority classes to have different values.  
+
+$$L(y,p,\alpha, \gamma_1, \gamma_2) = - 
+	\left( 
+		\alpha y \log \left( p \right)  \left( 1-p \right)^{\gamma_1}
+		+ 
+		\left( 1-\alpha \right) \left( 1-y \right) \log \left(1-p \right) p^{\gamma_2}
+	\right) 
+$$
+
+%%%
+\subsubsection{Comparison of Loss Functions}
+
+The table below compares the three loss functions.  For $\alpha$, we will assume that the minority class is 10\% of the dataset, so 
+$r = 10 \to \alpha = r/(r+1)= 10/11 \approx 0.9090$.
+For focal loss, we will use $\gamma = 2$.  
+
+Machine learning algorithms use the loss function when comparing two candidate models, only asking which one is less, with no concern for the actual magnitude.  For this reason, the choice of base for the logarithm is inconsequential (we arbitrarily choose base 10 for the chart below); also, that the raw focal loss values are each less than the raw class weights, which are each less than the raw log loss, is not relevant, so we have included normalized values for comparing the three loss functions.  
+
+\begin{center}
+\begin{tabular}{ccc|ccc|ccc<{\vrule width 0pt height 12pt depth 4pt}}
+	&&& \multicolumn{3}{c}{Raw} & \multicolumn{3}{c}{Normalized} \cr
+	Class & y & p & Log & Class & Focal & Log & Class & Focal \cr
+	&&& Loss & Weights & Loss & Loss & Weights & Loss \cr\hline
+%	Class & y & p & Log Loss & Class Weights & Focal Loss & Log & Class & Focal \cr	
+%	& & & $-y \log p$ & $-\alpha y \log p$ & $-\alpha y \log p (1-p)^\gamma$ \cr\hline 
+		\multirow{3}{*}{Minority} & 1 & 0.9 & 0.04576 & 0.04160 & 0.00042  & 0.04560 & 0.08292 & 0.00464  \cr
+	& 1 & 0.7 & 0.15490 & 0.14082 & 0.01267  & 0.15438 & 0.28069 & 0.14136 \cr
+	& 1 & 0.5 & 0.30103 & 0.27366 & 0.06842 & 0.30002 & 0.54548 & 0.76309 \cr\hline
+	\multirow{3}{*}{Majority} & 0 & 0.5 & 0.30103 & 0.02737 & 0.00684 & 0.30002 & 0.05455 & 0.07631 \cr
+	& 0 & 0.3 & 0.15490 & 0.01408 & 0.00127 & 0.15438 & 0.02807 & 0.01414 \cr
+	& 0 & 0.1 & 0.04576 & 0.00416 & 0.00004 & 0.04560 & 0.00829 & 0.00046	 \cr
+\end{tabular}
+\end{center}
+
+Note that, with focal loss, most of the total loss comes from the one badly misclassified minority sample, so to minimize the loss, the algorithm needs to do a better job classifying that sample.  

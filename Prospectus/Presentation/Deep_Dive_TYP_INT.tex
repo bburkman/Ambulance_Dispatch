@@ -1,0 +1,200 @@
+\section{Deep Dive:  Order of Operations}
+
+\begin{frame}[t]
+	\frametitle{Deep Dive:  Order of Operations}
+\Large
+
+	\begin{itemize}
+		\item Binning and Imputing
+		% Binning, Bucketing, Discretization
+		% Example:  Age, Speed, Time
+		\item Which should we do first?		
+		\item Experiment
+		\item Possible outcomes
+		% Bin before imputing
+		% Impute before binning
+		% Difference is within the change from different random seeds
+		% 
+		\item Interpreting results
+	\end{itemize}
+	
+\end{frame}
+
+\begin{frame}[t]
+	\frametitle{Example:  TYP\_INT, Type of Intersection}
+\Large
+
+	\begin{itemize}
+		\item CRSS Accident Data Set
+		\begin{itemize}
+			\Large
+			\item 51 features, 20 of which we will use
+			\item 259,077 samples
+			\item 91,714 (35\%) have some value missing
+		\end{itemize}
+		\item TYP\_INT feature
+		\begin{itemize}
+			\Large
+			\item 9 known values	
+			
+			\vskip 6pt
+			\item 26,650 (10.29\%) missing values
+			\begin{itemize}
+				\Large
+				\item Not Reported (26,565, 10.25\%)
+				\item Reported as Unknown (85, 0.03\%)
+			\end{itemize}
+		\end{itemize}
+	\end{itemize}
+	
+\end{frame}
+
+{\nologo
+\begin{frame}[t]
+	\frametitle{Weather:  Binning by Correlation to Hospitalization}
+	\Large
+
+\vskip -8pt
+	\begin{tabular}{rlrcc}	
+	\multicolumn{3}{l}{\Large Value and Meaning \hfill \% Samples} & \Large \% Hospital & \Large Bin \cr\hline
+	 11 & Other Intersection Type & 0.00 & 33.33 & 1 \cr
+	 10 & L-Intersection & 0.04 & 16.98 & 1 \cr
+	 3 & T-Intersection & 10.67 & 16.74 & 1 \cr
+	 1 & Not an Intersection & 50.76 & 16.63 & 0 \cr
+	 2 & Four-Way Intersection & 26.68 & 16.36 & 1 \cr
+	 7 & Five Point, or More & 0.18 & 15.87 & 1 \cr
+	 4 & Y-Intersection & 0.33 & 15.84 & 1 \cr
+	 6 & Roundabout & 0.17 & 9.51 & 2 \cr
+	 5 & Traffic Circle & 0.06 & 8.60 & 2 \cr
+	 98 & Not Reported & 11.08 & 12.40 \cr
+	 99 & Reported as Unknown & 0.03 & 16.39 \cr
+	\end{tabular}
+	
+\end{frame}
+}
+
+\begin{frame}[t]
+	\frametitle{Imputing Missing Values}
+	\Large
+	
+	\begin{itemize}
+		\item Delete samples with missing values
+		\item Assign most common value in feature
+		\item Build a model using other features (IVEware)
+	\end{itemize}
+	
+\end{frame}
+
+
+\begin{frame}[t]
+	\frametitle{Experimental Method}
+	\Large
+	
+	\begin{enumerate}
+		\item CRSS ACCIDENT data set (259,077 samples)
+		\item In each feature, note proportion of missing values 
+		
+		(in WEATHER, 13,284 samples $\div$ 259,077 =  5.1\%)
+		\item Drop all samples with missing data (167,363 left)
+		\item Store copy for ground truth
+		\item In each feature, erase a proportional number of values (167,363 $\times$ 5.1\% = 8,581)
+		\item Bin then Impute
+		\item Impute then Bin
+		\item Analyze crosstabs
+		
+	\end{enumerate}
+\end{frame}
+
+
+\begin{frame}[t]
+	\frametitle{Weather Crosstabs:  Bin before Imputing}
+	\Large
+
+\begin{tabular}{crrrrr}
+Bin - Impute &   0 &     1 &    2 &     3 &    4 \\
+Ground Truth &     &       &      &       &      \\
+\hline
+0       &  53 &     3 &    0 &     0 &    0 \\
+1       &   0 &  6110 &   26 &    36 &    7 \\
+2       &   1 &    28 &  786 &     5 &    1 \\
+3       &   0 &    62 &    6 &  1235 &    1 \\
+4       &   0 &     3 &    0 &     0 &  218 \\
+\end{tabular}
+
+\
+
+8581 missing values
+
+179 (2.09\%) imputed incorrectly
+
+\end{frame}
+
+
+\begin{frame}[t]
+	\frametitle{Weather Crosstabs:  Impute before Binning}
+	\Large
+
+\begin{tabular}{crrrrr}
+Impute - Bin &   0 &     1 &    2 &     3 &    4 \\
+Ground Truth &     &       &      &       &      \\
+\hline
+0       &  53 &     2 &    0 &     0 &    1 \\
+1       &   1 &  6104 &   32 &    35 &    7 \\
+2       &   0 &    28 &  786 &     7 &    0 \\
+3       &   0 &    68 &    7 &  1227 &    2 \\
+4       &   0 &     0 &    1 &     2 &  218 \\
+\end{tabular}
+
+\
+
+8581 missing values
+
+193 (2.25\%) imputed incorrectly
+
+\end{frame}
+
+\begin{frame}[t]
+	\frametitle{Weather Crosstabs:  Both}
+	\Large
+	
+\begin{tabular}{crrrrr}
+Impute - Bin &   0 &     1 &    2 &     3 &    4 \\
+Bin - Impute &     &       &      &       &      \\
+\hline
+0    &  53 &     1 &    0 &     0 &    0 \\
+1    &   0 &  6125 &   34 &    39 &    8 \\
+2    &   0 &    28 &  786 &     4 &    0 \\
+3    &   1 &    42 &    5 &  1227 &    1 \\
+4    &   0 &     6 &    1 &     1 &  219 \\
+\end{tabular}	
+
+\
+
+8581 missing values
+
+ 171 (1.99\%) imputed differently
+
+\end{frame}
+
+\begin{frame}[t]
+	\frametitle{Weather Crosstabs:  Different Random Seed}
+	\Large
+	
+\begin{tabular}{crrrrr}
+Bin - Impute 2 &   0 &     1 &    2 &     3 &    4 \\
+Bin - Impute 1 &     &       &      &       &      \\
+\hline
+0              &  47 &     5 &    2 &     0 &    0 \\
+1              &   4 &  6029 &   63 &   100 &   10 \\
+2              &   0 &    53 &  753 &    11 &    1 \\
+3              &   2 &    90 &    9 &  1175 &    0 \\
+4              &   0 &    13 &    2 &     5 &  207 \\
+\end{tabular}
+
+\
+
+8581 missing values
+
+ 370 (4.31\%) imputed differently
+
+\end{frame}

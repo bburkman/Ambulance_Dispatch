@@ -1,0 +1,142 @@
+% !TEX TS-program = pdflatexmk
+
+
+\documentclass[11pt]{report}
+
+\usepackage[
+%	notes,
+	backend=biber,
+%	isbn=false,
+%	annotation,
+%	notetype=endonly
+	]{biblatex}
+\DeclareFieldFormat{addendum}{\paragraph\indent{\textbf{Suggestions for Future Research:}\addspace#1}\\}\DeclareFieldFormat{annotation}{\paragraph\indent{\textbf{Brad's Notes:}\addspace#1}\\}
+\DeclareFieldFormat{institution}{\paragraph\indent{\textbf{Institution:}\addspace#1}\\}
+
+
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usetikzlibrary{shapes}
+\usetikzlibrary{patterns}
+\usetikzlibrary{positioning}
+\usetikzlibrary{decorations.pathmorphing}
+%\usetikzlibrary{patterns,positioning,decorations.pathmorphing,arrows,shapes
+\usetikzlibrary{fit}
+
+\usepackage{pgfmath}
+\usepackage[edges]{forest}
+
+\usepackage{setspace}
+\usepackage{amsmath}
+\usepackage{amsthm}
+	\newtheorem*{theorem}{Theorem}
+	\newtheorem*{lemma}{Lemma}
+	\newtheorem*{definition}{Definition}
+\usepackage{amssymb}
+
+\usepackage{array}
+\usepackage{multirow}
+
+\usepackage{hyperref}
+\usepackage{enumerate}
+\usepackage{enumitem}
+\setlist{noitemsep}
+
+\usepackage{listings}
+\lstset{language=C}
+
+\usepackage{makeidx}
+\usepackage{verbatim}
+\usepackage{datetime}
+
+\setcounter{tocdepth}{2}
+
+\setlength{\pdfpageheight}{11in}
+\setlength{\textheight}{9in}
+\setlength{\voffset}{-1in}
+\setlength{\oddsidemargin}{0pt}
+\setlength{\marginparsep}{0pt}
+\setlength{\marginparwidth}{0pt}
+\setlength{\marginparpush}{0pt}
+\setlength{\textwidth}{6.5in}
+
+
+\def\sinline[#1]{ \ \tikz\draw[decorate,decoration={snake,amplitude=0.6mm, segment length=14pt},->] (0,0) -- (.6,0) node [midway, above] {#1}; \ }
+
+\pagestyle{plain}
+\makeindex
+
+\title{Literature Review for Imbalanced Data}
+\author{Brad Burkman}
+\newdateformat{vardate}{\THEDAY\ \monthname[\THEMONTH]\ \THEYEAR}
+\vardate
+\date{\today}
+
+\addbibresource{../Papers/BibFile_Spring_2022.bib}
+
+\begin{document}
+\setlength{\parindent}{20pt}
+\begin{spacing}{1.2}
+\maketitle
+\tableofcontents
+
+%%%%%%%%%%%%%%%%%%
+% Index
+% Example of how to put something in the index:
+% This item will be listed as "Definition" under the heading of "Articulation Node."
+%		\index{Articulation Node!Definition}
+
+\newpage
+\phantomsection
+\addcontentsline{toc}{chapter}{Index}
+\printindex
+
+
+%%%%%%%%%%
+\chapter{To Do}
+\input{To_Do}
+
+\chapter{Methods}
+
+\input{Algorithm_Level_Methods}
+
+\input{Loss_Functions}
+
+\input{Data_Level_Methods}
+
+\input{Bagging_and_Boosting}
+
+%%%%%%%%%%
+\chapter{Datasets}
+
+\input{Datasets}
+
+
+%%%%%%%%%%
+\chapter{Interesting Papers}
+
+\input{Review_Papers}
+
+%%%%%
+\newpage
+\phantomsection
+\addcontentsline{toc}{chapter}{Bibliography}
+\printbibliography
+
+
+
+%%%%%%%%%%%%%%%%
+\end{spacing}
+\end{document}
+
+%%%%%%%%%%%%
+% Useful tools
+%%%%%%%%%
+
+\begin{lstlisting}
+Put your code here.
+\end{lstlisting}
+
+\lstinputlisting[language=python]{source_filename.py}
+
+

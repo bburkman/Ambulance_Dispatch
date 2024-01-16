@@ -1,0 +1,843 @@
+IVEware Setup Checker, Sat Nov 18 17:31:12 2023                                  1
+
+Setup listing:
+
+title Multiple imputation;
+datain CRSS;
+dataout impute;
+default categorical;
+minrsqd 0.01;
+maxpred 15;
+iterations 10;
+run;
+IVEware Iterative Imputation Procedure, Sat Nov 18 17:50:30 2023                 1
+
+Multiple imputation
+
+Variable            Observed           Imputed    Double counted
+HOUR                  215511             34878                 0
+INT_HWY               215475             34914                 0
+LGT_COND              215486             34903                 0
+MONTH                 215487             34902                 0
+PERMVIT               215473             34916                 0
+REL_ROAD              215453             34936                 0
+RELJCT2               215486             34903                 0
+SCH_BUS               215409             34980                 0
+URBANICITY            215611             34778                 0
+VE_TOTAL              215433             34956                 0
+WEATHER               215578             34811                 0
+DAY_WEEK              215517             34872                 0
+WRK_ZONE              215520             34869                 0
+VE_FORMS              215573             34816                 0
+PVH_INVL              215554             34835                 0
+PERNOTMVIT            215601             34788                 0
+NUM_INJ               215486             34903                 0
+PSU                   215581             34808                 0
+PJ                    215560             34829                 0
+MAN_COLL              215550             34839                 0
+HARM_EV               215561             34828                 0
+TYP_INT               215539             34850                 0
+YEAR                  215496             34893                 0
+REGION                215449             34940                 0
+ALCOHOL               215426             34963                 0
+MAX_SEV               215481             34908                 0
+RELJCT1               215514             34875                 0
+ACC_TYPE              215450             34939                 0
+BODY_TYP              215548             34841                 0
+BUS_USE               215549             34840                 0
+CARGO_BT              215565             34824                 0
+DR_PRES               215490             34899                 0
+EMER_USE              215527             34862                 0
+FIRE_EXP              215582             34807                 0
+HAZ_CNO               215520             34869                 0
+HAZ_INV               215491             34898                 0
+HAZ_PLAC              215556             34833                 0
+HAZ_REL               215437             34952                 0
+HIT_RUN               215532             34857                 0
+IMPACT1               215519             34870                 0
+J_KNIFE               215462             34927                 0
+M_HARM                215592             34797                 0
+MAK_MOD               215467             34922                 0
+MAKE                  215543             34846                 0
+MAX_VSEV              215553             34836                 0
+MODEL                 215461             34928                 0
+NUM_INJV              215602             34787                 0
+NUMOCCS               215450             34939                 0
+P_CRASH1              215585             34804                 0
+P_CRASH2              215516             34873                 0
+IVEware Iterative Imputation Procedure, Sat Nov 18 17:50:30 2023                 2
+
+Multiple imputation
+
+Variable            Observed           Imputed    Double counted
+PCRASH4               215523             34866                 0
+PCRASH5               215538             34851                 0
+ROLLOVER              215540             34849                 0
+SPEC_USE              215578             34811                 0
+SPEEDREL              215552             34837                 0
+TOW_VEH               215534             34855                 0
+TOWED                 215545             34844                 0
+VALIGN                215488             34901                 0
+VEH_ALCH              215604             34785                 0
+VPROFILE              215455             34934                 0
+VSPD_LIM              215478             34911                 0
+VSURCOND              215514             34875                 0
+VTCONT_F              215488             34901                 0
+VTRAFCON              215496             34893                 0
+VTRAFWAY              215514             34875                 0
+AGE                   215531             34858                 0
+AIR_BAG               215570             34819                 0
+ALC_RES               215475             34914                 0
+ALC_STATUS            215584             34805                 0
+EJECTION              215467             34922                 0
+HOSPITAL              215564             34825                 0
+INJ_SEV               215488             34901                 0
+PER_TYP               215587             34802                 0
+REST_MIS              215521             34868                 0
+REST_USE              215503             34886                 0
+SEAT_POS              215569             34820                 0
+SEX                   215572             34817                 0
+VEH_AGE               215569             34820                 0
+
+Variable HOUR
+                    Observed           Imputed          Combined
+      Code       Freq    Per       Freq    Per       Freq    Per
+         0       7326   3.40       1232   3.53       8558   3.42
+         1      37368  17.34       5975  17.13      43343  17.31
+         2      53641  24.89       8911  25.55      62552  24.98
+         3      59676  27.69       9619  27.58      69295  27.67
+         4      26068  12.10       4142  11.88      30210  12.07
+         5      19639   9.11       3095   8.87      22734   9.08
+         6      11793   5.47       1904   5.46      13697   5.47
+     Total     215511 100.00      34878 100.00     250389 100.00
+
+Variable INT_HWY
+                    Observed           Imputed          Combined
+      Code       Freq    Per       Freq    Per       Freq    Per
+         0     189241  87.83      30754  88.09     219995  87.86
+         1      26234  12.17       4160  11.91      30394  12.14
+     Total     215475 100.00      34914 100.00     250389 100.00
+IVEware Iterative Imputation Procedure, Sat Nov 18 17:50:30 2023                 3
+
+Multiple imputation
+
+Variable LGT_COND
+                    Observed           Imputed          Combined
+      Code       Freq    Per       Freq    Per       Freq    Per
+         0      17988   8.35       2887   8.27      20875   8.34
+         1      33526  15.56       5598  16.04      39124  15.63
+         2       5064   2.35        825   2.36       5889   2.35
+         3     158908  73.74      25593  73.33     184501  73.69
+     Total     215486 100.00      34903 100.00     250389 100.00
+
+Variable MONTH
+                    Observed           Imputed          Combined
+      Code       Freq    Per       Freq    Per       Freq    Per
+         0      66710  30.96      10791  30.92      77501  30.95
+         1      73192  33.97      11807  33.83      84999  33.95
+         2      75585  35.08      12304  35.25      87889  35.10
+     Total     215487 100.00      34902 100.00     250389 100.00
+
+Variable PERMVIT
+                    Observed           Imputed          Combined
+      Code       Freq    Per       Freq    Per       Freq    Per
+         0      13748   6.38       1370   3.92      15118   6.04
+         1      67093  31.14      10738  30.75      77831  31.08
+         2     134632  62.48      22808  65.32     157440  62.88
+     Total     215473 100.00      34916 100.00     250389 100.00
+
+Variable REL_ROAD
+                    Observed           Imputed          Combined
+      Code       Freq    Per       Freq    Per       Freq    Per
+         0      17881   8.30       2938   8.41      20819   8.31
+         1     195989  90.97      31758  90.90     227747  90.96
+         2       1583   0.73        240   0.69       1823   0.73
+     Total     215453 100.00      34936 100.00     250389 100.00
+
+Variable RELJCT2
+                    Observed           Imputed          Combined
+      Code       Freq    Per       Freq    Per       Freq    Per
+         0      57320  26.60       9486  27.18      66806  26.68
+         1      89728  41.64      13942  39.94     103670  41.40
+         2      23643  10.97       3645  10.44      27288  10.90
+         3      44795  20.79       7830  22.43      52625  21.02
+     Total     215486 100.00      34903 100.00     250389 100.00
+
+Variable SCH_BUS
+                    Observed           Imputed          Combined
+      Code       Freq    Per       Freq    Per       Freq    Per
+         0     214401  99.53      34819  99.54     249220  99.53
+         1       1008   0.47        161   0.46       1169   0.47
+     Total     215409 100.00      34980 100.00     250389 100.00
+IVEware Iterative Imputation Procedure, Sat Nov 18 17:50:30 2023                 4
+
+Multiple imputation
+
+Variable URBANICITY
+                    Observed           Imputed          Combined
+      Code       Freq    Per       Freq    Per       Freq    Per
+         1     161353  74.84      26028  74.84     187381  74.84
+         2      54258  25.16       8750  25.16      63008  25.16
+     Total     215611 100.00      34778 100.00     250389 100.00
+
+Variable VE_TOTAL
+                    Observed           Imputed          Combined
+      Code       Freq    Per       Freq    Per       Freq    Per
+         1      20576   9.55       3368   9.63      23944   9.56
+         2     159861  74.20      26027  74.46     185888  74.24
+         3      26010  12.07       4089  11.70      30099  12.02
+         4       8986   4.17       1472   4.21      10458   4.18
+     Total     215433 100.00      34956 100.00     250389 100.00
+
+Variable WEATHER
+                    Observed           Imputed          Combined
+      Code       Freq    Per       Freq    Per       Freq    Per
+         0       1068   0.50        148   0.43       1216   0.49
+         1     154481  71.66      24963  71.71     179444  71.67
+         2      21083   9.78       3400   9.77      24483   9.78
+         3      36171  16.78       5845  16.79      42016  16.78
+         4       2775   1.29        455   1.31       3230   1.29
+     Total     215578 100.00      34811 100.00     250389 100.00
+
+Variable DAY_WEEK
+                    Observed           Imputed          Combined
+      Code       Freq    Per       Freq    Per       Freq    Per
+         0      53224  24.70       8682  24.90      61906  24.72
+         1     162293  75.30      26190  75.10     188483  75.28
+     Total     215517 100.00      34872 100.00     250389 100.00
+
+Variable WRK_ZONE
+                    Observed           Imputed          Combined
+      Code       Freq    Per       Freq    Per       Freq    Per
+         0     210279  97.57      34124  97.86     244403  97.61
+         1       4821   2.24        691   1.98       5512   2.20
+         2        369   0.17         51   0.15        420   0.17
+         3         51   0.02          3   0.01         54   0.02
+     Total     215520 100.00      34869 100.00     250389 100.00
+
+Variable VE_FORMS
+                    Observed           Imputed          Combined
+      Code       Freq    Per       Freq    Per       Freq    Per
+         1      22905  10.63       3829  11.00      26734  10.68
+         2     158642  73.59      25542  73.36     184184  73.56
+         3      25273  11.72       4088  11.74      29361  11.73
+         4       8753   4.06       1357   3.90      10110   4.04
+     Total     215573 100.00      34816 100.00     250389 100.00
+IVEware Iterative Imputation Procedure, Sat Nov 18 17:50:30 2023                 5
+
+Multiple imputation
+
+Variable PVH_INVL
+                    Observed           Imputed          Combined
+      Code       Freq    Per       Freq    Per       Freq    Per
+         0     212341  98.51      34342  98.58     246683  98.52
+         1       3213   1.49        493   1.42       3706   1.48
+     Total     215554 100.00      34835 100.00     250389 100.00
+
+Variable PERNOTMVIT
+                    Observed           Imputed          Combined
+      Code       Freq    Per       Freq    Per       Freq    Per
+         0     215021  99.73      34674  99.67     249695  99.72
+         1        580   0.27        114   0.33        694   0.28
+     Total     215601 100.00      34788 100.00     250389 100.00
+
+Variable NUM_INJ
+                    Observed           Imputed          Combined
+      Code       Freq    Per       Freq    Per       Freq    Per
+         0     102800  47.71      14738  42.23     117538  46.94
+         1      60273  27.97      10945  31.36      71218  28.44
+         2      28445  13.20       4875  13.97      33320  13.31
+         3      12569   5.83       2168   6.21      14737   5.89
+         4      11399   5.29       2177   6.24      13576   5.42
+     Total     215486 100.00      34903 100.00     250389 100.00
+
+Variable PSU
+                    Observed           Imputed          Combined
+      Code       Freq    Per       Freq    Per       Freq    Per
+         0      17318   8.03       2783   8.00      20101   8.03
+         1      38977  18.08       6328  18.18      45305  18.09
+         2      50601  23.47       8182  23.51      58783  23.48
+         3      60390  28.01       9985  28.69      70375  28.11
+         4      48295  22.40       7530  21.63      55825  22.30
+     Total     215581 100.00      34808 100.00     250389 100.00
+
+Variable PJ
+                    Observed           Imputed          Combined
+      Code       Freq    Per       Freq    Per       Freq    Per
+         0      31470  14.60       5085  14.60      36555  14.60
+         1      30498  14.15       5000  14.36      35498  14.18
+         2      52293  24.26       8458  24.28      60751  24.26
+         3      54134  25.11       8721  25.04      62855  25.10
+         4      46491  21.57       7455  21.40      53946  21.54
+      1051         13   0.01          4   0.01         17   0.01
+      4154        661   0.31        106   0.30        767   0.31
+     Total     215560 100.00      34829 100.00     250389 100.00
+
+Variable MAN_COLL
+                    Observed           Imputed          Combined
+      Code       Freq    Per       Freq    Per       Freq    Per
+         0       8716   4.04       1414   4.06      10130   4.05
+         1      25264  11.72       4150  11.91      29414  11.75
+IVEware Iterative Imputation Procedure, Sat Nov 18 17:50:30 2023                 6
+
+Multiple imputation
+
+Variable MAN_COLL
+                    Observed           Imputed          Combined
+         2      65344  30.32      10541  30.26      75885  30.31
+         3      89218  41.39      14368  41.24     103586  41.37
+         4      27008  12.53       4366  12.53      31374  12.53
+     Total     215550 100.00      34839 100.00     250389 100.00
+
+Variable HARM_EV
+                    Observed           Imputed          Combined
+      Code       Freq    Per       Freq    Per       Freq    Per
+         0       3249   1.51        609   1.75       3858   1.54
+         1     190233  88.25        550   1.58     190783  76.19
+         2       6613   3.07      31138  89.41      37751  15.08
+         3      15466   7.17       2531   7.27      17997   7.19
+     Total     215561 100.00      34828 100.00     250389 100.00
+
+Variable TYP_INT
+                    Observed           Imputed          Combined
+      Code       Freq    Per       Freq    Per       Freq    Per
+         0      28374  13.16       5130  14.72      33504  13.38
+         1     119081  55.25      18341  52.63     137422  54.88
+         2      66509  30.86      11117  31.90      77626  31.00
+         3       1575   0.73        262   0.75       1837   0.73
+     Total     215539 100.00      34850 100.00     250389 100.00
+
+Variable YEAR
+                    Observed           Imputed          Combined
+      Code       Freq    Per       Freq    Per       Freq    Per
+      2016      44676  20.73       7238  20.74      51914  20.73
+      2017      44776  20.78       7274  20.85      52050  20.79
+      2018      37189  17.26       6010  17.22      43199  17.25
+      2019      28253  13.11       4508  12.92      32761  13.08
+      2020      29259  13.58       4770  13.67      34029  13.59
+      2021      31343  14.54       5093  14.60      36436  14.55
+     Total     215496 100.00      34893 100.00     250389 100.00
+
+Variable REGION
+                    Observed           Imputed          Combined
+      Code       Freq    Per       Freq    Per       Freq    Per
+         1       8072   3.75       1314   3.76       9386   3.75
+         2      34984  16.24       5544  15.87      40528  16.19
+         3     164044  76.14      26783  76.65     190827  76.21
+         4       8349   3.88       1299   3.72       9648   3.85
+     Total     215449 100.00      34940 100.00     250389 100.00
+
+Variable ALCOHOL
+                    Observed           Imputed          Combined
+      Code       Freq    Per       Freq    Per       Freq    Per
+         1       8313   3.86       1392   3.98       9705   3.88
+         2     197317  91.59      31985  91.48     229302  91.58
+         8          5   0.00          1   0.00          6   0.00
+IVEware Iterative Imputation Procedure, Sat Nov 18 17:50:30 2023                 7
+
+Multiple imputation
+
+Variable ALCOHOL
+                    Observed           Imputed          Combined
+         9       9791   4.54       1585   4.53      11376   4.54
+     Total     215426 100.00      34963 100.00     250389 100.00
+
+Variable MAX_SEV
+                    Observed           Imputed          Combined
+      Code       Freq    Per       Freq    Per       Freq    Per
+         0     102729  47.67         14   0.04     102743  41.03
+         1      54191  25.15       9649  27.64      63840  25.50
+         2      32375  15.02       5711  16.36      38086  15.21
+         3      21901  10.16      18798  53.85      40699  16.25
+         4       3384   1.57        547   1.57       3931   1.57
+         5        895   0.42        108   0.31       1003   0.40
+         6          6   0.00         81   0.23         87   0.03
+     Total     215481 100.00      34908 100.00     250389 100.00
+
+Variable RELJCT1
+                    Observed           Imputed          Combined
+      Code       Freq    Per       Freq    Per       Freq    Per
+         0     174988  81.20      28295  81.13     203283  81.19
+         1       8974   4.16       1474   4.23      10448   4.17
+         8      31514  14.62       5098  14.62      36612  14.62
+         9         38   0.02          8   0.02         46   0.02
+     Total     215514 100.00      34875 100.00     250389 100.00
+
+Variable ACC_TYPE
+                    Observed           Imputed          Combined
+      Code       Freq    Per       Freq    Per       Freq    Per
+         0      40379  18.74       6528  18.68      46907  18.73
+         1      32688  15.17       5195  14.87      37883  15.13
+         2      50758  23.56       8347  23.89      59105  23.61
+         3      51996  24.13       8461  24.22      60457  24.15
+         4      39629  18.39       6408  18.34      46037  18.39
+     Total     215450 100.00      34939 100.00     250389 100.00
+
+Variable BODY_TYP
+                    Observed           Imputed          Combined
+      Code       Freq    Per       Freq    Per       Freq    Per
+         0      15957   7.40       2541   7.29      18498   7.39
+         1      82475  38.26      13221  37.95      95696  38.22
+         2      19235   8.92       3019   8.67      22254   8.89
+         3      37430  17.37       6169  17.71      43599  17.41
+         4      11582   5.37       1932   5.55      13514   5.40
+         5      48869  22.67       7959  22.84      56828  22.70
+     Total     215548 100.00      34841 100.00     250389 100.00
+
+Variable BUS_USE
+                    Observed           Imputed          Combined
+      Code       Freq    Per       Freq    Per       Freq    Per
+         0         19   0.01          2   0.01         21   0.01
+IVEware Iterative Imputation Procedure, Sat Nov 18 17:50:30 2023                 8
+
+Multiple imputation
+
+Variable BUS_USE
+                    Observed           Imputed          Combined
+         1     214750  99.63      34713  99.64     249463  99.63
+         2        780   0.36        125   0.36        905   0.36
+     Total     215549 100.00      34840 100.00     250389 100.00
+
+Variable CARGO_BT
+                    Observed           Imputed          Combined
+      Code       Freq    Per       Freq    Per       Freq    Per
+         0     207766  96.38      33524  96.27     241290  96.37
+         1       7799   3.62       1300   3.73       9099   3.63
+     Total     215565 100.00      34824 100.00     250389 100.00
+
+Variable DR_PRES
+                    Observed           Imputed          Combined
+      Code       Freq    Per       Freq    Per       Freq    Per
+         0         28   0.01          5   0.01         33   0.01
+         1     215462  99.99      34894  99.99     250356  99.99
+     Total     215490 100.00      34899 100.00     250389 100.00
+
+Variable EMER_USE
+                    Observed           Imputed          Combined
+      Code       Freq    Per       Freq    Per       Freq    Per
+         0        350   0.16         62   0.18        412   0.16
+         1     214943  99.73      34762  99.71     249705  99.73
+         2        234   0.11         38   0.11        272   0.11
+     Total     215527 100.00      34862 100.00     250389 100.00
+
+Variable FIRE_EXP
+                    Observed           Imputed          Combined
+      Code       Freq    Per       Freq    Per       Freq    Per
+         0        318   0.15         51   0.15        369   0.15
+         1     215264  99.85      34756  99.85     250020  99.85
+     Total     215582 100.00      34807 100.00     250389 100.00
+
+Variable HAZ_CNO
+                    Observed           Imputed          Combined
+      Code       Freq    Per       Freq    Per       Freq    Per
+         0          3   0.00      34862  99.98      34865  13.92
+         1     215466  99.97          0   0.00     215466  86.05
+         2         51   0.02          7   0.02         58   0.02
+     Total     215520 100.00      34869 100.00     250389 100.00
+
+Variable HAZ_INV
+                    Observed           Imputed          Combined
+      Code       Freq    Per       Freq    Per       Freq    Per
+         0     215436  99.97      34888  99.97     250324  99.97
+         1         55   0.03         10   0.03         65   0.03
+     Total     215491 100.00      34898 100.00     250389 100.00
+IVEware Iterative Imputation Procedure, Sat Nov 18 17:50:30 2023                 9
+
+Multiple imputation
+
+Variable HAZ_PLAC
+                    Observed           Imputed          Combined
+      Code       Freq    Per       Freq    Per       Freq    Per
+         0     215500  99.97      34823  99.97     250323  99.97
+         1         56   0.03         10   0.03         66   0.03
+     Total     215556 100.00      34833 100.00     250389 100.00
+
+Variable HAZ_REL
+                    Observed           Imputed          Combined
+      Code       Freq    Per       Freq    Per       Freq    Per
+         0         10   0.00      34941  99.97      34951  13.96
+         1     215387  99.98          0   0.00     215387  86.02
+         2         40   0.02         11   0.03         51   0.02
+     Total     215437 100.00      34952 100.00     250389 100.00
+
+Variable HIT_RUN
+                    Observed           Imputed          Combined
+      Code       Freq    Per       Freq    Per       Freq    Per
+         0     214528  99.53      34666  99.45     249194  99.52
+         1       1004   0.47        191   0.55       1195   0.48
+     Total     215532 100.00      34857 100.00     250389 100.00
+
+Variable IMPACT1
+                    Observed           Imputed          Combined
+      Code       Freq    Per       Freq    Per       Freq    Per
+         0      18586   8.62       2973   8.53      21559   8.61
+         1      86493  40.13      14051  40.30     100544  40.16
+         2      15780   7.32       2653   7.61      18433   7.36
+         3      31198  14.48       5049  14.48      36247  14.48
+         4      54376  25.23       8608  24.69      62984  25.15
+         5       9086   4.22       1536   4.40      10622   4.24
+     Total     215519 100.00      34870 100.00     250389 100.00
+
+Variable J_KNIFE
+                    Observed           Imputed          Combined
+      Code       Freq    Per       Freq    Per       Freq    Per
+         0         92   0.04         10   0.03        102   0.04
+         1     210613  97.75      34107  97.65     244720  97.74
+         2       4757   2.21        810   2.32       5567   2.22
+     Total     215462 100.00      34927 100.00     250389 100.00
+
+Variable M_HARM
+                    Observed           Imputed          Combined
+      Code       Freq    Per       Freq    Per       Freq    Per
+         0      18876   8.76       3083   8.86      21959   8.77
+         1     188949  87.64      30525  87.72     219474  87.65
+         2       7767   3.60       1189   3.42       8956   3.58
+     Total     215592 100.00      34797 100.00     250389 100.00
+IVEware Iterative Imputation Procedure, Sat Nov 18 17:50:30 2023                10
+
+Multiple imputation
+
+Variable MAK_MOD
+                    Observed           Imputed          Combined
+      Code       Freq    Per       Freq    Per       Freq    Per
+         0      36999  17.17       6099  17.46      43098  17.21
+         1      45518  21.13       7441  21.31      52959  21.15
+         2      44819  20.80       7261  20.79      52080  20.80
+         3      47227  21.92       7591  21.74      54818  21.89
+         4      40893  18.98       6520  18.67      47413  18.94
+     32057          1   0.00          1   0.00          2   0.00
+     32498          1   0.00          0   0.00          1   0.00
+     39403          1   0.00          0   0.00          1   0.00
+     42498          2   0.00          1   0.00          3   0.00
+     58498          4   0.00          8   0.02         12   0.00
+     89883          2   0.00          0   0.00          2   0.00
+     Total     215467 100.00      34922 100.00     250389 100.00
+
+Variable MAKE
+                    Observed           Imputed          Combined
+      Code       Freq    Per       Freq    Per       Freq    Per
+         0      42192  19.57       6836  19.62      49028  19.58
+         1      32110  14.90       5315  15.25      37425  14.95
+         2      28056  13.02       4573  13.12      32629  13.03
+         3       4105   1.90        664   1.91       4769   1.90
+         4      25475  11.82       4079  11.71      29554  11.80
+         5       3223   1.50        567   1.63       3790   1.51
+         6      29726  13.79       4666  13.39      34392  13.74
+         7       8730   4.05       1356   3.89      10086   4.03
+         8      41926  19.45       6790  19.49      48716  19.46
+     Total     215543 100.00      34846 100.00     250389 100.00
+
+Variable MAX_VSEV
+                    Observed           Imputed          Combined
+      Code       Freq    Per       Freq    Per       Freq    Per
+         0      38684  17.95       6558  18.83      45242  18.07
+         1      39609  18.38      22785  65.41      62394  24.92
+         2     137260  63.68       5493  15.77     142753  57.01
+     Total     215553 100.00      34836 100.00     250389 100.00
+
+Variable MODEL
+                    Observed           Imputed          Combined
+      Code       Freq    Per       Freq    Per       Freq    Per
+         0      37545  17.43       6107  17.48      43652  17.43
+         1      46613  21.63       7624  21.83      54237  21.66
+         2      44072  20.45       7108  20.35      51180  20.44
+         3      42994  19.95       6994  20.02      49988  19.96
+         4      44236  20.53       7093  20.31      51329  20.50
+        63          1   0.00          2   0.01          3   0.00
+     Total     215461 100.00      34928 100.00     250389 100.00
+IVEware Iterative Imputation Procedure, Sat Nov 18 17:50:30 2023                11
+
+Multiple imputation
+
+Variable NUM_INJV
+                    Observed           Imputed          Combined
+      Code       Freq    Per       Freq    Per       Freq    Per
+         0      24641  11.43       4124  11.86      28765  11.49
+         1      53681  24.90       8828  25.38      62509  24.96
+         2         19   0.01      18424  52.96      18443   7.37
+         3     137249  63.66       3230   9.29     140479  56.10
+        13         12   0.01        181   0.52        193   0.08
+     Total     215602 100.00      34787 100.00     250389 100.00
+
+Variable NUMOCCS
+                    Observed           Imputed          Combined
+      Code       Freq    Per       Freq    Per       Freq    Per
+         0        544   0.25        164   0.47        708   0.28
+         1      56820  26.37       9246  26.46      66066  26.39
+         2       2567   1.19        464   1.33       3031   1.21
+         3     111049  51.54      17930  51.32     128979  51.51
+         4        127   0.06         27   0.08        154   0.06
+         5      24424  11.34       3996  11.44      28420  11.35
+         6      19919   9.25       3112   8.91      23031   9.20
+     Total     215450 100.00      34939 100.00     250389 100.00
+
+Variable P_CRASH1
+                    Observed           Imputed          Combined
+      Code       Freq    Per       Freq    Per       Freq    Per
+         0      14983   6.95       2476   7.11      17459   6.97
+         1     105915  49.13      17125  49.20     123040  49.14
+         2      21589  10.01       3445   9.90      25034  10.00
+         3      15716   7.29       2523   7.25      18239   7.28
+         4      38394  17.81       6209  17.84      44603  17.81
+         5      18988   8.81       3026   8.69      22014   8.79
+     Total     215585 100.00      34804 100.00     250389 100.00
+
+Variable P_CRASH2
+                    Observed           Imputed          Combined
+      Code       Freq    Per       Freq    Per       Freq    Per
+         0      41714  19.36       6676  19.14      48390  19.33
+         1      36359  16.87       5956  17.08      42315  16.90
+         2      23884  11.08       3890  11.15      27774  11.09
+         3      49639  23.03       7959  22.82      57598  23.00
+         4      28954  13.43       4788  13.73      33742  13.48
+         5      34966  16.22       5604  16.07      40570  16.20
+     Total     215516 100.00      34873 100.00     250389 100.00
+
+Variable PCRASH4
+                    Observed           Imputed          Combined
+      Code       Freq    Per       Freq    Per       Freq    Per
+         0       9083   4.21       1475   4.23      10558   4.22
+         1     206440  95.79      33391  95.77     239831  95.78
+     Total     215523 100.00      34866 100.00     250389 100.00
+IVEware Iterative Imputation Procedure, Sat Nov 18 17:50:30 2023                12
+
+Multiple imputation
+
+Variable PCRASH5
+                    Observed           Imputed          Combined
+      Code       Freq    Per       Freq    Per       Freq    Per
+         0        406   0.19         58   0.17        464   0.19
+         1      18603   8.63       3029   8.69      21632   8.64
+         2      20600   9.56       3329   9.55      23929   9.56
+         3     172451  80.01      27876  79.99     200327  80.01
+         4       3478   1.61        559   1.60       4037   1.61
+     Total     215538 100.00      34851 100.00     250389 100.00
+
+Variable ROLLOVER
+                    Observed           Imputed          Combined
+      Code       Freq    Per       Freq    Per       Freq    Per
+         0       5768   2.68        971   2.79       6739   2.69
+         1     209772  97.32      33878  97.21     243650  97.31
+     Total     215540 100.00      34849 100.00     250389 100.00
+
+Variable SPEC_USE
+                    Observed           Imputed          Combined
+      Code       Freq    Per       Freq    Per       Freq    Per
+         0        568   0.26         83   0.24        651   0.26
+         1     213896  99.22      34552  99.26     248448  99.22
+         2       1114   0.52        176   0.51       1290   0.52
+     Total     215578 100.00      34811 100.00     250389 100.00
+
+Variable SPEEDREL
+                    Observed           Imputed          Combined
+      Code       Freq    Per       Freq    Per       Freq    Per
+         0       9256   4.29       1465   4.21      10721   4.28
+         1     206296  95.71      33372  95.79     239668  95.72
+     Total     215552 100.00      34837 100.00     250389 100.00
+
+Variable TOW_VEH
+                    Observed           Imputed          Combined
+      Code       Freq    Per       Freq    Per       Freq    Per
+         0     210595  97.71      34101  97.84     244696  97.73
+         1       4939   2.29        754   2.16       5693   2.27
+     Total     215534 100.00      34855 100.00     250389 100.00
+
+Variable TOWED
+                    Observed           Imputed          Combined
+      Code       Freq    Per       Freq    Per       Freq    Per
+         0      82058  38.07      13098  37.59      95156  38.00
+         1       1072   0.50        163   0.47       1235   0.49
+         2     122888  57.01      20010  57.43     142898  57.07
+         3       9527   4.42       1573   4.51      11100   4.43
+     Total     215545 100.00      34844 100.00     250389 100.00
+IVEware Iterative Imputation Procedure, Sat Nov 18 17:50:30 2023                13
+
+Multiple imputation
+
+Variable VALIGN
+                    Observed           Imputed          Combined
+      Code       Freq    Per       Freq    Per       Freq    Per
+         0      18453   8.56       2980   8.54      21433   8.56
+         1     190490  88.40      30984  88.78     221474  88.45
+         2       6545   3.04        937   2.68       7482   2.99
+     Total     215488 100.00      34901 100.00     250389 100.00
+
+Variable VEH_ALCH
+                    Observed           Imputed          Combined
+      Code       Freq    Per       Freq    Per       Freq    Per
+         0       5025   2.33        866   2.49       5891   2.35
+         1     210579  97.67      33919  97.51     244498  97.65
+     Total     215604 100.00      34785 100.00     250389 100.00
+
+Variable VPROFILE
+                    Observed           Imputed          Combined
+      Code       Freq    Per       Freq    Per       Freq    Per
+         0      16371   7.60       2661   7.62      19032   7.60
+         1     175906  81.64      28484  81.54     204390  81.63
+         2      23178  10.76       3789  10.85      26967  10.77
+     Total     215455 100.00      34934 100.00     250389 100.00
+
+Variable VSPD_LIM
+                    Observed           Imputed          Combined
+      Code       Freq    Per       Freq    Per       Freq    Per
+         0      24840  11.53       3991  11.43      28831  11.51
+         1      33213  15.41       5280  15.12      38493  15.37
+         2      54480  25.28       8853  25.36      63333  25.29
+         3       5889   2.73        925   2.65       6814   2.72
+         4      23011  10.68       3753  10.75      26764  10.69
+         5      38341  17.79       6300  18.05      44641  17.83
+         7      35704  16.57       5809  16.64      41513  16.58
+     Total     215478 100.00      34911 100.00     250389 100.00
+
+Variable VSURCOND
+                    Observed           Imputed          Combined
+      Code       Freq    Per       Freq    Per       Freq    Per
+         0        519   0.24         77   0.22        596   0.24
+         1     174157  80.81      28164  80.76     202321  80.80
+         2      30985  14.38       4985  14.29      35970  14.37
+         3       9853   4.57       1649   4.73      11502   4.59
+     Total     215514 100.00      34875 100.00     250389 100.00
+
+Variable VTCONT_F
+                    Observed           Imputed          Combined
+      Code       Freq    Per       Freq    Per       Freq    Per
+         0        211   0.10         18   0.05        229   0.09
+         1     141977  65.89      22843  65.45     164820  65.83
+         2          9   0.00          0   0.00          9   0.00
+         3      73171  33.96      12028  34.46      85199  34.03
+IVEware Iterative Imputation Procedure, Sat Nov 18 17:50:30 2023                14
+
+Multiple imputation
+
+Variable VTCONT_F
+                    Observed           Imputed          Combined
+         4        120   0.06         12   0.03        132   0.05
+     Total     215488 100.00      34901 100.00     250389 100.00
+
+Variable VTRAFCON
+                    Observed           Imputed          Combined
+      Code       Freq    Per       Freq    Per       Freq    Per
+         0       5565   2.58        981   2.81       6546   2.61
+         1     141902  65.85          0   0.00     141902  56.67
+         2      46956  21.79      30442  87.24      77398  30.91
+         3      21073   9.78       3470   9.94      24543   9.80
+     Total     215496 100.00      34893 100.00     250389 100.00
+
+Variable VTRAFWAY
+                    Observed           Imputed          Combined
+      Code       Freq    Per       Freq    Per       Freq    Per
+         0      93893  43.57      15210  43.61     109103  43.57
+         1      43154  20.02       6966  19.97      50120  20.02
+         2      12293   5.70       1959   5.62      14252   5.69
+         3      49136  22.80       8015  22.98      57151  22.82
+         4      17038   7.91       2725   7.81      19763   7.89
+     Total     215514 100.00      34875 100.00     250389 100.00
+
+Variable AGE
+                    Observed           Imputed          Combined
+      Code       Freq    Per       Freq    Per       Freq    Per
+         0      21231   9.85       3299   9.46      24530   9.80
+         1      16595   7.70       2724   7.81      19319   7.72
+         2     130039  60.33      21176  60.75     151215  60.39
+         3      39729  18.43       6413  18.40      46142  18.43
+         4       7937   3.68       1246   3.57       9183   3.67
+     Total     215531 100.00      34858 100.00     250389 100.00
+
+Variable AIR_BAG
+                    Observed           Imputed          Combined
+      Code       Freq    Per       Freq    Per       Freq    Per
+         0      46668  21.65       7525  21.61      54193  21.64
+         1     168902  78.35      27294  78.39     196196  78.36
+     Total     215570 100.00      34819 100.00     250389 100.00
+
+Variable ALC_RES
+                    Observed           Imputed          Combined
+      Code       Freq    Per       Freq    Per       Freq    Per
+         0     214319  99.46      34732  99.48     249051  99.47
+         1       1156   0.54        182   0.52       1338   0.53
+     Total     215475 100.00      34914 100.00     250389 100.00
+IVEware Iterative Imputation Procedure, Sat Nov 18 17:50:30 2023                15
+
+Multiple imputation
+
+Variable ALC_STATUS
+                    Observed           Imputed          Combined
+      Code       Freq    Per       Freq    Per       Freq    Per
+         0       4300   1.99        726   2.09       5026   2.01
+         1     211284  98.01      34079  97.91     245363  97.99
+     Total     215584 100.00      34805 100.00     250389 100.00
+
+Variable EJECTION
+                    Observed           Imputed          Combined
+      Code       Freq    Per       Freq    Per       Freq    Per
+         0       5093   2.36        866   2.48       5959   2.38
+         1     210374  97.64      34056  97.52     244430  97.62
+     Total     215467 100.00      34922 100.00     250389 100.00
+
+Variable HOSPITAL
+                    Observed           Imputed          Combined
+      Code       Freq    Per       Freq    Per       Freq    Per
+         0     182315  84.58      29405  84.44     211720  84.56
+         1      33249  15.42       5420  15.56      38669  15.44
+     Total     215564 100.00      34825 100.00     250389 100.00
+
+Variable INJ_SEV
+                    Observed           Imputed          Combined
+      Code       Freq    Per       Freq    Per       Freq    Per
+         0      31046  14.41       4907  14.06      35953  14.36
+         1      33287  15.45       5402  15.48      38689  15.45
+         3     151155  70.15      24592  70.46     175747  70.19
+     Total     215488 100.00      34901 100.00     250389 100.00
+
+Variable PER_TYP
+                    Observed           Imputed          Combined
+      Code       Freq    Per       Freq    Per       Freq    Per
+         0          1   0.00          0   0.00          1   0.00
+         1      64609  29.97      10229  29.39      74838  29.89
+         2     150977  70.03      24573  70.61     175550  70.11
+     Total     215587 100.00      34802 100.00     250389 100.00
+
+Variable REST_MIS
+                    Observed           Imputed          Combined
+      Code       Freq    Per       Freq    Per       Freq    Per
+         0       6285   2.92       1036   2.97       7321   2.92
+         1     209236  97.08      33832  97.03     243068  97.08
+     Total     215521 100.00      34868 100.00     250389 100.00
+
+Variable REST_USE
+                    Observed           Imputed          Combined
+      Code       Freq    Per       Freq    Per       Freq    Per
+         0      12851   5.96       2097   6.01      14948   5.97
+         1     190052  88.19      30706  88.02     220758  88.17
+         2      12600   5.85       2083   5.97      14683   5.86
+     Total     215503 100.00      34886 100.00     250389 100.00
+IVEware Iterative Imputation Procedure, Sat Nov 18 17:50:30 2023                16
+
+Multiple imputation
+
+Variable SEAT_POS
+                    Observed           Imputed          Combined
+      Code       Freq    Per       Freq    Per       Freq    Per
+         0       1669   0.77        277   0.80       1946   0.78
+         1      35722  16.57       5754  16.52      41476  16.56
+         2      10510   4.88       1662   4.77      12172   4.86
+         3     150917  70.01      24591  70.62     175508  70.09
+         4      16751   7.77       2536   7.28      19287   7.70
+     Total     215569 100.00      34820 100.00     250389 100.00
+
+Variable SEX
+                    Observed           Imputed          Combined
+      Code       Freq    Per       Freq    Per       Freq    Per
+         0     103540  48.03      16769  48.16     120309  48.05
+         1     112032  51.97      18048  51.84     130080  51.95
+     Total     215572 100.00      34817 100.00     250389 100.00
+
+Variable VEH_AGE
+                    Observed           Imputed          Combined
+      Code       Freq    Per       Freq    Per       Freq    Per
+         0      64838  30.08      10482  30.10      75320  30.08
+         1      58110  26.96       9492  27.26      67602  27.00
+         2      47220  21.90       7633  21.92      54853  21.91
+         3      31261  14.50       5005  14.37      36266  14.48
+         4      14140   6.56       2208   6.34      16348   6.53
+     Total     215569 100.00      34820 100.00     250389 100.00

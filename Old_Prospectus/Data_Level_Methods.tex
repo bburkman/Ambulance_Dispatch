@@ -1,0 +1,221 @@
+%%%%%
+\section{Data Level Methods}
+
+%%%
+\subsection{Imbalanced Cleaning:  Tomek and Condensed Nearest Neighbor}
+\index{Tomek Links}
+\index{Condensed Nearest Neighbor}
+
+Batista
+\cite{BATISTA_2004}
+uses two imbalanced cleaning method called {\it Tomek links} and {\it Condensed Nearest Neighbor}.  If examples from the majority and minority class are close to each other, it deletes the majority samples.   One could think of it as targeted undersampling of the majority set.  
+
+Imbalanced-Learn, an add-on to Scikit-Learn, has these algorithms read to use.  Tomek and Wilson's papers introducing these algorithms are from the 1970's.  
+\index{Imbalanced-Learn}
+
+
+%%%
+\subsection{Tomek's Links}
+
+This method undersamples the majority-class samples, eliminating ones that are too close to minority-class samples, presuming them to be noise, and helping clarify clusters of minority samples.  
+
+A pair of samples are a {\it Tomek link} if one is majority and one minority, and they are each other's nearest neighbors. To use Tomek's inks as an undersampling strategy for imbalanced data, delete the positive sample in each Tomek's link.  Other cleaning strategies (for balanced sets) would eliminate both the positive and negative.  
+
+It is possible to iterate Tomek's several times.  Here's an example of how it works in one round and in a second round.  The blue samples are from the majority set and the red are from the minority.  Assume that these seven points are a small part of a large dataset, but these are the only points in this region.
+
+\
+
+\noindent\hfil\begin{tikzpicture}[x=7mm, y=7mm]
+	\draw [<->] (-1,0) -- (22,0);
+	\foreach \x in {0,1,2,...,21}
+		\draw (\x, 0.1) -- (\x,-0.1) node [below] {$\x$};
+	\fill [blue] (0,0) circle (2pt) node [above=3pt, blue] {$A$};
+	\fill [blue] (4,0) circle (2pt) node [above=3pt, blue] {$B$};
+	\fill [blue] (9,0) circle (2pt) node [above=3pt, blue] {$D$};
+	\fill [blue] (16,0) circle (2pt) node [above=3pt, blue] {$F$};
+	\fill [blue] (21,0) circle (2pt) node [above=3pt, blue] {$G$};
+	\fill [red] (7,0) circle (2pt) node [above=3pt, red] {$C$};
+	\fill [red] (12,0) circle (2pt) node [above=3pt, red] {$E$};
+\end{tikzpicture}
+
+In the original dataset, $C$ and $D$ are each other's nearest neighbors, $C$ from minority and $D$ from majority, so they are a Tomek link.   On the other hand, $D$ is the nearest neighbor to $E$, but $E$ is not $D$'s nearest neighbor, so they are not a Tomek link.  
+
+Eliminate sample $D$.  
+
+\
+
+\noindent\hfil\begin{tikzpicture}[x=7mm, y=7mm]
+	\draw [<->] (-1,0) -- (22,0);
+	\foreach \x in {0,1,2,...,21}
+		\draw (\x, 0.1) -- (\x,-0.1) node [below] {$\x$};
+	\fill [blue] (0,0) circle (2pt) node [above=3pt, blue] {$A$};
+	\fill [blue] (4,0) circle (2pt) node [above=3pt, blue] {$B$};
+%	\fill [blue] (9,0) circle (2pt) node [above=3pt, blue] {$D$};
+	\fill [blue] (16,0) circle (2pt) node [above=3pt, blue] {$F$};
+	\fill [blue] (21,0) circle (2pt) node [above=3pt, blue] {$G$};
+	\fill [red] (7,0) circle (2pt) node [above=3pt, red] {$C$};
+	\fill [red] (12,0) circle (2pt) node [above=3pt, red] {$E$};
+\end{tikzpicture}
+
+Now the pairs $(B,C)$ and $(E,F)$ are Tomek links, so if we ran Tomek undersampling a second time, we would remove samples $B$ and $F$.  
+
+\
+
+\noindent\hfil\begin{tikzpicture}[x=7mm, y=7mm]
+	\draw [<->] (-1,0) -- (22,0);
+	\foreach \x in {0,1,2,...,21}
+		\draw (\x, 0.1) -- (\x,-0.1) node [below] {$\x$};
+	\fill [blue] (0,0) circle (2pt) node [above=3pt, blue] {$A$};
+%	\fill [blue] (4,0) circle (2pt) node [above=3pt, blue] {$B$};
+%	\fill [blue] (9,0) circle (2pt) node [above=3pt, blue] {$D$};
+%	\fill [blue] (16,0) circle (2pt) node [above=3pt, blue] {$F$};
+	\fill [blue] (21,0) circle (2pt) node [above=3pt, blue] {$G$};
+	\fill [red] (7,0) circle (2pt) node [above=3pt, red] {$C$};
+	\fill [red] (12,0) circle (2pt) node [above=3pt, red] {$E$};
+\end{tikzpicture}
+
+Now $C$ and $E$ are each other's nearest neighbors and of the same (minority) class, so this part of the dataset would not change under another run of Tomek.  
+
+The idea of Tomek assumes that the minority samples should cluster, and any majority samples in or near those clusters must be noise, so we can eliminate them.  We now have a clear cluster of two minority samples with no close majority samples.  
+
+I saw multiple runs of Tomek mentioned [somewhere] in my reading, so  I tried it on the crash data, running it up to five times, and saw that it converged, with fewer positive samples eliminated in each round.  I had conjectured that a negative sample in a Tomek link in a later round must have been a negative sample in a Tomek link in an earlier round, digging itself out of a field of positive-class dust, but I suspected that there might be (perhaps unusual) cases where one minority-class sample ($C$ in the example above) created a Tomek link, and eliminating the majority-class sample in that link ($D$ above) allowed a Tomek link for a different minority-class sample ($E$ above).  I then played with it until I found a counterexample to my conjecture, so the conjecture, that a minority-class sample in a Tomek link in a later round of Tomek undersampling must have been in a Tomek link in every previous round of the Tomek undersampling, is false.  
+
+If the conjecture had been true, then we could greatly speed up subsequent rounds of Tomek undersampling by only considering the minority samples in Tomek links in the previous round.  That would not be thorough, but this approach would.  
+
+\subsubsection{Algorithm for Repeated Application of Tomek's Links}
+
+	For the first round of Tomek undersampling, one has to consider each element of the minority class.  In the Tomek's links, call the minority-class elements $\{A_{1}, A_{2}, \dots, A_{n1}\}$, and the majority-class elements $\{B_1, B_2, \dots, B_{n1}\}$.  Tomek undersampling for minority classes eliminates all of $\{B_1, B_2, \dots, B_{n1}\}$.
+	
+	In the second round of Tomek undersampling, we only need to consider as possible Tomek links the nearest neighbors of $\{A_{1}, A_{2}, \dots, A_{n1}\}$ and any element of the minority class that had one of $\{B_1, B_2, \dots, B_{n1}\}$ as its nearest neighbor.
+	
+In subsequent rounds, consider the minority-class samples from the Tomek's links from the previous round, and the elements of the minority class that had as their nearest neighbor an element of the majority class in the Tomek's links.  
+
+In theory there could be more Tomek's links in one round than in the previous round, but in practice they go to zero and the set converges to a set with no Tomek's links.  
+
+%%%
+\subsection{Cleaning Multiclass Data}
+
+Wei (2021) \cite{WEI_2021} uses something similar to Tomek's links for a multi-class problem with a majority class and multiple minority classes.  
+
+\begin{itemize}
+	\item Splits an imbalanced multi-class problem with $n+1$ classes ($n$ of them being minority) into $n$ imbalanced binary problems for data cleaning.  
+	\item Uses cleaning undersampling (similar to Tomek's Links) to remove noisy spots in the data.
+\end{itemize}
+
+
+%%%
+\subsection{Oversampling}
+
+Naive oversampling would be to create 99 copies of each of the positive samples, so that the two sets are balanced.  That would have exactly the same effect on the loss function, because there would now be 100 times as many samples with $y_i=1$.  
+
+
+%%%
+\subsection{Underssampling}
+
+Undersampling would erase 99\% of the negative samples so that the classes would be balanced.  That seems like a bad idea, because you would lose a lot of information about the majority class.  
+
+\subsection{SMOTE:  Synthetic Minority Oversampling TEchnique}
+
+Especially if we're doing fatalities, we have a terribly imbalanced data set.  Ideally we'd like to have an equal number of fatal and nonfatal crashes to plug into our ML algorithm, but we have about 0.47\% fatal and 99.53\% nonfatal.  
+
+One solution is to randomly choose 681 nonfatal crashes to compare with our 681 fatal crashes, but that leaves behind a LOT of information.  
+
+Many of the papers I've read use SMOTE, which balances the data set by creating synthetic elements for the minority set (fatal crashes).  It picks an element of the minority set, $a$, and picks one of its nearest neighbors, $b$, and creates a new synthetic element $c$.  For each data category, $D_i$, in which they differ, SMOTE chooses $D_i(c)$ to be between $D_i(a)$ and $D_i(b)$.  It randomly chooses a random number $r \in [0,1]$, and makes $D_i(c) = D_i(a) + r(D_i(a) - D_i(b))$.  
+
+I get how that works for continuous variables.  I get that it would work if $D_i(a)$ and $D_i(b)$ weren't very different.  
+
+How would that work for boolean variables?  SMOTE would choose nearest neighbors $a$ and $b$ that agree on most variables, but for values of $i$ where $D_i(a)=0$ and $D_i(b)=1$, it would randomly choose $D_i(c) \in \{0,1\}$.  There is no {\it between} for boolean variables.  It doesn't seem to me that it would work as well.  
+
+Original SMOTE only works with continuous variables.  There is something called SMOTE-NC that handles continuous and categorical, but it has to have some continuous variables to work on.  
+
+\begin{quote}
+Unlike SMOTE, SMOTE-NC for dataset containing numerical and categorical features. However, it is not designed to work with only categorical features.
+\end{quote}
+
+\url{https://imbalanced-learn.org/dev/references/generated/imblearn.over_sampling.SMOTENC.html}
+
+Since we have $\approx 200$ times as many nonfatal crashes as fatal crashes, to balance the data set with SMOTE, we would have to make two hundred synthetic elements for each fatal crash.  It seems to me that we would be making a mess of our data set.  
+		
+
+
+%%%
+\subsection{Flavors of SMOTE}
+\index{SMOTE}
+
+SMOTE, or Synthetic Minority Oversampling TEchnique, 			\cite{CHAWLA_2002}
+ creates extra samples of the minority class, but rather than making exact copies, it finds two similar samples and creates more samples ``between'' them, with feature values between the values of the two samples.  SMOTE only works for continuous features, not for categorical features.  Almost all of my features are categorical.  
+ 
+ I got this list of flavors of SMOTE from a 2021 review by Mahmudah.
+			\cite{MAHMUDAH_2021}  I've investigated some of them and given some flesh to some parts of this skeleton.
+ 
+ 		\begin{itemize}
+			\item SMOTE:  Synthetic Minority Oversampling TEchnique 
+			\cite{CHAWLA_2002}
+			
+			Uses $k$-nearest neighbors to find two close positive (minority) samples, and creates a synthetic sample between them.  Works on continuous data, not on categorical or binary data.  
+			
+			\item ADASYN:  ADAptive SYNthetic sampling approach for imbalanced learning.  
+			\cite{MAHMUDAH_2021}
+			
+			Creates synthetic samples based on the level of difficulty in learning the samples of the minority class.  A positive samples is ``difficult'' if it has more negative samples as its nearest neighbors.  The more difficult a sample is, the more synthetic copies of that sample ADASYN creates.  
+			
+			\item Borderline SMOTE
+			\cite{MAHMUDAH_2021}
+			
+			Generates synthetic positive samples along the border between the positive and negative classes.  Brad's Question:  This assumes you know where the border is.  I suppose you could do it iteratively.  
+			
+			\item Safe-level SMOTE
+			\cite{MAHMUDAH_2021}
+
+			When SMOTE finds the nearest positive-class neighbors of a positive sample, it ignores the negative (majority-class) neighbors.  [I think this is what it means:]  Creating synthetic positive-class samples in a neighborhood with lots of negative samples just makes more of a mess, so this is not considered a ``safe'' place to make synthetic samples.  Safe-level SMOTE creates synthetic positive samples only in majority-positive neighborhoods.  
+			
+			\item Relocating-safe-level SMOTE (RSLS)
+			\cite{MAHMUDAH_2021}
+			
+			Avoids creating synthetic positive samples near negative samples.  
+			
+			\item Density-based SMOTE (DBSMOTE)
+			\cite{MAHMUDAH_2021}
+
+			Integration of DBSCAN and SMOTE.   DBSCAN, Density-Based Spatial Clustering of Application with Noise, discovers clusters with an arbitrary shape (?)  DGSMOTE creates synthetic samples at the pseudo-centroids of the clusters of positive samples.  
+			
+			\item Adaptive Neighbor SMOTE (ANS)
+			\cite{MAHMUDAH_2021}
+
+			Focuses not on -where- to generate synthetic samples, but on -how many- samples to generate in a particular neighborhood. 
+
+			\item D2GAN 
+
+This 2020 article by Zhai \cite{ZHAI_2020_D2GAN} builds on the Dual Discriminator Generative Adversarial Nets (D2GAN) paper from 2017 by Nguyen \cite{NGUYEN_2017}.  They want to do better oversampling, comparing D2GAN with SMOTE.  I don't understand what this is, but they say SMOTE has three drawbacks:
+
+\begin{enumerate}
+	\item Ignores the probability distribution of minority class samples.
+	\item Synthetic examples lack diversity.
+	\item Interating SMOTE many times will give synthetic samples with significant overlap.
+\end{enumerate}
+
+This 2022 article by Zhai \cite{ZHAI_2022} slightly modifies Zhai's claims against SMOTE.
+
+\begin{enumerate}
+	\item Does not extend the training field of positive samples.
+	\item Synthetic examples lack diversity.
+	\item Does not accurately approximate the probability distribution of minority class samples.
+\end{enumerate}
+
+The authors propose two new methods of diversity oversampling by generative models, one based on ``extreme machine learning autoencoder,'' and the other based on generative adversarial networks (GAN).  
+
+			
+		\end{itemize}
+		
+
+%%%
+\subsection{Train/Test Split}
+
+The application in Sharififar's 2019 article \cite{SHARIFIFAR_2019}  is digital mapping of farmland, categorizing areas by soil type.  Some soil types are rare but significant.  This is the first article I've seen that, at the beginning, says that making sure each minority class appears in appropriate distribution in the validation and test sets is an important challenge.  They explicitly say that they split 30\% for the validation set by taking 30\% of each class.
+
+%%%
+\subsection{Feature Selection}
+
+This 2012 article by Tan \cite{TAN_2012} introduces a feature selection model specifically for imbalanced data sets.  I haven't dug in yet.  
+
+

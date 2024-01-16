@@ -1,0 +1,549 @@
+%%%%%
+% Headline Results
+\subsection{More Features Improve the Model}
+
+Our model metrics show that having more information about each crash and crash person greatly increases the precision and recall of the model.  The graphs and metrics below show the model with the highest F1 score for each of the easy, medium, and hard sets of features.  In terms of F1, all of the easy-feature models were worse than all of the medium-feature models, and except for the Easy Ensemble Classifier models, all of the medium-feature models were worse than the hard-feature models.  
+Full details about features for each set is in \verb|CRSS_06_Build_Model_01_15_22.ipynb|.
+
+
+The Easy set of features assumes that the automated crash notification comes to the police only with a location and that the police do not correlate that location information with detailed maps for information like whether that location is in a parking lot or a high-speed intersection.  These features (day of week, time of day, weather,...) are information the police already had before the notification.  This model balanced bagging model does correctly tell the police to dispatch 1,656 ambulances immediately with 40.0\% precision, which is better than zero.  
+
+
+
+\
+
+%%%
+\parbox{\linewidth}{
+{\bf Easy Features:  Balanced Random Forest model, No Tomek undersampling, No class weights}
+
+\noindent\begin{tabular}{@{\hspace{-6pt}}p{2.3in} @{\hspace{-6pt}}p{2.0in} p{1.8in}}
+	\vskip 0pt
+	\hfil Raw Model Output
+	
+	\input{../Keras/Images/BRFC_Easy_Tomek_0_alpha_0_5_v2_Pred.pgf}
+	
+&
+	\vskip 0pt
+	\hfil Linear Transformation
+	
+	\input{../Keras/Images/BRFC_Easy_Tomek_0_alpha_0_5_v2_Linear_Transform_Pred.pgf}
+
+&
+	\vskip 0pt
+	\begin{tabular}{cc|c|c|}
+	&\multicolumn{1}{c}{}& \multicolumn{2}{c}{Prediction} \cr
+	&\multicolumn{1}{c}{} & \multicolumn{1}{c}{N} & \multicolumn{1}{c}{P} \cr\cline{3-4}
+	\multirow{2}{*}{\rotatebox[origin=c]{90}{Actual}}&N &
+148,287 & 2,484
+	\vrule width 0pt height 10pt depth 2pt \cr\cline{3-4}
+	&P & 
+24,965 & 1,656
+	\vrule width 0pt height 10pt depth 2pt \cr\cline{3-4}
+	\end{tabular}
+
+	\hfil\begin{tabular}{ll}
+	\cr
+0.400 & Precision \cr	0.062 & Recall \cr	0.108 & F1 \cr	0.664 & AUC \cr	0.857 & $p$ \cr
+	\end{tabular}
+
+\cr
+\end{tabular}
+} % End parbox
+
+The Medium features assume two things.
+
+\begin{enumerate}
+	\item The police can correlate the location with detailed maps to get, for instance, the kind of road and whether the crash was in an intersection
+	\item The automated cell phone crash report comes to the police from the cell service provider with some information about the likely user of the phone, including age and sex.  
+\end{enumerate}
+	
+	Our best model on the Medium features sends $6,464$ needed ambulances with $43.0\%$ precision, much better than the Easy features.  Using this improved recall and precision is a good argument for investing in the data infrastructure necessary to make this information instantaneously available.  
+
+\
+
+%%%
+\parbox{\linewidth}{
+{\bf Medium Features:  Balanced Radom Forest model, Tomek Once, No class weights}
+
+\noindent\begin{tabular}{@{\hspace{-6pt}}p{2.3in} @{\hspace{-6pt}}p{2.0in} p{1.8in}}
+	\vskip 0pt
+	\qquad \qquad Raw Model Output
+	
+	\input{../Keras/Images/BRFC_Medium_Tomek_1_alpha_0_5_v2_Pred.pgf}
+	
+&
+	\vskip 0pt
+	\qquad \qquad Linear Transformation
+	
+	\input{../Keras/Images/BRFC_Medium_Tomek_1_alpha_0_5_v2_Linear_Transform_Pred.pgf}
+
+&
+	\vskip 0pt
+	\begin{tabular}{cc|c|c|}
+	&\multicolumn{1}{c}{}& \multicolumn{2}{c}{Prediction} \cr
+	&\multicolumn{1}{c}{} & \multicolumn{1}{c}{N} & \multicolumn{1}{c}{P} \cr\cline{3-4}
+	\multirow{2}{*}{\rotatebox[origin=c]{90}{Actual}}&N &
+142,217 & 8,554
+	\vrule width 0pt height 10pt depth 2pt \cr\cline{3-4}
+	&P & 
+20,157 & 6,464
+	\vrule width 0pt height 10pt depth 2pt \cr\cline{3-4}
+	\end{tabular}
+
+	\hfil\begin{tabular}{ll}
+	\cr
+0.430 & Precision \cr	0.243 & Recall \cr	0.310 & F1 \cr	0.728 & AUC \cr	0.763 & $p$ \cr
+	\end{tabular}
+\cr
+\end{tabular}
+} % End parbox
+
+The Hard features assume that the police can do an additional three things.  
+
+\begin{enumerate}
+	\item Correlate information about the likely phone user with public and private records about automobile ownership and insurance to guess what kind of vehicle the person is driving
+	\item Correlate location with detailed and up-to-date maps of lighting conditions and work zones.  
+	\item Correlate multiple notifications from the same location to determine (minimum) number of passengers, including whether a school bus is involved.  
+\end{enumerate}
+
+	Our best model on the Hard features sends $10,397$ needed ambulances with $51.3\%$ precision.  Again, this improvement in both precision and recall are good arguments for investing in the needed additional data infrastructure.
+
+\
+
+%%%
+\parbox{\linewidth}{
+{\bf Hard Features:  Balanced Random Forest model, Tomek twice, No class weights}
+
+\noindent\begin{tabular}{@{\hspace{-6pt}}p{2.3in} @{\hspace{-6pt}}p{2.0in} p{1.8in}}
+	\vskip 0pt
+	\qquad \qquad Raw Model Output
+	
+	\input{../Keras/Images/BRFC_Hard_Tomek_2_alpha_0_5_v1_Pred.pgf}
+	
+&
+	\vskip 0pt
+	\qquad \qquad Linear Transformation
+	
+	\input{../Keras/Images/BRFC_Hard_Tomek_2_alpha_0_5_v1_Linear_Transform_Pred.pgf}
+
+&
+	\vskip 0pt
+	\begin{tabular}{cc|c|c|}
+	&\multicolumn{1}{c}{}& \multicolumn{2}{c}{Prediction} \cr
+	&\multicolumn{1}{c}{} & \multicolumn{1}{c}{N} & \multicolumn{1}{c}{P} \cr\cline{3-4}
+	\multirow{2}{*}{\rotatebox[origin=c]{90}{Actual}}&N &
+140,914 & 9,857
+	\vrule width 0pt height 10pt depth 2pt \cr\cline{3-4}
+	&P & 
+16,224 & 10,397
+	\vrule width 0pt height 10pt depth 2pt \cr\cline{3-4}
+	\end{tabular}
+
+	\hfil\begin{tabular}{ll}
+	\cr
+0.513 & Precision \cr	0.391 & Recall \cr	0.444 & F1 \cr	0.800 & AUC \cr	0.705 & $p$ \cr
+	\end{tabular}
+
+\cr
+\end{tabular}
+} % End parbox
+
+
+\subsection{Results of Undersampling and Hyperparameters}
+
+The table below shows the top thirty-two runs measured by the F1 score, and the top run for each of the five remaining model algorithms.  All of the results are for the hard features.  
+
+The second column tells how many times we ran Tomek undersampling.  The third column gives the values of the hyperparameters $\alpha$ (class weight) that we used for the Balanced Random Forest, Keras Binary Focal Loss classifier, and Logistic Regression classifiers.  The fourth column gives the values of $\gamma$ (focal weight) we varied for the Keras binary focal loss classifier.  We ran the models twice with different random seeds (``Round 1'' and ``Round 2'' below), to see whether small differences were due to different models and hyperparameters or due to the inherent stochasticity of the train/test split and machine learning algorithms.  
+
+\
+
+\hfil\begin{tabular}{*9{c}}
+Algorithm & Tomek & $\alpha$ & $\gamma$ & Round & Precision & Recall & F1 & AUC \cr\hline
+BRFC & 2 & 1/2 && 1 & 0.5133 & 0.3906 & 0.4436 & 0.8002 \cr
+BRFC & 1 & 1/2 && 1 & 0.5136 & 0.3880 & 0.4420 & 0.7998 \cr
+BRFC & 0 & 1/2 && 1 & 0.5145 & 0.3858 & 0.4410 & 0.7993 \cr
+BRFC & 2 & 2/3 && 1 & 0.5064 & 0.3904 & 0.4409 & 0.7997 \cr
+BRFC & 0 & 2/3 && 1 & 0.5107 & 0.3866 & 0.4401 & 0.7995 \cr
+BRFC & 0 & 0.85 && 1 & 0.5056 & 0.3892 & 0.4399 & 0.7986 \cr
+BRFC & 1 & 2/3 && 1 & 0.5093 & 0.3866 & 0.4396 & 0.7994 \cr
+BRFC & 2 & 1/2 && 2 & 0.5061 & 0.3857 & 0.4378 & 0.7982 \cr
+BRFC & 2 & 0.85 && 1 & 0.5054 & 0.3823 & 0.4353 & 0.7984 \cr
+BRFC & 1 & 1/2 && 2 & 0.5069 & 0.3810 & 0.4350 & 0.7977 \cr
+BRFC & 1 & 2/3 && 2 & 0.5041 & 0.3824 & 0.4349 & 0.7981 \cr
+BRFC & 1 & 0.85 && 2 & 0.5036 & 0.3801 & 0.4332 & 0.7967 \cr
+BRFC & 1 & 0.85 && 1 & 0.5185 & 0.3673 & 0.4300 & 0.7978 \cr
+BRFC & 2 & 0.85 && 2 & 0.5078 & 0.3702 & 0.4282 & 0.7970 \cr
+BRFC & 0 & 1/2 && 2 & 0.5173 & 0.3649 & 0.4280 & 0.7967 \cr
+BRFC & 0 & 2/3 && 2 & 0.5166 & 0.3652 & 0.4279 & 0.7977 \cr
+BRFC & 2 & 2/3 && 2 & 0.5123 & 0.3667 & 0.4274 & 0.7973 \cr
+BRFC & 0 & 0.85 && 2 & 0.5091 & 0.3652 & 0.4253 & 0.7961 \cr\hline
+KBFC & 1 & 1/2  & 0.0 & 1 & 0.4825 & 0.3270 & 0.3898 & 0.7758 \cr
+KBFC & 0 & 1/2  & 0.0 & 1 & 0.4850 & 0.3196 & 0.3853 & 0.7753 \cr
+KBFC & 1 & 2/3  & 0.0 & 1 & 0.4848 & 0.3164 & 0.3829 & 0.7758 \cr
+KBFC & 0 & 2/3  & 0.5 & 2 & 0.4757 & 0.3202 & 0.3828 & 0.7755 \cr
+KBFC & 0 & 2/3  & 0.0 & 2 & 0.4790 & 0.3187 & 0.3827 & 0.7750 \cr
+Bagging & 2 &&& 1 & 0.5043 & 0.3079 & 0.3823 & 0.7664 \cr
+KBFC & 0 & 2/3  & 1.0 & 2 & 0.4805 & 0.3166 & 0.3817 & 0.7748 \cr
+KBFC & 1 & 0.85  & 0.0 & 1 & 0.4722 & 0.3199 & 0.3815 & 0.7742 \cr
+KBFC & 2 & 2/3  & 0.0 & 1 & 0.4830 & 0.3152 & 0.3814 & 0.7744 \cr
+KBFC & 2 & 2/3  & 0.5 & 1 & 0.4912 & 0.3117 & 0.3814 & 0.7751 \cr
+KBFC & 2 & 1/2  & 0.0 & 1 & 0.4886 & 0.3125 & 0.3812 & 0.7743 \cr
+KBFC & 2 & 2/3  & 1.0 & 1 & 0.4874 & 0.3127 & 0.3810 & 0.7750 \cr
+KBFC & 1 & 2/3  & 1.0 & 1 & 0.4855 & 0.3131 & 0.3807 & 0.7751 \cr
+KBFC & 1 & 2/3  & 0.5 & 2 & 0.4747 & 0.3171 & 0.3802 & 0.7740 \cr\vdots \cr
+LRC & 1 & 1/2 && 1 & 0.4408 & 0.2895 & 0.3495 & 0.7548 \cr
+AdaBoost & 2 &&& 1 & 0.4408 & 0.2707 & 0.3354 & 0.7542 \cr
+RUSBoost & 0 &&& 1 & 0.4412 & 0.2660 & 0.3319 & 0.7547 \cr
+EEC & 0 &&& 1 & 0.4202 & 0.2488 & 0.3125 & 0.7329 \cr\end{tabular}
+
+\
+
+The results indicate that Tomek undersampling and focal loss do not make a significant difference, especially compared with the much larger difference between the worst Balanced Random Forest Classifier model and the best Keras Binary Focal Crossentropy model.  Though varying the hyperparameters did not give the most significant changes in the results, we found interesting behaviors that may be relevant to future research.  What makes our look at focal loss different from most study is that we are only interested in the right tail past where $\Delta FP/\Delta TP = 2.0$.  
+
+
+
+
+%%%%%
+\subsection{Varying Binary Focal Crossentropy Hyperparameters}
+
+The Binary Focal Crossentropy loss function for Keras's neural network algorithm takes both a class weight hyperparameter $\alpha$ and a modulating factor hyperparameter $\gamma$ that gives more weight to samples badly misclassified.  We tried combinations, including the values of $\gamma$ tested in the paper \cite{lin2017focal}  The balanced class weight will vary slightly with undersampling of the majority class.  
+
+\
+
+\hfil\begin{tabular}{c|c}
+	$\alpha$ & Meaning \cr\hline
+	1/2 & No class weight  \cr
+	2/3 & $\Delta FP/\Delta TP < 2$  \cr
+	0.85 & Balanced class weight  \cr
+	\multicolumn{2}{c}{}\cr
+	\multicolumn{2}{c}{}\cr
+\end{tabular}	
+\qquad\begin{tabular}{c|c}
+	$\gamma$  & Notes \cr\hline
+	0.0 & Same as binary crossentropy \cr
+	0.5 & Very light modulation \cr
+	1.0 & Light modulation\cr
+	2.0 & Recommended by Lin \cr
+	5.0 & Heavy modulation \cr
+\end{tabular}	
+
+\subsubsection{Varying Class Weights}
+
+All three models used no Tomek undersampling and $\gamma=0.0$.
+
+With $\alpha = 0.5$, the model classifies the negative class well, but the positive class almost randomly.  With $\alpha = 0.85$, balanced class weights, the model classifies the positive class well, but the positive class so poorly that the model does not separate the two classes well.  
+
+\
+
+%%%
+\parbox{\linewidth}{
+{ No class weight ($\alpha = 0.5$)}
+
+\noindent\begin{tabular}{@{\hspace{-6pt}}p{2.3in} @{\hspace{-6pt}}p{2.0in} p{1.8in}}
+	\vskip 0pt
+	\hfil Raw Model Output
+	
+	\input{../Keras/Images/KBFC_Hard_Tomek_0_alpha_0_5_gamma_0_0_v1_Pred.pgf}
+	
+&
+	\vskip 0pt
+	\hfil Linear Transformation
+	
+	\input{../Keras/Images/KBFC_Hard_Tomek_0_alpha_0_5_gamma_0_0_v1_Linear_Transform_Pred.pgf}
+
+&
+	\vskip 0pt
+	\begin{tabular}{cc|c|c|}
+	&\multicolumn{1}{c}{}& \multicolumn{2}{c}{Prediction} \cr
+	&\multicolumn{1}{c}{} & \multicolumn{1}{c}{N} & \multicolumn{1}{c}{P} \cr\cline{3-4}
+	\multirow{2}{*}{\rotatebox[origin=c]{90}{Actual}}&N &
+141736 & 9035
+	\vrule width 0pt height 10pt depth 2pt \cr\cline{3-4}
+	&P & 
+18113 & 8508
+	\vrule width 0pt height 10pt depth 2pt \cr\cline{3-4}
+	\end{tabular}
+
+	\hfil\begin{tabular}{ll}
+	\cr
+	0.485 & Precision \cr	0.320 & Recall \cr	0.385 & F1 \cr	0.775 & AUC \cr 0.546 & $p$ \cr
+	\end{tabular}
+
+\cr
+\end{tabular}
+} % End parbox
+
+%%%
+\parbox{\linewidth}{
+{ Class weight for $\Delta FP/\Delta TP=2.0$ ($\alpha = 2/3$)}
+
+\noindent\begin{tabular}{@{\hspace{-6pt}}p{2.3in} @{\hspace{-6pt}}p{2.0in} p{1.8in}}
+	\vskip 0pt
+	\hfil Raw Model Output
+	
+	\input{../Keras/Images/KBFC_Hard_Tomek_0_alpha_target_gamma_0_0_v1_Pred.pgf}
+	
+&
+	\vskip 0pt
+	\hfil Linear Transformation
+	
+	\input{../Keras/Images/KBFC_Hard_Tomek_0_alpha_target_gamma_0_0_v1_Linear_Transform_Pred.pgf}
+
+&
+	\vskip 0pt
+	\begin{tabular}{cc|c|c|}
+	&\multicolumn{1}{c}{}& \multicolumn{2}{c}{Prediction} \cr
+	&\multicolumn{1}{c}{} & \multicolumn{1}{c}{N} & \multicolumn{1}{c}{P} \cr\cline{3-4}
+	\multirow{2}{*}{\rotatebox[origin=c]{90}{Actual}}&N &
+142029 & 8742	
+	\vrule width 0pt height 10pt depth 2pt \cr\cline{3-4}
+	&P & 
+18346 & 8275	\vrule width 0pt height 10pt depth 2pt \cr\cline{3-4}
+	\end{tabular}
+
+	\hfil\begin{tabular}{ll}
+	\cr
+	0.486 & Precision \cr	0.311 & Recall \cr	0.379 & F1 \cr	0.774 & AUC \cr 0.711 & $p$ \cr
+	\end{tabular}
+
+\cr
+\end{tabular}
+} % End parbox
+
+%%%
+
+\parbox{\linewidth}{
+
+{ Class weight for class balance ($\alpha \approx 0.85$)}
+
+\noindent\begin{tabular}{@{\hspace{-6pt}}p{2.3in} @{\hspace{-6pt}}p{2.0in} p{1.8in}}
+	\vskip 0pt
+	\hfil Raw Model Output
+	
+	\input{../Keras/Images/KBFC_Hard_Tomek_0_alpha_balanced_gamma_0_0_v1_Pred.pgf}
+	
+&
+	\vskip 0pt
+	\hfil Linear Transformation
+	
+	\input{../Keras/Images/KBFC_Hard_Tomek_0_alpha_balanced_gamma_0_0_v1_Linear_Transform_Pred.pgf}
+
+&
+	\vskip 0pt
+	\begin{tabular}{cc|c|c|}
+	&\multicolumn{1}{c}{}& \multicolumn{2}{c}{Prediction} \cr
+	&\multicolumn{1}{c}{} & \multicolumn{1}{c}{N} & \multicolumn{1}{c}{P} \cr\cline{3-4}
+	\multirow{2}{*}{\rotatebox[origin=c]{90}{Actual}}&N &
+141975 & 8796
+	\vrule width 0pt height 10pt depth 2pt \cr\cline{3-4}
+	&P & 
+18339 & 8282	\vrule width 0pt height 10pt depth 2pt \cr\cline{3-4}
+	\end{tabular}
+
+	\hfil\begin{tabular}{ll}
+	\cr
+0.485 & Precision \cr	0.311 & Recall \cr	0.379 & F1 \cr	0.774 & AUC \cr 0.892 & $p$ \cr
+	\end{tabular}
+
+\cr
+\end{tabular}
+} % End parbox
+
+\
+
+%%%%%
+\subsubsection{Varying $\gamma$ for Focal Loss}
+
+All five models used the class weight for $\Delta FP/\Delta TP=2.0$, $\alpha = 2/3$, with no Tomek undersampling.  
+
+The aspect that caught our attention was the way larger focal weights make the probabilities clusters towards the center, rather than the desired effect of giving more strongly classified samples.  
+
+\
+
+%%%
+\parbox{\linewidth}{
+{ $\gamma = 0.0$, same as non-focal binary crossentropy}
+
+\noindent\begin{tabular}{@{\hspace{-6pt}}p{2.3in} @{\hspace{-6pt}}p{2.0in} p{1.8in}}
+	\vskip 0pt
+	\hfil Raw Model Output
+	
+	\input{../Keras/Images/KBFC_Hard_Tomek_0_alpha_target_gamma_0_0_v1_Pred.pgf}
+	
+&
+	\vskip 0pt
+	\hfil Linear Transformation
+	
+	\input{../Keras/Images/KBFC_Hard_Tomek_0_alpha_target_gamma_0_0_v1_Linear_Transform_Pred.pgf}
+
+&
+	\vskip 0pt
+	\begin{tabular}{cc|c|c|}
+	&\multicolumn{1}{c}{}& \multicolumn{2}{c}{Prediction} \cr
+	&\multicolumn{1}{c}{} & \multicolumn{1}{c}{N} & \multicolumn{1}{c}{P} \cr\cline{3-4}
+	\multirow{2}{*}{\rotatebox[origin=c]{90}{Actual}}&N &
+142029 & 8742	
+	\vrule width 0pt height 10pt depth 2pt \cr\cline{3-4}
+	&P & 
+18346 & 8275	\vrule width 0pt height 10pt depth 2pt \cr\cline{3-4}
+	\end{tabular}
+
+	\hfil\begin{tabular}{ll}
+	\cr
+	0.486 & Precision \cr	0.311 & Recall \cr	0.379 & F1 \cr	0.774 & AUC \cr 0.711 & $p$ \cr
+	\end{tabular}
+
+\cr
+\end{tabular}
+} % End parbox
+
+%%%
+\parbox{\linewidth}{
+{ $\gamma = 0.5$}
+
+\noindent\begin{tabular}{@{\hspace{-6pt}}p{2.3in} @{\hspace{-6pt}}p{2.0in} p{1.8in}}
+	\vskip 0pt
+	\hfil Raw Model Output
+	
+	\input{../Keras/Images/KBFC_Hard_Tomek_0_alpha_target_gamma_0_5_v1_Pred.pgf}
+	
+&
+	\vskip 0pt
+	\hfil Linear Transformation
+	
+	\input{../Keras/Images/KBFC_Hard_Tomek_0_alpha_target_gamma_0_5_v1_Linear_Transform_Pred.pgf}
+
+&
+	\vskip 0pt
+	\begin{tabular}{cc|c|c|}
+	&\multicolumn{1}{c}{}& \multicolumn{2}{c}{Prediction} \cr
+	&\multicolumn{1}{c}{} & \multicolumn{1}{c}{N} & \multicolumn{1}{c}{P} \cr\cline{3-4}
+	\multirow{2}{*}{\rotatebox[origin=c]{90}{Actual}}&N &
+142202 & 8569
+	\vrule width 0pt height 10pt depth 2pt \cr\cline{3-4}
+	&P & 
+18492 & 8129	\vrule width 0pt height 10pt depth 2pt \cr\cline{3-4}
+	\end{tabular}
+
+	\hfil\begin{tabular}{ll}
+	\cr
+0.487 & Precision \cr	0.305 & Recall \cr	0.375 & F1 \cr	0.774 & AUC \cr	0.655 & $p$ \cr
+	\end{tabular}
+
+\cr
+\end{tabular}
+} % End parbox
+
+
+%%%
+\parbox{\linewidth}{
+{ $\gamma = 1.0$}
+
+\noindent\begin{tabular}{@{\hspace{-6pt}}p{2.3in} @{\hspace{-6pt}}p{2.0in} p{1.8in}}
+	\vskip 0pt
+	\hfil Raw Model Output
+	
+	\input{../Keras/Images/KBFC_Hard_Tomek_0_alpha_target_gamma_1_0_v1_Pred.pgf}
+	
+&
+	\vskip 0pt
+	\hfil Linear Transformation
+	
+	\input{../Keras/Images/KBFC_Hard_Tomek_0_alpha_target_gamma_1_0_v1_Linear_Transform_Pred.pgf}
+
+&
+	\vskip 0pt
+	\begin{tabular}{cc|c|c|}
+	&\multicolumn{1}{c}{}& \multicolumn{2}{c}{Prediction} \cr
+	&\multicolumn{1}{c}{} & \multicolumn{1}{c}{N} & \multicolumn{1}{c}{P} \cr\cline{3-4}
+	\multirow{2}{*}{\rotatebox[origin=c]{90}{Actual}}&N &
+141630 & 9141
+	\vrule width 0pt height 10pt depth 2pt \cr\cline{3-4}
+	&P & 
+18242 & 8379	\vrule width 0pt height 10pt depth 2pt \cr\cline{3-4}
+	\end{tabular}
+
+	\hfil\begin{tabular}{ll}
+	\cr
+0.478 & Precision \cr	0.315 & Recall \cr	0.380 & F1 \cr	0.775 & AUC \cr	0.615 & $p$ \cr
+	\end{tabular}
+
+\cr
+\end{tabular}
+} % End parbox
+
+
+%%%
+\parbox{\linewidth}{
+{ $\gamma = 2.0$}
+
+\noindent\begin{tabular}{@{\hspace{-6pt}}p{2.3in} @{\hspace{-6pt}}p{2.0in} p{1.8in}}
+	\vskip 0pt
+	\hfil Raw Model Output
+	
+	\input{../Keras/Images/KBFC_Hard_Tomek_0_alpha_target_gamma_2_0_v1_Pred.pgf}
+	
+&
+	\vskip 0pt
+	\hfil Linear Transformation
+	
+	\input{../Keras/Images/KBFC_Hard_Tomek_0_alpha_target_gamma_2_0_v1_Linear_Transform_Pred.pgf}
+
+&
+	\vskip 0pt
+	\begin{tabular}{cc|c|c|}
+	&\multicolumn{1}{c}{}& \multicolumn{2}{c}{Prediction} \cr
+	&\multicolumn{1}{c}{} & \multicolumn{1}{c}{N} & \multicolumn{1}{c}{P} \cr\cline{3-4}
+	\multirow{2}{*}{\rotatebox[origin=c]{90}{Actual}}&N &
+142496 & 8275
+	\vrule width 0pt height 10pt depth 2pt \cr\cline{3-4}
+	&P & 
+18602 & 8019	\vrule width 0pt height 10pt depth 2pt \cr\cline{3-4}
+	\end{tabular}
+
+	\hfil\begin{tabular}{ll}
+	\cr
+0.492 & Precision \cr	0.301 & Recall \cr	0.374 & F1 \cr	0.774 & AUC \cr	0.585 & $p$ \cr
+	\end{tabular}
+
+\cr
+\end{tabular}
+} % End parbox
+
+
+%%%
+\parbox{\linewidth}{
+{ $\gamma = 5.0$}
+
+\noindent\begin{tabular}{@{\hspace{-6pt}}p{2.3in} @{\hspace{-6pt}}p{2.0in} p{1.8in}}
+	\vskip 0pt
+	\hfil Raw Model Output
+	
+	\input{../Keras/Images/KBFC_Hard_Tomek_0_alpha_target_gamma_5_0_v1_Pred.pgf}
+	
+&
+	\vskip 0pt
+	\hfil Linear Transformation
+	
+	\input{../Keras/Images/KBFC_Hard_Tomek_0_alpha_target_gamma_5_0_v1_Linear_Transform_Pred.pgf}
+
+&
+	\vskip 0pt
+	\begin{tabular}{cc|c|c|}
+	&\multicolumn{1}{c}{}& \multicolumn{2}{c}{Prediction} \cr
+	&\multicolumn{1}{c}{} & \multicolumn{1}{c}{N} & \multicolumn{1}{c}{P} \cr\cline{3-4}
+	\multirow{2}{*}{\rotatebox[origin=c]{90}{Actual}}&N &
+143657 & 7114
+	\vrule width 0pt height 10pt depth 2pt \cr\cline{3-4}
+	&P & 
+19351 & 7270	\vrule width 0pt height 10pt depth 2pt \cr\cline{3-4}
+	\end{tabular}
+
+	\hfil\begin{tabular}{ll}
+	\cr
+0.505 & Precision \cr	0.273 & Recall \cr	0.355 & F1 \cr	0.773 & AUC \cr	0.543 & $p$ \cr
+	\end{tabular}
+
+\cr
+\end{tabular}
+} % End parbox

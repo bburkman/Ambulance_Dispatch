@@ -1,0 +1,120 @@
+%%%%% Lit Review
+
+
+
+
+
+
+%\cite{7727770} Wang, Training deep neural networks on imbalanced data sets, cited in Formosa 2020 with ``Deep Neural Network (DNN) models with a Mean Squared False Error loss function have the ability to capture classification errors from both majority and minority classes equally (Wang et al., 2016)''
+
+%\cite{PENG2020105610} used cost-sensitive MLP algorithm, which was developed by \cite{6469237}.  MLP is Multi-Layer Perceptron.
+
+
+%%%
+\subsection{Imbalanced Data in Crash Analysis}
+
+Imbalanced data is a frequent concern in crash analysis.  In crash prediction, ``non-crash'' samples are much more numerous than ``crash'' samples. 
+
+%%%
+\subsubsection{Oversampling}
+
+%
+\cite{PARSA2019202} used SMOTE to balance the dataset of crashes on Chicago's Eisenhower expressway.  
+%
+\cite{LI2020105371} used SMOTE to study crashes on urban arterials.  
+%
+\cite{GUO2021106328} used SMOTE to consider risky driving behavior in crash prediction.  
+%
+\cite{ORSINI2021106382} used SMOTE in building a a real-time conflict prediction model.
+%
+\cite{ELAMRANIABOUELASSAD2020102708} used SMOTE in studying crash prediction for collision avoidance systems.  
+%
+\cite{MORRIS2021106240} compared three oversampling methods, 
+random over-sampling, SMOTE, and adaptive synthetic sampling, for crash data analysis.  
+%
+\cite{YAHAYA2021105936} compared three oversampling methods studying contributing factors in fatal crashes in Ghana, and the same group applied the majority weighted minority oversampling (MWMOTE) method to study multiple fatal injury crashes \citep{YAHAYA2021105851}.
+
+
+%%%
+\subsubsection{Multiple Techniques}
+%
+\cite{SCHLOGL2019134} used SMOTE and maximum dissimilarity undersampling to balance an Australian dataset to build a model to predict crashes, while in a later paper Sch\"{o}gl used a balanced bagging approach \citep{SCHLOGL2020105398}.    
+%
+\cite{CHEN2020102646} used SMOTE and Tomek's links in studying crash potential in lane-changing behavior.  
+%
+\cite{PENG2020105610} used undersampling, SMOTE, cost-sensitive algorithms, and boosting.  
+%
+\cite{LI2021106422} used the proximity weighted synthetic oversampling technique (ProWSyn) method to build a traffic violation prediction model.
+%
+\cite{CHEN2022106496} compared Synthetic Minority Over-Sampling Technique for panel data (SMOTE-P) with Random Under-sampling of the Majority Class (RUMC) technique, Cluster-Based Under-Sampling (CBUS), and mixed resampling to identify explanatory factors that affect the crash risk of buses in Hong Kong.
+%
+\cite{CHEN2020102646} used ENN-SMOTE-Tomek Link (EST) in estimating crash risk in lane changing.  
+
+
+
+%%%
+\subsubsection{Image (or Image-like) Data}
+%
+\cite{FORMOSA2020105429} used Deep Neural Network (DNN) models with a Mean Squared False Error loss function to analyze images from front-facing cameras in cars on a UK roadway to predict crashes.  
+%
+% Not images?
+\cite{LIN2020105628} used Generative Adversarial Networks (GAN) to overcome data imbalance for their incident detection model.  
+%
+\cite{ISLAM2021105950} found that a variational autoencoder was more useful than SMOTE, ADASYN, and GAN for generating minority samples to balance crash and non-crash events.  
+%
+\cite{BASSO2021106409} used Deep Convolutional Generative Adversarial Networks technique with random undersampling to use image and image-like data to build an accident-prediction model for a section of highway in Chile.  
+%
+\cite{MAN2022106511} used Wasserstein GAN (WGAN) and random undersampling to study the transferability of a model built on one dataset to other datasets.  
+%
+\cite{CAI2020102697} compared deep convolutional generative adversarial network (DCGAN) with SMOTE and random undersampling to study the effects of proactive traffic safety management strategies such as variable speed limits and dynamic message signs.  
+
+%%%
+\subsubsection{Other}
+%
+\cite{LACK2021106105} used bagging in predicting crashes for trucks and finding ways to improve truck safety.  
+%
+\cite{HAULE2021106181} used boosting in studying the effects of ramp metering on traffic safety.  
+%
+\cite{YU2020102740} implemented the new focal loss technique in real-time crash prediction.
+%
+\cite{SHI2019170} used undersampling to analyze factors predicting risky and safe driving.  
+%
+\cite{ZHU2021106199} used cost-sensitive semi-supervised logistic regression (CS3LR) for hit-and-run analysis.  
+
+
+
+%%%
+\subsubsection{Imbalanced Data in Other Transportation Areas}
+
+%
+\cite{MOHAMMADI2019153} used 
+the Adaptive Synthetic Sampling Approach (ADASYN) on a dataset of foot-by-foot track geometry and tonnage to identify the factors that predict rail defects.
+%
+\cite{SHI2021103414} developed a
+hierarchical over-sampling bagging method based on Grey Wolf Optimizer (GWO) algorithm and Synthetic Minority Over-sampling Technique (SMOTE)
+to study lane changing for autonomous vehicles.  The data was severely imbalanced because lane changing is rare compared with lane keeping.
+%
+\cite{KHAN2021103225} used SMOTE and Tomek links and ``average balanced recall accuracies'' for flight delay prediction.  
+%
+\cite{CHEN2022103709} used bagging for ride-hailing demand prediction.  
+ 
+%%%
+%
+% Needs work
+%
+%%%
+
+In crash severity, most reported crashes are just property damage only (PDO), and many PDO crashes aren't even reported.  Other aspects of transportation also have imbalanced data, including 
+
+\begin{itemize}
+	\item \cite{JIANG2020105520} used similar data and addressed the challenges we'll have with it.  
+	\item \cite{ELAMRANIABOUELASSAD2020102708} works with several imbalanced methods.  Use this paper as a model.  
+\end{itemize}
+
+%%%
+\subsubsection{Ambulances}
+
+\begin{itemize}
+	\item \cite{PARK2019230} has a full-page table categorizing studies of ambulance location, relocation, and dispatching using different optimization methods.  
+\end{itemize}
+

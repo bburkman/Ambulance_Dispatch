@@ -1,0 +1,46 @@
+%%%%%
+\section{Lit Review:  Medium.com {\it Towards Data Science} Articles}
+
+These aren't exactly peer reviewed, but they're current.  
+
+Soleymani (4/1/22) says that class weights are more effective than SMOTE, and gives an example of why SMOTE doesn't do what you think it should.   
+\cite{Soleymani_TDS_04_01_2022}
+
+Raj (9/5/19) is a brief article that introduces what an imbalanced data set is, and resampling, including na\"ive oversampling, undersampling, and SMOTE.  
+\cite{Raj_TDS_09_05_19}
+
+Soni (10/9/20) introduces Balanced Random Forest, with code, in addition to undersampling and oversampling.  Balanced Random Sampling is, I think, a form of bagging.  You take a bootstrap sample of the minority class and the same number of elements from the majority class, and run random forest; then aggregate the results.  
+\cite{Soni_TDS_10_09_20}
+
+Brownlee isn't in TDS, but gives an easy introduction to ROC curves.  
+\cite{Brownlee_TDS_11_26_14}
+Also gives good references in \cite{Brownlee_TDS_08_19_15}.
+
+Stewart also mentions Tomek Links.  
+\cite{Stewart_TDS_07_01_22}
+
+Bordia reviews variants of SMOTE, including SMOTE\_NC, which works with datasets with some (but not all) categorical data and some continuous data.  NC is for Nominal and Continuous.  
+\cite{Bordia_TDS_02_25_22}
+
+Boyle recommends Random Forests for imbalanced data.  
+\cite{Boyle_TDS_02_03_19}
+
+Keras can do random forest classifiers, although you may need to make it yourself.  \url{https://keras.io/examples/structured_data/deep_neural_decision_forests/}
+
+How to do an ROC curve and find AUC for Keras and sklearn: \url{https://medium.com/hackernoon/simple-guide-on-how-to-generate-roc-plot-for-keras-classifier-2ecc6c73115a}
+
+Badr includes bagging.  
+\cite{Badr_TDS_02_22_19}
+
+Rocca gives many different ideas.  Read this one carefully.  
+\cite{Rocca_01_27_19}
+
+Lador gives good examples of when different metrics are useful.  
+\cite{Lador_TDS_09_05_17}
+
+Jaitley also recommends Random Forest, Gradient Boosting, and AdaBoost.
+\cite{Jaitley_02_01_19}
+
+Ahamed had entirely different recommendations, Ensemble Cross-Validation (CV), Class Weights, and Over-Predicting the class of the minority class, {\it i.e.} setting a lower probability threshold for the minority class.  
+\cite{Ahamed_04_15_18}
+

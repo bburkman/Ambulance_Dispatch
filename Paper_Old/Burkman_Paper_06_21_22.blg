@@ -1,0 +1,50 @@
+This is BibTeX, Version 0.99d (TeX Live 2021)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: Burkman_Paper_06_21_22.aux
+The style file: cas-model2-names.bst
+Database file #1: Paper_Summer_2022.bib
+Warning--I didn't find a database entry for "NIPS2014_5ca3e9b1"
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Warning--empty title in BRIEMAN_1996
+You've used 62 entries,
+            2990 wiz_defined-function locations,
+            1194 strings with 23455 characters,
+and the built_in function-call counts, 43180 in all, are:
+= -- 3346
+> -- 1844
+< -- 28
++ -- 737
+- -- 645
+* -- 4955
+:= -- 6366
+add.period$ -- 227
+call.type$ -- 62
+change.case$ -- 524
+chr.to.int$ -- 60
+cite$ -- 63
+duplicate$ -- 3111
+empty$ -- 2977
+format.name$ -- 823
+if$ -- 8008
+int.to.chr$ -- 3
+int.to.str$ -- 1
+missing$ -- 623
+newline$ -- 366
+num.names$ -- 248
+pop$ -- 1005
+preamble$ -- 1
+purify$ -- 461
+quote$ -- 0
+skip$ -- 862
+stack$ -- 0
+substring$ -- 1669
+swap$ -- 2367
+text.length$ -- 3
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 558
+warning$ -- 1
+while$ -- 238
+width$ -- 0
+write$ -- 998
+(There were 2 warnings)

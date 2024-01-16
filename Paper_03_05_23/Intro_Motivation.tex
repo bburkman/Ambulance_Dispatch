@@ -1,0 +1,34 @@
+%%%
+\subsection{Motivation}
+
+
+%Starting in 2022, each new iPhone has a feature that can automatically notify police if the phone detects the deceleration profile of a crash.  If the injuries are serious, time to medical care is critical, but few crashes result in serious injuries, and ambulances are in limited supply and expensive.  From the data available from such an automatic notification, can we build a machine-learning model that will recommend whether police should immediately, perhaps automatically, dispatch an ambulance?  
+
+A Google Pixel phone can detect the deceleration profile of a car crash and, if you have enabled the settings in the Personal Safety app, will, if you do not respond in 60 seconds, automatically call the police, reporting your location.  Apple announced in November 2021 that it was planning to do something similar.  
+
+The crash victims who would most obviously benefit from such technology are those in crashes with no witnesses to call police (``unnoticed run-off roadway''), who survived the crash and might have lived if help had arrived promptly, but died from their injuries.  Such crashes are very rare, about seventy-seven fatalities annually in the US in 2010-2018,   
+\citep{SPICER2021105974}
+of the about 35,000 crash fatalities per year in the same time period.  \citep{FARS}
+% 2020:  38,824
+% 2019:  36,355
+% 2018:  36,835
+% 2017:  37,473
+% 2016:  37,806
+% 2015:  35,484
+% 2014:  32,744
+% 2013:  32,893
+% 2012:  33,782
+% 2011:  32,479
+% 2010:  32,999
+
+A much larger group who could benefit from faster ambulance response are those injuries are serious and need prompt medical attention.  Dispatching an ambulance automatically, rather than waiting for an eyewitness to call for one, would cut at least several minutes off of the ambulance response time.  In a 1996 study on 1990 data for US urban interstates, freeways, and expressways \citep{edsoai.on1047979037n.d.}, the average accident notification time was 5.2 minutes, and the additional time to EMS (emergency medical services) arrival was 6.2 minutes.    Evanco estimated that reducing the notification time from 5.2 minutes to 2 minutes would cut fatalities by 15.9\%.   Even those who might not die may recover more fully and quickly with prompt medical attention, so dispatching an ambulance promptly when one is needed would be beneficial.  
+
+On the other hand, we do not want to send an ambulance to every accident scene, because only a small proportion of crashes have severe injury; most are property damage only (PDO) crashes.  Ambulances and their crews are expensive and in finite supply.  
+
+{\bf [Insert cost differential discussion]}
+
+Given the information available to the police from a phone's automated crash notification, can we build a model that will recommend (or determine) whether to send an ambulance immediately?  
+
+
+
+

@@ -1,0 +1,19 @@
+%%%
+\subsection{Imbalanced Data}
+
+Only a small proportion of crashes require immediate medical attention.  In the Louisiana data, 8.5\% of persons involved in a crash were transported by ambulance.  If we built a model that classified all crashes as ``Ambulance Not Needed,'' the model would have 91.5\% accuracy, which would be excellent in some other applications, but not here.  The toolkit for building models on imbalanced data is well established, but many of the tools only work for continuous data (our data is all categorical), and their use is as much art as science. 
+	 
+\begin{description}
+
+	\item [Balancing the Data]
+	
+	\item [Loss Function]
+	
+	
+	\item [Metrics]  Machine learning algorithms work iteratively by evaluating a model, perturbing the model, evaluating the new model, and deciding whether the new model is better; repeat.  What do we mean by ``better,'' and how do we measure it?  
+	
+	\item [Hyperparameter Tuning]  The ML algorithms we will use have some user-set parameters to optimize the model, and they can only be set by trial and error.  As we use two datasets, and as we add data to our model, should we use the same hyperparameters, or can they change?   
+
+	\item [Boosting]
+\end{description}
+

@@ -1,0 +1,240 @@
+\ifglsentryexists{crss}{}%
+{%
+\gls@defglossaryentry{crss}%
+{%
+name={CRSS},%
+sort={CRSS},%
+type={acronym},%
+first={Crash Report Sampling System\glsspace (CRSS)},%
+firstplural={Crash Report Sampling Systems\glsspace (CRSSs)},%
+text={CRSS},%
+plural={CRSSs},%
+description={Crash Report Sampling System},%
+descriptionplural={Crash Report Sampling System\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Crash Report Sampling System},%
+longplural={Crash Report Sampling Systems},%
+short={CRSS},%
+shortplural={CRSSs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{smote}{}%
+{%
+\gls@defglossaryentry{smote}%
+{%
+name={SMOTE},%
+sort={SMOTE},%
+type={acronym},%
+first={Synthetic Minority Oversampling Technique\glsspace (SMOTE)},%
+firstplural={Synthetic Minority Oversampling Techniques\glsspace (SMOTEs)},%
+text={SMOTE},%
+plural={SMOTEs},%
+description={Synthetic Minority Oversampling Technique},%
+descriptionplural={Synthetic Minority Oversampling Technique\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Synthetic Minority Oversampling Technique},%
+longplural={Synthetic Minority Oversampling Techniques},%
+short={SMOTE},%
+shortplural={SMOTEs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{nhtsb}{}%
+{%
+\gls@defglossaryentry{nhtsb}%
+{%
+name={NHTSB},%
+sort={NHTSB},%
+type={acronym},%
+first={National Highway Transportation Safety Board\glsspace (NHTSB)},%
+firstplural={National Highway Transportation Safety Boards\glsspace (NHTSBs)},%
+text={NHTSB},%
+plural={NHTSBs},%
+description={National Highway Transportation Safety Board},%
+descriptionplural={National Highway Transportation Safety Board\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={National Highway Transportation Safety Board},%
+longplural={National Highway Transportation Safety Boards},%
+short={NHTSB},%
+shortplural={NHTSBs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{dot}{}%
+{%
+\gls@defglossaryentry{dot}%
+{%
+name={DOT},%
+sort={DOT},%
+type={acronym},%
+first={Department of Transportation\glsspace (DOT)},%
+firstplural={Department of Transportations\glsspace (DOTs)},%
+text={DOT},%
+plural={DOTs},%
+description={Department of Transportation},%
+descriptionplural={Department of Transportation\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Department of Transportation},%
+longplural={Department of Transportations},%
+short={DOT},%
+shortplural={DOTs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{nass ges}{}%
+{%
+\gls@defglossaryentry{nass ges}%
+{%
+name={NASS GES},%
+sort={NASS GES},%
+type={acronym},%
+first={National Automotive Sampling System General Estimates System\glsspace (NASS GES)},%
+firstplural={National Automotive Sampling System General Estimates Systems\glsspace (NASS GESs)},%
+text={NASS GES},%
+plural={NASS GESs},%
+description={National Automotive Sampling System General Estimates System},%
+descriptionplural={National Automotive Sampling System General Estimates System\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={National Automotive Sampling System General Estimates System},%
+longplural={National Automotive Sampling System General Estimates Systems},%
+short={NASS GES},%
+shortplural={NASS GESs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{shrp}{}%
+{%
+\gls@defglossaryentry{shrp}%
+{%
+name={SHRP2},%
+sort={SHRP2},%
+type={acronym},%
+first={Second Highway Research Program\glsspace (SHRP2)},%
+firstplural={Second Highway Research Programs\glsspace (SHRP2s)},%
+text={SHRP2},%
+plural={SHRP2s},%
+description={Second Highway Research Program},%
+descriptionplural={Second Highway Research Program\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Second Highway Research Program},%
+longplural={Second Highway Research Programs},%
+short={SHRP2},%
+shortplural={SHRP2s},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{iveware}{}%
+{%
+\gls@defglossaryentry{iveware}%
+{%
+name={IVEware},%
+sort={IVEware},%
+type={acronym},%
+first={Imputation and Variance Estimation Software\glsspace (IVEware)},%
+firstplural={Imputation and Variance Estimation Softwares\glsspace (IVEwares)},%
+text={IVEware},%
+plural={IVEwares},%
+description={Imputation and Variance Estimation Software},%
+descriptionplural={Imputation and Variance Estimation Software\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Imputation and Variance Estimation Software},%
+longplural={Imputation and Variance Estimation Softwares},%
+short={IVEware},%
+shortplural={IVEwares},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{smri}{}%
+{%
+\gls@defglossaryentry{smri}%
+{%
+name={SMRI},%
+sort={SMRI},%
+type={acronym},%
+first={Sequential Regression Multivariate Imputation\glsspace (SMRI)},%
+firstplural={Sequential Regression Multivariate Imputations\glsspace (SMRIs)},%
+text={SMRI},%
+plural={SMRIs},%
+description={Sequential Regression Multivariate Imputation},%
+descriptionplural={Sequential Regression Multivariate Imputation\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Sequential Regression Multivariate Imputation},%
+longplural={Sequential Regression Multivariate Imputations},%
+short={SMRI},%
+shortplural={SMRIs},%
+counter={page},%
+parent={},%
+%
+}%
+}%

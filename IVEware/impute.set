@@ -1,0 +1,8 @@
+title Multiple imputation;
+datain CRSS;
+dataout impute;
+default categorical;
+minrsqd 0.01;
+maxpred 15;
+iterations 10;
+run;

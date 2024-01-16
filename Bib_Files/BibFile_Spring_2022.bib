@@ -1,0 +1,277 @@
+
+
+@article{BATISTA_2004,
+author = {Batista, Gustavo E. A. P. A. and Prati, Ronaldo C. and Monard, Maria Carolina},
+title = {A Study of the Behavior of Several Methods for Balancing Machine Learning Training Data},
+year = {2004},
+issue_date = {June 2004},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+volume = {6},
+number = {1},
+issn = {1931-0145},
+url = {https://doi.org/10.1145/1007730.1007735},
+doi = {10.1145/1007730.1007735},
+abstract = {There are several aspects that might influence the performance achieved by existing learning systems. It has been reported that one of these aspects is related to class imbalance in which examples in training data belonging to one class heavily outnumber the examples in the other class. In this situation, which is found in real world data describing an infrequent but important event, the learning system may have difficulties to learn the concept related to the minority class. In this work we perform a broad experimental evaluation involving ten methods, three of them proposed by the authors, to deal with the class imbalance problem in thirteen UCI data sets. Our experiments provide evidence that class imbalance does not systematically hinder the performance of learning systems. In fact, the problem seems to be related to learning with too few minority class examples in the presence of other complicating factors, such as class overlapping. Two of our proposed methods deal with these conditions directly, allying a known over-sampling method with data cleaning methods in order to produce better-defined class clusters. Our comparative experiments show that, in general, over-sampling methods provide more accurate results than under-sampling methods considering the area under the ROC curve (AUC). This result seems to contradict results previously published in the literature. Two of our proposed methods, Smote + Tomek and Smote + ENN, presented very good results for data sets with a small number of positive examples. Moreover, Random over-sampling, a very simple over-sampling method, is very competitive to more complex over-sampling methods. Since the over-sampling methods provided very good performance results, we also measured the syntactic complexity of the decision trees induced from over-sampled data. Our results show that these trees are usually more complex then the ones induced from original data. Random over-sampling usually produced the smallest increase in the mean number of induced rules and Smote + ENN the smallest increase in the mean number of conditions per rule, when compared among the investigated over-sampling methods.},
+journal = {SIGKDD Explor. Newsl.},
+month = {jun},
+pages = {20–29},
+numpages = {10}
+}
+
+@article{CHABBOUH_2019,
+title = {Multi-objective evolution of oblique decision trees for imbalanced data binary classification},
+journal = {Swarm and Evolutionary Computation},
+volume = {49},
+pages = {1-22},
+year = {2019},
+issn = {2210-6502},
+doi = {https://doi.org/10.1016/j.swevo.2019.05.005},
+url = {https://www.sciencedirect.com/science/article/pii/S2210650218305054},
+author = {Marwa Chabbouh and Slim Bechikh and Chih-Cheng Hung and Lamjed {Ben Said}},
+keywords = {Imbalanced data binary classification, Oblique decision trees, Evolutionary algorithms, Multi-objective optimization},
+abstract = {Imbalanced data classification is one of the most challenging problems in data mining. In this kind of problems, we have two types of classes: the majority class and the minority one. The former has a relatively high number of instances while the latter contains a much less number of instances. As most traditional classifiers usually assume that data is evenly distributed for all classes, they may considerably fail in recognizing instances in the minority class due to the imbalance problem. Several interesting approaches have been proposed to handle the class imbalance issue in the literature and the Oblique Decision Tree (ODT) is one of them. Nevertheless, most standard ODT construction algorithms use a greedy search process; while only very few works have addressed this induction problem using an evolutionary approach and this is done without really considering the class imbalance issue. To cope with this limitation, we propose in this paper a multi-objective evolutionary approach to find optimized ODTs for imbalanced binary classification. Our approach, called ODT-Θ-NSGA-III (ODT-based-Θ-Nondominated Sorting Genetic Algorithm-III), is motivated by its abilities: (a) to escape local optima in the ODT search space and (b) to maximize simultaneously both Precision and Recall. Thanks to these two features, ODT-Θ-NSGA-III provides competitive and better results when compared to many state-of-the-art classification algorithms on commonly used imbalanced benchmark data sets.}
+}
+
+@article{CHAWLA_2002,
+   title={SMOTE: Synthetic Minority Over-sampling Technique},
+   volume={16},
+   ISSN={1076-9757},
+   url={http://dx.doi.org/10.1613/jair.953},
+   DOI={10.1613/jair.953},
+   journal={Journal of Artificial Intelligence Research},
+   publisher={AI Access Foundation},
+   author={Chawla, N. V. and Bowyer, K. W. and Hall, L. O. and Kegelmeyer, W. P.},
+   year={2002},
+   month={Jun},
+   pages={321–357} }
+
+
+@article{CHAWLA_2004,
+author = {Chawla, Nitesh V. and Japkowicz, Nathalie and Kotcz, Aleksander},
+title = {Editorial: Special Issue on Learning from Imbalanced Data Sets},
+year = {2004},
+issue_date = {June 2004},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+volume = {6},
+number = {1},
+issn = {1931-0145},
+url = {https://doi.org/10.1145/1007730.1007733},
+doi = {10.1145/1007730.1007733},
+journal = {SIGKDD Explor. Newsl.},
+month = {jun},
+pages = {1–6},
+numpages = {6}
+}
+
+@INPROCEEDINGS{CHEN_2011,  author={Chen, Chao and Shyu, Mei-Ling},  booktitle={2011 IEEE International Conference on Information Reuse   Integration},   title={Clustering-based binary-class classification for imbalanced data sets},   year={2011},  volume={},  number={},  pages={384-389},  doi={10.1109/IRI.2011.6009578}}
+
+@article{DABLAIN_2021,
+Abstract = {Despite over two decades of progress, imbalanced data is still considered a significant challenge for contemporary machine learning models. Modern advances in deep learning have magnified the importance of the imbalanced data problem. The two main approaches to address this issue are based on loss function modifications and instance resampling. Instance sampling is typically based on Generative Adversarial Networks (GANs), which may suffer from mode collapse. Therefore, there is a need for an oversampling method that is specifically tailored to deep learning models, can work on raw images while preserving their properties, and is capable of generating high quality, artificial images that can enhance minority classes and balance the training set. We propose DeepSMOTE - a novel oversampling algorithm for deep learning models. It is simple, yet effective in its design. It consists of three major components: (i) an encoder/decoder framework; (ii) SMOTE-based oversampling; and (iii) a dedi},
+Author = {Dablain, Damien and Krawczyk, Bartosz and Chawla, Nitesh V.},
+Keywords = {Computer Science - Computer Vision and Pattern Recognition, Computer Science - Machine Learning},
+Title = {DeepSMOTE: Fusing Deep Learning and SMOTE for Imbalanced Data.},
+Year = {2021},
+}
+
+@book{FERNANDEZ_2018,
+Abstract = {Learning from Imbalanced Data Sets},
+Author = {Fernández, Alberto and García, Salvador and Galar, Mikel and Prati, Ronaldo C. and Krawczyk, Bartosz and Herrera, Francisco},
+Publisher = {Springer International Publishing},
+Title = {Learning from Imbalanced Data Sets.},
+Year = {2018},
+}
+
+@misc{LEE_2022,
+  author = {Lee, Wei-Meng},
+  title = {Using Principal Component Analysis (PCA) for Machine Learning},
+  journal = {Towards Data Science},
+  publisher = {Medium.com},
+  howpublished = {\url{https://towardsdatascience.com/using-principal-component-analysis-pca-for-machine-learning-b6e803f5bf1e}},
+  note = {Accessed: 2022-02-11}
+}
+
+@misc{LEE_2021,
+      title={A surrogate loss function for optimization of $F_\beta$ score in binary classification with imbalanced data}, 
+      author={Namgil Lee and Heejung Yang and Hojin Yoo},
+      year={2021},
+      eprint={2104.01459},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG}
+}
+
+@article{LIN_2020,
+Abstract = {The highest accuracy object detectors to date are based on a two-stage approach popularized by R-CNN, where a classifier is applied to a sparse set of candidate object locations. In contrast, one-stage detectors that are applied over a regular, dense sampling of possible object locations have the potential to be faster and simpler, but have trailed the accuracy of two-stage detectors thus far. In this paper, we investigate why this is the case. We discover that the extreme foreground-background class imbalance encountered during training of dense detectors is the central cause. We propose to address this class imbalance by reshaping the standard cross entropy loss such that it down-weights the loss assigned to well-classified examples. Our novel Focal Loss focuses training on a sparse set of hard examples and prevents the vast number of easy negatives from overwhelming the detector during training. To evaluate the effectiveness of our loss, we design and train a simple dense detector },
+Author = {Lin, T. and Goyal, P. and Girshick, R. and He, K. and Dollar, P.},
+ISSN = {0162-8828},
+Journal = {IEEE Transactions on Pattern Analysis and Machine Intelligence, Pattern Analysis and Machine Intelligence, IEEE Transactions on, IEEE Trans. Pattern Anal. Mach. Intell},
+Keywords = {Computing and Processing, Bioengineering, Detectors, Training, Object detection, Entropy, Proposals, Convolutional neural networks, Feature extraction, Computer vision, object detection, machine learning, convolutional neural networks},
+Number = {2},
+Pages = {318 - 327},
+Title = {Focal Loss for Dense Object Detection.},
+Volume = {42},
+Year = {2020},
+}
+
+
+@Article{MAHMUDAH_2021,
+AUTHOR = {Mahmudah, Kunti Robiatul and Indriani, Fatma and Takemori-Sakai, Yukiko and Iwata, Yasunori and Wada, Takashi and Satou, Kenji},
+TITLE = {Classification of Imbalanced Data Represented as Binary Features},
+JOURNAL = {Applied Sciences},
+VOLUME = {11},
+YEAR = {2021},
+NUMBER = {17},
+ARTICLE-NUMBER = {7825},
+URL = {https://www.mdpi.com/2076-3417/11/17/7825},
+ISSN = {2076-3417},
+ABSTRACT = {Typically, classification is conducted on a dataset that consists of numerical features and target classes. For instance, a grayscale image, which is usually represented as a matrix of integers varying from 0 to 255, enables one to apply various classification algorithms to image classification tasks. However, datasets represented as binary features cannot use many standard machine learning algorithms optimally, yet their amount is not negligible. On the other hand, oversampling algorithms such as synthetic minority oversampling technique (SMOTE) and its variants are often used if the dataset for classification is imbalanced. However, since SMOTE and its variants synthesize new minority samples based on the original samples, the diversity of the samples synthesized from binary features is highly limited due to the poor representation of original features. To solve this problem, a preprocessing approach is studied. By converting binary features into numerical ones using feature extraction methods, succeeding oversampling methods can fully display their potential in improving the classifiers’ performances. Through comprehensive experiments using benchmark datasets and real medical datasets, it was observed that a converted dataset consisting of numerical features is better for oversampling methods (maximum improvements of accuracy and F1-score were 35.11\% and 42.17\%, respectively). In addition, it is confirmed that feature extraction and oversampling synergistically contribute to the improvement of classification performance.},
+DOI = {10.3390/app11177825}
+}
+
+
+@misc{NGUYEN_2017,
+      title={Dual Discriminator Generative Adversarial Nets}, 
+      author={Tu Dinh Nguyen and Trung Le and Hung Vu and Dinh Phung},
+      year={2017},
+      eprint={1709.03831},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG}
+}
+
+
+
+@inproceedings{PEDNAULT_2000,
+  title={Handling Imbalanced Data Sets in Insurance Risk Modeling},
+  author={Edwin P. D. Pednault and Barry K. Rosen and Chidanand Apt{\'e}},
+  publisher={AAAI Workshop on Learning from Imbalanced Data Sets},
+  year={2000}
+}
+
+
+@article{SHARIFIFAR_2019,
+Abstract = {Considering the nature of soils distribution, an important modeling issue in soil class mapping is imbalanced class observations. Imbalanced number of data in observed soil classes in an area can result in the underestimation or loss of minority classes and an overestimation of the majority classes in predictive modeling. The effect of this phenomenon is that an area of land with comparatively fewer soil profile observations could be unmapped in the digital maps. To address this problem, this paper investigated the usefulness of data pretreatment techniques called over- and under-sampling of data applied on three predictive models including decision trees (DT), random forest (RF), and multinomial logistic regression (MNLR). The study area is situated in the northwest of Iran with 452 profiles observations on a regular grid covering about 12,000 ha. This area has 8 USDA soil great groups with an imbalanced frequency distribution. Results showed that modeling using imbalanced distributi},
+Author = {Sharififar, Amin and Sarmadian, Fereydoon and Malone, Brendan P. and Minasny, Budiman},
+ISSN = {0016-7061},
+Journal = {Geoderma},
+Keywords = {Imbalanced classification, Digital soil mapping, Uncertainty assessment, Data resampling, Categorical soil mapping, Machine learning},
+Pages = {84 - 92},
+Title = {Addressing the issue of digital mapping of soil classes with imbalanced class observations.},
+Volume = {350},
+Year = {2019},
+}
+
+@article{SPICER_2021,
+Abstract = {Highlights •Annually, on average, 566 people are killed and 14,371 are injured in events involving a disabled vehicle on U.S. roadways.•These crashes result in an annual estimated $8.8 billion in societal costs.•This analysis highlights the risks to motorists who exited their vehicles to attend to a disabled or stopped vehicle.},
+Author = {Spicer, Rebecca and Bahouth, George and Vahabaghaie, Amin and Drayer, Rebecca},
+ISSN = {0001-4575},
+Journal = {Accident Analysis and Prevention},
+Keywords = {Disabled vehicle, Pedestrian, Technology, Low conspicuity event, Cost},
+Title = {Frequency and cost of crashes, fatalities, and injuries involving disabled vehicles.},
+Volume = {152},
+URL = {https://ezproxyprod.ucs.louisiana.edu:2443/login?url=https://search.ebscohost.com/login.aspx?direct=true&AuthType=ip,cookie,uid,url&db=edselp&AN=S0001457521000051&site=eds-live&scope=site},
+Year = {2021},
+}
+
+@INPROCEEDINGS{TAN_2012,  
+author={Tan, Ding-Wen and Liew, Soung-Yue and Tan, Teik-Boon and Yeoh, William},  
+booktitle={2012 4th Conference on Data Mining and Optimization (DMO)},   
+title={A feature selection model for binary classification of imbalanced data based on preference for target instances},   
+year={2012},  volume={},  number={},  pages={35-42},  
+doi={10.1109/DMO.2012.6329795}}
+
+@article{WEISS_2000,
+author = {Weiss, Gary},
+year = {2000},
+month = {05},
+pages = {},
+title = {Learning to Predict Extremely Rare Events},
+journal = {AAAI Workshop on Learning from Imbalanced Data Sets}
+}
+
+@article{WANG_2021,
+title = {Adaptive ensemble of classifiers with regularization for imbalanced data classification},
+journal = {Information Fusion},
+volume = {69},
+pages = {81-102},
+year = {2021},
+issn = {1566-2535},
+doi = {https://doi.org/10.1016/j.inffus.2020.10.017},
+url = {https://www.sciencedirect.com/science/article/pii/S1566253520303869},
+author = {Chen Wang and Chengyuan Deng and Zhoulu Yu and Dafeng Hui and Xiaofeng Gong and Ruisen Luo},
+keywords = {Adaptive ensemble, Gradient boosting machines, Regularization, Imbalanced data classification},
+abstract = {The dynamic ensemble selection of classifiers is an effective approach for processing label-imbalanced data classifications. However, such a technique is prone to overfitting, owing to the lack of regularization methods and the dependence on local geometry of data. In this study, focusing on binary imbalanced data classification, a novel dynamic ensemble method, namely adaptive ensemble of classifiers with regularization (AER), is proposed, to overcome the stated limitations. The method solves the overfitting problem through a new perspective of implicit regularization. Specifically, it leverages the properties of stochastic gradient descent to obtain the solution with the minimum norm, thereby achieving regularization; furthermore, it interpolates the ensemble weights by exploiting the global geometry of data to further prevent overfitting. According to our theoretical proofs, the seemingly complicated AER paradigm, in addition to its regularization capabilities, can actually reduce the asymptotic time and memory complexities of several other algorithms. We evaluate the proposed AER method on seven benchmark imbalanced datasets from the UCI machine learning repository and one artificially generated GMM-based dataset with five variations. The results show that the proposed algorithm outperforms the major existing algorithms based on multiple metrics in most cases, and two hypothesis tests (McNemar’s and Wilcoxon tests) verify the statistical significance further. In addition, the proposed method has other preferred properties such as special advantages in dealing with highly imbalanced data, and it pioneers the researches on regularization for dynamic ensemble methods.}
+}
+
+@article{WEI_2021,
+title = {New imbalanced bearing fault diagnosis method based on Sample-characteristic Oversampling TechniquE (SCOTE) and multi-class LS-SVM},
+journal = {Applied Soft Computing},
+volume = {101},
+pages = {107043},
+year = {2021},
+issn = {1568-4946},
+doi = {https://doi.org/10.1016/j.asoc.2020.107043},
+url = {https://www.sciencedirect.com/science/article/pii/S1568494620309819},
+author = {Jianan Wei and Haisong Huang and Liguo Yao and Yao Hu and Qingsong Fan and Dong Huang},
+keywords = {Multi-class imbalanced classification, SCOTE oversampling, Least squares support vector machine, Bearing fault diagnosis},
+abstract = {In actual industrial production, the historical data sets used for bearing fault diagnosis are generally limited and imbalanced and consist of multiple classes. These problems present challenges in the field of bearing fault diagnosis, for which traditional fault diagnosis methods (e.g., multi-class least squares support vector machine (multi-class LS-SVM)) are not very effective. Therefore, we propose a new multi-class imbalanced fault diagnosis method based on Sample-characteristic Oversampling Technique (SCOTE) and multi-class LS-SVM, where SCOTE is a new oversampling method proposed by us. SCOTE transforms multi-class imbalanced problems into multiple binary imbalanced problems. In each binary imbalanced problem, first, SCOTE uses the k-nearest neighbours (knn) noise processing method to filter out noisy points. Second, samples are trained by LS-SVM, and minority samples are sorted by importance according to the misclassification error of the minority classes in the training sets. Moreover, based on the importance sorting of minority samples, SCOTE performs a sample synthesis method based on the k* information nearest neighbours (k*inn) to address the binary imbalanced problems. Thus, when all the binary imbalance problems are addressed, the multi-class imbalanced problem will also be addressed. The 20 fault diagnosis examples represented by Case Western Reserve University (CWRU) bearing data and Intelligent Maintenance Systems (IMS) bearing data show that the proposed method has higher fault diagnosis recognition rates and algorithm robustness than 8 oversampling algorithms and 8 multi-class imbalanced algorithms.}
+}
+
+
+@article{YU_2020,
+Abstract = {Highlights •Developed a tensor-based structure to represent crash precursors.•Applied CNN model for multi-dimensional traffic flow features extraction.•Proposed refined-focal loss functions for the imbalanced data issue.•Obtained 66.8\% sensitivity with 3.8\% FAR result under 1:100 imbalanced ratio.},
+Author = {Yu, Rongjie and Wang, Yiyun and Zou, Zihang and Wang, Liqiang},
+ISSN = {0968-090X},
+Journal = {Transportation Research Part C},
+Keywords = {Real-time crash risk analysis, Convolutional Neural Network (CNN), Focal loss, Temporal and spatial operational features, Imbalanced data issue},
+Title = {Convolutional neural networks with refined loss functions for the real-time crash risk analysis.},
+Volume = {119},
+Year = {2020},
+}
+
+
+
+@INPROCEEDINGS{ZHAI_2020,  
+author={ZHAI, JUN-HAI and ZHANG, SU-FANG and WANG, MO-HAN and LI, YAN},  
+booktitle={2020 International Conference on Machine Learning and Cybernetics (ICMLC)},   
+title={A Three-stage Method for Classification of Binary Imbalanced Big Data},   
+year={2020},  
+volume={},  
+number={},  
+pages={207-212},  
+doi={10.1109/ICMLC51923.2020.9469568}}
+
+@ARTICLE{ZHAI_2020_D2GAN,  author={Zhai, Junhai and Qi, Jiaxing and Zhang, Sufang},  journal={IEEE Access},   title={Binary Imbalanced Data Classification Based on Modified D2GAN Oversampling and Classifier Fusion},   year={2020},  volume={8},  number={},  pages={169456-169469},  doi={10.1109/ACCESS.2020.3023949}}
+
+@article{ZHAI_2022,
+title = {Binary imbalanced data classification based on diversity oversampling by generative models},
+journal = {Information Sciences},
+volume = {585},
+pages = {313-343},
+year = {2022},
+issn = {0020-0255},
+doi = {https://doi.org/10.1016/j.ins.2021.11.058},
+url = {https://www.sciencedirect.com/science/article/pii/S0020025521011804},
+author = {Junhai Zhai and Jiaxing Qi and Chu Shen},
+keywords = {Imbalanced learning, Binary imbalanced data classification, Diversity oversampling, Generative adversarial network, Extreme learning machine autoencoder},
+abstract = {In many practical applications, the data are class imbalanced. Accordingly, it is very meaningful and valuable to investigate the classification of imbalanced data. In the framework of binary imbalanced data classification, the synthetic minority oversampling technique (SMOTE) is the best-known oversampling method. However, for each positive sample, SMOTE generates only k synthetic samples on the lines between the positive sample and its k-nearest neighbors, resulting in three drawbacks: (1) SMOTE cannot effectively extend the training field of positive samples; (2) the generated positive samples lack diversity; (3) SMOTE does not accurately approximate the probability distribution of the positive samples. Therefore, two binary imbalanced data classification methods named BIDC1 and BIDC2 based on diversity oversampling by generative models are proposed. The BIDC1 and BIDC2 conduct diversity oversampling using extreme learning machine autoencoder and generative adversarial network, respectively. Extensive experiments on 26 data sets are conducted to compare the two methods with 14 state-of-the-art methods using five metrics: F-measure, G-means, AUC-area, MMD-score, and Silhouette-score. The experimental results demonstrate that the two methods outperform the other 14 methods.}
+}
+
+@article{ZHENG_2021,
+title = {An automatic sampling ratio detection method based on genetic algorithm for imbalanced data classification},
+journal = {Knowledge-Based Systems},
+volume = {216},
+pages = {106800},
+year = {2021},
+issn = {0950-7051},
+doi = {https://doi.org/10.1016/j.knosys.2021.106800},
+url = {https://www.sciencedirect.com/science/article/pii/S0950705121000630},
+author = {Ming Zheng and Tong Li and Liping Sun and Taochun Wang and Biao Jie and Weiyi Yang and Mingjing Tang and Changlong Lv},
+keywords = {Imbalanced data classification, Sampling methods, Sampling ratio, Genetic algorithm},
+abstract = {Imbalanced data are a common phenomenon in both theoretical research and real-world applications. At a data level, standard classification algorithms cannot effectively learn and make predictions from imbalanced data, and this problem is generally solved by using oversampling, undersampling, or hybrid sampling methods. However, most of the current sampling methods use random sampling ratios, and the resulting classification performance can be undesirable and unstable. To obtain satisfactory and stable classification performance, we proposed three algorithms to automatically determine the sampling ratios for oversampling, undersampling, and hybrid sampling methods, based on a genetic algorithm. Experiments were performed to test the algorithms’ effectiveness by utilizing five widely used standard classification algorithms on 14 different imbalanced datasets using two oversampling, two undersampling, and four hybrid sampling methods. The statistical test results showed that for all five standard classification algorithms, sampling methods that used our proposed algorithms achieved the best classification results. Using area under the receiver operating characteristic curve (AUC) as the evaluation metric, it was demonstrated that the proposed algorithms for automatically determining the sampling ratio outperformed the random sampling ratio.}
+}
+
+
+
+
+

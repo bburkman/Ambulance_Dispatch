@@ -1,0 +1,231 @@
+%%%%%
+\section{Loss Functions}
+
+%%%%%
+\subsection{Binary Cross-Entropy Loss Function}
+
+Let's say we have an imbalanced data set with 100 negative samples for each positive sample.  
+
+For binary classification, the first three (class weights, weighted loss function, and naive oversampling) are effectively the same in the training phase.  The cross-entropy loss function, 
+
+$$loss = \sum_{i=1}^n y_i \log(p_i) + (1-y_i) \log (1-p_i)$$
+
+for binary classification is
+
+$$loss = \sum_{y_i=1} \log (p_i) + \sum_{y_i=0} \log (1-p_i)$$
+
+which is the sum of the logs of the errors in predictions for the negative class plus the sum of the logs of the errors in predictions for the positive class.  
+
+%%%
+\subsection{Class Weights and $\alpha$-weighted Loss}
+\index{Class Weights}
+\index{$\alpha$-Weighted Loss}
+
+If the classes are imbalanced, like there are 100 times as many samples with $y=0$ as samples with $y=1$, then the loss function is mostly summing how bad the predicting probability is for the majority class and largely ignoring the minority class.  Both the class weights parameter and a weighted loss function fix this by multiplying one or the other by some compensating factor.
+
+$$loss = 100 \times \sum_{y_i=1} \log (p_i) +  \sum_{y_i=0} \log (1-p_i)$$
+
+This multiple gives the two classes equal weight in the loss.  
+
+In the $\alpha$-weighted cross entropy, 
+
+$$loss = \sum_{i=1}^n \alpha y_i \log(p_i) + (1 - \alpha) (1-y_i) \log (1 - p_i)$$
+
+let $\alpha = \frac{100}{100+1}$ and you'll get the same thing, within a positive constant multiple.  
+
+$$loss = \sum_{i=1}^n \frac{100}{101} y_i \log(p_i) + \frac{1}{101} (1-y_i) \log (1 - p_i)$$
+
+$$loss = \frac{1}{101}\sum_{i=1}^n 100 y_i \log(p_i) + (1-y_i) \log (1 - p_i)$$
+
+The only difference I can ascertain between the class weights parameter and a weighted loss function is that the class weights aren't used with the validation set.  
+
+%%%
+\subsection{Oversampling}
+\subsection{Naive Oversampling}
+
+Naive oversampling would be to create 99 copies of each of the positive samples, so that the two sets are balanced.  That would have exactly the same effect on the loss function, because there would now be 100 times as many samples with $y_i=1$.  
+
+%%%%%
+\subsection{Class Weights v/s Naive Oversampling: They're the Same}
+
+I had an insight on why these things are the same.  Let's say you have an imbalanced data set, with 100 times as many negative samples as positive samples.  
+
+In Naive Oversampling, you make 100 copies of each of the positive samples and run regular cross-entropy loss.  
+
+In weighted Class Entropy, you multiply the positive-class losses by 100.
+
+$$loss = 100 \times \sum_{y_i=1} \log (p_i) +  \sum_{y_i=0} \log (1-p_i)$$
+
+These two approaches different in execution but the same in result because, as I often remind my students, multiplying something by 100 is the same as adding it to itself 100 times.  
+
+
+
+%%%
+\subsection{Focal Loss}
+\index{Focal Loss}
+
+Introduced by Lin in 2017.  \cite{LIN_2020}
+
+Yu 2020 \cite{YU_2020} adapts $\alpha$-weighted cross entropy and focal loss to crash analysis.
+
+
+In the focal loss function, 
+
+\begin{align*}
+	loss &= \sum_{i=1}^n \alpha (1 - p_i) ^{\gamma_1} y_i \log (p_i) + (1 - \alpha) p_i^{\gamma_2} (1 - y_i)  \log (1 - p_i) \cr
+	loss &= \sum_{y_i=1} \alpha (1 - p_i) ^{\gamma_1} \log (p_i) + \sum_{y_i=0} (1 - \alpha) p_i^{\gamma_2}   \log (1 - p_i) \cr
+	\end{align*}
+
+if $\gamma_1= \gamma_2 = 0$, then it's the same as the $\alpha$-weighted loss function.  
+
+In the original focal loss paper by Lin \cite{LIN_2020}, $\gamma_1$ and $\gamma_2$ are the same.  
+
+For samples with $y_i=1$, the minority class, here are values of $(1 - p_i) ^{\gamma_1} \log (p_i)$ for different values of $p_i$ and different values of $\gamma_1$.  I got the range of values of $\gamma_1 \in \{0, 0.5, 1, 2, 5\}$ from Lin's 2018 paper  that proposed focal loss.  
+
+\begin{center}
+\begin{tabular}{rl | llllll}
+	&& \multicolumn{5}{c}{$\gamma_1$} \cr
+	$(1 - p_i) ^{\gamma_1} \log (p_i)$ & & 0 & 0.5 & 1 & 2 & 5 \cr \hline
+	& 0.1 & -3.32 & -3.15 & -2.99 & -2.69 & -1.96 \cr
+	& 0.3 & -1.74 & -1.45 & -1.22 & -0.85 & -0.29 \cr
+	$p_i$ & 0.5 & -1 & -0.71 & -0.5 & -0.25 & -0.03 \cr
+	& 0.7 & -0.51 & -0.28 & -0.15 & -0.05 & 0 \cr
+	& 0.9 & -0.15 & -0.05 & -0.02 & 0 & 0 \cr\end{tabular}
+\end{center}
+
+If $\gamma_1 > 0$, then for samples in the positive class, the loss is negligible for good predictions ($p_i$ close to 1), so it focuses the loss on poor predictions.  
+
+Yu applied focal loss in the crash literature.\cite{YU_2020}
+
+%%%
+\subsection{Optimizing $F_\beta$}
+\index{$F_\beta$}
+
+Loss functions for gradient-based learning need to be differentiable (?), and the $F_\beta$ score is not differentiable, so this 2021 article by Lee \cite{LEE_2021} proposes a differentiable surrogate loss function that optimizes the $F_\beta$ score.  
+
+With imbalanced data, using a loss function that optimized $F_\beta$ instead of accuracy would let you balance precision and recall, fixing one aspect of the imbalance problem.  
+
+$$F_\beta = \frac{(1+\beta^2) \cdot \text{Precision} \cdot \text{Recall}}{(\beta^2 \cdot \text{Precision}) + \text{Recall}} 
+= \frac{1}{
+	\displaystyle\frac{\lambda_\beta}{\text{Recall}} + \frac{1 - \lambda_\beta}{\text{Precision}}
+	}, 
+	\qquad
+	\lambda_\beta = \frac{\beta^2}{1 + \beta^2}
+$$
+
+The article takes a deep dive into loss functions.  I should master it.  
+
+
+%%%
+\subsection{Tree-Based Methods}
+
+
+Pendault \cite{PEDNAULT_2000} has a 2000 article on insurance risk modeling that incorporates ``a domain-specific optimization criterion... to identify suitable splits during tree building.''  It assigns different weights to {\it claim} and {\it nonclaim} records.  Because that strategy helps but does not entirely solve the imbalanced data problem, they also have a split criterion that prevents splits of really small branches, ``splinter groups,'' that are unlikely to contain any elements of the minority class because the minority class is so sparse.  
+
+
+%%%%%
+\subsection{$\alpha$-weighted Binary Cross-Entropy Loss Function as Ethical Tradeoff}
+
+From \verb|Brads_Report_10_25_21|
+
+I made a [perhaps paper-worthy?] connection between the loss function I want and the $\alpha$-weighted binary cross-entropy loss function, which is widely known and widely implemented, but, according to Yu's paper, not before used in crash-related modeling.  
+
+\subsubsection{Matrix}
+
+\hfil\begin{tabular}{r|c|c|c|}
+	& Do Not &  \cr
+	& Send & Send \cr
+	& Ambulance & Ambulance \cr
+	& $h_\theta(x_i)<0.5$ & $h_\theta(x_i)>0.5$  \cr\hline
+	Do Not Need Ambulance \  $y_i=0$ & TN & FP \cr \hline
+	Need Ambulance \   $y_i=1$ & FN & TP \cr\hline
+\end{tabular}
+
+\subsubsection{Switching between Binary and Continuous}
+
+In the binary cross-entropy loss function, 
+
+$$J = -\sum_{i=1}^N y_i \log( h_\theta (x_i)) + (1-y_i) \log( 1 - h_\theta (x_i))$$
+
+the $y_i$ are binary, $y_i \in \{0,1\}$, but the model predictions, $h_\theta (x_i)$, are a probability, $h_\theta(x_i) \in (0,1)$.  
+
+
+\
+
+If we treat the model predictions as binary, replacing 
+
+$$
+\log ( h_\theta(x_i)) \to 
+\begin{cases}
+	0 & \text{if } h_\theta(x_i) <= 0.5 \cr
+	1 & \text{if } h_\theta(x_i) > 0.5 \cr
+\end{cases}
+$$
+
+and
+
+$$
+\log ( 1 -  h_\theta(x_i)) \to 
+\begin{cases}
+	0 & \text{if } 1 - h_\theta(x_i) <= 0.5 \cr
+	1 & \text{if } 1 - h_\theta(x_i) > 0.5 \cr
+\end{cases}
+$$
+
+then 
+
+$$ TP = \sum_{i=1}^N y_i \log( h_\theta (x_i))$$
+
+$$ TN = \sum_{i=1}^N  (1-y_i) \log( 1 - h_\theta (x_i))$$
+
+and the loss function becomes $J = -(TP+TN)$
+
+Why do we use the continuous instead of the binary in the loss function?  Because we want the predictions to be robust, so that when we use the model on unseen data, we can be more certain that it will correctly classify new instances.  The binary, however, are much easier to explain to non-technical people, or even technical people in other fields.  
+
+%%%
+\subsubsection{Scenario}
+
+The medical ethicists and politicians decide on a number, $p$, such that we are willing to automatically dispatch $p$ ambulances when they aren't needed in order to send one ambulance when it is needed.   We want $$ \frac{\Delta FP}{\Delta TP} \le p$$
+
+%%%
+\subsubsection{Binary $h_\theta$}
+
+Our loss function is $$FP - p\cdot TP $$
+
+%%%
+\subsubsection{Continuous $h_\theta$}
+
+Use the $\alpha$-weighted cross-entropy loss function, as in Yu's paper and widely available.
+
+$$J = -\sum_{i=1}^N \alpha y_i \log( h_\theta (x_i)) + (1-\alpha)(1-y_i) \log( 1 - h_\theta (x_i)), \quad \alpha = \frac{p}{p+1}$$
+
+%%%
+\subsubsection{Why are these equivalent?}
+
+Adding a constant to the loss function, or multiplying it by a positive constant, does not change its effect.  
+
+$FP - p \cdot TP$ is equivalent to $FP - p \cdot TP + (TN+FP)$, because $TN+FP$ is constant, so 
+$FP - p \cdot TP$ is equivalent to $-(p \cdot TP+ TP)$.
+
+
+$$FP - p \cdot TP$$
+$$-(p \cdot TP + TN)$$
+Multiplying by $\frac{1}{p+1}$ gives an equivalent loss function, because $\frac{1}{p+1}>0$.
+$$-\frac{p \cdot TP + TN}{p+1}$$
+$$- \left( \frac{p}{p+1} TP + \frac{1}{p+1} TN\right)$$
+$$- \left( \frac{p}{p+1} TP + \left( 1 - \frac{p}{p+1} \right) TN \right)$$
+$$- (\alpha TP + (1 - \alpha) TN) $$
+
+The continuous version of $TP$ is 
+$ \displaystyle \sum_{i=1}^N y_i \log( h_\theta (x_i))$
+
+The continuous version of $TN$ is 
+$ \displaystyle \sum_{i=1}^N (1-y_i) \log( 1 - h_\theta (x_i))$
+
+$$J = -\sum_{i=1}^N \alpha y_i \log( h_\theta (x_i)) + (1-\alpha)(1-y_i) \log( 1 - h_\theta (x_i)), \quad \alpha = \frac{p}{p+1}$$
+
+%%%
+\subsubsection{Paper Focus}
+
+Yu et al introduced to the crash-analysis field the alpha-weighted cross-entropy loss function to deal with imbalanced data.  We propose another application of the alpha-weighted loss, to encode and implement tradeoffs that come from our ethical/political values decided by community leaders.   
+

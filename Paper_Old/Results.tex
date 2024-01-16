@@ -1,0 +1,603 @@
+%%%%%
+%\section{Results}
+
+We tested several combinations of model inputs.  
+
+\begin{itemize}
+	\item Easy, Medium, and Hard to collect features
+	\item Undersampling with Tomek links
+	\item Model types
+	\item Loss Functions
+	\item Class weights parameters and other hyperparameters
+\end{itemize}
+
+We do not hope to get a perfect model, but something better than, ``Never send an ambulance,'' ``Always send an ambulance,'' or random noise.
+
+\
+
+Each of the five models types we tested had one version in the top five, measured by both F1 and AUC.  
+
+
+\begin{center}
+\begin{tabular}{llp{4in}}
+\bf F1 & \bf AUC & \bf Model \cr\hline
+0.429 & 0.760 & Bagging \cr
+0.400 & 0.752 & AdaBoost (Linear transformation) \cr
+0.364 & 0.714 & Balanced Random Forest \cr
+0.354 & 0.697 & $\alpha$-weighted Binary Crossentropy with Class Weights \cr
+0.353 & 0.695 & Binary Focal Crossentropy with Class Weights and $\gamma = 2.0$ (Linear Transformation) \cr
+\end{tabular}
+\end{center}
+
+Details follow.  
+
+%%%
+\subsection{$\alpha$-weighted Binary Cross Entropy Model with $\alpha = 0.850$, $r = 5.66$}
+
+\noindent\begin{tabular}{@{}p{0.5\textwidth} p{0.5\textwidth}}
+	\vspace{0pt} 
+	\input{../Keras/Images/AWBCE_class_weights_Before_Tomek_Pred.pgf}
+	&
+	\vspace{0pt} 
+	\input{../Keras/Images/AWBCE_class_weights_Before_Tomek_Linear_Transform_Pred.pgf}
+	\cr
+%	\noalign{\vskip -12pt}
+	\vspace{0pt} 
+\hfil\begin{tabular}{cc|c|c|}
+\multicolumn{1}{c}{Prediction}& \multicolumn{1}{c}{}& \multicolumn{1}{c}{N} & \multicolumn{1}{c}{P}\cr\cline{3-4}
+\multirow{2}{*}{Actual}&N & 109,166 & 41,605 \vrule width 0pt height 10pt depth 2pt \cr\cline{3-4}
+&P & 11,959 & 14,662 \vrule width 0pt height 10pt depth 2pt \cr\cline{3-4}
+\end{tabular}
+\vskip 12pt
+
+\hfil\begin{tabular}{ll}
+0.698 & Accuracy \cr 
+0.637 & Balanced Accuracy \cr 
+0.261 & Precision \cr 
+0.666 & Balanced Precision \cr 
+0.551 & Recall \cr 
+0.354 & F1 \cr 
+0.603 & Balanced F1 \cr 
+0.434 & Gmean \cr 
+\end{tabular}
+
+	&
+	\vspace{0pt} 
+\hfil\begin{tabular}{cc|c|c|}
+\multicolumn{1}{c}{Prediction}& \multicolumn{1}{c}{}& \multicolumn{1}{c}{N} & \multicolumn{1}{c}{P}\cr\cline{3-4}
+\multirow{2}{*}{Actual}&N & 112,677 & 38,094 \vrule width 0pt height 10pt depth 2pt \cr\cline{3-4}
+&P & 12,746 & 13,875 \vrule width 0pt height 10pt depth 2pt \cr\cline{3-4}
+\end{tabular}
+\vskip 12pt
+
+\hfil\begin{tabular}{ll}
+0.713 & Accuracy \cr 
+0.634 & Balanced Accuracy \cr 
+0.267 & Precision \cr 
+0.674 & Balanced Precision \cr 
+0.521 & Recall \cr 
+0.353 & F1 \cr 
+0.588 & Balanced F1 \cr 
+0.447 & Gmean \cr 
+\end{tabular}
+
+  \cr
+&
+  \vspace{0pt} 
+    \input{../Keras/Images/AWBCE_class_weights_Before_Tomek_Linear_Transform_ROC.pgf}
+
+  \cr
+\end{tabular}
+
+%%%
+\subsection{$\alpha$-weighted Binary Cross Entropy Model with $\alpha = 0.5$, $r=1$}
+
+\noindent\begin{tabular}{@{}p{0.5\textwidth} p{0.5\textwidth}}
+  \vspace{0pt} 
+  \input{../Keras/Images/AWBCE_Weights_1_0_and_1_0_Before_Tomek_Pred.pgf}
+  &
+  \vspace{0pt} 
+  \input{../Keras/Images/AWBCE_Weights_1_0_and_1_0_Before_Tomek_Linear_Transform_Pred.pgf}
+  
+  \cr
+  \noalign{\vskip -12pt}
+
+	  \vspace{0pt} 
+\hfil\begin{tabular}{cc|c|c|}
+\multicolumn{1}{c}{Prediction}& \multicolumn{1}{c}{}& \multicolumn{1}{c}{N} & \multicolumn{1}{c}{P}\cr\cline{3-4}
+	\multirow{2}{*}{Actual}&N & 150,771 & 0 \vrule width 0pt height 10pt depth 2pt \cr\cline{3-4}
+	&P & 26,621 & 0 \vrule width 0pt height 10pt depth 2pt \cr\cline{3-4}
+\end{tabular}
+
+
+\vskip 12pt
+
+\hfil\begin{tabular}{ll}
+0.850 & Accuracy \cr 
+0.500 & Balanced Accuracy \cr 
+0.000 & Precision \cr 
+0.000 & Balanced Precision \cr 
+0.000 & Recall \cr 
+0.000 & F1 \cr 
+0.000 & Balanced F1 \cr 
+0.000 & Gmean \cr 
+\end{tabular}
+
+&
+	  \vspace{0pt} 
+\hfil\begin{tabular}{cc|c|c|}
+\multicolumn{1}{c}{Prediction}& \multicolumn{1}{c}{}& \multicolumn{1}{c}{N} & \multicolumn{1}{c}{P}\cr\cline{3-4}
+	\multirow{2}{*}{Actual}&N & 124,949 & 25,822 \vrule width 0pt height 10pt depth 2pt \cr\cline{3-4}
+	&P & 15,894 & 10,727 \vrule width 0pt height 10pt depth 2pt \cr\cline{3-4}
+\end{tabular}
+
+\vskip 12pt
+
+\hfil\begin{tabular}{ll}
+0.765 & Accuracy \cr 
+0.616 & Balanced Accuracy \cr 
+0.293 & Precision \cr 
+0.702 & Balanced Precision \cr 
+0.403 & Recall \cr 
+0.340 & F1 \cr 
+0.512 & Balanced F1 \cr 
+0.493 & Gmean \cr 
+\end{tabular}
+
+  \cr
+ & 
+  \vspace{0pt} 
+   \input{../Keras/Images/AWBCE_Weights_1_0_and_1_0_Before_Tomek_Linear_Transform_ROC.pgf}
+
+\cr  
+\end{tabular}
+
+
+%%%
+\subsection{$\alpha$-weighted Binary Cross Entropy Model with $\alpha = 0.89$, $r=10$}
+
+\noindent\begin{tabular}{@{}p{0.5\textwidth} p{0.5\textwidth}}
+  \vspace{0pt} 
+  \input{../Keras/Images/AWBCE_Weights_0_55_and_5_50_Before_Tomek_Pred.pgf}
+  &
+  \vspace{0pt} 
+  \input{../Keras/Images/AWBCE_Weights_0_55_and_5_50_Before_Tomek_Linear_Transform_Pred.pgf}
+  
+  \cr
+  \noalign{\vskip -12pt}
+
+	  \vspace{0pt} 
+\hfil\begin{tabular}{cc|c|c|}
+\multicolumn{1}{c}{Prediction}& \multicolumn{1}{c}{}& \multicolumn{1}{c}{N} & \multicolumn{1}{c}{P}\cr\cline{3-4}
+	\multirow{2}{*}{Actual}&N & 8,346 & 142,425 \vrule width 0pt height 10pt depth 2pt \cr\cline{3-4}
+	&P & 210 & 26,411 \vrule width 0pt height 10pt depth 2pt \cr\cline{3-4}
+\end{tabular}
+
+\vskip 12pt
+
+\hfil\begin{tabular}{ll}
+0.196 & Accuracy \cr 
+0.524 & Balanced Accuracy \cr 
+0.156 & Precision \cr 
+0.512 & Balanced Precision \cr 
+0.992 & Recall \cr 
+0.270 & F1 \cr 
+0.676 & Balanced F1 \cr 
+0.093 & Gmean \cr 
+\end{tabular}
+
+&	
+	  \vspace{0pt} 
+\hfil\begin{tabular}{cc|c|c|}
+\multicolumn{1}{c}{Prediction}& \multicolumn{1}{c}{}& \multicolumn{1}{c}{N} & \multicolumn{1}{c}{P}\cr\cline{3-4}
+	\multirow{2}{*}{Actual}&N & 107,543 & 43,228 \vrule width 0pt height 10pt depth 2pt \cr\cline{3-4}
+	&P & 11,819 & 14,802 \vrule width 0pt height 10pt depth 2pt \cr\cline{3-4}
+\end{tabular}
+
+\vskip 12pt
+
+\hfil\begin{tabular}{ll}
+0.690 & Accuracy \cr 
+0.635 & Balanced Accuracy \cr 
+0.255 & Precision \cr 
+0.660 & Balanced Precision \cr 
+0.556 & Recall \cr 
+0.350 & F1 \cr 
+0.603 & Balanced F1 \cr 
+0.427 & Gmean \cr 
+\end{tabular}
+
+  \cr
+  &
+  \vspace{0pt} 
+    \input{../Keras/Images/AWBCE_Weights_0_55_and_5_50_Before_Tomek_Linear_Transform_ROC.pgf}
+
+  
+\end{tabular}
+
+
+%%%
+\subsection{Binary Focal Crossentropy with  $\alpha = 0.850$ and $\gamma = 0.0$}
+
+\noindent\begin{tabular}{@{}p{0.5\textwidth} p{0.5\textwidth}}
+  \vspace{0pt} 
+  \input{../Keras/Images/BFC_before_Tomek_alpha_equal_alpha_gamma_0_0_Pred.pgf}
+  &
+  \vspace{0pt} 
+  \input{../Keras/Images/BFC_before_Tomek_alpha_equal_alpha_gamma_0_0_Linear_Transform_Pred.pgf}
+  
+  \cr
+\noalign{\vskip -12pt}
+	  \vspace{0pt} 
+\hfil\begin{tabular}{cc|c|c|}
+\multicolumn{1}{c}{Prediction}& \multicolumn{1}{c}{}& \multicolumn{1}{c}{N} & \multicolumn{1}{c}{P}\cr\cline{3-4}
+	\multirow{2}{*}{Actual}&N & 150,771 & 0 \vrule width 0pt height 10pt depth 2pt \cr\cline{3-4}
+	&P & 26,621 & 0 \vrule width 0pt height 10pt depth 2pt \cr\cline{3-4}
+\end{tabular}
+
+\vskip 12pt
+
+\hfil\begin{tabular}{ll}
+0.850 & Accuracy \cr 
+0.500 & Balanced Accuracy \cr 
+0.000 & Precision \cr 
+0.000 & Balanced Precision \cr 
+0.000 & Recall \cr 
+0.000 & F1 \cr 
+0.000 & Balanced F1 \cr 
+0.000 & Gmean \cr 
+\end{tabular}
+
+&
+
+	  \vspace{0pt} 
+\hfil\begin{tabular}{cc|c|c|}
+\multicolumn{1}{c}{Prediction}& \multicolumn{1}{c}{}& \multicolumn{1}{c}{N} & \multicolumn{1}{c}{P}\cr\cline{3-4}
+	\multirow{2}{*}{Actual}&N & 126,475 & 24,296 \vrule width 0pt height 10pt depth 2pt \cr\cline{3-4}
+	&P & 16,054 & 10,567 \vrule width 0pt height 10pt depth 2pt \cr\cline{3-4}
+\end{tabular}
+
+\vskip 12pt
+
+\hfil\begin{tabular}{ll}
+0.773 & Accuracy \cr 
+0.618 & Balanced Accuracy \cr 
+0.303 & Precision \cr 
+0.711 & Balanced Precision \cr 
+0.397 & Recall \cr 
+0.344 & F1 \cr 
+0.510 & Balanced F1 \cr 
+0.504 & Gmean \cr 
+\end{tabular}
+
+  \cr
+  
+  \vspace{0pt} 
+The results from this model should be the same as for our original $\alpha$-weighted binary crossentropy model with $\alpha = 0.850$, but they're not. Need to fix that.  
+
+&  
+  \vspace{0pt} 
+    \input{../Keras/Images/BFC_before_Tomek_alpha_equal_alpha_gamma_0_0_Linear_Transform_ROC.pgf}
+
+  
+\end{tabular}
+
+
+%%%
+\subsection{Binary Focal Crossentropy with  $\alpha = 0.850$ and $\gamma = 2.0$}
+
+\noindent\begin{tabular}{@{}p{0.5\textwidth} p{0.5\textwidth}}
+  \vspace{0pt} 
+  \input{../Keras/Images/BFC_before_Tomek_alpha_equal_alpha_Pred.pgf}
+  &
+  \vspace{0pt} 
+  \input{../Keras/Images/BFC_before_Tomek_alpha_equal_alpha_Linear_Transform_Pred.pgf}
+  
+  \cr
+\noalign{\vskip -12pt}
+	  \vspace{0pt} 
+\hfil\begin{tabular}{cc|c|c|}
+\multicolumn{1}{c}{Prediction}& \multicolumn{1}{c}{}& \multicolumn{1}{c}{N} & \multicolumn{1}{c}{P}\cr\cline{3-4}
+	\multirow{2}{*}{Actual}&N & 150,771 & 0 \vrule width 0pt height 10pt depth 2pt \cr\cline{3-4}
+	&P & 26,621 & 0 \vrule width 0pt height 10pt depth 2pt \cr\cline{3-4}
+\end{tabular}
+
+\vskip 12pt
+
+\hfil\begin{tabular}{ll}
+0.850 & Accuracy \cr 
+0.500 & Balanced Accuracy \cr 
+0.000 & Precision \cr 
+0.000 & Balanced Precision \cr 
+0.000 & Recall \cr 
+0.000 & F1 \cr 
+0.000 & Balanced F1 \cr 
+0.000 & Gmean \cr 
+\end{tabular}
+
+&	
+	  \vspace{0pt} 
+\hfil\begin{tabular}{cc|c|c|}
+\multicolumn{1}{c}{Prediction}& \multicolumn{1}{c}{}& \multicolumn{1}{c}{N} & \multicolumn{1}{c}{P}\cr\cline{3-4}
+	\multirow{2}{*}{Actual}&N & 111,533 & 39,238 \vrule width 0pt height 10pt depth 2pt \cr\cline{3-4}
+	&P & 12,521 & 14,100 \vrule width 0pt height 10pt depth 2pt \cr\cline{3-4}
+\end{tabular}
+
+\vskip 12pt
+
+\hfil\begin{tabular}{ll}
+0.708 & Accuracy \cr 
+0.635 & Balanced Accuracy \cr 
+0.264 & Precision \cr 
+0.671 & Balanced Precision \cr 
+0.530 & Recall \cr 
+0.353 & F1 \cr 
+0.592 & Balanced F1 \cr 
+0.442 & Gmean \cr 
+\end{tabular}
+
+  \cr
+&
+  \vspace{0pt} 
+    \input{../Keras/Images/BFC_before_Tomek_alpha_equal_alpha_Linear_Transform_ROC.pgf}
+
+\end{tabular}
+
+
+%%%
+\subsection{Binary Focal Crossentropy with  Class Balancing and $\gamma = 2.0$}
+
+\noindent\begin{tabular}{@{}p{0.5\textwidth} p{0.5\textwidth}}
+  \vspace{0pt} 
+  \input{../Keras/Images/BFC_before_Tomek_Apply_Class_Balancing_Pred.pgf}
+  &
+  \vspace{0pt} 
+  \input{../Keras/Images/BFC_before_Tomek_Apply_Class_Balancing_Linear_Transform_Pred.pgf}
+  
+  \cr
+\noalign{\vskip -12pt}
+	  \vspace{0pt} 
+\hfil\begin{tabular}{cc|c|c|}
+\multicolumn{1}{c}{Prediction}& \multicolumn{1}{c}{}& \multicolumn{1}{c}{N} & \multicolumn{1}{c}{P}\cr\cline{3-4}
+	\multirow{2}{*}{Actual}&N & 150,771 & 0 \vrule width 0pt height 10pt depth 2pt \cr\cline{3-4}
+	&P & 26,621 & 0 \vrule width 0pt height 10pt depth 2pt \cr\cline{3-4}
+\end{tabular}
+
+\vskip 12pt
+
+\hfil\begin{tabular}{ll}
+0.850 & Accuracy \cr 
+0.500 & Balanced Accuracy \cr 
+0.000 & Precision \cr 
+0.000 & Balanced Precision \cr 
+0.000 & Recall \cr 
+0.000 & F1 \cr 
+0.000 & Balanced F1 \cr 
+0.000 & Gmean \cr 
+\end{tabular}
+
+&	
+	  \vspace{0pt} 
+\hfil\begin{tabular}{cc|c|c|}
+\multicolumn{1}{c}{Prediction}& \multicolumn{1}{c}{}& \multicolumn{1}{c}{N} & \multicolumn{1}{c}{P}\cr\cline{3-4}
+	\multirow{2}{*}{Actual}&N & 116,943 & 33,828 \vrule width 0pt height 10pt depth 2pt \cr\cline{3-4}
+	&P & 13,850 & 12,771 \vrule width 0pt height 10pt depth 2pt \cr\cline{3-4}
+\end{tabular}
+
+\vskip 12pt
+
+\hfil\begin{tabular}{ll}
+0.731 & Accuracy \cr 
+0.628 & Balanced Accuracy \cr 
+0.274 & Precision \cr 
+0.681 & Balanced Precision \cr 
+0.480 & Recall \cr 
+0.349 & F1 \cr 
+0.563 & Balanced F1 \cr 
+0.461 & Gmean \cr 
+\end{tabular}
+
+  \cr
+    \vspace{0pt} 
+For this model we took out the $\alpha$ parameter and set \verb|apply_class_balancing=True|.
+  
+  &
+    \vspace{0pt} 
+    \input{../Keras/Images/BFC_before_Tomek_Apply_Class_Balancing_Linear_Transform_ROC.pgf}
+
+
+\end{tabular}
+
+
+
+
+%%%
+\subsection{AdaBoost}
+
+\noindent\begin{tabular}{@{}p{0.5\textwidth} p{0.5\textwidth}}
+  \vspace{0pt} 
+  \input{../Keras/Images/AdaBoost_Before_Tomek_Pred.pgf}
+  &
+  \vspace{0pt} 
+  \input{../Keras/Images/AdaBoost_Before_Tomek_Linear_Transform_Pred.pgf}
+  
+  \cr
+\noalign{\vskip -12pt}
+
+	  \vspace{0pt} 
+\hfil\begin{tabular}{cc|c|c|}
+\multicolumn{1}{c}{Prediction}& \multicolumn{1}{c}{}& \multicolumn{1}{c}{N} & \multicolumn{1}{c}{P}\cr\cline{3-4}
+	\multirow{2}{*}{Actual}&N & 148,358 & 2,413 \vrule width 0pt height 10pt depth 2pt \cr\cline{3-4}
+	&P & 23,995 & 2,626  \vrule width 0pt height 10pt depth 2pt \cr\cline{3-4}
+\end{tabular}
+
+\vskip 12pt
+
+\hfil\begin{tabular}{ll}
+0.851 & Accuracy \cr 
+0.541 & Balanced Accuracy \cr 
+0.521 & Precision \cr 
+0.860 & Balanced Precision \cr 
+0.099 & Recall \cr 
+0.166 & F1 \cr 
+0.177 & Balanced F1 \cr 
+0.716 & Gmean \cr 
+\end{tabular}
+
+&
+	  \vspace{0pt} 
+\hfil\begin{tabular}{cc|c|c|}
+\multicolumn{1}{c}{Prediction}& \multicolumn{1}{c}{}& \multicolumn{1}{c}{N} & \multicolumn{1}{c}{P}\cr\cline{3-4}
+	\multirow{2}{*}{Actual}&N & 108,133 & 42,638 \vrule width 0pt height 10pt depth 2pt \cr\cline{3-4}
+	&P & 9,298 & 17,323  \vrule width 0pt height 10pt depth 2pt \cr\cline{3-4}
+\end{tabular}
+
+\vskip 12pt
+
+\hfil\begin{tabular}{ll}
+0.707 & Accuracy \cr 
+0.684 & Balanced Accuracy \cr 
+0.289 & Precision \cr 
+0.697 & Balanced Precision \cr 
+0.651 & Recall \cr 
+0.400 & F1 \cr 
+0.673 & Balanced F1 \cr 
+0.455 & Gmean \cr 
+\end{tabular}
+
+  \cr
+  &
+    \vspace{0pt} 
+    \input{../Keras/Images/AdaBoost_Before_Tomek_Linear_Transform_ROC.pgf}
+\cr
+\end{tabular}
+
+
+%%%
+\subsection{Bagging}
+
+\noindent\begin{tabular}{@{}p{0.5\textwidth} p{0.5\textwidth}}
+  \vspace{0pt} 
+  \input{../Keras/Images/Bagging_Before_Tomek_Pred.pgf}
+  &
+  \vspace{0pt} 
+  \input{../Keras/Images/Bagging_Before_Tomek_Linear_Transform_Pred.pgf}
+  
+  \cr
+\noalign{\vskip -12pt}
+	  \vspace{0pt} 
+\hfil\begin{tabular}{cc|c|c|}
+\multicolumn{1}{c}{Prediction}& \multicolumn{1}{c}{}& \multicolumn{1}{c}{N} & \multicolumn{1}{c}{P}\cr\cline{3-4}
+	\multirow{2}{*}{Actual}&N & 125,633 & 25,138 \vrule width 0pt height 10pt depth 2pt \cr\cline{3-4}
+	&P & 12,475 & 14,146  \vrule width 0pt height 10pt depth 2pt \cr\cline{3-4}
+\end{tabular}
+
+\vskip 12pt
+
+\hfil\begin{tabular}{ll}
+0.788 & Accuracy \cr 
+0.682 & Balanced Accuracy \cr 
+0.360 & Precision \cr 
+0.761 & Balanced Precision \cr 
+0.531 & Recall \cr 
+0.429 & F1 \cr 
+0.626 & Balanced F1 \cr 
+0.548 & Gmean \cr 
+\end{tabular}
+
+&	
+	  \vspace{0pt} 
+\hfil\begin{tabular}{cc|c|c|}
+\multicolumn{1}{c}{Prediction}& \multicolumn{1}{c}{}& \multicolumn{1}{c}{N} & \multicolumn{1}{c}{P}\cr\cline{3-4}
+	\multirow{2}{*}{Actual}&N & 125,633 & 25,138 \vrule width 0pt height 10pt depth 2pt \cr\cline{3-4}
+	&P & 12,475 & 14,146  \vrule width 0pt height 10pt depth 2pt \cr\cline{3-4}
+\end{tabular}
+
+\vskip 12pt
+
+\hfil\begin{tabular}{ll}
+0.788 & Accuracy \cr 
+0.682 & Balanced Accuracy \cr 
+0.360 & Precision \cr 
+0.761 & Balanced Precision \cr 
+0.531 & Recall \cr 
+0.429 & F1 \cr 
+0.626 & Balanced F1 \cr 
+0.548 & Gmean \cr 
+\end{tabular}
+
+  \cr
+  
+  \vspace{0pt}
+  Our linear transformation took $p=0.5$ to itself, so the discrete metrics did not change.  
+  &
+    \vspace{0pt} 
+    \input{../Keras/Images/Bagging_Before_Tomek_Linear_Transform_ROC.pgf}
+
+\cr
+\end{tabular}
+
+
+%%%
+\subsection{Balanced Random Forest Classifier}
+
+\noindent\begin{tabular}{@{}p{0.5\textwidth} p{0.5\textwidth}}
+  \vspace{0pt} 
+  \input{../Keras/Images/BRFC_Before_Tomek_Pred.pgf}
+  &
+  \vspace{0pt} 
+  \input{../Keras/Images/BRFC_Before_Tomek_Linear_Transform_Pred.pgf}
+  
+  \cr
+\noalign{\vskip -12pt}
+	  \vspace{0pt} 
+\hfil\begin{tabular}{cc|c|c|}
+\multicolumn{1}{c}{Prediction}& \multicolumn{1}{c}{}& \multicolumn{1}{c}{N} & \multicolumn{1}{c}{P}\cr\cline{3-4}
+	\multirow{2}{*}{Actual}&N & 119,102 & 31,669 \vrule width 0pt height 10pt depth 2pt \cr\cline{3-4}
+	&P & 13,649 & 12,972  \vrule width 0pt height 10pt depth 2pt \cr\cline{3-4}
+\end{tabular}
+
+\vskip 12pt
+
+\hfil\begin{tabular}{ll}
+0.745 & Accuracy \cr 
+0.639 & Balanced Accuracy \cr 
+0.291 & Precision \cr 
+0.699 & Balanced Precision \cr 
+0.487 & Recall \cr 
+0.364 & F1 \cr 
+0.574 & Balanced F1 \cr 
+0.479 & Gmean \cr 
+\end{tabular}
+
+&	
+	  \vspace{0pt} 
+\hfil\begin{tabular}{cc|c|c|}
+\multicolumn{1}{c}{Prediction}& \multicolumn{1}{c}{}& \multicolumn{1}{c}{N} & \multicolumn{1}{c}{P}\cr\cline{3-4}
+	\multirow{2}{*}{Actual}&N & 134,347 & 16,424 \vrule width 0pt height 10pt depth 2pt \cr\cline{3-4}
+	&P & 18,475 & 8,146  \vrule width 0pt height 10pt depth 2pt \cr\cline{3-4}
+\end{tabular}
+
+\vskip 12pt
+
+\hfil\begin{tabular}{ll}
+0.803 & Accuracy \cr 
+0.599 & Balanced Accuracy \cr 
+0.332 & Precision \cr 
+0.737 & Balanced Precision \cr 
+0.306 & Recall \cr 
+0.318 & F1 \cr 
+0.433 & Balanced F1 \cr 
+0.544 & Gmean \cr 
+\end{tabular}
+
+  \cr
+  
+  &
+    \vspace{0pt} 
+    \input{../Keras/Images/BRFC_Before_Tomek_Linear_Transform_ROC.pgf}
+	\cr
+\end{tabular}
+
+
+

@@ -1,0 +1,59 @@
+\contentsline {subsection}{\numberline {0.1}Getting Probability from predict\_proba}{3}{subsection.0.1}%
+\contentsline {section}{\numberline {1}Outline}{3}{section.1}%
+\contentsline {section}{\numberline {2}Introduction}{3}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Introduction}{3}{subsection.2.1}%
+\contentsline {subsubsection}{\numberline {2.1.1}Confusion Matrix}{4}{subsubsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.2}Decision Threshold}{4}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Simplifying Assumptions and Caveats}{6}{subsection.2.3}%
+\contentsline {section}{\numberline {3}Total and Marginal Precision}{6}{section.3}%
+\contentsline {section}{\numberline {4}Marginal}{9}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Getting Probability from predict\_proba}{9}{subsection.4.1}%
+\contentsline {section}{\numberline {5}Literature Review}{9}{section.5}%
+\contentsline {section}{\numberline {6}Dataset}{9}{section.6}%
+\contentsline {section}{\numberline {7}Methods}{9}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Goal}{10}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Dataset}{10}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.3}Binning Categories}{10}{subsection.7.3}%
+\contentsline {subsection}{\numberline {7.4}Imputing Missing Data}{11}{subsection.7.4}%
+\contentsline {subsection}{\numberline {7.5}Order of Operations}{11}{subsection.7.5}%
+\contentsline {section}{\numberline {8}Methods}{11}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Metrics}{11}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2} Incorporating the $\Delta FP/\Delta TP < \omega $ Ethical Threshold}{11}{subsection.8.2}%
+\contentsline {subsubsection}{\numberline {8.2.1}Class Weight}{12}{subsubsection.8.2.1}%
+\contentsline {subsubsection}{\numberline {8.2.2}Decision Threshold}{12}{subsubsection.8.2.2}%
+\contentsline {subsection}{\numberline {8.3}Preparing the Data}{13}{subsection.8.3}%
+\contentsline {subsubsection}{\numberline {8.3.1}Order of Operations}{13}{subsubsection.8.3.1}%
+\contentsline {subsubsection}{\numberline {8.3.2}Binning}{14}{subsubsection.8.3.2}%
+\contentsline {subsubsection}{\numberline {8.3.3}Imputing Missing Values}{14}{subsubsection.8.3.3}%
+\contentsline {subsection}{\numberline {8.4}Selecting Features}{14}{subsection.8.4}%
+\contentsline {subsection}{\numberline {8.5}Handling Imbalanced Data}{14}{subsection.8.5}%
+\contentsline {subsubsection}{\numberline {8.5.1}Resampling the Dataset}{15}{subsubsection.8.5.1}%
+\contentsline {subsubsection}{\numberline {8.5.2}Modifying the Loss Function}{16}{subsubsection.8.5.2}%
+\contentsline {subsubsection}{\numberline {8.5.3}Metrics for Imbalance}{16}{subsubsection.8.5.3}%
+\contentsline {subsubsection}{\numberline {8.5.4}ML Algorithms for Imbalanced Data}{17}{subsubsection.8.5.4}%
+\contentsline {subsection}{\numberline {8.6}Models}{17}{subsection.8.6}%
+\contentsline {subsection}{\numberline {8.7}Analysis of Results}{18}{subsection.8.7}%
+\contentsline {section}{\numberline {9}Results}{21}{section.9}%
+\contentsline {section}{\numberline {10}Conclusions}{21}{section.10}%
+\contentsline {section}{\numberline {11}Discussion}{21}{section.11}%
+\contentsline {section}{\numberline {12}Future Work}{21}{section.12}%
+\contentsline {section}{\numberline {13}To Do, Notes to Self}{21}{section.13}%
+\contentsline {section}{\numberline {14}Henry\_07\_22\_23}{21}{section.14}%
+\contentsline {section}{\numberline {15}To Henry, 22 July 2023}{21}{section.15}%
+\contentsline {subsection}{\numberline {15.1}Big Question}{21}{subsection.15.1}%
+\contentsline {subsection}{\numberline {15.2}Scenario}{22}{subsection.15.2}%
+\contentsline {subsection}{\numberline {15.3}Decision Threshold}{22}{subsection.15.3}%
+\contentsline {subsection}{\numberline {15.4}Understanding the Data}{23}{subsection.15.4}%
+\contentsline {subsubsection}{\numberline {15.4.1}Total Effects}{23}{subsubsection.15.4.1}%
+\contentsline {subsubsection}{\numberline {15.4.2}Marginal Effects of Moving the Decision Threshold}{24}{subsubsection.15.4.2}%
+\contentsline {subsection}{\numberline {15.5}Evaluating Models}{25}{subsection.15.5}%
+\contentsline {subsection}{\numberline {15.6}Example: Finding Decision Thresholds in One Model}{25}{subsection.15.6}%
+\contentsline {subsection}{\numberline {15.7}Answers to Political Questions for This Model}{26}{subsection.15.7}%
+\contentsline {subsection}{\numberline {15.8}Comparing Models}{28}{subsection.15.8}%
+\contentsline {subsection}{\numberline {15.9}Comparing Models over Three Sets of Features}{29}{subsection.15.9}%
+\contentsline {section}{\numberline {16}Results}{30}{section.16}%
+\contentsline {subsection}{\numberline {16.1}Hard Features}{31}{subsection.16.1}%
+\contentsline {subsection}{\numberline {16.2}Balanced Random Forest Classifier, $\alpha $ balanced}{39}{subsection.16.2}%
+\contentsline {subsection}{\numberline {16.3}Medium Features}{71}{subsection.16.3}%
+\contentsline {subsection}{\numberline {16.4}Easy Features}{111}{subsection.16.4}%
+\contentsline {section}{\numberline {17}}{151}{section.17}%

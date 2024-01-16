@@ -1,0 +1,18 @@
+%%%%%
+\subsection{ROC Slope and Ethical Tradeoff Rate}
+
+The ROC (Receiver Operating Characteristic) curve is a parameterized curve that shows, for values of $p \in (0,1)$, the values for the True Positive Rate (TPR) versus the False Positive Rate (FPR).  The ethical tradeoff rate above is inversely proportional to the slope of the ROC curve that has been used in other literature for cost-sensitive analysis [CITATION]
+
+\begin{center}
+\begin{tabular}{>{$\displaystyle }r<{$ \vrule width 0pt height 14pt depth 14pt} @{\hspace{2pt}}>{$\displaystyle }c<{$} @{\hspace{2pt}}>{$\displaystyle }l<{$}}
+	FPR &=& \frac{FP}{N} \to FP = N \cdot FPR \cr
+	TPR &=& \frac{TP}{P} \to TP = P \cdot TPR \cr
+	\frac{FP}{TP} &=& \frac{N \cdot FPR}{P \cdot TPR} = \frac{N}{P} \cdot \frac{FPR}{TPR} \cr
+	\multispan{3}{and because $N$ and $P$ are constant,\vrule width 0pt height 12pt depth 9pt} \cr
+	\frac{\Delta FP}{\Delta TP} &=&  \frac{N}{P} \cdot \frac{\Delta FPR}{\Delta TPR} \cr
+	\frac{\Delta FP}{\Delta TP} &=& \frac{N}{P} \cdot \frac{1}{\text{slope of ROC}} \cr
+	\frac{\Delta FP}{\Delta TP} &=&   \frac{1}{\frac{P}{N} \cdot (\text{slope of ROC})} \cr
+\end{tabular}
+\end{center}
+
+The $P/N$ is the proportion of positive to negative class used to balance the classes in the balanced accuracy metric, so our ethical tradeoff rate is the reciprocal of the product of the class balancing ratio and the slope of the ROC curve.

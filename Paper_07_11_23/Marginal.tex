@@ -1,0 +1,14 @@
+\subsection{Marginal}\label{Marginal}
+
+Each of our models gives, for each sample $x_i$, a prediction $\text{predict\_proba}(x_i) \in [0,1]$ that the sample belongs to the positive class, {\it i.e.} that that crash person needs an ambulance.  For some modeling algorithms, the prediction $\text{predict\_proba}(x_i)$ is reasonably close to the posterior probability, but for other (otherwise useful) algorithms, we can only be confident that $\text{predict\_proba}(x_i)$ increases with the probability $P(y_i=1 | x_i)$.
+\cite{Niculescu-Mizil_2005}
+
+ Because we are doing supervised learning (training and testing our model on data where we know the answer $y_i \in \{0,1\}$ to whether or not the crash person needed an ambulance), we can find the probabilities directly.  If we choose ranges of $\text{predict\_proba}(x_i)$ large enough to smooth out the randomness, we can find the probability in that range from the ratio of the number of samples for which $y=1$.  
+
+Sophisticated algorithms exist for recalibrating the $\text{predict\_proba}(x_i)$ to give the posterior probability.  One such method, called Platt Scaling, learns a sigmoid transformation, and another process uses isotonic regression to learn a monotonically increasing mapping from $\text{predict\_proba}(x_i)$ to the posterior probability.  The scikit-learn method \verb|calibration_curve| implements both methods.  
+
+\
+
+From sklearn documentation \url{https://scikit-learn.org/stable/modules/calibration.html#calibration}
+
+Factors in scoring:   ``calibration (reliability) and discriminative power (resolution) of a model, as well as the randomness of the data (uncertainty)''

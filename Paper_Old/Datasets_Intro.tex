@@ -1,0 +1,31 @@
+%%%%%
+\section{Datasets}
+
+The dataset we want for this study, unfortunately, does not exist.  Such a dataset would have several years of automatic notifications from cell phones to police of a crash, with accompanying data on (a) whether it actually was a crash, (b) whether the user of that phone needed an ambulance, and (c) whether anyone else involved in the crash needed an ambulance.  The dataset does not yet exist because the technology is too new.  The app developers must have testing data, but we have not seen any publicly available.  
+
+To do the best work we can with what is available, we need an appropriate proxy dataset, but that will be challenging.  We do not know how well the apps detect a crash, currently or in the future.  For instance, if the crashes the apps detect were those crashes where the airbag deploys, they would miss most of the crashes requiring an ambulance.  (These data are from CRSS; see below.)  
+
+\begin{center}
+\begin{tabular}{cr|r|r|}
+	&\multicolumn{1}{c}{}& \multicolumn{2}{c}{Air Bag Deployed} \cr
+	&\multicolumn{1}{c}{} & \multicolumn{1}{c}{No} & \multicolumn{1}{c}{Yes} \cr\cline{3-4}
+	\multirow{2}{*}{Ambulance}& No & 479,287 & 61,377 \vrule width 0pt height 10pt depth 2pt \cr\cline{3-4}
+	& Yes & 64,699 & 38,911 \vrule width 0pt height 10pt depth 2pt \cr\cline{3-4}
+\end{tabular}
+\end{center}
+
+The apps using the phone's accelerometer will have a hard time distinguishing low-speed crashes from hard braking, so the apps will not detect many non-injury crashes; therefore, we may need to either underrepresent non-injury crashes in our work, or start with a database that does that, like CRSS.  
+
+For this study we used two datasets, the Crash Report Sampling System 2016-2020 \citep{CRSS}, and a tabular assembly of all of the Louisiana crash records 2014-2018.  While the CRSS data and a helpful guide are available online, the Louisiana data is not publicly available.  
+
+%%%
+\subsection{CRSS:  Crash Report Sampling System}
+
+CRSS, as its name suggests, is a curated sample of crashes in the US, scrubbed of personally identifying information and with missing values imputed. It is intentionally not a representative sample, but intentionally over represents serious crashes; for instance, ``crashes with killed or injured pedestrian'' represent 9\% of the crashes in the dataset but only 1.9\% of crashes in the US.   Its sample design is given on page 18 of the CRSS Analytical Users Manual \citep{CRSS_Manual}.  Because the dataset is not representative, we have to be careful in drawing inferences.  Since we do not know, in detail, the present and future capabilities of the cell phone app, this dataset that overrepresents more serious crashes may be a good proxy, and we will use it as such.    
+
+
+%%%
+\subsection{Louisiana Data}
+
+The structure of the Louisiana data is similar to CRSS.  Key differences are that it is a census of all crash reports, and missing data is not imputed.   While CRSS data is given entirely in attribute codes, many fields in the Louisiana data, like city and street names, are text, uncorrected; the city of Shreveport is spelled at least nineteen different ways.  
+

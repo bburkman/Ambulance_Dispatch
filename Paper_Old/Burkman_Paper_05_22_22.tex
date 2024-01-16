@@ -1,0 +1,302 @@
+%% 
+%% Copyright 2019-2021 Elsevier Ltd
+%% 
+%% This file is part of the 'CAS Bundle'.
+%% --------------------------------------
+%% 
+%% It may be distributed under the conditions of the LaTeX Project Public
+%% License, either version 1.2 of this license or (at your option) any
+%% later version.  The latest version of this license is in
+%%    http://www.latex-project.org/lppl.txt
+%% and version 1.2 or later is part of all distributions of LaTeX
+%% version 1999/12/01 or later.
+%% 
+%% The list of all files belonging to the 'CAS Bundle' is
+%% given in the file `manifest.txt'.
+%% 
+%% Template article for cas-dc documentclass for 
+%% double column output.
+
+\documentclass[fleqn]{cas-sc}
+
+\usepackage{lipsum}
+\usepackage{tikz}
+\usetikzlibrary{shapes, snakes, calc}
+
+% If the frontmatter runs over more than one page
+% use the longmktitle option.
+
+%\documentclass[a4paper,fleqn,longmktitle]{cas-dc}
+
+%\usepackage[numbers]{natbib}
+%\usepackage[authoryear]{natbib}
+\usepackage[authoryear,longnamesfirst]{natbib}
+
+%%%Author macros
+\def\tsc#1{\csdef{#1}{\textsc{\lowercase{#1}}\xspace}}
+\tsc{WGM}
+\tsc{QE}
+%%%
+
+% Uncomment and use as if needed
+%\newtheorem{theorem}{Theorem}
+%\newtheorem{lemma}[theorem]{Lemma}
+%\newdefinition{rmk}{Remark}
+%\newproof{pf}{Proof}
+%\newproof{pot}{Proof of Theorem \ref{thm}}
+
+\begin{document}
+\let\WriteBookmarks\relax
+\def\floatpagepagefraction{1}
+\def\textpagefraction{.001}
+
+% Short title
+\shorttitle{Ambulance Dispatch}    
+
+% Short author
+\shortauthors{Burkman, Jin, and Sun}  
+
+% Main title of the paper
+\title [mode = title]{Modeling the Need for an Ambulance based on Automated Crash Reports from iPhones}  
+
+% Title footnote mark
+% eg: \tnotemark[1]
+%\tnotemark[<tnote number>] 
+%\tnotemark[1] 
+
+% Title footnote 1.
+% eg: \tnotetext[1]{Title footnote text}
+%\tnotetext[1]{Working Title} 
+
+% First author
+%
+% Options: Use if required
+% eg: \author[1,3]{Author Name}[type=editor,
+%       style=chinese,
+%       auid=000,
+%       bioid=1,
+%       prefix=Sir,
+%       orcid=0000-0000-0000-0000,
+%       facebook=<facebook id>,
+%       twitter=<twitter id>,
+%       linkedin=<linkedin id>,
+%       gplus=<gplus id>]
+
+%\author[<aff no>]{<author name>}[<options>]
+\author[1,2]{J. Bradford Burkman}[]
+% Footnote of the first author
+%\fnmark[1]
+% Corresponding author indication
+\cormark[1]
+% Email id of the first author
+\ead{bradburkman@gmail.com}
+% URL of the first author
+\ead[url]{www.lsmsa.edu}
+
+% Credit authorship
+% eg: \credit{Conceptualization of this study, Methodology, Software}
+% Options: conceptualization; data curation; formal analysis; funding acquisition; investigation; methodology; project administration; resources; software; supervision; validation; visualization; writing – original draft; and writing – review and editing.
+\credit{Conceptualization, Investigation, Writing - original draft, Visualization}
+
+
+\author[1]{Miao Jin}[]
+\credit{Supervision, Methodology, Writing - review and editing}
+
+\author[3]{Xiaoduan Sun}[]
+\credit{Data curation, Writing - review and editing}
+
+
+
+
+
+
+\affiliation[1]{organization={School of Computing and Informatics, University of Louisiana at Lafayette},
+%            addressline={301 E. Lewis St}, 
+%            city={Lafayette},
+%          citysep={}, % Uncomment if no comma needed between city and postcode
+%            state={LA},
+%            postcode={70503}, 
+            country={USA}}
+
+% Address/affiliation
+\affiliation[2]{organization={Louisiana School for Math, Science, and the Arts},
+%            addressline={715 University Pkwy}, 
+%            city={Natchitoches},
+%          citysep={}, % Uncomment if no comma needed between city and postcode
+%            state={LA},
+%            postcode={71457}, 
+            country={USA}}
+
+\affiliation[3]{organization={Department of Civil Engineering, University of Louisiana at Lafayette},
+%            addressline={131 Rex St}, 
+%            city={Lafayette},
+%          citysep={}, % Uncomment if no comma needed between city and postcode
+%            state={LA},
+%            postcode={70504}, 
+            country={USA}}
+
+
+
+
+% For a title note without a number/mark
+%\nonumnote{}
+
+% Here goes the abstract
+\begin{abstract}
+%%%%% Abstract
+% I found an abstract in TRpC June 2022 with 365 words.
+Put abstract here.
+\vskip 1in
+
+\end{abstract}
+
+% Use if graphical abstract is present
+%\begin{graphicalabstract}
+%\includegraphics{}
+%\end{graphicalabstract}
+
+% Research highlights
+\begin{highlights}
+	\item  Supports transferability and benchmarking of different approaches on a public large-scale dataset.  The associated GitHub page provides the code and detailed notes used to perform the analysis on the Crash Report Sampling System.  
+	\item Novel Application:  Machine Learning Classification Models for Dispatching Ambulances based on Automated Crash Reports
+	\item Perennial Machine Learning Challenge:  Imbalanced Datasets, more challenging because we use two similar datasets with different imbalances.
+	\item 
+\end{highlights}
+
+% Keywords
+% Each keyword is seperated by \sep
+\begin{keywords}
+ \sep Automated crash notification \sep Ambulance dispatch \sep Emergency medical services  \sep Machine learning
+\end{keywords}
+
+\maketitle
+
+% Main text
+
+%%%%% Introduction
+\section{Introduction}\label{What does the label do?}
+
+\begin{comment}
+	Notes from 5/16/22 meeting with Dr. Jin:
+		I Motivation - Good, needs more material
+		II Analyze Difficulty in Solving Problem
+		III ML/Data Analysis
+			Tradeoffs
+			Limits of Methods
+		IV Plan
+		
+		Mention overlaps with other work
+\end{comment}
+
+\input{Intro_Motivation}
+\input{Intro_Datasets}
+\input{Intro_Difficulty}
+\input{Intro_Challenges}
+\input{Intro_Plan}
+
+%%%%% Lit Review
+\section{Literature Review}
+\input{Lit_Review}
+
+%%%%% Methods
+\input{Methods}
+
+%%%%% Results
+\section{Results}
+
+%%%%% Conclusions
+\section{Conclusions}
+
+%%%%%
+\section{Discussion}
+
+%%%%% Future Work
+\section{Future Work}
+
+%%%%%
+\section*{Funding Statement}
+
+%%%%% Conflict of Interest
+\section*{Conflict of Interest}
+
+The authors have no relevant financial or non-financial interests to disclose.
+
+%%%%% Acknowledgements
+\section*{Acknowledgements}
+
+George Broussard contributed to this work in the NSF Research Experiences for Undergraduates program.
+
+%%%%% Data Availability
+\section*{Data Availability}
+
+The CRSS data is publicly available at the link in the references.  The Louisiana crash data is not publicly available.  
+
+%%%%% Technical Paper
+\section*{Technical Paper}
+
+The technical paper with more detail and the code used for the CRSS data can be found at the corresponding author's GitHub page ....
+
+
+
+\begin{comment}
+% Figure
+\begin{figure}[<options>]
+	\centering
+		\includegraphics[<options>]{}
+	  \caption{}\label{fig1}
+\end{figure}
+
+
+\begin{table}[<options>]
+\caption{}\label{tbl1}
+\begin{tabular*}{\tblwidth}{@{}LL@{}}
+\toprule
+  &  \\ % Table header row
+\midrule
+ & \\
+ & \\
+ & \\
+ & \\
+\bottomrule
+\end{tabular*}
+\end{table}
+\end{comment}
+
+% Uncomment and use as the case may be
+%\begin{theorem} 
+%\end{theorem}
+
+% Uncomment and use as the case may be
+%\begin{lemma} 
+%\end{lemma}
+
+%% The Appendices part is started with the command \appendix;
+%% appendix sections are then done as normal sections
+%% \appendix
+
+\section{}\label{}
+
+% To print the credit authorship contribution details
+\printcredits
+
+%% Loading bibliography style file
+%\bibliographystyle{model1-num-names}
+\bibliographystyle{cas-model2-names}
+
+% Loading bibliography database
+\bibliography{../Papers/Paper_Summer_2022.bib}
+
+
+\begin{comment}
+% Biography
+\bio{}
+% Here goes the biography details.
+\endbio
+
+\bio{pic1}
+% Here goes the biography details.
+\endbio
+\end{comment}
+
+\end{document}
+

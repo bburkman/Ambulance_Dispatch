@@ -1,0 +1,14 @@
+%%%%%
+\subsection{ROC Slope as Ethical Tradeoff Rate}
+
+Similarly to choosing the class weight hyperparameter to reflect our value judgement about how many unneeded ambulances we are willing to send to send one that is needed, we can use the slope of the ROC curve to choose the threshold between negative and positive predictions.  The class weight hyperparameter has a marginal effect, influencing the loss on each sample as the model is built, and the slope of the ROC curve has a total effect on the model's results.  
+
+As before, if the medical ethicists and politicians decide on a tradeoff threshold, $r$ such that, at the margin, we are willing to automatically dispatch $r$ ambulances when they aren't needed in order to send one ambulance when it is needed, then we want $\Delta FP/\Delta TP  r$.  
+
+$$\Delta\frac{FP}{TP} = r $$
+$$TPR = \frac{TP}{P}, \ FPR = \frac{FP}{N}$$
+$$\frac{TPR}{FPR} 
+	= \frac{TP}{P} \cdot \frac{N}{FP} 
+	= \frac{N}{P} \cdot \frac{TP}{FP} 
+	= \frac{N}{P} \cdot \frac{1}{r}
+$$

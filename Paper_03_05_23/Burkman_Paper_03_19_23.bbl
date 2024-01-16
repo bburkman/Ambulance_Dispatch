@@ -1,0 +1,190 @@
+\begin{thebibliography}{18}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\href}[2]{#2}
+\providecommand{\path}[1]{#1}
+\providecommand{\DOIprefix}{doi:}
+\providecommand{\ArXivprefix}{arXiv:}
+\providecommand{\URLprefix}{URL: }
+\providecommand{\Pubmedprefix}{pmid:}
+\providecommand{\doi}[1]{\href{http://dx.doi.org/#1}{\path{#1}}}
+\providecommand{\Pubmed}[1]{\href{pmid:#1}{\path{#1}}}
+\providecommand{\bibinfo}[2]{#2}
+\ifx\xfnm\relax \def\xfnm[#1]{\unskip,\space#1}\fi
+%Type = Article
+\bibitem[{Amini et~al.(2022)Amini, Bagheri and Delen}]{AMINI2022108720}
+\bibinfo{author}{Amini, M.}, \bibinfo{author}{Bagheri, A.},
+  \bibinfo{author}{Delen, D.}, \bibinfo{year}{2022}.
+\newblock \bibinfo{title}{Discovering injury severity risk factors in
+  automobile crashes: A hybrid explainable ai framework for decision support}.
+\newblock \bibinfo{journal}{Reliability Engineering \& System Safety}
+  \bibinfo{volume}{226}, \bibinfo{pages}{108720}.
+\newblock \URLprefix
+  \url{https://www.sciencedirect.com/science/article/pii/S0951832022003441},
+  \DOIprefix\doi{https://doi.org/10.1016/j.ress.2022.108720}.
+%Type = Misc
+\bibitem[{Chollet et~al.(2015)}]{chollet2015keras}
+\bibinfo{author}{Chollet, F.}, et~al., \bibinfo{year}{2015}.
+\newblock \bibinfo{title}{Keras}.
+\newblock \bibinfo{howpublished}{\url{https://keras.io}}.
+%Type = Article
+\bibitem[{Cox and Cicchino(2021)}]{COX2021288}
+\bibinfo{author}{Cox, A.E.}, \bibinfo{author}{Cicchino, J.B.},
+  \bibinfo{year}{2021}.
+\newblock \bibinfo{title}{Continued trends in older driver crash involvement
+  rates in the united states: Data through 2017–2018}.
+\newblock \bibinfo{journal}{Journal of Safety Research} \bibinfo{volume}{77},
+  \bibinfo{pages}{288--295}.
+\newblock \URLprefix
+  \url{https://www.sciencedirect.com/science/article/pii/S0022437521000463},
+  \DOIprefix\doi{https://doi.org/10.1016/j.jsr.2021.03.013}.
+%Type = Techreport
+\bibitem[{Evanco(1996)}]{edsoai.on1047979037n.d.}
+\bibinfo{author}{Evanco, W.E.}, \bibinfo{year}{1996}.
+\newblock \bibinfo{title}{Impact Of Rapid Incident Detection On Freeway
+  Accident Fatalities.}
+\newblock \bibinfo{type}{Technical Report}. Joint Program Office for
+  Intelligent Transportation Systems.
+\newblock \URLprefix \url{https://rosap.ntl.bts.gov/view/dot/14153}.
+  \bibinfo{note}{792508; PDF; Research Paper; DTFH61-95-C00040;}.
+%Type = Article
+\bibitem[{Gong et~al.(2022)Gong, Fu, Sun, Guo, Cong, Hu and
+  Ling}]{GONG2022100190}
+\bibinfo{author}{Gong, H.}, \bibinfo{author}{Fu, T.}, \bibinfo{author}{Sun,
+  Y.}, \bibinfo{author}{Guo, Z.}, \bibinfo{author}{Cong, L.},
+  \bibinfo{author}{Hu, W.}, \bibinfo{author}{Ling, Z.}, \bibinfo{year}{2022}.
+\newblock \bibinfo{title}{Two-vehicle driver-injury severity: A multivariate
+  random parameters logit approach}.
+\newblock \bibinfo{journal}{Analytic Methods in Accident Research}
+  \bibinfo{volume}{33}, \bibinfo{pages}{100190}.
+\newblock \URLprefix
+  \url{https://www.sciencedirect.com/science/article/pii/S2213665721000348},
+  \DOIprefix\doi{https://doi.org/10.1016/j.amar.2021.100190}.
+%Type = Techreport
+\bibitem[{Herbert(2019)}]{CRSS_Imputation}
+\bibinfo{author}{Herbert, G.}, \bibinfo{year}{2019}.
+\newblock \bibinfo{title}{Crash Report Sampling System: Imputation}.
+\newblock \bibinfo{type}{Technical Report} \bibinfo{number}{DOT HS 812 795}.
+  National Highway Traffic Safety Administration.
+%Type = Article
+\bibitem[{Kaplan et~al.(2017)Kaplan, Caetano, Giesbrecht, Huguet, Kerr,
+  McFarland and Nolte}]{KAPLAN2017130}
+\bibinfo{author}{Kaplan, M.S.}, \bibinfo{author}{Caetano, R.},
+  \bibinfo{author}{Giesbrecht, N.}, \bibinfo{author}{Huguet, N.},
+  \bibinfo{author}{Kerr, W.C.}, \bibinfo{author}{McFarland, B.H.},
+  \bibinfo{author}{Nolte, K.B.}, \bibinfo{year}{2017}.
+\newblock \bibinfo{title}{The national violent death reporting system: Use of
+  the restricted access database and recommendations for the system’s
+  improvement}.
+\newblock \bibinfo{journal}{American Journal of Preventive Medicine}
+  \bibinfo{volume}{53}, \bibinfo{pages}{130--133}.
+\newblock \URLprefix
+  \url{https://www.sciencedirect.com/science/article/pii/S0749379717301101},
+  \DOIprefix\doi{https://doi.org/10.1016/j.amepre.2017.01.043}.
+%Type = Article
+\bibitem[{Mueller and Cicchino(2022)}]{MUELLER2022305}
+\bibinfo{author}{Mueller, A.S.}, \bibinfo{author}{Cicchino, J.B.},
+  \bibinfo{year}{2022}.
+\newblock \bibinfo{title}{Teen driver crashes potentially preventable by crash
+  avoidance features and teen-driver-specific safety technologies}.
+\newblock \bibinfo{journal}{Journal of Safety Research} \bibinfo{volume}{81},
+  \bibinfo{pages}{305--312}.
+\newblock \URLprefix
+  \url{https://www.sciencedirect.com/science/article/pii/S0022437522000433},
+  \DOIprefix\doi{https://doi.org/10.1016/j.jsr.2022.03.007}.
+%Type = Techreport
+\bibitem[{{National Center for Statistics and Analysis}(2022)}]{CRSS_Manual}
+\bibinfo{author}{{National Center for Statistics and Analysis}},
+  \bibinfo{year}{2022}.
+\newblock \bibinfo{title}{Crash Report Sampling System analytical user's
+  manual, 2016-2020}.
+\newblock \bibinfo{type}{Technical Report} \bibinfo{number}{DOT HS 813 236}.
+  National Highway Traffic Safety Administration.
+%Type = Misc
+\bibitem[{NHTSA(1975-2020)}]{FARS}
+\bibinfo{author}{NHTSA}, \bibinfo{year}{1975-2020}.
+\newblock \bibinfo{title}{Fatality analysis reporting system}.
+\newblock
+  \bibinfo{note}{\url{https://www.nhtsa.gov/research-data/fatality-analysis-reporting-system-fars}}.
+%Type = Misc
+\bibitem[{NHTSA(2016-2020)}]{CRSS}
+\bibinfo{author}{NHTSA}, \bibinfo{year}{2016-2020}.
+\newblock \bibinfo{title}{Crash report sampling system}.
+\newblock
+  \bibinfo{note}{\url{https://www.nhtsa.gov/crash-data-systems/crash-report-sampling-system}}.
+%Type = Article
+\bibitem[{Pedregosa et~al.(2011)Pedregosa, Varoquaux, Gramfort, Michel,
+  Thirion, Grisel, Blondel, Prettenhofer, Weiss, Dubourg, Vanderplas, Passos,
+  Cournapeau, Brucher, Perrot and Duchesnay}]{scikit-learn}
+\bibinfo{author}{Pedregosa, F.}, \bibinfo{author}{Varoquaux, G.},
+  \bibinfo{author}{Gramfort, A.}, \bibinfo{author}{Michel, V.},
+  \bibinfo{author}{Thirion, B.}, \bibinfo{author}{Grisel, O.},
+  \bibinfo{author}{Blondel, M.}, \bibinfo{author}{Prettenhofer, P.},
+  \bibinfo{author}{Weiss, R.}, \bibinfo{author}{Dubourg, V.},
+  \bibinfo{author}{Vanderplas, J.}, \bibinfo{author}{Passos, A.},
+  \bibinfo{author}{Cournapeau, D.}, \bibinfo{author}{Brucher, M.},
+  \bibinfo{author}{Perrot, M.}, \bibinfo{author}{Duchesnay, E.},
+  \bibinfo{year}{2011}.
+\newblock \bibinfo{title}{Scikit-learn: Machine learning in {P}ython}.
+\newblock \bibinfo{journal}{Journal of Machine Learning Research}
+  \bibinfo{volume}{12}, \bibinfo{pages}{2825--2830}.
+%Type = Misc
+\bibitem[{Raghunathan et~al.()Raghunathan, Solenberger, Berglund and van
+  Hoewyk}]{IVEware}
+\bibinfo{author}{Raghunathan, T.}, \bibinfo{author}{Solenberger, P.},
+  \bibinfo{author}{Berglund, P.}, \bibinfo{author}{van Hoewyk, J.}, .
+\newblock \bibinfo{title}{Iveware: Imputation and variation estimation
+  software}.
+\newblock \URLprefix \url{https://www.src.isr.umich.edu/software/iveware/}.
+%Type = Article
+\bibitem[{Spicer et~al.(2021)Spicer, Bahouth, Vahabaghaie and
+  Drayer}]{SPICER2021105974}
+\bibinfo{author}{Spicer, R.}, \bibinfo{author}{Bahouth, G.},
+  \bibinfo{author}{Vahabaghaie, A.}, \bibinfo{author}{Drayer, R.},
+  \bibinfo{year}{2021}.
+\newblock \bibinfo{title}{Frequency and cost of crashes, fatalities, and
+  injuries involving disabled vehicles}.
+\newblock \bibinfo{journal}{Accident Analysis \& Prevention}
+  \bibinfo{volume}{152}, \bibinfo{pages}{105974}.
+\newblock \URLprefix
+  \url{https://www.sciencedirect.com/science/article/pii/S0001457521000051},
+  \DOIprefix\doi{https://doi.org/10.1016/j.aap.2021.105974}.
+%Type = Techreport
+\bibitem[{Subramanian et~al.(2002)}]{subramanian2002transitioning}
+\bibinfo{author}{Subramanian, R.}, et~al., \bibinfo{year}{2002}.
+\newblock \bibinfo{title}{Transitioning to multiple imputation: a new method to
+  impute missing blood alcohol concentration (BAC) values in FARS}.
+\newblock \bibinfo{type}{Technical Report}. National Center for Statistics and
+  Analysis (US).
+%Type = Misc
+\bibitem[{{Tensorflow Authors}(2019)}]{Tensorflow_Imbalanced_Data}
+\bibinfo{author}{{Tensorflow Authors}}, \bibinfo{year}{2019}.
+\newblock \bibinfo{title}{Classification on imbalanced data}.
+\newblock \URLprefix
+  \url{https://www.tensorflow.org/tutorials/structured_data/imbalanced_data}.
+%Type = Article
+\bibitem[{Topuz and Delen(2021)}]{TOPUZ2021113557}
+\bibinfo{author}{Topuz, K.}, \bibinfo{author}{Delen, D.}, \bibinfo{year}{2021}.
+\newblock \bibinfo{title}{A probabilistic bayesian inference model to
+  investigate injury severity in automobile crashes}.
+\newblock \bibinfo{journal}{Decision Support Systems} \bibinfo{volume}{150},
+  \bibinfo{pages}{113557}.
+\newblock \URLprefix
+  \url{https://www.sciencedirect.com/science/article/pii/S0167923621000671},
+  \DOIprefix\doi{https://doi.org/10.1016/j.dss.2021.113557}.
+  \bibinfo{note}{interpretable Data Science For Decision Making}.
+%Type = Article
+\bibitem[{Villavicencio et~al.(2022)Villavicencio, Svancara, Kelley-Baker and
+  Tefft}]{VILLAVICENCIO2022757}
+\bibinfo{author}{Villavicencio, L.}, \bibinfo{author}{Svancara, A.M.},
+  \bibinfo{author}{Kelley-Baker, T.}, \bibinfo{author}{Tefft, B.C.},
+  \bibinfo{year}{2022}.
+\newblock \bibinfo{title}{Passenger presence and the relative risk of teen
+  driver death}.
+\newblock \bibinfo{journal}{Journal of Adolescent Health} \bibinfo{volume}{70},
+  \bibinfo{pages}{757--762}.
+\newblock \URLprefix
+  \url{https://www.sciencedirect.com/science/article/pii/S1054139X21005759},
+  \DOIprefix\doi{https://doi.org/10.1016/j.jadohealth.2021.10.038}.
+
+\end{thebibliography}

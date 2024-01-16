@@ -1,0 +1,14 @@
+Optimize your decision threshold, or why ML model metrics are not always helpful to build a business-relevant model
+
+Maxim Gusarov
+
+2022
+
+https://medium.com/codex/optimize-your-decision-threshold-or-why-ml-model-metrics-are-not-always-helpful-to-build-a-b84821c51e2
+
+Uses two methods for determining decision threshold:
+
+1.  Min of | TPR + FPR - 1 |, which minimizes the distance from (0,1) to the curve.  
+2.  Find threshold that maximizes profit, which is not one of the usual metrics.  
+
+Use Gmean with ROC and F1 with Precision/Recall Curve to optimize.  

@@ -1,0 +1,114 @@
+
+%%%%%
+\section{Topics Remaining}
+
+\subsection{Big Items}
+
+\begin{itemize}
+	\item Crash Analysis Lit Review
+	\item Data Overview and Analysis
+	\item Research Plan
+\end{itemize}
+
+\subsection{Details}
+\begin{itemize}
+	\item Worked through Brad's Reports
+	\item Find where it mentions multiple Tomek runs.  
+	\item Work through this tutorial, which will explain Condensed Nearest Neighbor.
+	
+	https://machinelearningmastery.com/undersampling-algorithms-for-imbalanced-classification/
+	
+	\item Figure out what Rough Sets Theory and Fuzzy Sets are.  
+	\item Learn to use ROC curves.
+	\item Review different types of models and how to implement them in Keras.
+	\item Bagging and Boosting
+	\item Topological Data Analysis
+	
+	Giotto-tda is a Python package dedicated to integrating TDA in the machine learning workflow by means of a scikit-learn API
+
+\end{itemize}
+
+%%%%
+\section{Plan}
+
+\begin{itemize}
+	\item Identify review papers by established experts that give overviews of the field.  Use these as a ``textbook'' for imbalanced data.
+	\item Write a review of the field (similar to my study guide for the Algorithms Comp)
+	\begin{itemize}
+		\item Topics
+		\begin{itemize}
+			\item Benchmark datasets for imbalanced classification.
+			\item Sampling methods
+			\item Metrics
+			\item Loss functions
+			\item Bagging and Boosting
+			\item Math and CS tools, like Principal Component Analysis
+		\end{itemize}
+		\item For each topic
+		\begin{itemize}
+			\item Original and significant papers
+			\item Theory and rationale
+			\item Examples of usage in the field
+			\item Example where I implement it
+			\item If appropriate, implement it on the crash data
+		\end{itemize}
+
+	\end{itemize}
+\end{itemize}
+
+%%%%%
+\section{Paper Standards}
+
+When I took a 619 with Dr. Raghavan, he rejected my first draft of my paper because it could be summarized as, ``I used existing methods to do the same thing other people have done, but on my own data.''  He expected me to have done more thinking and synthesis.  
+
+I had written the paper that way because that's what most of the papers I'd read did.  I learned later that I had been reading in a low-ranked journal.  
+
+I feel like most of the {\it Accident Analysis and Prevention} papers are like that, ``I did a thing!''  If this field had benchmark datasets, it would be easier to see what is actually new in each article.  The {\it AAP} journal is not well ranked.  The {\it Transportation Research: Part C, Emerging Technologies} is better in both content and rankings.  I'll use the {\it TRC} articles as models.
+
+%%%%%
+\section{Paper Outline Idea from 7/19/21 Report}
+
+\begin{enumerate}
+	\item Louisiana Crash Dataset and its Challenges
+	\begin{enumerate}[label=\alph*.]
+		\item General Description
+		\item Some data is missing
+		\item Some data is unreliable or obviously wrong
+		\item Data is imbalanced
+	\end{enumerate}
+	\item Incorporating Other Data
+	\begin{enumerate}[label=\alph*.]
+		\item Weather
+		\item Urban/Rural
+	\end{enumerate}
+	
+	\item Data Cleanup:  Methods
+	\begin{enumerate}[label=\alph*.]
+		\item Comparison of methods for handling missing data
+		\item Methods for dealing with outliers
+	\end{enumerate}
+	\item Features:  Methods
+	\begin{enumerate}[label=\alph*.]
+		\item Engineering New Features
+		\item Selecting Features [Incorporate Jing Chen's methods]
+	\end{enumerate}
+	\item Imbalanced Data:  Comparison of Methods
+	\begin{enumerate}[label=\alph*.]
+		\item Oversampling
+		\item Understampling
+		\item \verb|class_weight = 'balanced'|
+		\item Finding balance between methods [pun intended]
+	\end{enumerate}
+	\item New Metrics: {\it Balanced Precision} and {\it Balanced f1}
+	\begin{enumerate}[label=\alph*.]
+		\item Definitions
+		\item Justification
+		\item Examples
+	\end{enumerate}
+	\item Models
+	\item Balancing Everything
+	\item Conclusion
+	
+\end{enumerate}
+ 
+

@@ -1,0 +1,11 @@
+%%%%%
+\subsection{Missing Data}
+
+The CRSS \verb|HOSPITAL| feature, which we used as our target feature, has missing values.  CRSS has imputed missing values for several features, but not for \verb|HOSPITAL|.  
+
+For its imputed features, CRSS used IVEware, which uses sequential regression multivariate imputation (SRMI).  
+
+We first tried to use scikit-learn's SimpleImputer, which imputed all of the missing values as ``0: Not Transported.''
+
+Then we tried scikit-learn's IterativeImputer, but it only works with numerical continuous data, and all of our features are unordered categorical.
+

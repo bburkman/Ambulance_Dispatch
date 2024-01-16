@@ -1,0 +1,139 @@
+% !TEX TS-program = pdflatexmk
+
+
+\documentclass[11pt]{report}
+
+\usepackage[top=1in,bottom=1in,left=1in,right=1in]{geometry}
+
+\usepackage[
+%	notes,
+	backend=biber,
+%	isbn=false,
+%	annotation,
+%	notetype=endonly
+	]{biblatex}
+%\DeclareFieldFormat{addendum}{\paragraph\indent{\textbf{Suggestions for Future Research:}\addspace#1}\\}\DeclareFieldFormat{annotation}{\paragraph\indent{\textbf{Brad's Notes:}\addspace#1}\\}
+%\DeclareFieldFormat{institution}{\paragraph\indent{\textbf{Institution:}\addspace#1}\\}
+
+
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usetikzlibrary{shapes}
+\usetikzlibrary{patterns}
+\usetikzlibrary{positioning}
+\usetikzlibrary{decorations.pathmorphing}
+%\usetikzlibrary{patterns,positioning,decorations.pathmorphing,arrows,shapes
+\usetikzlibrary{fit}
+
+\usepackage{pgfmath}
+\usepackage[edges]{forest}
+
+\usepackage{setspace}
+\usepackage{amsmath}
+\usepackage{amsthm}
+	\newtheorem*{theorem}{Theorem}
+	\newtheorem*{lemma}{Lemma}
+	\newtheorem*{definition}{Definition}
+\usepackage{amssymb}
+
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{longtable}
+
+\usepackage{hyperref}
+\usepackage{xurl}
+\usepackage{enumerate}
+\usepackage{enumitem}
+\setlist{noitemsep}
+\usepackage{etoc}
+%\usepackage{etoolbox}
+%\makeatletter
+%\patchcmd{\chapter}{\if@openright\cleardoublepage\else\clearpage\fi}{}{}{}
+%\makeatother
+
+\usepackage{listings}
+\lstset{language=C}
+
+\usepackage{makeidx}
+\usepackage{verbatim}
+\usepackage{datetime}
+%\usepackage[strings]{underscore}
+\setcounter{tocdepth}{2}
+
+\usepackage[acronym]{glossaries}
+\glsdisablehyper
+\makeglossaries
+
+\setlength{\pdfpageheight}{11in}
+%\setlength{\textheight}{9in}
+%\setlength{\voffset}{-1in}
+%\setlength{\oddsidemargin}{0pt}
+%\setlength{\marginparsep}{0pt}
+%\setlength{\marginparwidth}{0pt}
+%\setlength{\marginparpush}{0pt}
+%\setlength{\textwidth}{6.5in}
+
+\def\sinline[#1]{ \ \tikz\draw[decorate,decoration={snake,amplitude=0.6mm, segment length=14pt},->] (0,0) -- (.6,0) node [midway, above] {#1}; \ }
+
+\pagestyle{plain}
+\makeindex
+
+\title{Prospectus Report:  Building a Model to Recommend Dispatching an Ambulance based on Automated Crash Reports from Cell Phones}
+\author{Brad Burkman}
+\newdateformat{vardate}{\THEDAY\ \monthname[\THEMONTH]\ \THEYEAR}
+\vardate
+\date{Updated \today}
+
+\begin{document}
+\setlength{\parindent}{20pt}
+\begin{spacing}{1.2}
+\setcounter{chapter}{-1}
+
+
+\maketitle
+
+
+%%%%%
+%\chapter{One-Page Summary}
+\phantomsection
+\input{Intro/One_Page_Summary}
+
+%%%%%%%%%%
+\newpage
+\chapter{Qualifications}
+\input{Intro/Graduation_Plan}
+\input{Intro/Previous_Work}
+
+
+%%%%%%%%%%
+\chapter{Introduction}
+\input{Intro/Problem}
+\input{Intro/Rationale}
+
+
+
+
+
+%%%%%%%%%%
+\setcounter{chapter}{9}
+\chapter{Research Plan}
+\input{Plan/Progress}
+\input{Plan/Goals}
+\input{Plan/Timeline}
+
+
+%%%%%%%%%%%%%%%%
+\end{spacing}
+\end{document}
+
+%%%%%%%%%%%%
+% Useful tools
+%%%%%%%%%
+
+\begin{lstlisting}
+Put your code here.
+\end{lstlisting}
+
+\lstinputlisting[language=python]{source_filename.py}
+
+

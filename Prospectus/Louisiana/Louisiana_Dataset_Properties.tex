@@ -1,0 +1,92 @@
+%%%%%
+\section{Properties}
+
+%%%
+\subsection{Boolean Nature of our Data}
+
+Most of our data is boolean.  Was alcohol involved?  Did the car leave its lane?  Was there a pedestrian?  We have categorical variables, like type of vehicle which we represent as dummy (boolean) variables.  We have some categories we could represent as numbers (like day of the week), and we could impose an order, (Monday comes before Tuesday), but the order isn't relevant in predicting injuries or fatalities, (Neither increases or decreases as the days ``progress.''), so we should represent them as categories, in dummy variables.  
+
+
+%%%
+\subsection{Top Twenty Features that Correlate with Fatality}
+
+Last column is the {\it balanced f1} score.
+
+\
+
+\begin{tabular}{llll}
+\verb|DR_COND_CD2| & I & DRUG USE - IMPAIRED & 0.33 \cr
+\verb|SEC_CONTRIB_FAC_CD| & L & CONDITION OF PEDESTRIAN & 0.32 \cr
+\verb|PRI_CONTRIB_FAC_CD| & L & CONDITION OF PEDESTRIAN  & 0.25 \cr
+\verb|PRI_CONTRIB_FAC_CD| & M & PEDESTRIAN ACTIONS & 0.20 \cr 
+\verb|VEH_TYPE_CD1| & G & OFF-ROAD VEHICLE & 0.18 \cr
+\verb|M_HARM_EV_CD1| & B & FIRE/EXPLOSION  & 0.17 \cr
+\verb|DR_COND_CD2| & F & APPARENTLY ASLEEP/BLACKOUT & 0.17 \cr
+\verb|CRASH_TYPE| & C &  [Unknown] & 0.17 \cr
+\verb|SEC_CONTRIB_FAC_CD| & M & PEDESTRIAN ACTIONS & 0.16  \cr 
+\verb|M_HARM_EV_CD1| & O & PEDESTRIAN & 0.15 \cr
+\verb|VEH_COND_CD| & E & ALL LIGHTS OUT & 0.15 \cr
+\verb|F_HARM_EV_CD1| & O & PEDESTRIAN & 0.15 \cr
+\verb|M_HARM_EV_CD1| & F & FELL/JUMPED FROM MOTOR VEHICLE & 0.15 \cr
+\verb|F_HARM_EV_CD1| & F & FELL/JUMPED FROM MOTOR VEHICLE & 0.14 \cr
+\verb|PEDESTRIAN| &&& 0.13 \cr
+\verb|VEH_TYPE_CD1| & E & MOTORCYCLE & 0.13 \cr
+\verb|DR_COND_CD2| & G & DRINKING ALCOHOL - IMPAIRED & 0.13 \cr
+\verb|CRASH_TYPE| & A &  [Unknown] & 0.13 \cr
+\verb|MOVEMENT_REASON_2| & G & VEHICLE OUT OF CONTROL, PASSING & 0.12 \cr
+\end{tabular}
+
+%%%%%
+\section{Thoughts on our Data Set:  Trees}
+
+I suspect that a decision tree is the only realistic way to make a predict model for any aspect of crash data.  If a pedestrian is involved, or it's a rural area, or alcohol is involved, the dynamics of the problem change.  That there could be some linear (or nonlinear) function of all of the variables to fatality or injury is not reasonable to hope.  If we think of it not as one big problem but as lots of little problems, like ``What factors predict a fatality/injury in a crash involving a pedestrian in a rural area at night?'' and, ``What factors predict a fatality/injury in a crash where alcohol is involved at rush hour in an urban area?'',  we'll have much more likelihood of success.  
+
+
+%%%%%
+\section{Times}
+
+From the \verb|Brads_Report_11_01_21|
+
+%%%
+\subsection{New Features}
+Interesting features I didn't have before:
+
+\begin{itemize}
+	\item \verb|AMBULANCE| $\in \{0,1\}$
+	\item \verb|CRASH_TIME|
+	\item \verb|TIME_POLICE_NOTE|
+	\item \verb|TIME_POLICE_ARR|
+	\item \verb|TIME_AMB_CALLED|
+	\item \verb|TIME_AMB_ARR|
+\end{itemize}
+
+In the 828,248 records, 167,662 (20.2\%) have \verb|AMBULANCE|==1.
+
+\subsection{Misspellings}
+
+In the `CITY' feature in the data, the name of the city of Shreveport is spelled nineteen different ways.  It's not a problem, though, because it's spelled correctly about 47,000 times and incorrectly only 35 times.  
+
+\subsection{Dirty Data}
+
+
+In many of the records, one of the times could be 0, which could indicate midnight, but more likely indicates missing data.  Lots of the records mix up AM and PM.  Some of them have the police or ambulance called before the crash time.  In some of them, the ambulance isn't called until more than half an hour after the crash time, which could be real, but more likely a data entry error.  Adding to the messiness is that some of the crashes roll over midnight.  
+
+There may be ways to fix some of those records, but for now I'll thrown them out.  I threw out 47,640 records (28\%), leaving 120,002 records.  
+
+\subsection{Strange Data}
+
+The \verb|CRASH_TIME| feature is in the format ``1/1/01 HH:MM:SS,'' but the second are either ``00'' or ``39.''  I don't know why.  I'm going to ask Malek whether it appears that way in the original Access file.  
+
+\subsection{Ambulance Call within/after 5 min after Crash}
+
+\begin{itemize}
+	\item In 64\% of the cases, the ambulance was called within 5 min of the crash.  
+	\item In 15\% of the cases, the ambulance was called more than 5 min after the crash and after the police arrived.  Those 18,037 are the interesting cases.  
+\end{itemize}
+
+\subsection{Hospitalized}
+
+Of the 120,022 clean records where an ambulance was called, 43,902 (37\%) had no one hospitalized, so while the ambulance crew may have applied minor first aid, it wasn't an emergency.  
+
+
+

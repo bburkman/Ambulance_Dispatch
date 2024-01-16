@@ -1,0 +1,58 @@
+%%%
+\subsection{Imbalanced Data}
+
+In building a model to predict, based on records of roadside inspections, traffic violations, and previous crashes, future crashes for trucks, \cite{LACK2021106105} described the imbalanced data problem well.
+
+\begin{quote}
+Initial models ``correctly'' classified no-crash versus crash instances 99\% of the time, but almost never correctly predicting a crash—a major failure in achieving the goal of this analysis and a common issue in unbalanced datasets.
+\end{quote}
+
+
+Our work in this paper uses the most straightforward of machine learning (ML) algorithms, the binary classifier.  We want to answer, ``Should we send an ambulance to this crash,'' and are using historical data answering for each crash, ``Did we use an ambulance?''  We want to build a model that will look at the data we have for a crash and return a prediction.  To build it, we will separate our data into a training set and a test set; use the training set to build the model, then evaluate the model on the (unseen during model building) test set.  
+
+The model will not be perfect.  We want to send ambulances to all of the crashes that need one (True Positive), and not send ambulances to crashes that don't (True Negative).  Sending an ambulance when one is not needed (False Positive) is unnecessarily expensive, but if we don't send an ambulance when one is needed (False Negative), someone might die unnecessarily.
+
+We can visually organize the success and failures of our binary classification model in a {\it confusion matrix} (also called {\it error matrix}, or {\it contingency table}).
+
+
+\begin{center}
+\begin{tabular}{cc|c|c|}
+	&\multicolumn{1}{c}{}& \multicolumn{2}{c}{Prediction} \cr
+	&\multicolumn{1}{c}{} & \multicolumn{1}{c}{N} & \multicolumn{1}{c}{P} \cr\cline{3-4}
+	\multirow{2}{*}{Actual}&N & TN & FP \vrule width 0pt height 10pt depth 2pt \cr\cline{3-4}
+	&P & FN & TP \vrule width 0pt height 10pt depth 2pt \cr\cline{3-4}
+\end{tabular}
+\end{center}
+
+Most machine learning algorithms are designed to maximize {\it accuracy}, the proportion of classifications that were successful.  
+
+$$\text{Accuracy} = \frac{ \text{TN} + \text{TP}}{\text{TN} + \text{FP} + \text{FN} + \text{TP}}$$
+
+In many applications, the accuracy is straightforward and useful, but not if the data are imbalanced.  In our case, in all of the reported crashes in Louisiana in 2014-2018, there were 645,748 people involved in the crashes, and 55,164 used an ambulance (\verb|OCC_MED_TRANS_CD = A|), 8.5\% of the total.  
+
+If we built a model that predicted that none of the crashes required an ambulance, our model would have 91.5\% accuracy.  
+
+
+\
+
+\hfil \begin{tabular}{cc|c|c|}
+	&\multicolumn{1}{c}{}& \multicolumn{2}{c}{Prediction} \cr
+	&\multicolumn{1}{c}{} & \multicolumn{1}{c}{N} & \multicolumn{1}{c}{P} \cr\cline{3-4}
+	\multirow{2}{*}{Actual}&N & 590,584 & 0 \vrule width 0pt height 10pt depth 2pt \cr\cline{3-4}
+	&P & 55,164 & 0 \vrule width 0pt height 10pt depth 2pt \cr\cline{3-4}
+\end{tabular}
+
+\
+
+$$\text{Accuracy} = \frac{ \text{590,584} + \text{0}}{\text{590,584} + \text{0} + \text{55,164} + \text{0}} \approx 0.915$$
+
+In many applications, 91\% accuracy would be good.  Why is it different in our context?  For two reasons.  First, our model is useless because we have entirely misclassified all of the positive samples.  Second, accuracy gives the same weight to false positives and false negatives, but in our application, their costs are very different.  The cost of a false positive (sending an ambulance when one is not necessary) is measured in money, while the cost of a false negative (not sending an ambulance promptly when one is necessary) is measured in lives.  We are willing to trade off sending $p$ number of unnecessary ambulances if it means that we will send one more necessary ambulance.  [Choosing the value of $p$ is a question for ethicists and politicians that we will discuss later.]
+
+There are four [citation] categories of methods for building a machine learning model on an imbalanced dataset, and we will use all four in this paper.  
+
+\begin{itemize}
+	\item Data-level techniques to artificially balance the dataset
+	\item Modifying the loss function in building the model
+	\item Modifying the model-building algorithm
+	\item Changing the metric in evaluating the model
+\end{itemize}

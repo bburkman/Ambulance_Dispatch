@@ -1,0 +1,134 @@
+%%%%%
+\section{CRSS Features (178 Features)}
+\label{CRSS Features}
+
+%%%
+\subsection{Imputed Features to Use ($10 \times 2 = 20$ Features)}
+
+Notes
+
+\begin{itemize}
+	\item The RELJCT1 field did not have missing values imputed in 2019, so those 54,409 cells are blank in RELJCT1\_IM.  To reconstruct it, I used the RELJCT1\_IM values from 2016, 2017, 2018, and 2020 with the RELJCT1 values from 2019, and used IVEware to impute the missing values. \cite{IVEware} Not perfect, but better than we had.  See the CRSS Imputation report for details.  \cite{CRSS_Imputation}
+	\item Why did CRSS impute missing values for DAY\_WEEK when there weren't any missing values?  For historical consistency and backwards compatibility going back to 1988.  \cite{CRSS_Imputation}  In a crash report, some data may be missing because of human error, confusion, rush, illegibility, \dots, but the date is one of the first things on the report and is more reliable.  
+\end{itemize}
+
+\begin{longtable}{llp{1.5in}rrp{48pt}r}
+	Original & Imputed & \multicolumn{2}{c}{Meaning \hfill Number of} & Num. of  & Values & Num. of \cr
+	Feature & Feature & \multicolumn{2}{r}{Categories} & Missing & Signifying & Unknown \cr
+	& & & & Values & ``Unknown'' & Values \cr
+	\hline
+AGE & AGE\_IM & Age  & 118 & 0 & [998,999] & 41087 \cr
+BODY\_TYP & BDYTYP\_IM & Vehicle Body Type Code & 73 & 0 & [98, 99, 49, 79] & 18211 \cr
+DAY\_WEEK & WKDY\_IM & Day of Week & 7 & 0 & [9] & 0 \cr
+HOUR & HOUR\_IM & Hour & 25 & 0 & [99] & 1127 \cr
+LGT\_COND & LGTCON\_IM & Light Condition & 9 & 0 & [8,9] & 2309 \cr
+MOD\_YEAR & MDLYR\_IM & Model Year & 83 & 0 & [9998, 9999] & 18524 \cr
+RELJCT1 & RELJCT1\_IM & Relation to Junction-Within Interchange Area  & 4 & 54409 & [8,9] & 65920 \cr
+RELJCT2 & RELJCT2\_IM & Relation to Junction-Specific Location  & 15 & 0 & [98,99] & 19721 \cr
+SEX & SEX\_IM & Sex & 4 & 0 & [8,9] & 26143 \cr
+WEATHER & WEATHR\_IM & Weather & 13 & 0 & [98,99] & 13284 \cr
+\end{longtable}
+
+%%%
+\subsection{Features to Use with No Missing or Unknown Values (13 Features)}
+
+\begin{tabular}{lp{2in}rrcr}
+	Feature & \multicolumn{2}{c}{Meaning \hfill Number of} \cr
+	Name & \multicolumn{2}{r}{Categories} \cr
+	\hline
+MODEL & Vehicle Model Code & 140 \cr
+MONTH &  & 12 \cr
+PEDS & Number of persons not in motor vehicles & 10 \cr
+PER\_TYP & Person type & 13 \cr
+PERMVIT & Number of Persons in Motor Vehicles in Transport  & 26 \cr
+PERNOTMVIT & Number of Persons Not in Motor Vehicles in Transport  & 10 \cr
+PVH\_INVL & Number of Parked/Working Vehicles in the Crash  & 11 \cr
+REGION &  & 4 \cr
+SCH\_BUS &  & 2 \cr
+URBANICITY &  & 2 \cr
+VE\_FORMS & Number of Motor Vehicles in Transport  & 13 \cr
+VE\_TOTAL & Number of vehicles in crash & 13 \cr
+WRK\_ZONE & Work Zone & 5 \cr
+\end{tabular}
+
+%%%
+\subsection{Features to Use with Unknown Values to Impute (12 Features)}
+
+\begin{tabular}{lp{2in}rrcr}
+	Feature & \multicolumn{2}{c}{Meaning \hfill Number of} & Num. of  & Values & Num. of \cr
+	Name & \multicolumn{2}{r}{Categories} & Missing & Signifying & Unknown \cr
+	& & & Values & ``Unknown'' & Values \cr
+	\hline
+HOSPITAL & How taken to hospital & 9 & 0 & [8,9] & 13522 \cr
+INT\_HWY & Interstate Highway & 3 & 0 & [9] & 25 \cr
+MAKE & Vehicle Manufacturer Code & 70 & 0 & [99] & 12901 \cr
+MOD\_YEAR & Model Year & 83 & 0 & [9998, 9999] & 18524 \cr
+REL\_ROAD & Relation to Trafficway  & 13 & 0 & [98,99] & 190 \cr
+TYP\_INT & Type of Intersection  & 11 & 0 & [98,99] & 26650 \cr
+VALIGN & Roadway Alignment & 7 & 0 & [8, 9] & 31554 \cr
+VNUM\_LAN & Total Lanes in Roadway & 10 & 0 & [8, 9] & 127387 \cr
+VPROFILE & Roadway Grade & 9 & 0 & [8, 9] & 62776 \cr
+VSPD\_LIM & Speed Limit & 20 & 0 & [98, 99] & 62649 \cr
+VTRAFCON & Traffic Control Device & 19 & 0 & [97, 99] & 30151 \cr
+VTRAFWAY & Trafficway Description & 9 & 0 & [8, 9] & 83513 \cr
+\end{tabular}
+
+%%%
+\subsection{CRSS Internal Features for Merging the ACCIDENT, VEHICLE, and PERSON Data Files (3 Features)}
+
+Note that if the person was not in a vehicle, PER\_NO = 0.  
+
+\
+
+\begin{tabular}{lp{2in}rrcr}
+	Feature & \multicolumn{2}{c}{Meaning \hfill Number of} \cr
+	Name & \multicolumn{2}{r}{Unique Values} \cr
+	\hline
+CASENUM & CRSS Case Number & 259077 \cr
+VEH\_NO & Index of Vehicle in Crash & 15 \cr
+PER\_NO & Index of Person in Vehicle & 75 \cr
+\end{tabular}
+
+%%%
+\subsection{CRSS Imputed Features to Not Use, Except as a Control for our Imputation Method ($17\times2 = 34$ Features)}
+
+These features are unknowable without investigation on the scene, thus not relevant to our study of features that are either given by an automated report or can be inferred from one.  
+
+These fields, however, like the CRSS-imputed fields above, may be useful as a control for our imputation method, which is an approximation of the method used by the CRSS authors.  We can impute the unknown values in the original feature and compare our imputations those from CRSS.  
+
+\begin{longtable}{llp{1.5in}rrp{48pt}r}
+	Original & Imputed & \multicolumn{2}{c}{Meaning \hfill Number of} & Num. of  & Values & Num. of \cr
+	Feature & Feature & \multicolumn{2}{r}{Categories} & Missing & Signifying & Unknown \cr
+	& & & & Values & ``Unknown'' & Values \cr
+	\hline
+ALCOHOL & ALCHL\_IM & Alcohol Involved in Crash  & 4 & 0 & [9] & 59889 \cr
+DRINKING & PERALCH\_IM & Person Drinking & 4 & 0 & [8,9] & 232366 \cr
+EJECTION & EJECT\_IM & Ejection & 7 & 0 & [9] & 2137 \cr
+HARM\_EV & EVENT1\_IM & First Harmful Event  & 56 & 0 & [98,99] & 166 \cr
+HIT\_RUN & HITRUN\_IM & Hit and Run & 3 & 94718 & [9] & 30 \cr
+IMPACT1 & IMPACT1\_IM & Area of Impact – Initial Contact Point  & 26 & 0 & [98, 99] & 11061 \cr
+INJ\_SEV & INJSEV\_IM & Injury Severity & 8 & 0 & [9] & 21595 \cr
+M\_HARM & VEVENT\_IM & Most Harmful Event & 56 & 0 & [98, 99] & 189 \cr
+MAN\_COLL & MANCOL\_IM & Manner of Collision of the First Harmful Event  & 11 & 0 & [98,99] & 1012 \cr
+MAX\_SEV & MAXSEV\_IM & Maximum Severity in Crash & 9 & 0 & [9] & 4480 \cr
+MAX\_VSEV & MXVSEV\_IM & Maximum Injury Severity in Vehicle & 9 & 0 & [9] & 18600 \cr
+MINUTE & MINUTE\_IM &  & 61 & 0 & [99] & 1127 \cr
+NUM\_INJ & NO\_INJ\_IM & Number Injured in Crash & 20 & 0 & [99] & 4480 \cr
+NUM\_INJV & NUMINJ\_IM & Number Injured in Vehicle & 17 & 0 & [99] & 18600 \cr
+P\_CRASH1 & PCRASH1\_IM & Pre-Event Movement (Prior to Recognition of Critical Event)  & 20 & 0 & [99] & 8340 \cr
+SEAT\_POS & SEAT\_IM & Seating Position & 30 & 0 & [98,99] & 7981 \cr
+VEH\_ALCH & V\_ALCH\_IM & Driver Drinking in Vehicle & 4 & 0 & [9] & 84494 \cr
+\end{longtable}
+
+%%%
+\subsection{Other Features to Not Use (94 Features)}
+
+We excluded these features for one or more of these reasons.  
+
+\begin{itemize}
+	\item Not knowable without on-scene investigation, so cannot even be guessed well from a cell phone notification.
+	\item Useless information, like registration number or license number.
+	\item Data in that feature is not available for all five years.
+\end{itemize}
+
+

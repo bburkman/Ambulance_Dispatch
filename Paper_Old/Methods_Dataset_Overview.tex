@@ -1,0 +1,11 @@
+%%%%%
+\subsection{Dataset Overview}
+
+The Crash Report Sampling System (CRSS) \citep{CRSS} is an annually published anonymized sample of crash reports in the US, produced by the National Center for Statistics and Analysis (NCSA) of the National Highway Transportation Safety Administration (NHTSA) of the US Department of Transportation (DOT).  CRSS replaced the National Automotive Sampling System (NASS) General Estimates System (GES) in 2016.  This paper uses 2016-2020 data; the 2021 data is due out in spring 2023.  
+
+For each year, the CRSS data comes in three main files, the first with a row for each crash (\verb|Accident.csv|), the second with a row for each vehicle involved in the crash (\verb|Vehicle.csv|), and the third with a row for each person involved in the crash (\verb|Person.csv|).  Each year also has (depending on the year) about twenty other files with more detail, which we did not investigate.  Putting the five years together, the \verb|Accident| file has 51 features with 259,077 samples, the \verb|Vehicle| has 97 features with 457,314 samples, and the \verb|Person| has 67 features with 644,274 samples.  Some features were added or discontinued during these five years.  
+
+All of the data is discrete or categorical.  Some of the features have ordered data (year, month, hour), but some of them are unordered (make of vehicle).  Most features have missing data with a value (like \verb|9| or \verb|99|) to signify ``missing.''  Some features had their missing values imputed (in a separate feature, so we know which samples had the value missing).
+
+Accompanying the CRSS data are a very useful Analytical Users Manual \citep{CRSS_Manual} and a report on how (and why) they imputed missing values in some but not all features. \citep{CRSS_Imputation}
+

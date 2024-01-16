@@ -1,0 +1,32 @@
+%%%%%
+\section{Problem}
+
+%%%
+\subsection{Application}
+
+New (starting in 2022) iPhones \index{iPhone} and Apple Watches have a feature that will automatically alert the police when involved in an automobile crash.  Such systems (like GM OnStar) \index{GM OnStar} have existed for years, but now they will become ubiquitous.  When the police receive a notification, based on the information they have, should they automatically deploy an ambulance?  In an accident with severe (but not instantly fatal) injuries, a few minutes' delay may have serious consequences, but sending an ambulance is expensive, and their supply is limited.  Can we develop a model that will, from the limited information the police can hope to have, from the dataset we have, make a good prediction of whether an ambulance is needed?  
+
+I am using ``police'' as a shorthand for ``the decision makers at the emergency call center.''  
+
+This new iPhone feature will not be perfect; it will give many false positives and may not detect crashes with small objects, like pedestrians, \index{Pedestrian} that do not cause severe deceleration but are most likely to have severe injury.  It may, however, give us additional information like the number of people (number of phones) involved, and speed at time of impact.  This new iPhone feature will keep the crash analysis community busy for many years.  
+
+The ``make a good predicition'' part is complicated.  We're not going to get 100\% accuracy.   What would we mean by ``good,'' and what would we use as a basis of comparison?  The current system relies mostly on phone calls from eyewitnesses who can give more information than the police will have in an automated notification.  These are thorny questions that we must address.  
+
+%%%
+\subsection{Datasets}
+
+So far I am looking at two datasets, one of Louisiana crash records 20142-18 ($\approx 800,000$ records) and the US NHTSA (National Highway Transportation Safety Administration) Crash Investigation Sampling System data 2016-2020 data ($\approx 250,000$ records).  
+
+%%%
+\subsection{Imbalanced Data}
+
+In the 2014-2018 Louisiana data, we have over eight hundred thousand crash records.  If we are just looking for fatal crashes, about 3500 were fatal, 0.42\%.  If we built a model to predict whether a crash is fatal, and the model predicted that all crashes were nonfatal, that model would have correctly classified 99.58\% of crashes, or have 99.58\% {\it accuracy}.  In most contexts, that level of accuracy would be amazing, but in this context, such a model would be useless.  
+
+The dataset classifies the crashes as ``Fatal,'' ``Severe,'' ``Moderate,'' ``Complaint,'' and ``No Injury,'' also called PDO, ``Property Damage Only.''  Note that ``Fatal'' does not mean that everyone involved died, so there may be people moderately or seriously injured who need urgent medical attention.  If we are looking to model whether a crash is Fatal or Severe, those together are 1.1\%, and Fatal/Severe/Moderate is 6.8\%.  
+
+%%%
+\subsection{Tradeoffs}
+
+We would like to predict with good certainty whether a crash has severe injuries, so we can dispatch an ambulance as soon as possible, but we may need to include moderate injuries to have a significant amount of data. We would also like to not send ambulances where one is not needed, because they're expensive and in finite supply.  We will need to tolerate some threshold of false positives, and that threshold will ultimately be set by policy makers, not by data scientists.  Different techniques will give us a different balance of true positives, false positives, false negatives, and true negatives, and it is likely that this study will only illustrate the choices to be made rather than find a silver bullet that will significantly increase the number of true positives without increasing the number of false positives.  
+
+

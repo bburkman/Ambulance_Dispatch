@@ -1,0 +1,35 @@
+<R name="ive_examples">
+
+# iveware examples - R version
+
+# import the input datasets
+
+
+# run iveware
+
+# multiple imputation
+
+# Hello!
+
+print ("CRSS")
+CRSS <- read.delim("../../Big_Files/data_IVEware.txt")
+head(CRSS)
+tail(CRSS)
+save(CRSS, file = "CRSS.rda")
+
+<impute name="impute">
+title Multiple imputation;
+datain CRSS;
+dataout impute;
+default categorical;
+minrsqd 0.01;
+maxpred 15;
+iterations 10;
+run;
+</impute>
+
+data <- load(file = "impute.rda")
+write.csv(get(data), file="../../Big_Files/data_IVEware.csv")
+
+</R>
+

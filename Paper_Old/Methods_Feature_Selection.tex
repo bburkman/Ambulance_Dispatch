@@ -1,0 +1,71 @@
+%%%
+\subsection{Feature Selection}
+
+In selecting features from the CRSS dataset, we chose features that could be known or inferred at the time of the crash without an eyewitness.  We separated them into three sets in terms of how hard the data would be to get in good quality:  Easy, medium, and hard.  The easy information is a baseline, the information the police have before they receive the notification, like locality, time of day, and weather.    The medium level requires detailed maps to distinguish between, for example, an intersection and a parking lot, and information from the phone service provider about the primary user of the phone.  The hard level would require coordination of private (cell service providers, Apple Google) and public databases (police, government vehicle registries), or correlating several notifications from different phones at about the same time from about the same location to see that they are probably the same crash event.  
+
+
+\begin{description}
+	\item [Location] \
+		 \begin{description}
+			\item [Easy]
+			\item Region (4 regions of the US)
+			\item Principal Sampling Unit (74 subregions of the US)
+			\item Police Jurisdiction (422 jurisdictions)
+			\item Urban/Rural
+		\item [Medium:  Requires precise location and maps]
+		 	\item Interstate
+			\item In intersection (Yes/No)
+			\item Type of interesection
+			\item Position relative to the road
+			\item Position relative to an intersection
+			\item Roadway alignment (curve, straight, driveway,...)
+			\item Number of lanes in roadway
+			\item Roadway grade
+			\item Speed limit
+			\item Traffic control device (stop lights, stop signs)
+			\item Trafficway description (two way, divided, ramp,...)
+			\item [Medium:  Requires up-to-date maps]
+			\item Work Zone
+		\item [Hard:  Requires very detailed maps]
+			\item Relation to junction features
+		 \end{description}
+	\item [Time] \
+		 \begin{description}
+	 	\item [Easy]
+			\item Hour
+			\item Weekday/Weekend
+			\item Month
+			\item Year
+			\item Weather
+		\item [Medium:  Requires detailed maps per time of day]
+		 	\item Lighting Conditions
+		 \end{description}
+	\item [Phone User] \
+		 \begin{description}
+	 	\item [Medium: Requires identifying phone user]
+		 	\item Age
+			\item Sex
+		\item [Medium:  Requires storing acceleration data for several minutes]
+			\item Pedestrian / In moving vehicle
+		\item [Hard:  Requires identifying the vehicle used by phone user]
+			\item Make of vehicle
+			\item Model of vehicle
+			\item Age of vehicle
+			\item Body type of vehicle
+		\item [Hard:  Requires identify licensing of phone user (driver) or ages from several phones (bus passengers)]
+			\item School bus
+			\item Type of other bus
+			\item Emergency vehicle
+		 \end{description}
+	\item [Correlate Multiple Notifications] \ 
+		\begin{description}
+		\item [Hard]
+			\item Number of people in vehicles
+%			\item Number of pedestrians
+			\item Number of occupants of particular vehicle
+			\item Number of vehicles in motion
+			\item Number of parked vehicles	
+		\end{description}
+\end{description}
+
+

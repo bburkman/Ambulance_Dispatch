@@ -1,0 +1,42 @@
+%%%%%
+\section{Algorithm Level Approaches}
+
+%%%
+\subsection{Some Papers}
+\begin{itemize}
+	\item Recognition-based:  Learning from one class rather than discrimination-based, doing unsupervised learning on the minority class. \cite{CHAWLA_2004}
+	\item Fuzzy rule-based classification systems (what is this?)
+		\cite{CHABBOUH_2019} 
+		\cite{DABLAIN_2021}
+		\cite{MAHMUDAH_2021} 
+		\cite{ZHAI_2020} 
+		\cite{ZHAI_2020_D2GAN}
+	\item In decision trees, using evolutionary/genetic methods instead of greedy search 
+		\cite{CHABBOUH_2019} 
+		\cite{WEISS_2000}
+	\item Clustering and Subspace Modeling \cite{CHEN_2011}
+\end{itemize}
+
+%%%
+\subsection{Genetic Algorithms}
+
+In this short 2000 paper, Weiss \cite{WEISS_2000} used a genetic algorithm to predict rare events. Borrowing from simulated annealing, they varied the relative importance of precision and recall at each step of the genetic algorithm.  
+
+%%%
+\subsection{Subspace Model}
+
+Chen 2011 \cite{CHEN_2011}
+
+This was fascinating and entirely different from anything I've seen.  
+
+\begin{enumerate}
+	\item Separate the training data $Tr$ into negative (majority) and positive (minority) classes $TrN$ and $TrP$.
+	\item Let $K$ be the ratio of negative to positive samples, in my case about 100, so that if you divide the majority class $TrN$ into $K$ groups, each will have about the same number of samples as the minority class.
+	\item Use $K$-means clustering to separate the negative (majority) class $TrN$ into $K$ groups; each of the groups is a cluster of the negative (majority) class.
+	\item For each of the $K$ groups $TrN_i$:
+	\begin{itemize}
+		\item Combine the negative elements of the group with the entire positive (minority) class $TrP$ to form a balanced subspace.  
+		\item Train the model for the subspace
+	\end{itemize}
+	\item Recombine the $K$ subspace models with a model trained on the entire data set to build an integrated model.
+\end{enumerate}

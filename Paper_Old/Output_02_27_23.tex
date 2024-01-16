@@ -1,0 +1,932 @@
+Get_Data()
+data.shape:  (619027, 82)
+End Get_Data()
+
+Remove_Pedestrian_Crashes()
+0    591304
+1     26801
+2       922
+Name: PEDS, dtype: int64
+Removing 27723 crashes that involve a pedestrian.
+Feature_Engineering_Cross_Two
+
+591304 samples, 88735 hospitalized, 502569 not hospitalized
+15.006663 percent of samples hospitalized
+There are 5.663707 negative samples for each positive.
+
+Thin_Features()
+data.shape:  (591304, 40)
+End Thin_Features()
+
+AGE
+AGE_x_SCH_BUS
+AGE_x_SEX
+BODY_TYP
+BUS_USE
+DAY_WEEK
+EMER_USE
+HOSPITAL
+HOUR
+INT_HWY
+LGT_COND
+MAKE
+MODEL
+MONTH
+NUMOCCS
+PERMVIT
+PERNOTMVIT
+PER_TYP
+PJ
+PSU
+PVH_INVL
+REGION
+RELJCT1
+RELJCT2
+REL_ROAD
+SCH_BUS
+SEX
+TYP_INT
+URBANICITY
+VALIGN
+VEH_AGE
+VE_FORMS
+VE_TOTAL
+VPROFILE
+VSPD_LIM
+VTRAFCON
+VTRAFWAY
+WEATHER
+WRK_ZONE
+YEAR
+
+Get_Dummies
+
+Split_Data()
+(413912, 170) (413912,) 62114 70.0 %
+(177392, 170) (177392,) 26621 30.0 %
+
+X_train.shape =  (413912, 170)
+X_test.shape =  (177392, 170)
+y_train.shape =  (413912,)
+y_test.shape =  (177392,)
+
+Without Tomek
+
+N, n =  413912 62114
+p =  5.6637473033454615
+alpha =  0.849934285548619
+weights =  [0.5882808 3.3318737]
+
+
+------------------------------------------
+alpha_weighted, weights =  [0.5882808 3.3318737]
+Make_Model()
+
+Train_Model()
+2023-02-26 19:53:28.868704: W tensorflow/core/platform/profile_utils/cpu_utils.cc:128] Failed to get CPU frequency: 0 Hz
+5544/5544 [==============================] - 7s 1ms/step
+Balance_Proba
+AWBCE_class_weights_Before_Tomek
+Plot_Prediction()
+AWBCE_class_weights_Before_Tomek
+[0.0, 0.1, 0.2, 0.30000000000000004, 0.4, 0.5, 0.6000000000000001, 0.7000000000000001, 0.8, 0.9, 1.0]
+
+
+ROC()
+AWBCE_class_weights_Before_Tomek
+N_median, P_median =  0.46254164 0.50828487
+
+
+Evaluate_Model()
+[[109166  41605]
+ [ 11959  14662]]
+
+[[0.61539416 0.23453707]
+ [0.06741567 0.08265311]]
+
+- Accuracy_Metric:  0.6980472625593611
+- Balanced_Accuracy_Metric:  0.63740994904011
+- Precision_Metric:  0.26057902500531294
+- Balanced_Precision_Metric:  0.6662116963578274
+- Recall_Metric:  0.5507681905242073
+- F1_Metric:  0.3537787055913734
+- Balanced_F1_Metric:  0.603014521210698
+- Gmean_Metric:  0.4343646947075438
+
+0.698 & Accuracy \cr 
+0.637 & Balanced Accuracy \cr 
+0.261 & Precision \cr 
+0.666 & Balanced Precision \cr 
+0.551 & Recall \cr 
+0.354 & F1 \cr 
+0.603 & Balanced F1 \cr 
+0.434 & Gmean \cr 
+
+Linear_Transform_y_proba()
+
+a = 0.375, b = 0.635
+
+Plot_Prediction()
+AWBCE_class_weights_Before_Tomek_Linear_Transform
+[0.0, 0.1, 0.2, 0.30000000000000004, 0.4, 0.5, 0.6000000000000001, 0.7000000000000001, 0.8, 0.9, 1.0]
+
+
+ROC()
+AWBCE_class_weights_Before_Tomek_Linear_Transform
+N_median, P_median =  0.35377368 0.51207423
+
+
+Evaluate_Model()
+[[112677  38094]
+ [ 12746  13875]]
+
+[[0.63518648 0.21474475]
+ [0.07185217 0.07821661]]
+
+- Accuracy_Metric:  0.7134030846933833
+- Balanced_Accuracy_Metric:  0.6342718714290263
+- Precision_Metric:  0.2669860878595567
+- Balanced_Precision_Metric:  0.6735078226973659
+- Recall_Metric:  0.5212050636695796
+- F1_Metric:  0.35309846897175295
+- Balanced_F1_Metric:  0.5876487184880833
+- Gmean_Metric:  0.44668672496802353
+
+0.713 & Accuracy \cr 
+0.634 & Balanced Accuracy \cr 
+0.267 & Precision \cr 
+0.674 & Balanced Precision \cr 
+0.521 & Recall \cr 
+0.353 & F1 \cr 
+0.588 & Balanced F1 \cr 
+0.447 & Gmean \cr 
+
+
+N, n =  413912 62114
+p =  5.6637473033454615
+alpha =  0.849934285548619
+weights =  [1.0, 1.0]
+
+
+
+------------------------------------------
+alpha_weighted, weights =  [1.0, 1.0]
+Make_Model()
+
+Train_Model()
+5544/5544 [==============================] - 7s 1ms/step
+Balance_Proba
+AWBCE_Weights_1_0_and_1_0_Before_Tomek
+Plot_Prediction()
+AWBCE_Weights_1_0_and_1_0_Before_Tomek
+[0.0, 0.1, 0.2, 0.30000000000000004, 0.4, 0.5, 0.6000000000000001, 0.7000000000000001, 0.8, 0.9, 1.0]
+
+
+ROC()
+AWBCE_Weights_1_0_and_1_0_Before_Tomek
+N_median, P_median =  0.13777499 0.15908183
+
+
+Evaluate_Model()
+[[150771      0]
+ [ 26621      0]]
+
+[[0.84993123 0.        ]
+ [0.15006877 0.        ]]
+
+- Accuracy_Metric:  0.8499312257594198
+- Balanced_Accuracy_Metric:  0.4999999999996684
+- Precision_Metric:  0.0
+- Balanced_Precision_Metric:  0.0
+- Recall_Metric:  0.0
+- F1_Metric:  1e-07
+- Balanced_F1_Metric:  1e-07
+- Gmean_Metric:  0.0
+
+0.850 & Accuracy \cr 
+0.500 & Balanced Accuracy \cr 
+0.000 & Precision \cr 
+0.000 & Balanced Precision \cr 
+0.000 & Recall \cr 
+0.000 & F1 \cr 
+0.000 & Balanced F1 \cr 
+0.000 & Gmean \cr 
+
+Linear_Transform_y_proba()
+
+a = 0.099, b = 0.237
+
+Plot_Prediction()
+AWBCE_Weights_1_0_and_1_0_Before_Tomek_Linear_Transform
+[0.0, 0.1, 0.2, 0.30000000000000004, 0.4, 0.5, 0.6000000000000001, 0.7000000000000001, 0.8, 0.9, 1.0]
+
+
+ROC()
+AWBCE_Weights_1_0_and_1_0_Before_Tomek_Linear_Transform
+N_median, P_median =  0.30342323 0.44162002
+
+
+Evaluate_Model()
+[[124949  25822]
+ [ 15894  10727]]
+
+[[0.7043666  0.14556463]
+ [0.08959818 0.0604706 ]]
+
+- Accuracy_Metric:  0.7648371967164445
+- Balanced_Accuracy_Metric:  0.6158430993309292
+- Precision_Metric:  0.2934964020895414
+- Balanced_Precision_Metric:  0.701740305900109
+- Recall_Metric:  0.40295255625106885
+- F1_Metric:  0.3396233413481663
+- Balanced_F1_Metric:  0.5119397781054502
+- Gmean_Metric:  0.4931838828856102
+
+0.765 & Accuracy \cr 
+0.616 & Balanced Accuracy \cr 
+0.293 & Precision \cr 
+0.702 & Balanced Precision \cr 
+0.403 & Recall \cr 
+0.340 & F1 \cr 
+0.512 & Balanced F1 \cr 
+0.493 & Gmean \cr 
+
+
+N, n =  413912 62114
+p =  5.6637473033454615
+alpha =  0.849934285548619
+weights =  [0.55, 5.5]
+
+
+
+------------------------------------------
+alpha_weighted, weights =  [0.55, 5.5]
+Make_Model()
+
+Train_Model()
+5544/5544 [==============================] - 8s 1ms/step
+Balance_Proba
+AWBCE_Weights_0_55_and_5_50_Before_Tomek
+Plot_Prediction()
+AWBCE_Weights_0_55_and_5_50_Before_Tomek
+[0.0, 0.1, 0.2, 0.30000000000000004, 0.4, 0.5, 0.6000000000000001, 0.7000000000000001, 0.8, 0.9, 1.0]
+
+
+ROC()
+AWBCE_Weights_0_55_and_5_50_Before_Tomek
+N_median, P_median =  0.5950048 0.6419662
+
+
+Evaluate_Model()
+[[  8346 142425]
+ [   210  26411]]
+
+[[0.04704834 0.80288288]
+ [0.00118382 0.14888496]]
+
+- Accuracy_Metric:  0.19593330026145714
+- Balanced_Accuracy_Metric:  0.523733481896951
+- Precision_Metric:  0.15642990831330023
+- Balanced_Precision_Metric:  0.5122542445602525
+- Recall_Metric:  0.9921114909244877
+- F1_Metric:  0.2702488521426348
+- Balanced_F1_Metric:  0.6756513967140515
+- Gmean_Metric:  0.09305509951422253
+
+0.196 & Accuracy \cr 
+0.524 & Balanced Accuracy \cr 
+0.156 & Precision \cr 
+0.512 & Balanced Precision \cr 
+0.992 & Recall \cr 
+0.270 & F1 \cr 
+0.676 & Balanced F1 \cr 
+0.093 & Gmean \cr 
+
+Linear_Transform_y_proba()
+
+a = 0.497, b = 0.767
+
+Plot_Prediction()
+AWBCE_Weights_0_55_and_5_50_Before_Tomek_Linear_Transform
+[0.0, 0.1, 0.2, 0.30000000000000004, 0.4, 0.5, 0.6000000000000001, 0.7000000000000001, 0.8, 0.9, 1.0]
+
+
+ROC()
+AWBCE_Weights_0_55_and_5_50_Before_Tomek_Linear_Transform
+N_median, P_median =  0.37628427 0.53274673
+
+
+Evaluate_Model()
+[[107543  43228]
+ [ 11819  14802]]
+
+[[0.60624493 0.2436863 ]
+ [0.06662645 0.08344232]]
+
+- Accuracy_Metric:  0.6896872463241355
+- Balanced_Accuracy_Metric:  0.6346571172648997
+- Precision_Metric:  0.255074961226512
+- Balanced_Precision_Metric:  0.6597848588197553
+- Recall_Metric:  0.5560271965720445
+- F1_Metric:  0.3497183687190081
+- Balanced_F1_Metric:  0.6034787778203877
+- Gmean_Metric:  0.4265462033009413
+
+0.690 & Accuracy \cr 
+0.635 & Balanced Accuracy \cr 
+0.255 & Precision \cr 
+0.660 & Balanced Precision \cr 
+0.556 & Recall \cr 
+0.350 & F1 \cr 
+0.603 & Balanced F1 \cr 
+0.427 & Gmean \cr 
+
+
+
+
+------------------------------------------
+BinaryFocalCrossentropy same as Alpha Weighted
+Make_Model()
+
+Train_Model()
+5544/5544 [==============================] - 7s 1ms/step
+Balance_Proba
+BFC_before_Tomek_alpha_equal_alpha
+Plot_Prediction()
+BFC_before_Tomek_alpha_equal_alpha
+[0.0, 0.1, 0.2, 0.30000000000000004, 0.4, 0.5, 0.6000000000000001, 0.7000000000000001, 0.8, 0.9, 1.0]
+
+
+ROC()
+BFC_before_Tomek_alpha_equal_alpha
+N_median, P_median =  0.13267942 0.16137905
+
+
+Evaluate_Model()
+[[150771      0]
+ [ 26621      0]]
+
+[[0.84993123 0.        ]
+ [0.15006877 0.        ]]
+
+- Accuracy_Metric:  0.8499312257594198
+- Balanced_Accuracy_Metric:  0.4999999999996684
+- Precision_Metric:  0.0
+- Balanced_Precision_Metric:  0.0
+- Recall_Metric:  0.0
+- F1_Metric:  1e-07
+- Balanced_F1_Metric:  1e-07
+- Gmean_Metric:  0.0
+
+0.850 & Accuracy \cr 
+0.500 & Balanced Accuracy \cr 
+0.000 & Precision \cr 
+0.000 & Balanced Precision \cr 
+0.000 & Recall \cr 
+0.000 & F1 \cr 
+0.000 & Balanced F1 \cr 
+0.000 & Gmean \cr 
+
+Linear_Transform_y_proba()
+
+a = 0.089, b = 0.238
+
+Plot_Prediction()
+BFC_before_Tomek_alpha_equal_alpha_Linear_Transform
+[0.0, 0.1, 0.2, 0.30000000000000004, 0.4, 0.5, 0.6000000000000001, 0.7000000000000001, 0.8, 0.9, 1.0]
+
+
+ROC()
+BFC_before_Tomek_alpha_equal_alpha_Linear_Transform
+N_median, P_median =  0.3154898 0.4879835
+
+
+Evaluate_Model()
+[[118598  32173]
+ [ 13833  12788]]
+
+[[0.66856454 0.18136669]
+ [0.07797984 0.07208893]]
+
+- Accuracy_Metric:  0.740653468025198
+- Balanced_Accuracy_Metric:  0.6334913976331003
+- Precision_Metric:  0.2844242788187887
+- Balanced_Precision_Metric:  0.6924165709257643
+- Recall_Metric:  0.48037263814101505
+- F1_Metric:  0.35729663362321445
+- Balanced_F1_Metric:  0.5672256068747566
+- Gmean_Metric:  0.47300214233327204
+
+0.741 & Accuracy \cr 
+0.633 & Balanced Accuracy \cr 
+0.284 & Precision \cr 
+0.692 & Balanced Precision \cr 
+0.480 & Recall \cr 
+0.357 & F1 \cr 
+0.567 & Balanced F1 \cr 
+0.473 & Gmean \cr 
+
+
+
+
+------------------------------------------
+BinaryFocalCrossentropy
+Make_Model()
+
+Train_Model()
+5544/5544 [==============================] - 7s 1ms/step
+Balance_Proba
+BFC_before_Tomek_alpha_equal_alpha
+Plot_Prediction()
+BFC_before_Tomek_alpha_equal_alpha
+[0.0, 0.1, 0.2, 0.30000000000000004, 0.4, 0.5, 0.6000000000000001, 0.7000000000000001, 0.8, 0.9, 1.0]
+
+
+ROC()
+BFC_before_Tomek_alpha_equal_alpha
+N_median, P_median =  0.31816512 0.35014442
+
+
+Evaluate_Model()
+[[150769      2]
+ [ 26612      9]]
+
+[[0.84991995 0.00001127]
+ [0.15001804 0.00005074]]
+
+- Accuracy_Metric:  0.849970686388986
+- Balanced_Accuracy_Metric:  0.5001624069045475
+- Precision_Metric:  0.8181818107438018
+- Balanced_Precision_Metric:  0.9622445629319243
+- Recall_Metric:  0.0003380789602181057
+- F1_Metric:  0.0006760784770588949
+- Balanced_F1_Metric:  0.0006761202993107208
+- Gmean_Metric:  0.9045280302115772
+
+0.850 & Accuracy \cr 
+0.500 & Balanced Accuracy \cr 
+0.818 & Precision \cr 
+0.962 & Balanced Precision \cr 
+0.000 & Recall \cr 
+0.001 & F1 \cr 
+0.001 & Balanced F1 \cr 
+0.905 & Gmean \cr 
+
+Linear_Transform_y_proba()
+
+a = 0.255, b = 0.438
+
+Plot_Prediction()
+BFC_before_Tomek_alpha_equal_alpha_Linear_Transform
+[0.0, 0.1, 0.2, 0.30000000000000004, 0.4, 0.5, 0.6000000000000001, 0.7000000000000001, 0.8, 0.9, 1.0]
+
+
+ROC()
+BFC_before_Tomek_alpha_equal_alpha_Linear_Transform
+N_median, P_median =  0.36042303 0.51832557
+
+
+Evaluate_Model()
+[[111533  39238]
+ [ 12521  14100]]
+
+[[0.62873749 0.22119374]
+ [0.07058379 0.07948498]]
+
+- Accuracy_Metric:  0.7082224677546292
+- Balanced_Accuracy_Metric:  0.634704025400204
+- Precision_Metric:  0.2643518692109484
+- Balanced_Precision_Metric:  0.670531710374011
+- Recall_Metric:  0.5296570376750322
+- F1_Metric:  0.35268086004745386
+- Balanced_F1_Metric:  0.5918267452471885
+- Gmean_Metric:  0.4422155165418621
+
+0.708 & Accuracy \cr 
+0.635 & Balanced Accuracy \cr 
+0.264 & Precision \cr 
+0.671 & Balanced Precision \cr 
+0.530 & Recall \cr 
+0.353 & F1 \cr 
+0.592 & Balanced F1 \cr 
+0.442 & Gmean \cr 
+
+
+
+
+------------------------------------------
+BinaryFocalCrossentropy with Class Balancing
+Make_Model()
+
+Train_Model()
+5544/5544 [==============================] - 7s 1ms/step
+Balance_Proba
+BFC_before_Tomek_Apply_Class_Balancing
+Plot_Prediction()
+BFC_before_Tomek_Apply_Class_Balancing
+[0.0, 0.1, 0.2, 0.30000000000000004, 0.4, 0.5, 0.6000000000000001, 0.7000000000000001, 0.8, 0.9, 1.0]
+
+
+ROC()
+BFC_before_Tomek_Apply_Class_Balancing
+N_median, P_median =  0.23711279 0.2599893
+
+
+Evaluate_Model()
+[[150771      0]
+ [ 26621      0]]
+
+[[0.84993123 0.        ]
+ [0.15006877 0.        ]]
+
+- Accuracy_Metric:  0.8499312257594198
+- Balanced_Accuracy_Metric:  0.4999999999996684
+- Precision_Metric:  0.0
+- Balanced_Precision_Metric:  0.0
+- Recall_Metric:  0.0
+- F1_Metric:  1e-07
+- Balanced_F1_Metric:  1e-07
+- Gmean_Metric:  0.0
+
+0.850 & Accuracy \cr 
+0.500 & Balanced Accuracy \cr 
+0.000 & Precision \cr 
+0.000 & Balanced Precision \cr 
+0.000 & Recall \cr 
+0.000 & F1 \cr 
+0.000 & Balanced F1 \cr 
+0.000 & Gmean \cr 
+
+Linear_Transform_y_proba()
+
+a = 0.194, b = 0.329
+
+Plot_Prediction()
+BFC_before_Tomek_Apply_Class_Balancing_Linear_Transform
+[0.0, 0.1, 0.2, 0.30000000000000004, 0.4, 0.5, 0.6000000000000001, 0.7000000000000001, 0.8, 0.9, 1.0]
+
+
+ROC()
+BFC_before_Tomek_Apply_Class_Balancing_Linear_Transform
+N_median, P_median =  0.33509344 0.48763365
+
+
+Evaluate_Model()
+[[116943  33828]
+ [ 13850  12771]]
+
+[[0.65923491 0.19069631]
+ [0.07807567 0.0719931 ]]
+
+- Accuracy_Metric:  0.7312280147916866
+- Balanced_Accuracy_Metric:  0.6276836448345302
+- Precision_Metric:  0.2740616751426553
+- Balanced_Precision_Metric:  0.6813428488347608
+- Recall_Metric:  0.479734044549492
+- F1_Metric:  0.34883922243960286
+- Balanced_F1_Metric:  0.5630349243241825
+- Gmean_Metric:  0.4610546024646134
+
+0.731 & Accuracy \cr 
+0.628 & Balanced Accuracy \cr 
+0.274 & Precision \cr 
+0.681 & Balanced Precision \cr 
+0.480 & Recall \cr 
+0.349 & F1 \cr 
+0.563 & Balanced F1 \cr 
+0.461 & Gmean \cr 
+
+
+
+
+------------------------------------------
+AdaBoost()  AdaBoost_Before_Tomek
+
+
+
+------------------------------------------
+BinaryFocalCrossentropy same as Alpha Weighted
+Make_Model()
+
+Train_Model()
+2023-02-27 05:45:12.423095: W tensorflow/core/platform/profile_utils/cpu_utils.cc:128] Failed to get CPU frequency: 0 Hz
+5544/5544 [==============================] - 8s 1ms/step
+Balance_Proba
+BFC_before_Tomek_alpha_equal_alpha_gamma_0_0
+Plot_Prediction()
+BFC_before_Tomek_alpha_equal_alpha_gamma_0_0
+[0.0, 0.1, 0.2, 0.30000000000000004, 0.4, 0.5, 0.6000000000000001, 0.7000000000000001, 0.8, 0.9, 1.0]
+
+
+ROC()
+BFC_before_Tomek_alpha_equal_alpha_gamma_0_0
+N_median, P_median =  0.12810262 0.15351379
+
+
+Evaluate_Model()
+[[150771      0]
+ [ 26621      0]]
+
+[[0.84993123 0.        ]
+ [0.15006877 0.        ]]
+
+- Accuracy_Metric:  0.8499312257594198
+- Balanced_Accuracy_Metric:  0.4999999999996684
+- Precision_Metric:  0.0
+- Balanced_Precision_Metric:  0.0
+- Recall_Metric:  0.0
+- F1_Metric:  1e-07
+- Balanced_F1_Metric:  1e-07
+- Gmean_Metric:  0.0
+
+0.850 & Accuracy \cr 
+0.500 & Balanced Accuracy \cr 
+0.000 & Precision \cr 
+0.000 & Balanced Precision \cr 
+0.000 & Recall \cr 
+0.000 & F1 \cr 
+0.000 & Balanced F1 \cr 
+0.000 & Gmean \cr 
+
+Linear_Transform_y_proba()
+
+a = 0.088, b = 0.242
+
+Plot_Prediction()
+BFC_before_Tomek_alpha_equal_alpha_gamma_0_0_Linear_Transform
+[0.0, 0.1, 0.2, 0.30000000000000004, 0.4, 0.5, 0.6000000000000001, 0.7000000000000001, 0.8, 0.9, 1.0]
+
+
+ROC()
+BFC_before_Tomek_alpha_equal_alpha_gamma_0_0_Linear_Transform
+N_median, P_median =  0.28431165 0.43347272
+
+
+Evaluate_Model()
+[[126475  24296]
+ [ 16054  10567]]
+
+[[0.71296902 0.13696221]
+ [0.09050014 0.05956864]]
+
+- Accuracy_Metric:  0.7725376567146363
+- Balanced_Accuracy_Metric:  0.6178986079183542
+- Precision_Metric:  0.30310070848663884
+- Balanced_Precision_Metric:  0.7112547723413185
+- Recall_Metric:  0.3969422636249692
+- F1_Metric:  0.3437318043526148
+- Balanced_F1_Metric:  0.5095251657450034
+- Gmean_Metric:  0.5042395564936409
+
+0.773 & Accuracy \cr 
+0.618 & Balanced Accuracy \cr 
+0.303 & Precision \cr 
+0.711 & Balanced Precision \cr 
+0.397 & Recall \cr 
+0.344 & F1 \cr 
+0.510 & Balanced F1 \cr 
+0.504 & Gmean \cr 
+
+
+
+
+------------------------------------------
+AdaBoost()  AdaBoost_Before_Tomek
+Balance_Proba
+AdaBoost_Before_Tomek
+Plot_Prediction()
+AdaBoost_Before_Tomek
+[0.0, 0.1, 0.2, 0.30000000000000004, 0.4, 0.5, 0.6000000000000001, 0.7000000000000001, 0.8, 0.9, 1.0]
+
+
+ROC()
+AdaBoost_Before_Tomek
+N_median, P_median =  0.4944219968078386 0.4967401901935389
+
+
+Evaluate_Model()
+[[148358   2413]
+ [ 23995   2626]]
+
+[[0.83632858 0.01360264]
+ [0.1352654  0.01480337]]
+
+- Accuracy_Metric:  0.8511319563447894
+- Balanced_Accuracy_Metric:  0.5413197618476276
+- Precision_Metric:  0.5211351458519322
+- Balanced_Precision_Metric:  0.8604043880552192
+- Recall_Metric:  0.09864392772586061
+- F1_Metric:  0.16588770174254222
+- Balanced_F1_Metric:  0.1769957677397583
+- Gmean_Metric:  0.7160968429082546
+
+0.851 & Accuracy \cr 
+0.541 & Balanced Accuracy \cr 
+0.521 & Precision \cr 
+0.860 & Balanced Precision \cr 
+0.099 & Recall \cr 
+0.166 & F1 \cr 
+0.177 & Balanced F1 \cr 
+0.716 & Gmean \cr 
+
+Linear_Transform_y_proba()
+
+a = 0.491, b = 0.501
+
+Plot_Prediction()
+AdaBoost_Before_Tomek_Linear_Transform
+[0.0, 0.1, 0.2, 0.30000000000000004, 0.4, 0.5, 0.6000000000000001, 0.7000000000000001, 0.8, 0.9, 1.0]
+
+
+ROC()
+AdaBoost_Before_Tomek_Linear_Transform
+N_median, P_median =  0.3779881529996213 0.5823944924420689
+
+
+Evaluate_Model()
+[[108133  42638]
+ [  9298  17323]]
+
+[[0.60957089 0.24036033]
+ [0.05241499 0.09765378]]
+
+- Accuracy_Metric:  0.7072246775498854
+- Balanced_Accuracy_Metric:  0.6839635635527352
+- Precision_Metric:  0.2889044545616502
+- Balanced_Precision_Metric:  0.6970630093524531
+- Recall_Metric:  0.6507268697620272
+- F1_Metric:  0.4001525714575552
+- Balanced_F1_Metric:  0.6730985365018258
+- Gmean_Metric:  0.4551948474656569
+
+0.707 & Accuracy \cr 
+0.684 & Balanced Accuracy \cr 
+0.289 & Precision \cr 
+0.697 & Balanced Precision \cr 
+0.651 & Recall \cr 
+0.400 & F1 \cr 
+0.673 & Balanced F1 \cr 
+0.455 & Gmean \cr 
+
+
+
+
+------------------------------------------
+Bagging()  Bagging_Before_Tomek
+Balance_Proba
+Bagging_Before_Tomek
+Plot_Prediction()
+Bagging_Before_Tomek
+[0.0, 0.1, 0.2, 0.30000000000000004, 0.4, 0.5, 0.6000000000000001, 0.7000000000000001, 0.8, 0.9, 1.0]
+
+
+ROC()
+Bagging_Before_Tomek
+N_median, P_median =  0.3 0.6
+
+
+Evaluate_Model()
+[[125633  25138]
+ [ 12475  14146]]
+
+[[0.70822247 0.14170876]
+ [0.07032448 0.0797443 ]]
+
+- Accuracy_Metric:  0.7879667628749955
+- Balanced_Accuracy_Metric:  0.6823276603365659
+- Precision_Metric:  0.36009571326657136
+- Balanced_Precision_Metric:  0.7611715057791555
+- Recall_Metric:  0.5313849968050359
+- F1_Metric:  0.42928467997452735
+- Balanced_F1_Metric:  0.6258530037615203
+- Gmean_Metric:  0.5477746540477653
+
+0.788 & Accuracy \cr 
+0.682 & Balanced Accuracy \cr 
+0.360 & Precision \cr 
+0.761 & Balanced Precision \cr 
+0.531 & Recall \cr 
+0.429 & F1 \cr 
+0.626 & Balanced F1 \cr 
+0.548 & Gmean \cr 
+
+Linear_Transform_y_proba()
+
+a = 0.000, b = 1.000
+
+Plot_Prediction()
+Bagging_Before_Tomek_Linear_Transform
+[0.0, 0.1, 0.2, 0.30000000000000004, 0.4, 0.5, 0.6000000000000001, 0.7000000000000001, 0.8, 0.9, 1.0]
+
+
+ROC()
+Bagging_Before_Tomek_Linear_Transform
+N_median, P_median =  0.32 0.5900000000000001
+
+
+Evaluate_Model()
+[[125633  25138]
+ [ 12475  14146]]
+
+[[0.70822247 0.14170876]
+ [0.07032448 0.0797443 ]]
+
+- Accuracy_Metric:  0.7879667628749955
+- Balanced_Accuracy_Metric:  0.6823276603365659
+- Precision_Metric:  0.36009571326657136
+- Balanced_Precision_Metric:  0.7611715057791555
+- Recall_Metric:  0.5313849968050359
+- F1_Metric:  0.42928467997452735
+- Balanced_F1_Metric:  0.6258530037615203
+- Gmean_Metric:  0.5477746540477653
+
+0.788 & Accuracy \cr 
+0.682 & Balanced Accuracy \cr 
+0.360 & Precision \cr 
+0.761 & Balanced Precision \cr 
+0.531 & Recall \cr 
+0.429 & F1 \cr 
+0.626 & Balanced F1 \cr 
+0.548 & Gmean \cr 
+
+
+
+
+------------------------------------------
+Balanced Random Forest Classifier  BRFC_Before_Tomek
+Balance_Proba
+BRFC_Before_Tomek
+Plot_Prediction()
+BRFC_Before_Tomek
+[0.0, 0.1, 0.2, 0.30000000000000004, 0.4, 0.5, 0.6000000000000001, 0.7000000000000001, 0.8, 0.9, 1.0]
+
+
+ROC()
+BRFC_Before_Tomek
+N_median, P_median =  0.46985671359851366 0.4984513066167379
+
+
+Evaluate_Model()
+[[119102  31669]
+ [ 13649  12972]]
+
+[[0.6714057  0.17852553]
+ [0.07694259 0.07312618]]
+
+- Accuracy_Metric:  0.7445318841882698
+- Balanced_Accuracy_Metric:  0.6386187248510626
+- Precision_Metric:  0.2905848883307036
+- Balanced_Precision_Metric:  0.6987845449797281
+- Recall_Metric:  0.4872844746610297
+- F1_Metric:  0.3640651059723029
+- Balanced_F1_Metric:  0.5741772450881741
+- Gmean_Metric:  0.47911209235295227
+
+0.745 & Accuracy \cr 
+0.639 & Balanced Accuracy \cr 
+0.291 & Precision \cr 
+0.699 & Balanced Precision \cr 
+0.487 & Recall \cr 
+0.364 & F1 \cr 
+0.574 & Balanced F1 \cr 
+0.479 & Gmean \cr 
+
+Linear_Transform_y_proba()
+
+a = 0.426, b = 0.639
+
+Plot_Prediction()
+BRFC_Before_Tomek_Linear_Transform
+[0.0, 0.1, 0.2, 0.30000000000000004, 0.4, 0.5, 0.6000000000000001, 0.7000000000000001, 0.8, 0.9, 1.0]
+
+
+ROC()
+BRFC_Before_Tomek_Linear_Transform
+N_median, P_median =  0.23458137877874607 0.3552499959089068
+
+
+Evaluate_Model()
+[[134347  16424]
+ [ 18475   8146]]
+
+[[0.75734531 0.09258591]
+ [0.10414788 0.0459209 ]]
+
+- Accuracy_Metric:  0.8032662126810661
+- Balanced_Accuracy_Metric:  0.5985328038742208
+- Precision_Metric:  0.33154253154118213
+- Balanced_Precision_Metric:  0.73746710219906
+- Recall_Metric:  0.3059990233262988
+- F1_Metric:  0.3182591691362507
+- Balanced_F1_Metric:  0.43252822220438103
+- Gmean_Metric:  0.5435314813063469
+
+0.803 & Accuracy \cr 
+0.599 & Balanced Accuracy \cr 
+0.332 & Precision \cr 
+0.737 & Balanced Precision \cr 
+0.306 & Recall \cr 
+0.318 & F1 \cr 
+0.433 & Balanced F1 \cr 
+0.544 & Gmean \cr 
+

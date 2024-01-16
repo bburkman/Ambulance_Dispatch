@@ -1,0 +1,13 @@
+%%%%%
+\section{CRSS Data Files}
+
+Each year's CRSS dataset comes in twenty-some .csv files, but most are derivatives of the main three, ACCIDENT, VEHICLE, and PERSON, and from henceforth I will only mention these three.  
+
+The term ``accident'' has fallen out of favor, because it implies that the crash was not intentional, by commission or omission, so the practitioners in the field prefer ``crash.''  CRSS and the journal {\it Accident Analysis and Prevention} may keep ``accident'' for historical consistency.  I will tend to use ``crash,'' except when referring to the ACCIDENT data file.
+
+Each accident in ACCIDENT has a case number, CASENUM, and has at least one corresponding vehicle in VEHICLE.  One can merge the two sets on the case number.  Each accident has at least one vehicle, and each vehicle belongs to an accident.  
+
+Each sample in VEHICLE has a vehicle number, VEH\_NO, numbered from 1 in each accident.  In PERSON, each sample has the case number of the accident.  If the person was in a vehicle, then the sample has the vehicle number.  If the person was not in a vehicle, for instance a pedestrian, then the vehicle number is 0.  Not all vehicles have a person, and not all persons have a vehicle, so merging the two datasets requires handling values that are properly blank.  
+
+For our work, we dropped all crashes with pedestrians, because the deceleration profile of a crash between a vehicle and a pedestrian, on the phones of the pedestrian or an occupant of the vehicle, is different from the deceleration profile of hitting another vehicle or a tree.  The deceleration profile would be so similar to hard braking that we doubt the phone would send an alert.  
+

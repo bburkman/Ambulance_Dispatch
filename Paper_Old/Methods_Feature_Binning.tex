@@ -1,0 +1,40 @@
+%%%
+\subsection{Feature Binning}
+
+Above we illustrated how the \verb|HOSPITAL| field had nine attributes, but we put them into two bins.  We were interested only in whether a crash person was transported to a hospital, not exactly how, so for our purposes, ``EMS Air'' and "EMS Ground'' were equivalent.  Several of the features had about ten attributes that we could assign to fewer bins in obvious ways.  Details in the technical paper.
+
+Some features had attributes that did not fall into bins in obvious ways.  Is a ``Compact Pickup,'' a designation that only existed in 2016, more like a sedan or a light pickup?  To draw the lines, we looked at how that attribute correlated with \verb|HOSPITAL|.  The rate at which crash persons in compact pickups were transported to the hospital was (statistically) indistinguishable from sedans (15\%), but very different from light pickups (11\%).  
+
+For \verb|AGE_IM|, age with missing values imputed, we had values 0-120 that we wanted to assign to bins.  The obvious way would have been to do it by decade, but when we looked at the hospitalization rates, patterns emerged.  
+
+In most states in the US, teens can get a driver's license at age 16, but in most states they can get a learner's permit earlier, so in the chart below, some of the 14 and 15 year olds may be the driver.  
+
+In the chart, we see a big shift between 14 and 16, both in the number of crash people and the hospitalization rate.  There is also a big shift between 18 and 21 in hospitalization rate.  Where exactly to draw the line is open for debate, but we made 16-18 a separate group.  The next big shift was in the 50's, and we made 19-52 the next group.  
+
+\begin{center}
+\begin{tabular}{lll}
+	\multicolumn{2}{l}{Age} \cr
+	& \multicolumn{2}{l}{Percent of Total Crash Persons} \cr
+	&& Hospitalization Rate (\%) \cr\hline
+	 10 & 0.53 & 16.58 \vrule width 0pt height 10pt\cr
+	 11 & 0.51 & 15.51 \cr
+	 12 & 0.52 & 16.54 \cr
+	 13 & 0.54 & 16.72 \cr
+	 14 & 0.63 & 17.56 \cr
+	 15 & 0.88 & 15.21 \cr
+	 16 & 1.65 & 13.46 \cr
+	 17 & 2.18 & 14.25 \cr
+	 18 & 2.65 & 14.41 \cr
+	 19 & 2.67 & 15.47 \cr
+	 20 & 2.58 & 14.91 \cr
+	 21 & 2.51 & 15.65 \cr
+	 22 & 2.56 & 15.43 \cr
+	 23 & 2.44 & 15.57 \cr
+	 24 & 2.38 & 16.01 \cr
+	 25 & 2.37 & 15.50 \cr
+\end{tabular}
+\end{center}
+
+Full chart in the technical paper.  
+
+

@@ -1,0 +1,95 @@
+%%%%%
+\section{Focal Loss and Tomek}
+
+Working with our crash database, with the cleaning and organizing in which I had it in February 2022, I tried different values for $\gamma_1$ and $\gamma_2$ with and without Tomek Links cleaning.  
+
+Tomek Links is a method for cleaning a noisy dataset for binary classification.  A {\it Tomek Link} is a pair of samples, one from the positive and one from the negative class, that are each others' closest neighbors.  The idea is that one of them is noise, or that having these two interferes in making a good classification, that you want the classes to cluster.  In a balanced dataset you eliminate both of them from the training set.  In an imbalanced dataset, you eliminate the element from the majority class.  
+
+From my weekly report 2/21/22:
+
+\begin{itemize}
+	\item Unfortunately, $p$ means two different things below.  
+	\begin{itemize}
+		\item $p_i$ is the probability returned by the model that each sample belongs to the positive set.
+		\item $p$ is a hyperparameter, ideally the proportion of the negative to positives samples, to use $\alpha = p/(p+1)$ in the Focal Loss function, to create the class weights that have the same effect as random oversampling.  In our dataset, $p=88.8$.  (No, I'm not kidding.)
+	\end{itemize}
+	\item All runs without Tomek used the same training and test sets
+	\item All runs with Tomek used the same training and test sets
+	\item The two test/train splits used the same random sampling seed, so they should be the same sets.
+\end{itemize}
+
+
+\begin{align*}
+	\text{Focal Loss} &= \sum_{i=1}^n \alpha (1 - p_i) ^{\gamma_1} y_i \log (p_i) + (1 - \alpha) p_i^{\gamma_2} (1 - y_i)  \log (1 - p_i) \cr
+	 &= \sum_{y_i=1} \alpha (1 - p_i) ^{\gamma_1} \log (p_i) + \sum_{y_i=0} (1 - \alpha) p_i^{\gamma_2}   \log (1 - p_i) \cr
+	\end{align*}
+
+%%%
+\subsection{Different Values of $p$ with $\gamma_1=0$, $\gamma_2=0$}
+
+\begin{tabular}{rrrrrrrl}
+	& Tomek? & $p$ & $\gamma_1$ & $\gamma_2$ & TN/FN & FP/TP & Comments\cr\hline
+	& No & 1 & 0 & 0 &  573308  &  0 \cr
+	&&&&&  6466  &  0 \cr \hline
+	&No & 20&0&0&  562182  &  11126 \cr
+	 &&&&&  5850  &  616 \cr\hline
+	& No & 88.8 & 0 & 0 &  428929  &  144379 & This is the natural $p$ \cr
+ 	&&&&& 3105  &  3361 & for our dataset. \cr	\hline
+	& No & 100 & 0 & 0 &  411813  &  161495 \cr
+	 &&&&&  2737  &  3729 \cr\hline
+	 & No  & 200 & 0 & 0 &  287151  &  286157 \cr
+	 &&&&&  1464  &  5002 \cr\hline
+\end{tabular}
+
+%%%
+\subsection{Fixed $p=88.8$, Different values of $\gamma_1$ and $\gamma_2$}
+
+\begin{tabular}{rrrrrrrl}
+	& Tomek? & $p$ & $\gamma_1$ & $\gamma_2$ & TN/FN & FP/TP & Comments\cr\hline
+	& No & 88.8 & 0.0 & 0.0 &  428929  &  144379 & This is the natural $p$ \cr
+ 	&&&&& 3105  &  3361 & for our dataset. \cr	\hline
+	 & No & 88.8 & 0.5 & 0.5 &  399870  &  173438 \cr
+	 &&&&&  2685  &  3781 \cr\hline
+	 & No & 88.8 & 1.0 & 1.0 &  420343  &  152965 \cr
+ 	&&&&&  3092  &  3374 \cr\hline
+ 	& No & 88.8 & 2.0 & 2.0 &  433805  &  139503 \cr
+ 	&&&&&  3213  &  3253 \cr\hline
+	 & No & 88.8 & 5.0 & 5.0 &  445445  &  127863 \cr
+	 &&&&&  3519  &  2947 \cr\hline
+	  & No & 88.8 & 0.0 & 2.0 &  337148  &  236160 \cr
+	 &&&&&  2092  &  4374 \cr\hline
+	  & No & 88.8 & 0.5 & 0 &  460148  &  113160 \cr
+	 &&&&&  3520  &  2946 \cr\hline
+	  & No & 88.8 & 1.0 & 0.0 &  391820  &  181488 \cr
+	 &&&&&  2596  &  3870 \cr\hline
+	 & No & 88.8 & 2.0 & 0.0 &  527871  &  45437 \cr
+	 &&&&&  4877  &  1589 \cr\hline
+ \end{tabular}
+ 
+ %%%
+ \subsection{Tomek}
+ 
+ Tomek took out 760 negative samples, bringing $p$ down to $88.66$.
+
+\
+ 
+ \begin{tabular}{rrrrrrrl}
+	& Tomek? & $p$ & $\gamma_1$ & $\gamma_2$ & TN/FN & FP/TP & Comments\cr\hline
+	& No & 88.8 & 0.0 & 0.0 &  428929  &  144379 &  \cr
+ 	&&&&& 3105  &  3361 &  \cr	\hline
+	& Yes & 88.8 & 0.0 & 0.0 &  387313  &  185995 & FN goes up 29\% \cr
+	 &&&&&  2504  &  3962 & TP goes up 18\% \cr\hline
+	& Yes & 88.66  & 0.0 & 0.0 &  387313  &  185995 \cr
+	 &&&&&  2504  &  3962 \cr\hline
+ \end{tabular}
+
+%%%%%
+\subsection{Discussion}
+
+\begin{itemize}
+	\item The different values of $p$, $\gamma_1$, and $\gamma_2$, and Tomek, give us different tradeoffs between false positives and false negatives, but no combination gives us fewer of both.  
+	\item It would be challenging to argue that one set of hyperparameters is ``better'' than another. 
+	\item I suspect that there just isn't enough of a pattern in this crash data to give us much confidence.  
+	\item I need to also work on other datasets that either might give clearer results, or will show me that all results are this fuzzy and I need to learn how to deal with it.  
+\end{itemize}
+

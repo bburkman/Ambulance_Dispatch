@@ -1,0 +1,167 @@
+%%%%%
+\section{Feature Engineering}
+
+%%%
+\subsection{Time of Day}
+
+Time of day is a continuous variable, but the correlation between time of day and [anything] is nonlinear.  We could do some kind of data transformation, perhaps taking the ratio of the number of accidents to the typical traffic density at that time of day, but the typical car trip at 3 am on a Wednesday may be different in character than a car trip at 7 am on a Saturday, even if the traffic volumes are similar.  Perhaps we should have boolean variables:
+
+\begin{itemize}
+	\item Morning rush hour
+	\item Mid-day
+	\item Afternoon rush hour
+	\item Evening
+	\item Late night
+\end{itemize}
+
+and another variable, {\tt Weekend}.
+
+%%%
+\subsection{Number of Fatalities/Injuries}
+
+The number of fatalities or injuries is a function of how many people were in each vehicle, which (a) we don't know and (b) probably isn't correlated to any other data we have.  Fatality and injury should be  boolean variables, that there was a fatality or there was an injury, rather than a count of the number of fatalities or injuries.  
+
+%%%
+\subsection{Day of Week}
+
+\begin{figure}[h!]
+\centering
+\begin{minipage}{.27\textwidth}
+  \centering
+  \includegraphics[scale=0.32]{../../../Fall_2021/699/Keras//12_04_21_Images/n_Accidents_DAY_OF_WK.png}
+  \caption{Number of Crashes, by Day of Week}
+  \label{fig:test1}
+\end{minipage}%
+\begin{minipage}{0.05\textwidth}
+\
+\end{minipage}
+\begin{minipage}{.27\textwidth}
+  \centering
+  \includegraphics[scale=0.32]{../../../Fall_2021/699/Keras//12_04_21_Images/n_Severe_DAY_OF_WK.png}
+  \caption{Number of Severe Injury Crashes, by Day of Week}
+  \label{fig:test2}
+\end{minipage}
+\begin{minipage}{0.05\textwidth}
+\
+\end{minipage}
+\begin{minipage}{.27\textwidth}
+  \centering
+  \includegraphics[scale=0.32]{../../../Fall_2021/699/Keras//12_04_21_Images/p_Severe_DAY_OF_WK.png}
+  \caption{Percentage of Crashes with Severe Injury, by Day of Week}
+  \label{fig:test2}
+\end{minipage}
+\end{figure}
+
+
+My understanding is that, for feature engineering, we don't care that there are more crashes on Friday than other weekdays, since the proportion of crashes that require an ambulance are the same.  Saturday and Sunday, though, are different.
+
+I made a feature, \verb|Weekday_SA_SU|:
+
+\begin{center}
+\begin{tabular}{rl}
+	0 & MO, TU, WE, TR, FR\cr
+	1 & SA \cr
+	2 & SU \cr
+\end{tabular}
+\end{center}
+
+\newpage
+%%%
+\subsection{Time of Day}
+
+\begin{figure}[h!]
+\centering
+\begin{minipage}{.45\textwidth}
+  \centering
+  \includegraphics[scale=0.5]{../../../Fall_2021/699/Keras/12_04_21_Images/n_Weekday_by_Hour.png}
+  \caption{Number of Weekday Crashes, by Hour}
+  \label{fig:test1}
+\end{minipage}%
+\begin{minipage}{0.08\textwidth}
+\
+\end{minipage}
+\begin{minipage}{.45\textwidth}
+  \centering
+  \includegraphics[scale=0.5]{../../../Fall_2021/699/Keras/12_04_21_Images/p_Weekday_by_Hour}
+  \caption{Percentage of Weekday Crashes with Severe Injury, by Hour}
+  \label{fig:test2}
+\end{minipage}
+\end{figure}
+
+I note with interest that, at 7am, the number of crashes spikes, but the percentage of severe injury crashes does not change significantly.  I created a \verb|Rush_Hour| feature, but I don't know if it will be of any use.  
+
+
+The spike of percentage of crashes at 1am is just noise, because of the small number of crashes at that time.    
+
+
+\
+
+The types of roads on which crashes occurs varies widely by time of day.  I don't know what to do with that.  
+
+
+\begin{figure}[h!]
+\centering
+\begin{minipage}{.45\textwidth}
+  \centering
+  \includegraphics[scale=0.5]{../../../Fall_2021/699/Keras/12_04_21_Images/Interstate_Crash_Percentage_by_Hour.png}
+  \caption{Percentage of Crashes on Interstates, by Hour}
+  \label{fig:test1}
+\end{minipage}%
+\begin{minipage}{0.08\textwidth}
+\
+\end{minipage}
+\begin{minipage}{.45\textwidth}
+  \centering
+  \includegraphics[scale=0.5]{../../../Fall_2021/699/Keras/12_04_21_Images/City_Street_Crash_Percentage_by_Hour}
+  \caption{Percentage of Crashes on City Streets, by Hour}
+  \label{fig:test2}
+\end{minipage}
+\end{figure}
+
+
+I made a feature, \verb|Time_of_Day|, grouping together times with similar percentages of crashes having severe injuries:
+
+\begin{center}
+\begin{tabular}{rl}
+	0 & Midnight - 3:00 am\cr
+	1 & 3:00 am - 5:00 am\cr
+	2 & 5:00 am - 7:00 am \cr
+	3 & 7:00 am - 5:00 pm \cr
+	4 & 5:00 pm - Midnight \cr
+\end{tabular}
+\end{center}
+
+
+%%%%%%%%%%%%%%%%%%
+\subsection{Location}
+	Location seems like it would be very important.  One proxy we have is the parish and the road name.  I've made a new feature, concatenating the parish and the road name.  Each unique value in that feature will become a category, yielding a new feature in the dummy (one-hot encoding) dataframe that we will use for training.
+	
+	There are 6.150 unique values, but most of them have few records.  How many records do you need to make a useful correlation, and how many categories will overload the training?
+	
+	Having a minimum of 1000 records per category gives me 142 categories plus 492,367 records in ``Other''; a minimum of 100 records gives me 1103 categories plus 221,644 records in ``Other.''  A minimum of 10 records gives me 2,534 categories and 171,802 in ``Other.''  Note that 161,454 are in ``Other'' because of missing data.
+
+
+%%%%%
+\subsection{Parish/Road Names}
+
+\begin{itemize}
+	\item We have 161,454 records with "0" for the \verb|PRI_ROAD_NAME|.  There's nothing we can do to recover those.  
+	\item  We have 26,289 different values for \verb|PRI_ROAD_NAME|.  
+	\item We have even more if we combine those with the, sometimes multiple, \verb|PRI_ROAD_TYPE|, like St, Ave, and Blvd.
+ \item In a few instances, roads with the same \verb|PRI_ROAD_NAME| and different \verb|PRI_ROAD_TYPE| are different roads, but usually within the same parish they're the same.  A noteable exception is North St and North Blvd in Baton Rouge.
+ \item For long roads, like interstates and some state highways, crash outcomes may differ based on which section of road you're on.
+ \item To Do:
+ 	\begin{itemize}
+		\item Combine  \verb|PARISH_CD| and \verb|PRI_ROAD_NAME| into a new feature,  \verb|PARISH_CD_and_PRI_ROAD_NAME|.
+		\item Ignore the \verb|PRI_ROAD_TYPE|
+		\item Keep the instances of  \verb|PARISH_CD_and_PRI_ROAD_NAME| that have more than 1000 crashes.  
+		\item Change all of the others to "Other".
+	\end{itemize}
+ \item Results:
+ 	\begin{itemize}
+		\item This leaves us with 142 different names with 335,880 crashes, plus ``Other'' with 492,367 crashes.  
+		\item \verb|PRI_ROAD_NAME| = "AIRLINE" appears (with at least 1000 crashes) in 11 parishes, with 51,399 crashes.
+	\end{itemize}
+   \end{itemize}
+
+

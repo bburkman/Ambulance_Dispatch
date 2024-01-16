@@ -1,0 +1,37 @@
+[0] Config.pm:311> INFO - This is Biber 2.16
+[0] Config.pm:314> INFO - Logfile is 'Burkman_Prospectus_05_01_22.blg'
+[53] biber-darwin:340> INFO - === Mon Sep 26, 2022, 05:11:30
+[65] Biber.pm:415> INFO - Reading 'Burkman_Prospectus_05_01_22.bcf'
+[155] Biber.pm:952> INFO - Found 185 citekeys in bib section 0
+[167] Biber.pm:4340> INFO - Processing section 0
+[175] Biber.pm:4531> INFO - Looking for bibtex format file '../../../Summer_2021/619/Accident_Analysis_and_Prevention/Accident_Analysis_and_Prevention.bib' for section 0
+[227] bibtex.pm:1689> INFO - LaTeX decoding ...
+[767] bibtex.pm:1494> INFO - Found BibTeX data source '../../../Summer_2021/619/Accident_Analysis_and_Prevention/Accident_Analysis_and_Prevention.bib'
+[811] Utils.pm:395> WARN - Duplicate entry key: '1984152' in file '../../../Summer_2021/619/Accident_Analysis_and_Prevention/Accident_Analysis_and_Prevention.bib', skipping ...
+[859] Biber.pm:4531> INFO - Looking for bibtex format file '../../../Spring_2022/699/Papers/BibFile_Spring_2022.bib' for section 0
+[862] bibtex.pm:1689> INFO - LaTeX decoding ...
+[885] bibtex.pm:1494> INFO - Found BibTeX data source '../../../Spring_2022/699/Papers/BibFile_Spring_2022.bib'
+[891] Utils.pm:395> WARN - legacy month field 'jun' in entry 'CHAWLA_2004' is not an integer - this will probably not sort properly.
+[932] Utils.pm:395> WARN - legacy month field 'jun' in entry 'BATISTA_2004' is not an integer - this will probably not sort properly.
+[941] Utils.pm:395> WARN - legacy month field 'Jun' in entry 'CHAWLA_2002' is not an integer - this will probably not sort properly.
+[967] Biber.pm:4531> INFO - Looking for bibtex format file '../../../Summer_2021/619/Transportation_Research_Part_C/Transportation_Research_Part_C.bib' for section 0
+[1000] bibtex.pm:1689> INFO - LaTeX decoding ...
+[1297] bibtex.pm:1494> INFO - Found BibTeX data source '../../../Summer_2021/619/Transportation_Research_Part_C/Transportation_Research_Part_C.bib'
+[1573] Biber.pm:4531> INFO - Looking for bibtex format file '../../../Fall_2021/699/Bib_Files/Old_Files/Ambulance.bib' for section 0
+[1574] bibtex.pm:1689> INFO - LaTeX decoding ...
+[1585] bibtex.pm:1494> INFO - Found BibTeX data source '../../../Fall_2021/699/Bib_Files/Old_Files/Ambulance.bib'
+[1586] Utils.pm:395> WARN - Possible typo (case mismatch) between datasource keys: 'Lin_2020' and 'LIN_2020' in file '../../../Fall_2021/699/Bib_Files/Old_Files/Ambulance.bib'
+[1586] Utils.pm:395> WARN - Possible typo (case mismatch) between datasource keys: 'Yu_2020' and 'YU_2020' in file '../../../Fall_2021/699/Bib_Files/Old_Files/Ambulance.bib'
+[1593] Utils.pm:395> WARN - BibTeX subsystem: /var/folders/c3/8xt1bqbj0ksbm8gr7lb1cysc0000gn/T/biber_tmp_yavQ/e756e1ad0922fd9772662eee05a700c6_8942.utf8, line 2, warning: 11 characters of junk seen at toplevel
+[1593] Utils.pm:395> WARN - BibTeX subsystem: /var/folders/c3/8xt1bqbj0ksbm8gr7lb1cysc0000gn/T/biber_tmp_yavQ/e756e1ad0922fd9772662eee05a700c6_8942.utf8, line 19, warning: 11 characters of junk seen at toplevel
+[1593] Utils.pm:395> WARN - BibTeX subsystem: /var/folders/c3/8xt1bqbj0ksbm8gr7lb1cysc0000gn/T/biber_tmp_yavQ/e756e1ad0922fd9772662eee05a700c6_8942.utf8, line 22, warning: 13 characters of junk seen at toplevel
+[1593] Utils.pm:395> WARN - BibTeX subsystem: /var/folders/c3/8xt1bqbj0ksbm8gr7lb1cysc0000gn/T/biber_tmp_yavQ/e756e1ad0922fd9772662eee05a700c6_8942.utf8, line 38, warning: 14 characters of junk seen at toplevel
+[1593] Utils.pm:395> WARN - BibTeX subsystem: /var/folders/c3/8xt1bqbj0ksbm8gr7lb1cysc0000gn/T/biber_tmp_yavQ/e756e1ad0922fd9772662eee05a700c6_8942.utf8, line 54, warning: 10 characters of junk seen at toplevel
+[1594] Utils.pm:395> WARN - BibTeX subsystem: /var/folders/c3/8xt1bqbj0ksbm8gr7lb1cysc0000gn/T/biber_tmp_yavQ/e756e1ad0922fd9772662eee05a700c6_8942.utf8, line 57, warning: 10 characters of junk seen at toplevel
+[1594] Utils.pm:395> WARN - BibTeX subsystem: /var/folders/c3/8xt1bqbj0ksbm8gr7lb1cysc0000gn/T/biber_tmp_yavQ/e756e1ad0922fd9772662eee05a700c6_8942.utf8, line 70, warning: 11 characters of junk seen at toplevel
+[1594] Utils.pm:395> WARN - BibTeX subsystem: /var/folders/c3/8xt1bqbj0ksbm8gr7lb1cysc0000gn/T/biber_tmp_yavQ/e756e1ad0922fd9772662eee05a700c6_8942.utf8, line 85, warning: 9 characters of junk seen at toplevel
+[1594] Utils.pm:395> WARN - BibTeX subsystem: /var/folders/c3/8xt1bqbj0ksbm8gr7lb1cysc0000gn/T/biber_tmp_yavQ/e756e1ad0922fd9772662eee05a700c6_8942.utf8, line 97, warning: 12 characters of junk seen at toplevel
+[1594] Biber.pm:4531> INFO - Looking for bibtex format file '../Papers/TRpC_vol_098_140.bib' for section 0
+[1704] Utils.pm:411> ERROR - Cannot find '../Papers/TRpC_vol_098_140.bib'!
+[1704] Biber.pm:128> INFO - WARNINGS: 15
+[1704] Biber.pm:132> INFO - ERRORS: 1

@@ -1,0 +1,529 @@
+\section{To Henry, 22 July 2023}
+
+Henry, 
+
+Greetings from Frankfurt!  And later in the writing process, Barcelona!
+
+I think I've found something that works for building and interpreting a model in a way that's actually useful in the political settings where these decisions are made.  
+
+The analysis all builds on moving the decision threshold from the default $p=0.5$ to a value of $p$ that gives you the tradeoff the political process chooses.  I haven't seen this done much, and I don't know whether there are good reasons to not do it.  
+
+I haven't found such an approach in the crash analysis literature, particularly using the slope of the ROC curve (or something equivalent to it).  There are three possibilities.  
+
+\begin{enumerate}
+	\item I haven't looked hard enough.
+	\item I've found something new, at least in the application.
+	\item The thing I'm doing doesn't work.  
+\end{enumerate}
+
+%%%
+\subsection{Big Question}
+
+I think that whether my analysis works hinges on this question.  
+
+Once you've built a binary classification model on the training set and evaluate it on the test set, the model returns for each sample in the test set a value $p$ that I've been told gives the probability that the sample is in the positive class.  Then you analyze the model by picking a decision threshold $\theta$ and seeing how many elements of the positive and negative classes have values of $p$ on the correct side of $\theta$.  
+
+The value of $p$ isn't exactly the probability, but my analysis hinges on this conjecture.  
+
+\begin{enumerate}
+	\item If a model gives two samples the same value of $p$, then the model says that those two samples have the same probability of being in the positive class.  
+	\item  Probability is an increasing function of $p$:  If a model gives samples $a$ and $b$ values $p_a$ and $p_b$ with $p_a < p_b$, then, according to the model, sample $b$ has a higher probability of being in the positive class than sample $a$.  
+\end{enumerate}
+
+I would appreciate your thoughts and direction.  
+
+Thanks,
+
+Brad
+
+%%%
+\subsection{Scenario}  
+
+The scenario is that the emergency dispatchers receive an automated crash notification from a cell phone and have yet not received a call from an eyewitness.  The dispatchers do not know with strong certainty whether an ambulance is needed, but they have some indicators.  The dispatchers have three options.  
+
+\begin{description}
+	\item [Always] Always send an ambulance immediately to all such notifications, knowing that only about 15\% will be needed.
+	\item [Wait] Dispatch police, but wait for a report from an eyewitness (perhaps the police) before sending an ambulance.
+	\item [Sometimes] Use a machine learning model with some decision threshold to decide which crashes to send an ambulance to immediately, reserving the option to send an ambulance later based on an eyewitness report.  
+\end{description}
+
+%%%
+\subsection{Decision Threshold}
+
+Here's something new from my last email.  
+
+How to determine the decision threshold is a political decision, not a technical one.  We will consider three ways politicians might answer that question and how to implement each in our models and decision thresholds.  
+
+\begin{enumerate}
+	\item Our local fleet of ambulances now goes to $n$ crashes per year.  In the short term, without buying more ambulances and hiring more teams, we can increase the number of ambulance runs to crashes by some percentage, or in the longer term we are willing to increase the number of ambulances going to crashes by a larger, but still fixed, percentage.  
+	
+	\
+	
+	We will use 5\% as our example of how to implement this policy.  The increase does not include the true positives (TP), because those ambulances would go anyway; the increase is the allowable number of false positives (FP).  Set the decision threshold where the number of false positives is 5\% of the positive class ($\text{P} = \text{FN} + \text{TP}$).   
+
+$$\frac{\text{FP}}{\text{P}} =  \frac{\text{FP}}{\text{FN} + \text{TP}} = 0.05  $$
+
+Lots of ratios of TN, FP, FN, and TP have names, but I haven't found a name for FP/P or where other people have used it.  
+
+\
+
+	
+	\item We are willing to send ambulances based on automated crash reports, but only up to the point where a certain proportion of the ambulances we immediately dispatch (FP+TP) are actually needed (TP), which is equivalent to saying that we are willing to immediately send a certain number of unneeded ambulances for each one we automatically send that is needed.  
+	
+	\
+	
+	This is what I was trying to get at with FP and TP, but I realized it's equivalent to Precision, which the readers will understand.  
+	
+	\
+	
+	Choose the decision threshold where the precision is the specified level.  We will use $1/3$ for our example, being willing to send two FP for each TP.  
+	
+	\
+	
+	\item By looking at the slope of the ROC curve we can (roughly) estimate the probability that a particular crash needs an ambulance.  Some of them almost definitely need an ambulance, and we should dispatch those immediately, but we will choose a minimum probability to which we will immediately dispatch an ambulance.  
+	
+	\
+	
+	I'm going to use 50\% as an example of the minimum probability.  The model assigns to each sample in the test set at value $p \in [0,1]$.  I had read that $p$ was the probability that the sample was in the positive class, but I don't think that's exactly true.  What is true is that $p$ generally increases with probability.  
+	
+	\
+	
+	In each sufficiently large* range of $p$ (like $p \in [0.60, 0.61)$) there are some number of elements of the negative and positive class.  For a given range of $p$, call the number of elements of the negative class ``Neg'' and the number of elements of the positive class ``Pos.''  For the samples in that range of $p$, the probability that they are in the positive class is 
+	$$ \frac{\text{Pos}}{ \text{Pos} + \text{Neg}}$$
+	
+This expression is proportional to the slope of the ROC curve at that value of $p$. 
+	
+	\
+	
+	I want to call this ``marginal precision,'' but I haven't seen that term used that way in the ML literature.  I think ``marginal precision'' means something else in statistics.   See that 
+	$$\text{Pos} = \frac{\Delta \text{TP}}{\Delta p}, \quad 
+	 \text{Neg} = \frac{\Delta \text{FP}}{\Delta p}, \text{\quad and \quad} 
+	 \text{Pos} + \text{Neg} = \frac{\Delta (\text{TP} + \text{FP})}{
+\Delta p}, \text{\quad so \quad}
+	\frac{\text{Pos}}{ \text{Pos} + \text{Neg}} = \frac{\Delta \text{TP}}{\Delta(\text{TP} + \text{FP})}
+	$$
+
+	\
+	
+	*We have two challenges with choosing $\Delta p$, the size of our range of $p$, which we would like to be really small.  One is that some of our ML algorithms return (almost all) values of $p$ rounded to two decimal places, so we can't get more precision than that.  One of my algorithms (Balanced Bagging) gives $p$ for each sample to only one decimal place; thus, ``sufficiently large'' depends on the algorithm.  
+	
+The other problem is that if you zoom in too close, the number of samples in each $\Delta p$ isn't large enough to compensate for the randomness, and you see that your ``curve'' is actually jagged.  Because I wanted more samples in my test set, I went from using a 70/30 train/test split to using 5-fold validation, where all of the samples are in a test set.  
+	
+
+\end{enumerate}
+
+\subsection{Understanding the Data}
+
+\subsubsection{Total Effects}
+
+\
+
+The confusion matrix gives the totals based on the model and choice of decision treshold.
+
+\begin{center}
+\begin{tabular}{cccc}
+	&& \multicolumn{2}{c}{Predicted} \cr
+	&& PP & PN \cr\cline{3-4}
+	\multirow{2}{*}{Actual} & P \vrule width 0pt height 14pt depth 6pt& \multicolumn{1}{|c|}{TP} &  \multicolumn{1}{c|}{FN} \cr \cline{3-4}
+	& N \vrule width 0pt height 14pt depth 6pt& \multicolumn{1}{|c|}{FP} &  \multicolumn{1}{c|}{TN} \cr \cline{3-4}
+\end{tabular}
+\end{center}
+
+\hfil\begin{tabular}{c>{\hangindent=2em}p{5in}}
+	P & Number of crash persons who need an ambulance, also the number to whom we will {\it immediately} or {\it eventually} send an ambulance \cr
+	N & Number of crash person who do not need an ambulance\cr \cr
+	PP & Number of crash persons to whom we immediately dispatch an ambulance\cr
+	PN & Number of crash persons to whom we do not {\it immediately} dispatch an ambulance \cr \cr
+	TP & Number of crash persons to whom we send a needed ambulance \cr
+	FN & Number of crash persons who need an ambulance, but to whom we do not {\it immediately} send one, but we will send one later \cr
+	FP & Number of crash persons to whom we dispatch an ambulance that is not needed \cr
+	TN & Number of crash persons who do not need an ambulance and to whom we do not immediately (or ever) send one \cr \cr
+	$\displaystyle\frac{\text{TP}}{\text{FP} + \text{TP}} = \frac{ \text{TP}}{\text{PP}}$ & Precision, the proportion of immediately dispatched ambulances that are needed \\[1em]
+	$\displaystyle\frac{\text{TP}}{\text{FN} + \text{TP}} = \frac{ \text{TP}}{\text{P}}$ & Accuracy, the proportion of crash persons needing an ambulance to whom we immediately dispatch one \\[1em]
+$\displaystyle\frac{\text{FP}}{\text{FN} + \text{TP}} = \frac{ \text{FP}}{\text{P}}$ & Proportion of increase in number of ambulances sent because of immediate dispatch.  The P number of ambulances would have been dispatched anyway, but now the FP number of ambulances are also being sent.  \\[1em]
+\end{tabular}
+
+\subsubsection{Marginal Effects of Moving the Decision Threshold}
+
+\
+
+What if we move the decision threshold from $\theta = 0.85$ to $\theta = 0.86$?  What would the marginal effect be? 
+
+\begin{center}
+\begin{tabular}{rrrrrrrrrrrrrrr}
+\toprule
+p &     Neg &    Pos & mPrec &       TN &       FP &       FN &       TP &  Prec &   Rec &  FP/P & $\hat{p}$ \\
+\midrule
+0.80 &   1,392 &  1,585 &  0.53 &  589,317 &   11,498 &   90,351 &   22,400 &  0.66 &  0.20 &  0.10 &      0.05 \\
+0.81 &   1,358 &  1,673 &  0.55 &  590,675 &   10,140 &   92,024 &   20,727 &  0.67 &  0.18 &  0.09 &      0.04 \\
+0.82 &   1,244 &  1,590 &  0.56 &  591,919 &    8,896 &   93,614 &   19,137 &  0.68 &  0.17 &  0.08 &      0.04 \\
+0.83 &   1,112 &  1,560 &  0.58 &  593,031 &    7,784 &   95,174 &   17,577 &  0.69 &  0.16 &  0.07 &      0.04 \\
+0.84 &     972 &  1,594 &  0.62 &  594,003 &    6,812 &   96,768 &   15,983 &  0.70 &  0.14 &  0.06 &      0.03 \\ \hline
+ 0.85 &     952 &  1,479 &  0.61 &  594,955 &    5,860 &   98,247 &   14,504 &  0.71 &  0.13 &  0.05 &      0.03 \\ \hline
+0.86 &     886 &  1,489 &  0.63 &  595,841 &    4,974 &   99,736 &   13,015 &  0.72 &  0.12 &  0.04 &      0.03 \\ \hline
+0.87 &     712 &  1,481 &  0.68 &  596,553 &    4,262 &  101,217 &   11,534 &  0.73 &  0.10 &  0.04 &      0.02 \\
+0.88 &     731 &  1,429 &  0.66 &  597,284 &    3,531 &  102,646 &   10,105 &  0.74 &  0.09 &  0.03 &      0.02 \\
+0.89 &     622 &  1,389 &  0.69 &  597,906 &    2,909 &  104,035 &    8,716 &  0.75 &  0.08 &  0.03 &      0.02 \\
+0.90 &     565 &  1,357 &  0.71 &  598,471 &    2,344 &  105,392 &    7,359 &  0.76 &  0.07 &  0.02 &      0.01 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\hfil\begin{longtable}{rr >{\hangindent=2em}p{4.2in}}
+	p && Value returned by the model for each sample (crash person), a proxy for the probability that the sample is in the positive class (crash person needs an ambulance).  It is not exactly the probability, but it increases with the probability.  \cr
+	$\Delta$p & 0.01 & Width of each band of p.  For the above model, we can't go smaller because almost all of the returned $p$ values are rounded to two decimal places.  In some models the values of $p$ are more continuous, so we could go with smaller $\Delta$p, but if we go too small, the randomness inherent in the algorithm would make the results not smooth. \cr
+	Neg & 1,479 & The number of additional unneeded ambulances we would send if we changed p from 0.86 to 0.85 \cr
+	 && The number of actual negative samples in this band of p \cr
+	Pos & 952 & The number of additional needed ambulances we would send if we changed p from 0.86 to 0.85 \\[1em]
+	&& The number of actual positive samples in this band of p \cr
+	$\displaystyle \text{mPrec}  = \frac{ \text{Pos} }{ \text{Neg} + \text{Pos}}$ & 0.61 & 61\% of the {\it additional} ambulances we are sending (because we moved p from 0.86 to 0.85) that are needed \cr
+	&& ``Marginal Precision'' \\[1em]
+	&& All of the ambulances we are immediately dispatching have {\it at least} a 61\% chance of being needed \\[2em]
+	TN & 594,955 & If we choose $\text{p}=0.85$, then we will correctly decide that these 594,955 people do not need an ambulance, immediately or at all. \cr
+	&& Running total of Neg from $\text{p}=0$ \\[1em]
+	FP & 5,860 & If we choose $\text{p}=0.85$, then we will immediately dispatch 5,860 unneeded ambulances  \cr
+	&& Reverse running total of Neg from $\text{p} = 1.00$ \\[1em]
+	FN & 98,247 & If we choose $\text{p}=0.85$, then we will not {\it immediately} send ambulances to these 98,247 people, but will dispatch them when we hear from an eyewitness that an ambulance is needed \cr
+	&&Running total of Pos from $\text{p} = 0$ \\[1em]
+	TP & 14,504 &If we choose $\text{p}=0.85$, then we will immediately dispatch these 14,504 ambulances \cr
+	&&Running reverse total of Pos from $\text{p} = 1.00$ \\[1em]
+	FP/P & 0.05 & By choosing  $\text{p} = 0.85$, we will send 5\% more ambulances than if we did not dispatch any ambulances.  This number shows the increased cost of ambulance service.  \\[1em]
+	$\displaystyle\hat{p} = \frac{\text{PP}}{\text{PN} + \text{PP}}$ & 0.03 & Proportion of crash persons to whom we are immediately dispatching an ambulance.  \cr
+	&& I think Henry said that, usually, we want $\hat{p}$ to be the same as the proportion of crash persons who need an ambulance, $P/(N+P)$, which I think is equivalent to saying that FP = FN.  I'm pretty sure that's not what we want in this application.  
+\end{longtable}
+
+
+
+%%%
+\subsection{Evaluating Models}
+
+The politicians' choice of options above determine where we set the decision threshold for each model.  Choosing between models is then easy: Choose the model that yields the largest number of true positives (maximizes TP), which is the one that maximizes recall, because Recall = TP/P, and the number of positive samples is the same in all of the models we're building.   
+
+%%%
+\subsection{Example:  Finding Decision Thresholds in One Model}
+
+Here's a histogram of the $p$ values of the elements of the negative and positive classes for one model, the Balanced Random Forest Classifier with no class weights, on the full-feature (``Hard'') dataset that includes relevant information that may or may not be available in real time.  This model doesn't do a great job of separating the positive and negative classes, but it's better than random. 
+
+\noindent\begin{tabular}{@{\hspace{-6pt}}p{4.3in} @{\hspace{-6pt}}p{2.0in}}
+	\vskip 0pt
+	\hfil Raw Model Output
+	
+	\input{../Keras/Images/BRFC_5_Fold_alpha_0_5_Hard_Test_Pred_Wide.pgf}	
+&
+	\vskip 0pt
+	\hfil ROC Curve
+	
+	\input{../Keras/Images/BRFC_5_Fold_alpha_0_5_Hard_Test_ROC.pgf}
+	
+\end{tabular}
+
+Here's a table of the same data with $\Delta p = 0.05$.  With the output from this model we can go as small as $\Delta p = 0.01$, but that would take several pages to show.  I will zoom in on parts of the table below.  
+
+\
+
+\begin{tabular}{rrrrrrrrrrrrrrr}
+\toprule
+{} &     Neg &     Pos & mPrec &       TN &       FP &       FN &       TP &  Prec &   Rec &  FP/P & $\hat{p}$ \\
+p    &         &         &       &          &          &          &          &       &       &       &           \\
+\midrule
+0.00 &     617 &       2 &  0.00 &      617 &  600,198 &        2 &  112,749 &  0.16 &  1.00 &  5.32 &      1.00 \\
+0.05 &   8,421 &      69 &  0.01 &    9,038 &  591,777 &       71 &  112,680 &  0.16 &  1.00 &  5.25 &      0.99 \\
+0.10 &  21,762 &     308 &  0.01 &   30,800 &  570,015 &      379 &  112,372 &  0.16 &  1.00 &  5.06 &      0.96 \\
+0.15 &  34,768 &     625 &  0.02 &   65,568 &  535,247 &    1,004 &  111,747 &  0.17 &  0.99 &  4.75 &      0.91 \\
+0.20 &  45,253 &   1,271 &  0.03 &  110,821 &  489,994 &    2,275 &  110,476 &  0.18 &  0.98 &  4.35 &      0.84 \\
+0.25 &  52,539 &   2,041 &  0.04 &  163,360 &  437,455 &    4,316 &  108,435 &  0.20 &  0.96 &  3.88 &      0.77 \\
+0.30 &  57,103 &   3,074 &  0.05 &  220,463 &  380,352 &    7,390 &  105,361 &  0.22 &  0.93 &  3.37 &      0.68 \\
+0.35 &  59,125 &   4,177 &  0.07 &  279,588 &  321,227 &   11,567 &  101,184 &  0.24 &  0.90 &  2.85 &      0.59 \\
+0.40 &  57,636 &   5,410 &  0.09 &  337,224 &  263,591 &   16,977 &   95,774 &  0.27 &  0.85 &  2.34 &      0.50 \\
+0.45 &  54,781 &   6,860 &  0.11 &  392,005 &  208,810 &   23,837 &   88,914 &  0.30 &  0.79 &  1.85 &      0.42 \\
+0.50 &  48,984 &   7,956 &  0.14 &  440,989 &  159,826 &   31,793 &   80,958 &  0.34 &  0.72 &  1.42 &      0.34 \\
+0.55 &  42,326 &   8,998 &  0.18 &  483,315 &  117,500 &   40,791 &   71,960 &  0.38 &  0.64 &  1.04 &      0.27 \\
+0.60 &  34,742 &  10,006 &  0.22 &  518,057 &   82,758 &   50,797 &   61,954 &  0.43 &  0.55 &  0.73 &      0.20 \\
+0.65 &  27,178 &  10,132 &  0.27 &  545,235 &   55,580 &   60,929 &   51,822 &  0.48 &  0.46 &  0.49 &      0.15 \\
+0.70 &  20,014 &   9,991 &  0.33 &  565,249 &   35,566 &   70,920 &   41,831 &  0.54 &  0.37 &  0.32 &      0.11 \\
+0.75 &  13,935 &   9,409 &  0.40 &  579,184 &   21,631 &   80,329 &   32,422 &  0.60 &  0.29 &  0.19 &      0.08 \\
+0.80 &   9,356 &   8,739 &  0.48 &  588,540 &   12,275 &   89,068 &   23,683 &  0.66 &  0.21 &  0.11 &      0.05 \\
+0.85 &   6,131 &   8,400 &  0.58 &  594,671 &    6,144 &   97,468 &   15,283 &  0.71 &  0.14 &  0.05 &      0.03 \\
+0.90 &   3,687 &   7,562 &  0.67 &  598,358 &    2,457 &  105,030 &    7,721 &  0.76 &  0.07 &  0.02 &      0.01 \\
+0.95 &   1,968 &   5,691 &  0.74 &  600,326 &      489 &  110,721 &    2,030 &  0.81 &  0.02 &  0.00 &      0.00 \\
+1.00 &     489 &   2,030 &  0.81 &  600,815 &        0 &  112,751 &        0 &   nan &  0.00 &  0.00 &      0.00 \\
+\bottomrule
+\end{tabular}
+
+%%%
+\subsection{Answers to Political Questions for This Model}
+
+\begin{enumerate}
+	\item {\bf Send up to 5\% more ambulances.}  
+	
+\
+	
+\begin{tabular}{rrrrrrrrrrrrrrr}
+\toprule
+p &     Neg &    Pos & mPrec &       TN &       FP &       FN &       TP &  Prec &   Rec &  FP/P & $\hat{p}$ \\
+\midrule
+0.80 &   1,392 &  1,585 &  0.53 &  589,317 &   11,498 &   90,351 &   22,400 &  0.66 &  0.20 &  0.10 &      0.05 \\
+0.81 &   1,358 &  1,673 &  0.55 &  590,675 &   10,140 &   92,024 &   20,727 &  0.67 &  0.18 &  0.09 &      0.04 \\
+0.82 &   1,244 &  1,590 &  0.56 &  591,919 &    8,896 &   93,614 &   19,137 &  0.68 &  0.17 &  0.08 &      0.04 \\
+0.83 &   1,112 &  1,560 &  0.58 &  593,031 &    7,784 &   95,174 &   17,577 &  0.69 &  0.16 &  0.07 &      0.04 \\
+0.84 &     972 &  1,594 &  0.62 &  594,003 &    6,812 &   96,768 &   15,983 &  0.70 &  0.14 &  0.06 &      0.03 \\
+\bf 0.85 &     952 &  1,479 & \bf  0.61 &  594,955 &    5,860 &   98,247 &   14,504 & \bf 0.71 & \bf  0.13 & \bf  0.05 &      0.03 \\
+0.86 &     886 &  1,489 &  0.63 &  595,841 &    4,974 &   99,736 &   13,015 &  0.72 &  0.12 &  0.04 &      0.03 \\
+0.87 &     712 &  1,481 &  0.68 &  596,553 &    4,262 &  101,217 &   11,534 &  0.73 &  0.10 &  0.04 &      0.02 \\
+0.88 &     731 &  1,429 &  0.66 &  597,284 &    3,531 &  102,646 &   10,105 &  0.74 &  0.09 &  0.03 &      0.02 \\
+0.89 &     622 &  1,389 &  0.69 &  597,906 &    2,909 &  104,035 &    8,716 &  0.75 &  0.08 &  0.03 &      0.02 \\
+0.90 &     565 &  1,357 &  0.71 &  598,471 &    2,344 &  105,392 &    7,359 &  0.76 &  0.07 &  0.02 &      0.01 \\
+\bottomrule
+\end{tabular}
+
+\
+
+At $p=0.85$ we get $\text{FP/P} = 0.05$, so if we immediately dispatched ambulances to crashes the model predicts with $p > 0.85$, we would increase the load on our ambulance fleet by the allowed 5\%.  At this decision threshold, 
+
+\begin{itemize}
+	\item Recall = 0.13, so we would be immediately dispatching ambulances to 13\% of the people who need one.  
+	\item Precision = 0.71, so 71\% of the ambulances we immediately dispatched would be needed, and 
+	\item mPrec = 0.61, so each ambulance we immediately dispatched would have at least a 61\% chance of being needed.  
+\end{itemize}
+
+	  
+	\
+	
+	\item {\bf Immediately dispatch a total of two unneeded ambulances for each needed ambulance, {\it i.e.} Precision = 1/(2+1) = 1/3.}
+	
+	\
+	
+\begin{tabular}{rrrrrrrrrrrrrrr}
+\toprule
+p &     Neg &    Pos & mPrec &       TN &       FP &       FN &       TP &  Prec &   Rec &  FP/P & $\hat{p}$ \\
+\midrule
+0.41 &  10,889 &  1,438 &  0.12 &  370,854 &  229,961 &   21,063 &   91,688 &  0.29 &  0.81 &  2.04 &      0.45 \\
+0.42 &  10,778 &  1,476 &  0.12 &  381,632 &  219,183 &   22,539 &   90,212 &  0.29 &  0.80 &  1.94 &      0.43 \\
+0.43 &  10,541 &  1,504 &  0.12 &  392,173 &  208,642 &   24,043 &   88,708 &  0.30 &  0.79 &  1.85 &      0.42 \\
+0.44 &  10,283 &  1,455 &  0.12 &  402,456 &  198,359 &   25,498 &   87,253 &  0.31 &  0.77 &  1.76 &      0.40 \\
+0.45 &  10,095 &  1,622 &  0.14 &  412,551 &  188,264 &   27,120 &   85,631 &  0.31 &  0.76 &  1.67 &      0.38 \\
+0.46 &   9,770 &  1,592 &  0.14 &  422,321 &  178,494 &   28,712 &   84,039 &  0.32 &  0.75 &  1.58 &      0.37 \\
+\bf 0.47 &   9,459 &  1,650 & \bf  0.15 &  431,780 &  169,035 &   30,362 &   82,389 & \bf 0.33 & \bf 0.73 & \bf 1.50 &      0.35 \\
+0.48 &   9,164 &  1,770 &  0.16 &  440,944 &  159,871 &   32,132 &   80,619 &  0.34 &  0.72 &  1.42 &      0.34 \\
+0.49 &   8,761 &  1,716 &  0.16 &  449,705 &  151,110 &   33,848 &   78,903 &  0.34 &  0.70 &  1.34 &      0.32 \\
+0.50 &   8,578 &  1,787 &  0.17 &  458,283 &  142,532 &   35,635 &   77,116 &  0.35 &  0.68 &  1.26 &      0.31 \\
+0.51 &   8,255 &  1,787 &  0.18 &  466,538 &  134,277 &   37,422 &   75,329 &  0.36 &  0.67 &  1.19 &      0.29 \\
+0.52 &   7,940 &  1,871 &  0.19 &  474,478 &  126,337 &   39,293 &   73,458 &  0.37 &  0.65 &  1.12 &      0.28 \\
+\bottomrule
+\end{tabular}
+
+\
+	
+	At $p=0.47$ we get $\text{Precision} = 0.33$, which fits our political constraints.  Also at this decision threshold,  
+	
+\begin{itemize}
+	\item Recall = 0.73, so we would be immediately dispatching ambulances to 73\% of the people who need one.  
+	\item mPrec = 0.61, so each ambulance we immediately dispatched would have at least a 61\% chance of being needed.  
+	\item FP/P = 1.50, so we would increase the number of ambulances being sent by 150\%, which may not be possible in the short run and too expensive in the long run.  
+\end{itemize}
+
+The political decision makers may choose to stay with this Precision metric but change it to something less expensive like Precision = 0.5, and with the data we have we could tell them the implications of that decision.  
+	
+	
+	\
+	
+	\item {\bf Immediately dispatch ambulances to crashes with at least a 50\% probability of needing one.}  
+	
+	\
+	
+\begin{tabular}{rrrrrrrrrrrrrrr}
+\toprule
+p &     Neg &    Pos & mPrec &       TN &       FP &       FN &       TP &  Prec &   Rec &  FP/P & $\hat{p}$ \\
+\midrule
+0.73 &   2,295 &  1,749 &  0.43 &  576,458 &   24,357 &   78,787 &   33,964 &  0.58 &  0.30 &  0.22 &      0.08 \\
+0.74 &   2,311 &  1,696 &  0.42 &  578,769 &   22,046 &   80,483 &   32,268 &  0.59 &  0.29 &  0.20 &      0.08 \\
+0.75 &   2,125 &  1,672 &  0.44 &  580,894 &   19,921 &   82,155 &   30,596 &  0.61 &  0.27 &  0.18 &      0.07 \\
+0.76 &   1,993 &  1,653 &  0.45 &  582,887 &   17,928 &   83,808 &   28,943 &  0.62 &  0.26 &  0.16 &      0.07 \\
+0.77 &   1,859 &  1,640 &  0.47 &  584,746 &   16,069 &   85,448 &   27,303 &  0.63 &  0.24 &  0.14 &      0.06 \\
+\bf 0.78 &   1,656 &  1,717 & \bf  0.51 &  586,402 &   14,413 &   87,165 &   25,586 & \bf 0.64 & \bf  0.23 & \bf 0.13 &      0.06 \\
+0.79 &   1,523 &  1,601 &  0.51 &  587,925 &   12,890 &   88,766 &   23,985 &  0.65 &  0.21 &  0.11 &      0.05 \\
+0.80 &   1,392 &  1,585 &  0.53 &  589,317 &   11,498 &   90,351 &   22,400 &  0.66 &  0.20 &  0.10 &      0.05 \\
+0.81 &   1,358 &  1,673 &  0.55 &  590,675 &   10,140 &   92,024 &   20,727 &  0.67 &  0.18 &  0.09 &      0.04 \\
+0.82 &   1,244 &  1,590 &  0.56 &  591,919 &    8,896 &   93,614 &   19,137 &  0.68 &  0.17 &  0.08 &      0.04 \\
+\bottomrule
+\end{tabular}
+	
+	\
+	
+	A crash report with $p = 0.78$ has a  mPrec = 51\% chance of needing an ambulance, and crashes with $p > 0.78$ have a higher chance, so immediately dispatch ambulances to crash reports with $p > 0.78$.  Also at this decision threshold, 
+	
+\begin{itemize}
+	\item Recall = 0.23, so we would be immediately dispatching ambulances to 23\% of the people who need one.  
+	\item Prec = 0.64, so the ambulances we immediately dispatched would have at least a 64\% chance of being needed.  
+	\item FP/P = 0.13, so we would increase the number of ambulances being sent by 13\%.  
+\end{itemize}
+
+\
+
+In this case we would like to dig further into the data to see more precisely where in $p \in (0.77,0.78)$ the value of mPrec is closest to 0.50, but except for some noise, this model only returns values of $p$ to two decimal places.  In this model, only 8\% of the non-unique values of $p$ have more than two places of precision.  If we tried to dig deeper we would be looking at really small counts and see more randomness than actual insight.  
+
+\end{enumerate}
+	
+%%%
+\subsection{Comparing Models}
+
+In all of these comparisons the Balanced Random Forest Classifier (BRFC) is clearly best, but I did not spend much time optimizing the models or test other algorithms.  Mainly what I'm doing here is showing how I would compare the algorithms.  
+
+\
+
+
+\begin{enumerate}
+	\item {\bf Send up to 5\% more ambulances, {\it i.e.} FP/P = 0.05}  
+	
+	\
+	
+\begin{tabular}{llllll}
+\toprule
+Model & p & $m$Prec & Prec & Rec & FP/P \cr
+\midrule
+BRFC & 0.88 & 0.62 & 0.71 & 0.13 & 0.05 \cr
+KBFC & 0.76 & 0.57 & 0.68 & 0.11 & 0.05 \cr
+OBFC & 0.57 & 0.57 & 0.67 & 0.11 & 0.05 \cr
+AdaBoost & 0.71 & 0.52 & 0.57 & 0.07 & 0.05 \cr
+RUSBoost & 0.72 & 0.49 & 0.58 & 0.07 & 0.05 \cr
+LogReg & 0.6 & 0.51 & 0.59 & 0.07 & 0.05 \cr
+BalBag & 0.9 & 0.56 & 0.68 & 0.07 & 0.03 \cr
+EEC & 0.84 & 0.49 & 0.52 & 0.06 & 0.05 \cr
+\bottomrule
+\end{tabular}
+	
+
+	\
+	
+	\item {\bf Immediately dispatch a total of two unneeded ambulances for each needed ambulance, {\it i.e.} Precision = 1/(2+1) = 1/3.}
+	
+	
+	\
+	
+\begin{tabular}{llllll}
+\toprule
+Model & p & $m$Prec & Prec & Rec & FP/P \cr
+\midrule
+BRFC & 0.5 & 0.16 & 0.34 & 0.72 & 1.42 \cr
+BalBag & 0.48 & 0.17 & 0.32 & 0.66 & 1.41 \cr
+KBFC & 0.21 & 0.18 & 0.33 & 0.65 & 1.33 \cr
+OBFC & 0.26 & 0.18 & 0.33 & 0.65 & 1.32 \cr
+LogReg & 0.56 & 0.21 & 0.33 & 0.57 & 1.16 \cr
+AdaBoost & 0.51 & 0.2 & 0.33 & 0.57 & 1.14 \cr
+RUSBoost & 0.51 & 0.21 & 0.33 & 0.56 & 1.12 \cr
+EEC & 0.51 & 0.19 & 0.33 & 0.49 & 0.97 \cr
+\bottomrule
+\end{tabular}
+	
+
+	\
+	
+	
+	\item {\bf Immediately dispatch ambulances to crashes with at least a 50\% probability of needing one, {\it i.e.} mPrec = 0.50 }  
+	
+	\
+	
+\begin{tabular}{llllll}
+\toprule
+Model & p & $m$Prec & Prec & Rec & FP/P \cr
+\midrule
+BRFC & 0.78 & 0.5 & 0.64 & 0.23 & 0.13 \cr
+KBFC & 0.88 & 0.48 & 0.6 & 0.18 & 0.12 \cr
+BalBag & 0.88 & 0.49 & 0.6 & 0.16 & 0.11 \cr
+OBFC & 0.5 & 0.5 & 0.62 & 0.16 & 0.1 \cr
+AdaBoost & 0.8 & 0.5 & 0.56 & 0.08 & 0.07 \cr
+LogReg & 0.54 & 0.5 & 0.58 & 0.08 & 0.06 \cr
+RUSBoost & 0.87 & 0.5 & 0.57 & 0.08 & 0.06 \cr
+EEC & 0.92 & 0.5 & 0.52 & 0.06 & 0.05 \cr
+\bottomrule
+\end{tabular}
+\end{enumerate}
+
+%%%
+\subsection{Comparing Models over Three Sets of Features}
+
+I ran the models on three sets of features.  You can think of them as ``Easy, Medium, and Hard'' or ``Cheap, Moderate, and Expensive.''  
+
+\begin{description}
+	\item [Easy] The Easy features are the information the dispatchers already have (including time of day, day of week, weather) plus a bit of information from the location (like whether it's on an interstate highway).  
+	\item [Medium]	The Medium features add more detailed information about the location (like whether it's at an intersection or a parking lot) and a bit about the user of the phone (like age and sex).  
+	\item [Hard] The Hard features add really detailed information about the location (like whether it's in a work zone), correlates phone user information from the cell service provider with government and insurance records on vehicle ownership to guess at the kind of vehicle involved, and correlates multiple simultaneous notifications from the same location to guess at the number of people involved and whether it's a school bus.  Getting the ``hard'' features may also pose privacy issues.  
+\end{description}
+
+Political decision makers can use the differences in the model results to decide whether to invest in the infrastructure to get the more expensive levels of data in real time.  
+
+Future work could give better detail by going through each feature, ranking how much it would cost to get that data and how much that feature would contribute to the quality of the model.  
+
+\
+
+\begin{enumerate}
+	\item {\bf Send up to 5\% more ambulances, {\it i.e.} FP/P = 0.05}  
+	
+	\
+	
+\begin{tabular}{lllllll}
+\toprule
+Features & Model & p & $m$Prec & Prec & Rec & FP/P \cr
+\midrule
+Easy & BRFC & 0.96 & 0.36 & 0.43 & 0.05 & 0.06 \cr
+Medium & BRFC & 0.91 & 0.5 & 0.57 & 0.07 & 0.05 \cr
+Hard & BRFC & 0.88 & 0.62 & 0.71 & 0.13 & 0.05 \cr
+\bottomrule
+\end{tabular}
+
+\
+
+Recall goes from 5\% to 13\% of needed ambulances being dispatched immediately.
+	
+
+	\
+	
+	\item {\bf Immediately dispatch a total of two unneeded ambulances for each needed ambulance, {\it i.e.} Precision = 1/(2+1) = 1/3.}
+	
+	
+	\
+	
+\begin{tabular}{lllllll}
+\toprule
+Features & Model & p & $m$Prec & Prec & Rec & FP/P \cr
+\midrule
+Easy & BRFC & 0.79 & 0.28 & 0.33 & 0.2 & 0.41 \cr
+Medium & BRFC & 0.59 & 0.21 & 0.33 & 0.51 & 1.02 \cr
+Hard & BRFC & 0.5 & 0.16 & 0.34 & 0.72 & 1.42 \cr
+\bottomrule
+\end{tabular}
+
+\
+
+Recall goes from 20\% to 72\% of needed ambulances being dispatched immediately, but with the total number of ambulances being sent to crashes increasing 40\% to 142\%, which may not be possible in the budgeting process.  
+	
+
+	\
+	
+	
+	\item {\bf Immediately dispatch ambulances to crashes with at least a 50\% probability of needing one, {\it i.e.} mPrec = 0.50 }  
+	
+	\
+	
+\begin{tabular}{lllllll}
+\toprule
+Features & Model & p & $m$Prec & Prec & Rec & FP/P \cr
+\midrule
+Easy & EEC & 0.83 & 0.44 & 0.32 & 0.07 & 0.15 \cr
+Medium & KBFC & 0.73 & 0.5 & 0.54 & 0.08 & 0.07 \cr
+Hard & BRFC & 0.78 & 0.5 & 0.64 & 0.23 & 0.13 \cr
+\bottomrule
+\end{tabular}
+\end{enumerate}
+
+Recall goes from 7\% to 23\% of needed ambulances being dispatched immediately.  Going from Easy to Medium does not significantly increase the recall, but it does decrease the ambulance cost, with the percentage of additional ambulances being sent to crashes going from 15\% to 7\%.  
+
+	
+
+
+
+
+
+
+
+

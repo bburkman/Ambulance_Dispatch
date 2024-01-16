@@ -1,0 +1,14 @@
+Need a slide/page of introduction to Transportation Research Part C: Emerging Technologies
+
+Have a slide on how I chose the papers to cite:  Original paper for techniques, then recent papers in crash analysis lit that used the techniques.  
+
+Paper:  Have list of acronyms.  Even if we don't put in a list of algorithms, make sure the paper tells, in each section, what they mean before using them.
+
+Add to the lit review the crash articles that use different metrics.  Need section in paper on metrics in crash analysis journals.
+
+% Make prospectus paper the technical paper.
+
+
+Go through weekly reports and find good stuff.
+
+

@@ -1,0 +1,384 @@
+%% 
+%% Copyright 2019-2021 Elsevier Ltd
+%% 
+%% This file is part of the 'CAS Bundle'.
+%% --------------------------------------
+%% 
+%% It may be distributed under the conditions of the LaTeX Project Public
+%% License, either version 1.2 of this license or (at your option) any
+%% later version.  The latest version of this license is in
+%%    http://www.latex-project.org/lppl.txt
+%% and version 1.2 or later is part of all distributions of LaTeX
+%% version 1999/12/01 or later.
+%% 
+%% The list of all files belonging to the 'CAS Bundle' is
+%% given in the file `manifest.txt'.
+%% 
+%% Template article for cas-dc documentclass for 
+%% double column output.
+
+\documentclass[fleqn]{cas-sc}
+
+\usepackage{lipsum}
+\usepackage{tikz}
+\usetikzlibrary{shapes, snakes, calc}
+
+% If the frontmatter runs over more than one page
+% use the longmktitle option.
+
+%\documentclass[a4paper,fleqn,longmktitle]{cas-dc}
+
+%\usepackage[numbers]{natbib}
+%\usepackage[authoryear]{natbib}
+\usepackage[authoryear,longnamesfirst]{natbib}
+
+%%%Author macros
+\def\tsc#1{\csdef{#1}{\textsc{\lowercase{#1}}\xspace}}
+\tsc{WGM}
+\tsc{QE}
+%%%
+
+% Uncomment and use as if needed
+%\newtheorem{theorem}{Theorem}
+%\newtheorem{lemma}[theorem]{Lemma}
+%\newdefinition{rmk}{Remark}
+%\newproof{pf}{Proof}
+%\newproof{pot}{Proof of Theorem \ref{thm}}
+
+\begin{document}
+\let\WriteBookmarks\relax
+\def\floatpagepagefraction{1}
+\def\textpagefraction{.001}
+
+% Short title
+\shorttitle{Ambulance Dispatch}    
+
+% Short author
+%\shortauthors{Burkman, Jin, Abuhijleh, and Sun}  
+\shortauthors{First, Second, Third, Fourth}  
+
+% Main title of the paper
+\title [mode = title]{Modeling the Need for an Ambulance based on Automated Crash Reports from iPhones}  
+
+% Title footnote mark
+% eg: \tnotemark[1]
+%\tnotemark[<tnote number>] 
+%\tnotemark[1] 
+
+% Title footnote 1.
+% eg: \tnotetext[1]{Title footnote text}
+%\tnotetext[1]{Working Title} 
+
+% First author
+%
+% Options: Use if required
+% eg: \author[1,3]{Author Name}[type=editor,
+%       style=chinese,
+%       auid=000,
+%       bioid=1,
+%       prefix=Sir,
+%       orcid=0000-0000-0000-0000,
+%       facebook=<facebook id>,
+%       twitter=<twitter id>,
+%       linkedin=<linkedin id>,
+%       gplus=<gplus id>]
+
+%\author[<aff no>]{<author name>}[<options>]
+%\author[1,2]{J. Bradford Burkman}[]
+\author[1,2]{First Author}[]
+% Footnote of the first author
+%\fnmark[1]
+% Corresponding author indication
+%\cormark[1]
+% Email id of the first author
+%\ead{bradburkman@gmail.com}
+\ead{FirstAuthor@gmail.com}
+% URL of the first author
+%\ead[url]{http://www.github.com/bburkman}
+
+% Credit authorship
+% eg: \credit{Conceptualization of this study, Methodology, Software}
+% Options: conceptualization; data curation; formal analysis; funding acquisition; investigation; methodology; project administration; resources; software; supervision; validation; visualization; writing – original draft; and writing – review and editing.
+\credit{Conceptualization, Investigation, Writing - original draft, Visualization}
+
+
+%\author[1]{Miao Jin}[]
+\author[1]{Second Author}[]
+\credit{Supervision, Methodology, Writing - review and editing}
+
+%\author[1,3]{Malek Abuhijleh}[]
+\author[1,3]{Third Author}[]
+\credit{Investigation, Methodology}
+
+%\author[3]{Xiaoduan Sun}[]
+\author[3]{Fourth Author}[]
+\credit{Data curation, Writing - review and editing}
+
+
+
+
+
+
+%\affiliation[1]{organization={School of Computing and Informatics, University of Louisiana at Lafayette},
+\affiliation[1]{organization={School, University},
+%            addressline={301 E. Lewis St}, 
+%            city={Lafayette},
+%          citysep={}, % Uncomment if no comma needed between city and postcode
+%            state={LA},
+%            postcode={70503}, 
+%            country={USA}
+            }
+
+% Address/affiliation
+%\affiliation[2]{organization={Louisiana School for Math, Science, and the Arts},
+\affiliation[2]{organization={Other School},
+%            addressline={715 University Pkwy}, 
+%            city={Natchitoches},
+%          citysep={}, % Uncomment if no comma needed between city and postcode
+%            state={LA},
+%            postcode={71457}, 
+%            country={USA}
+            }
+
+%\affiliation[3]{organization={Department of Civil Engineering, University of Louisiana at Lafayette},
+\affiliation[3]{organization={Other Department, University},
+%            addressline={131 Rex St}, 
+%            city={Lafayette},
+%          citysep={}, % Uncomment if no comma needed between city and postcode
+%            state={LA},
+%            postcode={70504}, 
+%            country={USA}
+            }
+
+
+
+
+% For a title note without a number/mark
+%\nonumnote{}
+
+% Here goes the abstract
+\begin{abstract}
+%%%%% Abstract
+% I found an abstract in TRpC June 2022 with 365 words.
+%Put abstract here.
+%%%%% Abstract
+% I found an abstract in TRpC June 2022 with 365 words.
+New Google Pixel phones can automatically notify police if the phone detects the deceleration profile of a crash.  From the data available from such an automatic notification, can we build a machine-learning model that will recommend whether police should immediately, perhaps automatically, dispatch an ambulance?  If the injuries are serious, time to medical care is critical, but few crashes result in serious injuries, and ambulances are in limited supply and expensive.  Such a model will not be perfect, with many false positives (sending an ambulance when one is not needed) and some false negatives (not sending an ambulance when one is needed), but better than random.  How much better depends on several things that we will investigate.
+
+A key idea underlying this analysis is that the costs of the false positives and false negatives are very different.  The cost of sending an ambulance when one is not needed is measured in dollars, but the cost of not sending an ambulance when one is needed is measured in lives.  We propose a way to interpret class weights as the ethical rate of tradeoff.
+
+We will show that the quality of the model depends mostly on what information is available to inform the decision of whether to immediately dispatch an ambulance.  Whether a model is ``good'' is partly a political question, weighing prompt medical care against its high cost, but given a parameter $p$ of how to weigh those costs, we can build that tradeoff into the model.
+
+%We will show that the quality of the model depends mostly on what information is available to inform the decision of whether to immediately dispatch an ambulance.  Some information (location, time of day, day of week, weather) either come with the report or are known beforehand.  Other information (age and sex of phone's primary user, vehicle likely to be driven by that person) may be very helpful in making the decision to send the ambulance, but getting that information would require instantaneous communication between private and public databases.  Being able to interpret the location (is that precise location inside an intersection with high speed limits?) in real time would require planning and preparation.  Implementing such a system would require budgets, cooperation, privacy concerns, and probably legislation, but knowing which data is most useful can help set priorities.  
+
+We used the data of the Crash Report Sampling System (CRSS).% from the US Department of Transportation (DOT)'s National Highway Transportation Safety Administration (NHTSA) \cite{CRSS}.  
+This data is freely available online.  We have applied new methods (for this dataset in the literature) to handle missing data, and we have investigated several methods for handling the data imbalance.  To promote discussion and future research, we have included all of the code we used in our analysis.  
+%\vskip 1in
+
+\end{abstract}
+
+% Use if graphical abstract is present
+%\begin{graphicalabstract}
+%\includegraphics{}
+%\end{graphicalabstract}
+
+% Research highlights
+\begin{highlights}
+	\item  Supports transferability and benchmarking of different approaches on a public large-scale dataset.  We have attached the code we used to perform the analysis on the Crash Report Sampling System.  
+	\item Novel Application motivated by Emerging Technology:  Machine Learning Classification Models for Dispatching Ambulances based on Automated Crash Reports
+	\item New Use of Dataset:  Used Crash Report Sampling System (CRSS), which has imputed missing values for some features, but not all of the ones we wanted to use.  For the first time we have seen, we used the software the CRSS authors use for multiple imputation (IVEware) to impute missing values in more features.  
+	\item Perennial Machine Learning Challenge:  Imbalanced Datasets.
+\end{highlights}
+
+% Keywords
+% Each keyword is seperated by \sep
+\begin{keywords}
+ \sep Automated crash notification \sep Ambulance dispatch \sep Emergency medical services  \sep Machine learning \sep Imbalanced Data \sep Imputation
+\end{keywords}
+
+\maketitle
+
+% Main text
+
+%%%%%
+%
+% To Do
+%
+% Say we took out the pedestrians
+% Fix my explanation of ROC curves in the Model Evaluation section
+%
+%%%%%
+
+%%%%% Introduction
+\section{Introduction}\label{What does the label do?}
+
+\begin{comment}
+	Notes from 5/16/22 meeting with Dr. Jin:
+		I Motivation - Good, needs more material
+		II Analyze Difficulty in Solving Problem
+		III ML/Data Analysis
+			Tradeoffs
+			Limits of Methods
+		IV Plan
+		
+		Mention overlaps with other work
+\end{comment}
+
+%\input{Intro_Motivation}
+%\input{Intro_Difficulty}
+%\input{Intro_Challenges}
+%\input{Intro_Imbalanced_Data}
+%\input{Intro_Plan}
+
+%%%%% Lit Review
+\section{Literature Review}
+\input{Lit_Rev_Apps}
+\input{Lit_Rev_Imbalanced_Data}
+\input{Lit_Rev_Imb_Data_Level_Techniques}
+\input{Lit_Rev_Imb_Modify_Loss}
+\input{Lit_Rev_Imb_Algorithm_Level}
+\input{Lit_Rev_Imb_Metric}
+\input{Lit_Rev_Imb_Crash_Analysis}
+
+%%%%% Datasets
+%\input{Datasets_Intro}
+%\input{Datasets_CRSS_Imputation}
+
+%%%%% Methods
+% Methods
+%	Dataset
+%	Preparing the Data:  Imputing Missing Values
+% 		Feature Selection
+% 		Binning and Imputing:  Order of Operations
+%		Binning
+%			Correlation to Hospital
+%		Imputing
+%			IVEware
+%			Impute to Mode
+%			Random Forest
+%	Feature Selection
+%		Minimal
+%		Inexpensive
+%		Expensive
+%	Handling Imbalanced Data
+%		
+%
+%
+%
+%
+%
+
+\input{Methods_Intro}
+\input{Methods_Dataset_Overview}
+\input{Methods_Data_Prep}
+\input{Methods_Feature_Selection}
+
+%\input{Methods_Feature_Binning}
+\input{Methods_Feature_Engineering}
+\input{Methods_Data_Imbalance}
+%\input{Methods_Model_Building}
+\input{Methods_Class_Weights_Ethical_Tradeoff}
+\input{Methods_ROC_Ethical_Tradeoff}
+\input{Methods_Model_Evaluation_Technical}
+\input{Methods_Model_Evaluation_Ethical}
+
+%%%%% Results
+\section{Results}
+\input{Results}
+
+%%%%% Conclusions
+\section{Conclusions}
+
+%%%%%
+\section{Discussion}
+
+%%%%% Future Work
+\section{Future Work}
+
+%%%%%
+\section*{Funding Statement}
+
+%%%%% Conflict of Interest
+\section*{Conflict of Interest}
+
+The authors have no relevant financial or non-financial interests to disclose.
+
+%%%%% Acknowledgements
+\section*{Acknowledgements}
+
+%George Broussard 
+[STUDENT]
+contributed to this work in the 
+[FUNDED PROGRAM]
+%NSF Research Experiences for Undergraduates program.
+
+%%%%% Data Availability
+\section*{Data Availability}
+
+The CRSS data is publicly available at 
+
+\url{https://www.nhtsa.gov/crash-data-systems/crash-report-sampling-system}
+
+
+\begin{comment}
+% Figure
+\begin{figure}[<options>]
+	\centering
+		\includegraphics[<options>]{}
+	  \caption{}\label{fig1}
+\end{figure}
+
+
+\begin{table}[<options>]
+\caption{}\label{tbl1}
+\begin{tabular*}{\tblwidth}{@{}LL@{}}
+\toprule
+  &  \\ % Table header row
+\midrule
+ & \\
+ & \\
+ & \\
+ & \\
+\bottomrule
+\end{tabular*}
+\end{table}
+\end{comment}
+
+% Uncomment and use as the case may be
+%\begin{theorem} 
+%\end{theorem}
+
+% Uncomment and use as the case may be
+%\begin{lemma} 
+%\end{lemma}
+
+%% The Appendices part is started with the command \appendix;
+%% appendix sections are then done as normal sections
+%% \appendix
+
+\section{}\label{}
+
+% To print the credit authorship contribution details
+\printcredits
+
+%% Loading bibliography style file
+%\bibliographystyle{model1-num-names}
+\bibliographystyle{cas-model2-names}
+
+% Loading bibliography database
+\bibliography{Paper_Summer_2022.bib}
+
+
+\begin{comment}
+% Biography
+\bio{}
+% Here goes the biography details.
+\endbio
+
+\bio{pic1}
+% Here goes the biography details.
+\endbio
+\end{comment}
+
+\end{document}
+

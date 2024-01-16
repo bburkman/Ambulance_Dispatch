@@ -1,0 +1,187 @@
+%%%
+\subsection{Model Evaluation:  Baselines for Comparison}
+
+
+In the supervised learning method we used here, for each of the $\approx 600,000$ samples (people) in the dataset, we know the answer (the {\it label} or {\it ground truth}) to the question, whether the person needed an ambulance, $y=0$ for ``no'' and $y=1$ for ``yes.''  We are trying use historical data to build a model to predict the label for new data (incoming automated crash notifications).
+
+The binary classification models we used return, for each sample, a continuous probability $p \in (0,1)$ that the sample belongs in the positive class.   If a sample has $p = 0.1$, the model is 90\% confident that this sample is in the negative class.   We then pick a threshold, usually but not necessarily 0.5, and make a binary prediction, that samples with $p > 0.5$ need an ambulance, and those with $p < 0.5$ do not.   (What happens if $p=0.50000000000000000$ would apply to negligibly few samples, so which way it goes does not matter.) The {\it loss function} used by the model is the sum not of how many binary predictions were incorrect, but how strongly incorrect the continuous predictions were.  If the prediction for a sample is $p = 0.3$ and the label is $y=0$, then the loss for that sample is $0.3$, but if its label were $y=1$, then the loss would be $0.7$.  
+
+A perfect model would not only predict each sample's label correctly, but would do it with perfect certainty.  In the real world, with interesting questions about real data, we will have false positives ($y=0$ and $p>0.5$) and false negatives ($y=1$ and $p<0.5$), but we hope those are few, and that the predictions are strongly correct, meaning the predictions are close to their labels.
+
+When we get results for our models based on crash data, we need some frame of reference for what is ``good'' and ``bad,'' so we have created some sets of entirely artificial results using a gamma distribution for ideal results and a uniform distribution for awful results.  
+
+The histogram below of the percent of samples with predictions $p$ in each range illustrates the best results we can hope for in the real world.  The positive class is small because the data is imbalanced. about 15\% of the dataset, as in our CRSS data.  There are some false positives and negatives, but the overwhelming majority of the predictions are correct, and most with strong confidence.  
+
+The Receiver Operating Characteristic (ROC) is a parameterized curve following the probability threshold from $p=0$ to $p=1$, plotting the true positive rate (TPR) versus the false positive rate (FPR).  The Area Under the ROC curve (AUC) is often used to compare two models, with AUC of 1 indicating perfect prediction and AUC of 0.5 indicating no discernable pattern.  
+
+We have added to the typical ROC curve two labels, one for the positive and one for the negative class, of the median of the probabilities of the samples in that class.  T%he further apart those numbers are, the more robust the model.
+%We have added to the typical ROC curve the quartiles of the probabilities $p \in (0,1)$ of all of the samples to hint at the distribution and illustrate that the curve starts at $p=0$ in the upper right and goes to $p=1$ in the lower left.  A smaller number for the first quartile would correspond to more confidence in the model's predictions of the negative class.  Interpreting the other two numbers requires considering the class imbalance.  
+
+\begin{tabular}{p{0.5\textwidth} p{0.5\textwidth}}
+  \vspace{0pt} \input{Ideal_Pred.pgf}
+  &
+  \vspace{0pt} \input{Ideal_ROC.pgf}
+\end{tabular}
+
+
+The {\it confusion matrix} for this ideal data set, here given as percentages of the entire dataset, shows few false positives and false negatives.  The metrics below are the ones we will watch when evaluating models.  Each of them tells a different story about what the model does well.
+
+
+\begin{center}
+\begin{tabular}{cc}
+\begin{tabular}{cc|c|c|}
+	&\multicolumn{1}{c}{}& \multicolumn{2}{c}{Prediction} \cr
+	&\multicolumn{1}{c}{} & \multicolumn{1}{c}{N} & \multicolumn{1}{c}{P} \cr\cline{3-4}
+	\multirow{2}{*}{Actual}&N & 67.0\% & 18.7\% \vrule width 0pt height 10pt depth 2pt \cr\cline{3-4}
+	&P & 3.03\% & 11.3\% \vrule width 0pt height 10pt depth 2pt \cr\cline{3-4}
+\end{tabular}
+&
+\begin{tabular}{ll}
+0.783 & Accuracy \cr 
+0.785 & Balanced Accuracy \cr 
+0.376 & Precision \cr 
+0.783 & Balanced Precision \cr 
+0.788 & Recall \cr 
+0.509 & F1 \cr 
+0.785 & Balanced F1 \cr 
+0.542 & Gmean \cr 	\end{tabular}
+\end{tabular}
+\end{center}
+
+%%%%%
+If we do not address the data imbalance, the model building algorithm will maximize accuracy by classifying most (or all) of the samples as ``No Ambulance'' with $p < 0.5$  We built the artificial results below by multiplying the probabilities in the above results by $0.5$.  Note that the Area Under the Curve (AUC) did not change.  
+
+\begin{center}
+\begin{tabular}{p{0.5\textwidth} p{0.5\textwidth}}
+  \vspace{0pt} \input{Ideal_50_Pred.pgf}
+  &
+  \vspace{0pt} \input{Ideal_50_ROC.pgf}
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}{cc}
+\begin{tabular}{cc|c|c|}
+	&\multicolumn{1}{c}{}& \multicolumn{2}{c}{Prediction} \cr
+	&\multicolumn{1}{c}{} & \multicolumn{1}{c}{N} & \multicolumn{1}{c}{P} \cr\cline{3-4}
+	\multirow{2}{*}{Actual}&N & 85.7\% & 0.0\% \vrule width 0pt height 10pt depth 2pt \cr\cline{3-4}
+	&P & 14.3\% & 0.0\% \vrule width 0pt height 10pt depth 2pt \cr\cline{3-4}
+\end{tabular}
+&
+\begin{tabular}{ll}
+0.857 & Accuracy \cr 
+0.500 & Balanced Accuracy \cr 
+0.000 & Precision \cr 
+0.000 & Balanced Precision \cr 
+0.000 & Recall \cr 
+0.000 & F1 \cr 
+0.000 & Balanced F1 \cr 
+0.000 & Gmean \cr 
+	\end{tabular}
+\end{tabular}
+\end{center}
+
+%%%%%
+Such a recommendation system (``Never send an ambulance'') would be useless, but note that the distribution still separates the negative and positive classes, just not at $p=0.5$.  We can fix that in two ways; the first is to shift the distribution to be centered at $p=0.5$.  By ``centered,'' we mean that the average of the medians of the negative and positive classes (the 0.107 and 0.293 on the ROC curve above) will now be 0.5.  Further research can explore whether centering the distribution at the $p=0.5$ threshold or another value of $p$ is most useful.  
+
+\begin{center}
+\begin{tabular}{p{0.5\textwidth} p{0.5\textwidth}}
+  \vspace{0pt} \input{Ideal_50_Shifted_Pred.pgf}
+  &
+  \vspace{0pt} \input{Ideal_50_Shifted_ROC.pgf}
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}{cc}
+\begin{tabular}{cc|c|c|}
+	&\multicolumn{1}{c}{}& \multicolumn{2}{c}{Prediction} \cr
+	&\multicolumn{1}{c}{} & \multicolumn{1}{c}{N} & \multicolumn{1}{c}{P} \cr\cline{3-4}
+	\multirow{2}{*}{Actual}&N & 67.2\% & 18.5\% \vrule width 0pt height 10pt depth 2pt \cr\cline{3-4}
+	&P & 3.06\% & 11.22\% \vrule width 0pt height 10pt depth 2pt \cr\cline{3-4}
+\end{tabular}
+&
+\begin{tabular}{ll}
+0.784 & Accuracy \cr 
+0.785 & Balanced Accuracy \cr 
+0.377 & Precision \cr 
+0.784 & Balanced Precision \cr 
+0.786 & Recall \cr 
+0.510 & F1 \cr 
+0.785 & Balanced F1 \cr 
+0.543 & Gmean \cr 	\end{tabular}
+\end{tabular}
+\end{center}
+
+Another way is to linearly transform the probabilities.   Whether the distribution was clustered to the left or right, or clustered at the center, is not necessarily relevant, so we want to see it spread out.  We have arbitrarily chosen a transformation to put next the original models in our results to see if it will make a better model; tuning the transformation is an avenue for future work.  We have chosen to take the 0.05 quantile of the negative class and map it to $p=0.05$, and the 0.95 quantile of the positive class and map it to $p=0.95$.  This linear transformation gives the same metrics as the shift, and the ROC curve is the same except for the two labeled medians, now at 0.305 and 0.688.
+
+\begin{center}
+\begin{tabular}{p{0.5\textwidth} p{0.5\textwidth}}
+  \vspace{0pt} \input{Ideal_50_Linear_Transform_Pred.pgf}
+  &
+  \vspace{0pt} \input{Ideal_50_Linear_Transform_ROC.pgf}
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}{cc}
+\begin{tabular}{cc|c|c|}
+	&\multicolumn{1}{c}{}& \multicolumn{2}{c}{Prediction} \cr
+	&\multicolumn{1}{c}{} & \multicolumn{1}{c}{N} & \multicolumn{1}{c}{P} \cr\cline{3-4}
+	\multirow{2}{*}{Actual}&N & 67.5\% & 18.2\% \vrule width 0pt height 10pt depth 2pt \cr\cline{3-4}
+	&P & 3.11\% & 11.2\% \vrule width 0pt height 10pt depth 2pt \cr\cline{3-4}
+\end{tabular}
+&
+\begin{tabular}{ll}
+0.787 & Accuracy \cr 
+0.785 & Balanced Accuracy \cr 
+0.380 & Precision \cr 
+0.786 & Balanced Precision \cr 
+0.782 & Recall \cr 
+0.512 & F1 \cr 
+0.784 & Balanced F1 \cr 
+0.547 & Gmean \cr 
+	\end{tabular}
+\end{tabular}
+\end{center}
+
+
+
+
+%%%%%
+In the ideal results above, the algorithm learned a useful model from the patterns in the data.  The results below illustrate the worst case scenario, where the algorithm does not learn a good model, usually because the data does not have a pattern that predicts the target variable.  In the ROC curve, the median values of the probabilities for the two classes are so close that the labels are on top of each other.  
+
+\begin{center}
+\begin{tabular}{p{0.5\textwidth} p{0.5\textwidth}}
+  \vspace{0pt} \input{Awful_Pred.pgf}
+  &
+  \vspace{0pt} \input{Awful_ROC.pgf}
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}{cc}
+\begin{tabular}{cc|c|c|}
+	&\multicolumn{1}{c}{}& \multicolumn{2}{c}{Prediction} \cr
+	&\multicolumn{1}{c}{} & \multicolumn{1}{c}{N} & \multicolumn{1}{c}{P} \cr\cline{3-4}
+	\multirow{2}{*}{Actual}&N & 41.1\% & 44.6\% \vrule width 0pt height 10pt depth 2pt \cr\cline{3-4}
+	&P & 5.71\% & 8.57\% \vrule width 0pt height 10pt depth 2pt \cr\cline{3-4}
+\end{tabular}
+&
+\begin{tabular}{ll}
+0.497 & Accuracy \cr 
+0.540 & Balanced Accuracy \cr 
+0.161 & Precision \cr 
+0.536 & Balanced Precision \cr 
+0.600 & Recall \cr 
+0.254 & F1 \cr 
+0.566 & Balanced F1 \cr 
+0.278 & Gmean \cr 	\end{tabular}
+\end{tabular}
+\end{center}
+
+
+
+
+
+

@@ -1,0 +1,5 @@
+[0] Config.pm:311> INFO - This is Biber 2.16
+[10] Config.pm:314> INFO - Logfile is 'Burkman_Prospectus_Short.blg'
+[65] biber-darwin:340> INFO - === Wed Nov  2, 2022, 14:23:40
+[81] Biber.pm:415> INFO - Reading 'Burkman_Prospectus_Short.bcf'
+[146] Utils.pm:395> WARN - No data sources defined!

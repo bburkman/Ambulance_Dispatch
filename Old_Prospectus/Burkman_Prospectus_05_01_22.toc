@@ -1,0 +1,249 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Index}{5}{section*.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {0}To Do}{6}{chapter.0}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {0.1}Topics Remaining}{6}{section.0.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {0.1.1}Big Items}{6}{subsection.0.1.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {0.1.2}Details}{6}{subsection.0.1.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {0.2}Plan}{6}{section.0.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {0.3}Paper Standards}{7}{section.0.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {0.4}Paper Outline Idea from 7/19/21 Report}{7}{section.0.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {1}Introduction}{9}{chapter.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.1}Problem}{9}{section.1.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.1.1}Application}{9}{subsection.1.1.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.1.2}Datasets}{9}{subsection.1.1.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.1.3}Imbalanced Data}{10}{subsection.1.1.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.1.4}Tradeoffs}{10}{subsection.1.1.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.2}Rationale}{10}{section.1.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {2}Lit Review: Crash Analysis}{11}{chapter.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.1}Journals}{11}{section.2.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.2}Articles using Similar Datasets}{13}{section.2.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.3}Articles on Imbalanced Crash Data}{13}{section.2.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.4}Ambulances}{13}{section.2.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.4.1}Ambulance Response Time}{13}{subsection.2.4.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.5}iPhone to Automatically Detect Crash and Call Emergency Services}{14}{section.2.5}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.6}Weather}{15}{section.2.6}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.7}Lagniappe}{15}{section.2.7}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.8}Significant Authors}{15}{section.2.8}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.9}TR\_C Articles on Machine Learning}{16}{section.2.9}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.9.1}Application of articles whose keywords contain {\it machine learning}, {\it deep learning}, or {\it reinforcement learing}}{16}{subsection.2.9.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.9.2}Articles whose abstracts refer to imbalanced data}{18}{subsection.2.9.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.9.3}Crashes}{18}{subsection.2.9.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {3}Lit Review: Data Cleaning}{19}{chapter.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.1}Cleaning Techniques Used in Crash Analysis Studies}{19}{section.3.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {4}Lit Review: Methods for Imbalanced Data}{20}{chapter.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.1}Algorithm Level Approaches}{20}{section.4.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.1.1}Some Papers}{20}{subsection.4.1.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.1.2}Genetic Algorithms}{20}{subsection.4.1.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.1.3}Subspace Model}{20}{subsection.4.1.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.2}Metrics}{21}{section.4.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.2.1}The Problem: Imbalanced Data Set}{21}{subsection.4.2.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.2.2}Standard Metrics}{21}{subsection.4.2.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.2.3}Balanced Precision and Balanced f1 in the Penalty Function}{22}{subsection.4.2.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.2.4}Balanced Precision in the Literature}{22}{subsection.4.2.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.2.5}Balanced Accuracy}{22}{subsection.4.2.5}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.2.6}Balanced Precision}{23}{subsection.4.2.6}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.2.7}Balancing Two Metrics: F1 and Gmean}{24}{subsection.4.2.7}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{F1 Metric}{24}{section*.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Gmean}{24}{section*.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.3}Loss Functions}{25}{section.4.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.3.1}Binary Cross-Entropy Loss Function}{25}{subsection.4.3.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.3.2}Class Weights and $\alpha $-weighted Loss}{25}{subsection.4.3.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.3.3}Oversampling}{26}{subsection.4.3.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.3.4}Naive Oversampling}{26}{subsection.4.3.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.3.5}Class Weights v/s Naive Oversampling: They're the Same}{26}{subsection.4.3.5}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.3.6}Focal Loss}{26}{subsection.4.3.6}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.3.7}Optimizing $F_\beta $}{27}{subsection.4.3.7}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.3.8}Tree-Based Methods}{27}{subsection.4.3.8}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.3.9}$\alpha $-weighted Binary Cross-Entropy Loss Function as Ethical Tradeoff}{27}{subsection.4.3.9}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Matrix}{28}{section*.5}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Switching between Binary and Continuous}{28}{section*.6}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Scenario}{29}{section*.7}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Binary $h_\theta $}{29}{section*.8}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Continuous $h_\theta $}{29}{section*.9}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Why are these equivalent?}{29}{section*.10}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Paper Focus}{30}{section*.11}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.4}Data Level Methods}{30}{section.4.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.4.1}Imbalanced Cleaning: Tomek and Condensed Nearest Neighbor}{30}{subsection.4.4.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.4.2}Tomek's Links}{30}{subsection.4.4.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Algorithm for Repeated Application of Tomek's Links}{31}{section*.12}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.4.3}Cleaning Multiclass Data}{32}{subsection.4.4.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.4.4}Oversampling}{32}{subsection.4.4.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.4.5}Underssampling}{32}{subsection.4.4.5}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.4.6}SMOTE: Synthetic Minority Oversampling TEchnique}{32}{subsection.4.4.6}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.4.7}Flavors of SMOTE}{33}{subsection.4.4.7}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.4.8}Train/Test Split}{34}{subsection.4.4.8}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.4.9}Feature Selection}{34}{subsection.4.4.9}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.5}Bagging and Boosting}{34}{section.4.5}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.6}Lit Review: Medium.com {\it Towards Data Science} Articles}{35}{section.4.6}%
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {5}Lit Review: Datasets}{36}{chapter.5}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.1}Crash Datasets}{36}{section.5.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.1.1}Jargon to Understand}{36}{subsection.5.1.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.1.2}IRB, SHRP Database}{37}{subsection.5.1.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.1.3}NGSIM Database}{37}{subsection.5.1.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.2}Datasets with Imbalanced Data}{37}{section.5.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.2.1}Datasets, Annotated}{37}{subsection.5.2.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.2.2}Articles using These Datasets}{37}{subsection.5.2.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.2.3}Database Repositories}{37}{subsection.5.2.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {6}Lit Review: Seminal and Interesting Papers}{38}{chapter.6}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6.1}Seminal Papers}{38}{section.6.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6.2}Review Papers}{38}{section.6.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.2.1}Chawla}{38}{subsection.6.2.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.2.2}Chabbouh 2019}{39}{subsection.6.2.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.2.3}Mahmudah 2021}{39}{subsection.6.2.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6.3}Examples of Good Writing, Models to Follow}{39}{section.6.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.3.1}Elassad 2020}{40}{subsection.6.3.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {7}Dataset}{41}{chapter.7}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {7.1}Overview}{41}{section.7.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {7.1.1}Misspellings}{41}{subsection.7.1.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {7.2}Properties}{41}{section.7.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {7.2.1}Boolean Nature of our Data}{41}{subsection.7.2.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {7.2.2}Top Twenty Features that Correlate with Fatality}{41}{subsection.7.2.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {7.3}Thoughts on our Data Set: Trees}{42}{section.7.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {7.4}Times}{42}{section.7.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {7.4.1}New Features}{42}{subsection.7.4.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {7.4.2}Dirty Data}{43}{subsection.7.4.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {7.4.3}Strange Data}{43}{subsection.7.4.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {7.4.4}Ambulance Call within/after 5 min after Crash}{43}{subsection.7.4.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {7.4.5}Hospitalized}{43}{subsection.7.4.5}%
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {8}Methods and Experimental Results To Date}{44}{chapter.8}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {8.1}scikit-learn}{44}{section.8.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {8.2}Focal Loss and Tomek}{44}{section.8.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {8.2.1}Different Values of $p$ with $\gamma _1=0$, $\gamma _2=0$}{45}{subsection.8.2.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {8.2.2}Fixed $p=88.8$, Different values of $\gamma _1$ and $\gamma _2$}{46}{subsection.8.2.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {8.2.3}Tomek}{46}{subsection.8.2.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {8.2.4}Discussion}{46}{subsection.8.2.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {8.3}Feature Engineering}{47}{section.8.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {8.3.1}Time of Day}{47}{subsection.8.3.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {8.3.2}Number of Fatalities/Injuries}{47}{subsection.8.3.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {8.3.3}Day of Week}{47}{subsection.8.3.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {8.3.4}Time of Day}{49}{subsection.8.3.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {8.3.5}Location}{50}{subsection.8.3.5}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {8.3.6}Parish/Road Names}{50}{subsection.8.3.6}%
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {9}Research Plan}{52}{chapter.9}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {9.1}Goals}{52}{section.9.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {9.2}Progress}{52}{section.9.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {9.3}Steps}{52}{section.9.3}%

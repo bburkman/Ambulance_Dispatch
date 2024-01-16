@@ -1,0 +1,7 @@
+%%%%%
+\subsection{Model Evaluation:  Incorporating Ethical Tradeoffs}
+
+In evaluating our models, the considerations are not just technical.  A false positive is a recommendation to send an ambulance when one is not needed, which costs money.   A false negative is a recommendation to not send an ambulance when one is needed, which costs lives.  
+
+Of the metrics we are watching, F1 and AUC seem most useful in discriminating ``better'' from ``worse'' models.  F1 is the harmonic mean of Precision (What proportion of the ambulances we sent were needed?) and Recall (What proportion of the ambulances needed did we send?), and reflects the discrete results.  AUC (Area Under the (ROC) Curve) quantifies the predictive power of the continuous results.  It is possible to introduce a parameter to weight the precision and recall parts of F1 if you can quantify how much more important one is than the other, but we had no way to choose that number.
+

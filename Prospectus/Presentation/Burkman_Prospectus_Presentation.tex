@@ -1,0 +1,196 @@
+\documentclass{beamer}
+\usepackage{array}
+\usepackage{mathtools}
+\usepackage[normalem]{ulem}
+%\usepackage{enumerate}
+%\usepackage{enumitem}
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usetikzlibrary{overlay-beamer-styles}
+\usetikzlibrary{positioning}
+\usetikzlibrary{shapes, shapes.geometric, positioning}
+\usetikzlibrary{calc,intersections}
+\usepackage{tkz-euclide}
+\usetikzlibrary{through}
+
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd{\beamer@sectionintoc}{\vskip1.5em}{\vskip0.8em}{}{}
+\makeatother
+
+\usepackage{pgfmath}
+\usepackage{pgfplots}
+
+
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{verbatim}
+\usepackage{arcs}
+\usepackage{setspace}
+\usepackage{hyperref}
+
+%\usepackage{enumerate}
+%\usepackage{enumitem}
+%\setlist{noitemsep}
+
+\usepackage{listings}
+\lstset{language=python}
+
+\usepackage{array, multirow, bigdelim}
+\usepackage{makeidx}
+
+\setbeamertemplate{navigation symbols}{}
+\usetheme{CambridgeUS}
+\usecolortheme{Vermillion}
+
+\usepackage{adjustbox}
+
+
+%\DeclareMathOperator*{\argmax}{argmax}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{white},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=t,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\AtBeginSection[] {
+    \begin{frame}%<beamer>{Outline}
+    \tableofcontents[currentsection, currentsubsection, subsectionstyle=show/show/hide]
+    \end{frame}
+}
+
+%\AtBeginSection[]{%
+%  \begin{frame}<beamer>
+%    \frametitle{Outline}
+%    \tableofcontents[sectionstyle=show/hide,subsectionstyle=show]
+%  \end{frame}
+%  \addtocounter{framenumber}{-1}% If you don't want them to affect the slide number
+%}
+
+%%%%%
+\title{Dissertation Prospectus}
+\author{Brad Burkman}
+\institute[LSMSA / UL]{Louisiana School for Math, Science, and the Arts \and University of Louisiana at Lafayette}
+\date{4 November 2022}
+
+
+\begin{document}
+\logo{\includegraphics[height=1.0cm]{AcademicHorizontal_0.jpg}\hspace{12pt}}
+\newcommand{\nologo}{\setbeamertemplate{logo}{}} 
+
+
+\begin{frame}[t]
+	\Large
+	\maketitle
+\end{frame}
+
+% TOC
+\begin{frame}[t]
+	\Large
+	\tableofcontents[hideallsubsections]
+\end{frame}
+
+\input{Problem_Overview}
+\input{My_Background}
+\input{Dissertation_Goals}
+\input{Deep_Dive}
+\input{Challenges}
+\input{Timeline}
+\input{Acknowledgements}
+
+
+\section{Questions}
+{\nologo
+\begin{frame}[t]
+	\frametitle{Questions?}
+\Large
+
+\begin{center}
+\includegraphics[height=2.1in]{LSMSACrest_solid.png}
+\includegraphics[height=2.2in]{Fleur_de_Lis.png}
+\end{center}
+\end{frame}
+}
+
+
+%%%%%%%%%%%%
+%
+% End
+%
+%%%%%%%%%%%
+
+\end{document}
+%%%%%%%%%
+%
+% Generic structures
+%
+%%%%%%%%%%%
+
+%%%
+\begin{frame}[t]
+	\frametitle{}
+\Large
+
+	\begin{itemize}
+		\item 
+	\end{itemize}
+
+\end{frame}
+%%%
+
+%%%
+\begin{frame}[t]
+	\frametitle{}
+\Large
+
+\end{frame}
+%%%
+
+\begin{enumerate}
+	\item 
+\end{enumerate}
+
+
+\begin{itemize}
+	\item 
+\end{itemize}
+
+
+\begin{tabular}{@{}rl}
+	Given: & \cr
+	Prove: & \cr
+\end{tabular}
+
+
+\begin{tikzpicture}[x=10mm, y=10mm]
+	\coordinate () at ();
+	\path () node [] {$$};
+\end{tikzpicture}
+
+
+\begin{tabular}{*5{@{\hspace{5pt}}>{$\displaystyle}r<{$\vrule width 0pt height 12pt depth 4pt}}}
+
+\end{tabular}
+

@@ -1,0 +1,57 @@
+This is BibTeX, Version 0.99d (TeX Live 2021)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: Test_BibTeX.aux
+The style file: IEEEannot.bst
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Database file #1: ../Bib_Files/Marginal.bib
+-- IEEEtranS.bst version 1.11 (2003/04/02) by Michael Shell.
+-- http://www.ctan.org/tex-archive/macros/latex/contrib/supported/IEEEtran/
+-- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
+** Sorting version - not for use with work to be submitted to the IEEE.
+
+Done.
+You've used 1 entry,
+            4480 wiz_defined-function locations,
+            885 strings with 8815 characters,
+and the built_in function-call counts, 1179 in all, are:
+= -- 93
+> -- 23
+< -- 10
++ -- 12
+- -- 4
+* -- 65
+:= -- 178
+add.period$ -- 2
+call.type$ -- 1
+change.case$ -- 6
+chr.to.int$ -- 27
+cite$ -- 1
+duplicate$ -- 68
+empty$ -- 89
+format.name$ -- 5
+if$ -- 258
+int.to.chr$ -- 0
+int.to.str$ -- 1
+missing$ -- 10
+newline$ -- 24
+num.names$ -- 2
+pop$ -- 25
+preamble$ -- 1
+purify$ -- 4
+quote$ -- 2
+skip$ -- 88
+stack$ -- 0
+substring$ -- 71
+swap$ -- 56
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 6
+type$ -- 9
+warning$ -- 0
+while$ -- 5
+width$ -- 2
+write$ -- 30

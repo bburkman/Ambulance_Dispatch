@@ -1,0 +1,296 @@
+% !TEX TS-program = pdflatexmk
+
+
+\documentclass[11pt, twopage, openright]{book}
+
+\usepackage[top=1in,bottom=1in,left=1in,right=1in]{geometry}
+
+\usepackage[
+%	notes,
+	backend=biber,
+%	isbn=false,
+%	annotation,
+%	notetype=endonly
+	]{biblatex}
+%\DeclareFieldFormat{addendum}{\paragraph\indent{\textbf{Suggestions for Future Research:}\addspace#1}\\}\DeclareFieldFormat{annotation}{\paragraph\indent{\textbf{Brad's Notes:}\addspace#1}\\}
+%\DeclareFieldFormat{institution}{\paragraph\indent{\textbf{Institution:}\addspace#1}\\}
+
+
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usetikzlibrary{shapes}
+\usetikzlibrary{patterns}
+\usetikzlibrary{positioning}
+\usetikzlibrary{decorations.pathmorphing}
+%\usetikzlibrary{patterns,positioning,decorations.pathmorphing,arrows,shapes
+\usetikzlibrary{fit}
+
+\usepackage{pgfmath}
+\usepackage[edges]{forest}
+
+\usepackage{setspace}
+\usepackage{amsmath}
+\usepackage{amsthm}
+	\newtheorem*{theorem}{Theorem}
+	\newtheorem*{lemma}{Lemma}
+	\newtheorem*{definition}{Definition}
+\usepackage{amssymb}
+
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{longtable}
+
+\usepackage{hyperref}
+\usepackage{xurl}
+\usepackage{enumerate}
+\usepackage{enumitem}
+\setlist{noitemsep}
+\usepackage{etoc}
+%\usepackage{etoolbox}
+%\makeatletter
+%\patchcmd{\chapter}{\if@openright\cleardoublepage\else\clearpage\fi}{}{}{}
+%\makeatother
+
+\usepackage{listings}
+\lstset{language=C}
+
+\usepackage{makeidx}
+\usepackage{verbatim}
+\usepackage{datetime}
+%\usepackage[strings]{underscore}
+\setcounter{tocdepth}{2}
+
+\usepackage[acronym]{glossaries}
+\glsdisablehyper
+\makeglossaries
+
+\setlength{\pdfpageheight}{11in}
+%\setlength{\textheight}{9in}
+%\setlength{\voffset}{-1in}
+%\setlength{\oddsidemargin}{0pt}
+%\setlength{\marginparsep}{0pt}
+%\setlength{\marginparwidth}{0pt}
+%\setlength{\marginparpush}{0pt}
+%\setlength{\textwidth}{6.5in}
+
+\def\sinline[#1]{ \ \tikz\draw[decorate,decoration={snake,amplitude=0.6mm, segment length=14pt},->] (0,0) -- (.6,0) node [midway, above] {#1}; \ }
+
+\pagestyle{plain}
+\makeindex
+
+\title{Prospectus Report:  Building a Model to Recommend Dispatching an Ambulance based on Automated Crash Reports from Cell Phones}
+\author{Brad Burkman}
+\newdateformat{vardate}{\THEDAY\ \monthname[\THEMONTH]\ \THEYEAR}
+\vardate
+\date{Updated \today}
+
+\addbibresource{../Bib_Files/TRpC_vol_098_140.bib}
+\addbibresource{../Bib_Files/AAP_vol_122_173.bib}
+\addbibresource{../Bib_Files/Medium_TDS_Citations.bib}
+\addbibresource{../Bib_Files/BibFile_Spring_2022.bib}
+\addbibresource{../Bib_Files/Ambulance.bib}
+\addbibresource{../Bib_Files/Paper_Summer_2022_Short.bib}
+
+% Tell BiBTeX to ignore the abstract.  
+\DeclareSourcemap{
+  \maps[datatype=bibtex]{
+    \map{
+      \step[fieldset=abstract, null]
+    }
+  }
+}
+
+
+\begin{document}
+\setlength{\parindent}{20pt}
+\begin{spacing}{1.2}
+\setcounter{chapter}{-1}
+
+
+\maketitle
+
+
+%%%%%
+%\chapter{One-Page Summary}
+\phantomsection
+\addcontentsline{toc}{chapter}{One Page Summary}
+\input{Intro/One_Page_Summary}
+
+\newpage
+\setcounter{tocdepth}{1}
+\tableofcontents
+\etocsettocstyle{}{}
+\setcounter{tocdepth}{4}
+
+%%%%%%%%%%%%%%%%%%
+% Index
+% Example of how to put something in the index:
+% This item will be listed as "Definition" under the heading of "Articulation Node."
+%		\index{Articulation Node!Definition}
+
+\newpage
+\phantomsection
+\addcontentsline{toc}{chapter}{Index}
+\printindex
+
+%%%%%
+%
+% Glossaries
+%
+%\newglossaryentry{formula}
+%{
+%        name=formula,
+%        description={A mathematical expression}
+%}
+%
+%\newacronym{gcd}{GCD}{Greatest Common Divisor}
+% Usage:
+% \Gls{gcd}
+% \gls{gcd}
+% \Glspl{gcd} Plural
+% \acrlong(gcd}
+% \acrshort{gcd}
+% \acrfull{gcd}
+
+\newacronym{crss}{CRSS}{Crash Report Sampling System}
+\newacronym{smote}{SMOTE}{Synthetic Minority Oversampling Technique}
+\newacronym{nhtsb}{NHTSB}{National Highway Transportation Safety Board}
+\newacronym{dot}{DOT}{Department of Transportation}
+\newacronym{nass ges}{NASS GES}{National Automotive Sampling System General Estimates System}
+\newacronym{shrp}{SHRP2}{Second Highway Research Program}
+\newacronym{iveware}{IVEware}{Imputation and Variance Estimation Software}
+\newacronym{smri}{SMRI}{Sequential Regression Multivariate Imputation}
+
+\glstoctrue
+\printglossary[type=\acronymtype]
+\printglossary
+
+%%%%%%%%%%
+
+%\newpage
+%\chapter{Notes to Self (Temp)}
+%\localtableofcontents\newpage
+%\input{Notes/To_Do}
+%\input{Notes/What_is_Prospectus}
+%\input{Notes/Paper_Standards}
+%\input{Notes/Outline}
+
+
+
+\newpage
+\chapter{Qualifications}
+\label{sec:Qualifications}
+\localtableofcontents\newpage
+\input{Intro/Graduation_Plan}
+\input{Intro/Previous_Work}
+
+%%%%%%%%%%
+\newpage
+\chapter{Introduction}
+\localtableofcontents\newpage
+\input{Intro/Problem}
+\input{Intro/Rationale}
+
+%%%%%%%%%%
+\newpage
+\chapter{Lit Review:  Crash Analysis}
+\localtableofcontents\newpage
+\input{Lit_Review/Crash_Analysis_Lit}
+%%%%%%%%%%
+%\newpage
+%\chapter{Lit Review:  Data Cleaning}
+%\localtableofcontents\newpage
+\input{Lit_Review/Cleaning}
+
+%%%%%%%%%%
+\newpage
+\chapter{Lit Review: Methods for Imbalanced Data}
+\label{sec:Lit_Review_Imbalanced}
+\localtableofcontents\newpage
+\input{Lit_Review/Algorithm_Level_Methods}
+\input{Lit_Review/Metrics}
+\input{Lit_Review/Loss_Functions}
+\input{Lit_Review/Data_Level_Methods}
+\input{Lit_Review/Bagging_and_Boosting}
+\input{Lit_Review/Lit_Medium_TDS}
+
+\input{Lit_Review/Seminal}
+\input{Lit_Review/Review_Papers}
+\input{Lit_Review/Good_Writing}
+
+%%%%%%%%%%
+\newpage
+\chapter{Lit Review:  Datasets}
+\localtableofcontents\newpage
+\input{Lit_Review/Datasets_Crash}
+\input{Lit_Review/Datasets_Imbalanced}
+
+%%%%%%%%%%
+%\newpage
+%\chapter{Lit Review:  Seminal and Interesting Papers}
+%\localtableofcontents\newpage
+%\input{Lit_Review/Seminal}
+%\input{Lit_Review/Review_Papers}
+%\input{Lit_Review/Good_Writing}
+
+%%%%%%%%%%
+\newpage
+\chapter{CRSS Dataset}
+\localtableofcontents\newpage
+\input{CRSS/CRSS_Overview}
+\input{CRSS/CRSS_Data_Files}
+\input{CRSS/CRSS_Features}
+\input{CRSS/CRSS_Binning}
+\input{CRSS/CRSS_Imputing}
+\input{CRSS/CRSS_Binning_and_Imputing}
+\input{CRSS/CRSS_Feature_Engineering}
+\input{CRSS/CRSS_Papers}
+
+%%%%%%%%%%
+\newpage
+\chapter{Louisiana Dataset}
+\localtableofcontents\newpage
+\input{Louisiana/Louisiana_Dataset_Overview}
+\input{Louisiana/Louisiana_Dataset_Properties}
+
+%%%%%%%%%%
+\newpage
+\chapter{Methods and Experimental Results To Date (Louisiana Dataset)}
+\localtableofcontents\newpage
+\input{Methods/Scikit-Learn}
+\input{Methods/Focal_Loss_and_Tomek}
+\input{Methods/Feature_Engineering}
+
+
+
+%%%%%%%%%%
+\newpage
+\chapter{Research Plan}
+\label{sec:Research_Plan}
+\localtableofcontents\newpage
+\input{Plan/Progress}
+\input{Plan/Goals}
+\input{Plan/Timeline}
+
+
+%%%%%
+\newpage
+\phantomsection
+\addcontentsline{toc}{chapter}{Bibliography}
+\printbibliography
+
+%%%%%%%%%%%%%%%%
+\end{spacing}
+\end{document}
+
+%%%%%%%%%%%%
+% Useful tools
+%%%%%%%%%
+
+\begin{lstlisting}
+Put your code here.
+\end{lstlisting}
+
+\lstinputlisting[language=python]{source_filename.py}
+
+

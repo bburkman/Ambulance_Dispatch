@@ -1,0 +1,15 @@
+,TN,FP,FN,TP,Recall,Precision,F1,,ROC,,
+Bagging_Before_Tomek,125633,25138,12475,14146,0.531384997,0.360095713,0.429284576,0.429,0.76,Bagging,0.429 & 0.76 & Bagging \cr
+AdaBoost_Before_Tomek_Linear_Transform,108133,42638,9298,17323,0.65072687,0.288904455,0.400152457,0.4,0.752,AdaBoost (Linear transformation),0.4 & 0.752 & AdaBoost (Linear transformation) \cr
+BRFC_Before_Tomek,119102,31669,13649,12972,0.487284475,0.290584888,0.364065,0.364,0.714,Balanced Random Forest,0.364 & 0.714 & Balanced Random Forest \cr
+AWBCE_class_weights_Before_Tomek,109166,41605,11959,14662,0.550768191,0.260579025,0.353778593,0.354,0.697,$\alpha$-weighted Binary Crossentropy with Class Weights,0.354 & 0.697 & $\alpha$-weighted Binary Crossentropy with Class Weights \cr
+AWBCE_class_weights_Before_Tomek_Linear_Transform,112677,38094,12746,13875,0.521205064,0.266986088,0.353098359,0.353,,,
+BFC_before_Tomek_alpha_equal_alpha_Linear_Transform,111533,39238,12521,14100,0.529657038,0.264351869,0.352680749,0.353,0.695,Binary Focal Crossentropy with Class Weights and $\gamma = 2.0$ (Linear Transformation),0.353 & 0.695 & Binary Focal Crossentropy with Class Weights and $\gamma = 2.0$ (Linear Transformation) \cr
+AWBCE_Weights_0_55_and_5_50_Before_Tomek_Linear_Transform,107543,43228,11819,14802,0.556027197,0.255074961,0.349718255,0.35,,,
+BFC_before_Tomek_Apply_Class_Balancing_Linear_Transform,116943,33828,13850,12771,0.479734045,0.274061675,0.348839115,0.349,,,
+BFC_before_Tomek_alpha_equal_alpha_gamma_0_0_Linear_Transform,126475,24296,16054,10567,0.396942264,0.303100708,0.343731703,0.344,,,
+AWBCE_Weights_1_0_and_1_0_Before_Tomek_Linear_Transform,124949,25822,15894,10727,0.402952556,0.293496402,0.339623239,0.34,,,
+BRFC_Before_Tomek_Linear_Transform,134347,16424,18475,8146,0.305999023,0.331542532,0.318259069,0.318,,,
+AWBCE_Weights_0_55_and_5_50_Before_Tomek,8346,142425,210,26411,0.992111491,0.156429908,0.270248699,0.27,,,
+AdaBoost_Before_Tomek,148358,2413,23995,2626,0.098643928,0.521135146,0.165887555,0.166,,,
+BFC_before_Tomek_alpha_equal_alpha,150769,2,26612,9,0.000338079,0.818181818,0.000675879,0.001,,,

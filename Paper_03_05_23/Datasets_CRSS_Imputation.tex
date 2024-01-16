@@ -1,0 +1,170 @@
+%%%%%
+\subsection{Imputing Missing Data}
+
+All data is dirty, with incorrect and missing values.  The CRSS dataset is reasonably correct in that only the values that should appear in a feature actually appear; for instance, a feature that should have numerical values does not have text values for a few samples.  For CRSS, we will not tackle the question of whether the values are correct, but most of the features have values that signify ``Missing'' or ``Unknown,'' and we want to impute values for those incomplete samples, using data in other features. 
+
+The methods for imputing those values are well developed.  If the feature were continuous numeric, we could use the Numpy, Pandas, and scikit-learn methods to replace missing values in a feature with the mean or median of that feature.  For categorical data, the same packages will impute the most common value in that feature.    
+
+In CRSS, the data is almost all categorical, and the data is so imbalanced that the most common value often corresponds to a minor crash with no injury.  To impute values using the most common value in the feature would make our dataset even more imbalanced.  For instance, of the 644,274 people in the dataset, 429,574 (67\%) of the people have ``No Apparent Injury,'' and 21,595 (3.3\%) are ``Unknown/Not Reported.''  Assigning the most common value in that feature to the missing elements would worsen the imbalance; a better method would build a model of the data and use the model to fill in the holes.  
+
+Scikit-learn does have an experimental multiple imputation method, but it only works for continuous data.  
+
+The CRSS authors used a Sequential Regression Multivariate Imputation (SRMI) method to impute missing data in some features, employing the implementation in the University of Michigan's ``IVEware:  Imputation and Variance Estimation Software''  \citep{IVEware}.  
+
+In \verb|SEX|, for instance, the samples attributes ``Not Reported'' and ``Reported as Unknown'' are assigned to either ``Male'' or ``Female'' in the feature \verb|SEX_IM|.
+
+\begin{center}
+\begin{tabular}{cr|r|r|}
+	&\multicolumn{1}{c}{}& \multicolumn{2}{c}{Imputed} \cr
+	&\multicolumn{1}{c}{} & \multicolumn{1}{c}{Male} & \multicolumn{1}{c}{Female} \cr\cline{3-4}
+	\multirow{4}{*}{Original}& Male & 339,365 & 0 \vrule width 0pt height 10pt depth 2pt \cr\cline{3-4}
+	&Female & 0 & 278,766 \vrule width 0pt height 10pt depth 2pt \cr\cline{3-4}
+	& Not Reported & 8,748 & 7,168 \vrule width 0pt height 10pt depth 2pt \cr\cline{3-4}
+	& Reported as Unknown & 5,799 & 4,428 \vrule width 0pt height 10pt depth 2pt \cr\cline{3-4}
+\end{tabular}
+\end{center}
+
+The CRSS authors did not impute missing values for all of the features, including some we want to use.  The reasons they gave for not imputing more features include wanting to be consistent with the features and methods in the predecessor to CRSS, the National Automotive Sampling System General Estimates System (NASS GES), 1998-2015, which also used IVEware's SRMI in 2011-2015
+\citep{CRSS_Imputation}.  Which features are imputed even changes from year to year, for instance with \verb|RELJCT1_IM| being discontinued in 2019 and brought back in 2020.  
+Wanting all of the features we were to use to have missing values imputed, we followed CRSS's methods to run IVEware ourselves on the data, using the features imputed by CRSS to check that our process was similar to theirs.  
+
+The table below gives the frequency of values in the \verb|INJ_SEV| feature.  The original values include ``9:  Unknown/Not Reported.''  The last two rows show the results from the CRSS authors' imputations, and our imputations trying to replicate their method.  
+
+\begin{tabular}{llrrrrrrr}
+\toprule
+INJ\_SEV Imputed &&       0 &      1 &      2 &      3 &     4 &     5 &   6 \\
+INJ\_SEV Original &&         &        &        &        &       &       &     \\
+\midrule
+No Apparent Injury  & 0       &  429574 &      0 &      0 &      0 &     0 &     0 &   0 \\
+Possible Injury & 1       &       0 &  95761 &      0 &      0 &     0 &     0 &   0 \\
+Suspected Minor Injury & 2       &       0 &      0 &  57299 &      0 &     0 &     0 &   0 \\
+Suspected Serious Injury & 3       &       0 &      0 &      0 &  32556 &     0 &     0 &   0 \\
+Fatal Injury & 4       &       0 &      0 &      0 &      0 &  5587 &     0 &   0 \\
+Injured, Severity Unknown & 5       &       0 &      0 &      0 &      0 &     0 &  1883 &   0 \\
+Died Prior to Crash & 6       &       0 &      0 &      0 &      0 &     0 &     0 &  19 \\
+Unknown/Not Reported & 9       &   14986 &   4065 &   1401 &    876 &   114 &   153 &   0 \\
+Unknown/Not Reported & 9       &   15423 &   3104 &   1777 &   1061 &   180 &    49 &   1 \\
+\bottomrule
+\end{tabular}
+
+
+
+Imputation methods are given on page 19 of the CRSS Analytical User's Manual and in the CRSS Imputation report.  The imputation report gives the model selection criteria used in IVEware, and we have used those in our work, particularly 10 cycles, the minimum marginal r-squared required for a predictor to be included in the model set to 0.01, and the maximum number of predictors in a model set to 15 (footnotes on pages 7 and 8).  
+
+Two feature's imputations are inexplicably different from the others, \verb|MAX_SEV|, the maximum injury severity in a crash, and \verb|NUM_INJ|, the number of people injured in the crash.  Not only are missing values imputed, but some other values are changed.  Another odd imputation is \verb|VEVENT_IM|, the imputed values of \verb|M_HARM|, the most harmful event.  Category 4, ``Gas Inhalation,'' does not appear any of the original samples, but three of the missing entries get imputed to that category.  Perhaps these samples were imputed by hand.  
+
+
+
+\begin{center}
+\begin{tabular}{cr*9{r|}}
+	\multicolumn{1}{c}{} &\multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{8}{c}{Imputed} \cr
+	&\multicolumn{1}{c}{Original} 
+		& \multicolumn{1}{c}{} 
+		& \multicolumn{1}{c}{0} 
+		& \multicolumn{1}{c}{1} 
+		& \multicolumn{1}{c}{2} 
+		& \multicolumn{1}{c}{3} 
+		& \multicolumn{1}{c}{4} 
+		& \multicolumn{1}{c}{5} 
+		& \multicolumn{1}{c}{6} 
+		& \multicolumn{1}{c}{8} 
+		\cr\cline{2-2}\cline{4-11}
+%	\multirow{4}{*}{Original} 
+& No Apparent Injury & 0    &      120,142  & 1,300 &   422 &  266  &  29  &  51 &  0  & 0 
+	 \vrule width 0pt height 10pt depth 2pt \cr\cline{4-11}
+	& Possible Injury & 1 &  0 & 58,392 &   222 &   125  &  16 &    0 &  0 &  0
+	 \vrule width 0pt height 10pt depth 2pt \cr\cline{4-11}
+	 & Suspected Minor Injury
+		 & 2 &   0  &    0 &  40,247  &   93  &  20 &    0 &  0 &  0
+	 \vrule width 0pt height 10pt depth 2pt \cr\cline{4-11}
+	 & Suspected Serious Injury & 
+              3 & 0  &    0  &    0 & 26,767  &   9 &    0 &  0 &  0
+	 \vrule width 0pt height 10pt depth 2pt \cr\cline{4-11}
+	& Fatal & 
+	4   &            0  &    0 &     0  &    0 & 5,115  &   0 &  0 &  0
+	 \vrule width 0pt height 10pt depth 2pt \cr\cline{4-11}
+	 & Injured, Severity Unknown 
+	& 5  &             0  &   16  &    6  &    2  &   1 & 1,250  & 0 &  0
+	 \vrule width 0pt height 10pt depth 2pt \cr\cline{4-11}
+	 & Died Prior to Crash
+	& 6       &        0  &    0  &    0   &   0  &   0   &  0 & 11  & 0
+	 \vrule width 0pt height 10pt depth 2pt \cr\cline{4-11}
+	& No Person Involved in Crash 	 
+	& 8    &           0  &    0  &    0  &    0  &   0  &   0 &  0 & 95
+	 \vrule width 0pt height 10pt depth 2pt \cr\cline{4-11}
+	 & Unknown/Not Reported 
+	& 9      &      2,859  &  887   & 383 &   290 &   38  &  23 &  0 &  0
+	 \vrule width 0pt height 10pt depth 2pt \cr\cline{4-11}
+\end{tabular}
+\end{center}
+
+We considered using \verb|MAX_SEV| as our target variable, but ended up not using it at all.  We instead decided to use \verb|HOSPITAL|, which ``identifies the mode of transportation to a hospital or medical facility provided for this person.''  Five of the values of that data element correspond to the person being transported to a hospital by some means, and the other four either not transported or unknown.  We binned it as in this chart.  
+
+\begin{center}
+\verb|HOSPITAL| Field in CRSS
+
+\
+
+\begin{tabular}{c| l  r|r<{\vrule width 0pt height 10pt depth 2pt}}
+	\multicolumn{1}{c|}{Binned} & \multicolumn{2}{c|}{Original} & \multicolumn{1}{c}{Count} \cr\hline
+	\multirow{4}{*}{FALSE} 
+	& Not Transported & 0 & 522,801 \cr
+	& Other & 6 & 4,341 \cr
+	& Not Reported & 8 & 12,447 \cr
+	& Unknown & 9 & 1,075 \cr\hline
+	\multirow{5}{*}{TRUE}
+	& EMS Air & 1 & 2,549 \cr
+	& Law Enforcement & 2 & 605 \cr
+	& EMS Unknown Mode & 3 & 30,368 \cr
+	& Transported Unknown Source & 4 & 8,926 \cr
+	& EMS Ground & 5 & 61,162 \cr	
+\end{tabular}
+\end{center}
+
+%%%
+\subsection{Lit Review:  Imputing Missing Data in CRSS [Rough]}
+
+\begin{itemize}
+	\item \cite{TOPUZ2021113557} does a thorough description of imputing missing data in CRSS.  Does not mention IVEware.  Also deals with imbalanced data well.  Need to spend time with this article. 
+
+	\item \cite{COX2021288} says CRSS ``can be
+weighted to produce annual national estimates.''  Also, ``Police-reported
+crash sampling methods changed when NHTSA converted from
+NASS GES to CRSS, which may have affected the comparability of
+the 2017 data on all crash involvements with earlier years.''
+	
+	In this study, 
+	``Imputed data were utilized when available to account for missing data.''
+	
+	\item \cite{AMINI2022108720} gives a thorough description of CRSS.  They took out CRSS-imputed variables.  Also removed post-accident information, as it was not relevant.  They imputed missing continuous variables, but don't say how.  They left missing categorical variables as ``Unknown'' and ``Missing'' categories.  
+	
+\begin{quote}
+	Employing descriptive analytics, we distinguished and removed
+variables with a large percentage of missing values (more than 70\%), as
+well as the identification, irrelevant, repetitive, and CRSS-imputed
+variables. We also removed the variables with post-accident information,
+such as whether the vehicle was towed afterward or the number of
+injured people. Using such variables contradicts the basic assumption of
+time order in causal relations, where a cause should precede its effect.
+Furthermore, we handled other missing values by considering them
+separate categories for nominal variables and imputing numeric ones.
+\end{quote}	
+
+	\item \cite{SPICER2021105974} used CRSS but did not mention missing or imputed data.  
+	
+	\item \cite{VILLAVICENCIO2022757} says that ``CRSS is a representative
+sample of all police-reported crashes in the United States,'' which is not true.  They used FARS and CRSS as their primary data sources, but did not mention imputed or missing data.  
+	
+	``Each record in CRSS includes a statistical weight to
+indicate the number of crashes in the population represented by
+each record in the sample.''  
+	
+	\item \cite{MUELLER2022305} says that ``CRSS sampling weights were used in those data to generate national estimates,'' and ``The CRSS data set handles missing data for some variables by statistically imputing values, which were used when available.''
+	
+	\item \cite{KAPLAN2017130} uses the phrase, ``restricted access database.''  I should use that for the Louisiana crash database.  
+	
+	\item \cite{GONG2022100190} just dropped samples with missing values.  
+	
+	\item As far back as 2002, NHTSA was working on multiple imputation methods for its related database, FARS.  \citep{subramanian2002transitioning}
+		
+\end{itemize}

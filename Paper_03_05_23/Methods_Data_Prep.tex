@@ -1,0 +1,119 @@
+%%%%%
+\subsection{Preparing the Data}
+
+To prepare the data for building a model we have two challenges.  First, the data has missing values, and we need to choose an approach to handling them.  Second, some features have too many unique values for effective model building, and we need to group (bin, discretize) them into larger categories.  
+
+To handle the missing values, we have three options, to throw out the samples with missing values in the features we are using to build the model (around 30\% of the samples), to treat ``missing'' as its own value in each feature, or to use some statistical or machine learning method to impute missing values.  We chose to impute missing values.  
+
+To impute missing values on some features, the CRSS authors used IVEware: Imputation and Variance Software, which uses multivariate sequential regression, and the CRSS imputation report gives the values for the hyperparameters they used. \citep{CRSS_Imputation}  Of the forty-three features we want to use for our most robust model, only eight were imputed in CRSS; the other thirty-five features have one or more values signifying ``Missing.''
+
+Why did the CRSS authors not impute missing values in all of the features?  For some features it is the nature of the data.  In other fields, like VIN (Vehicle Identification Number), if that data is missing from the report, there is no way to recover, or even guess at, that information using other data in the sample.  On the bureaucratic form that is a police crash report, the police jurisdiction is usually printed on the form, and the date is one of the first fields that the reporting officer understands is vital.  No CRSS samples have the month or day of week missing; however, CRSS does impute \verb|DAY_WEEK| as \verb|WKDY_IM|, with exactly the same values.  The fuller logic for which fields get imputed is partly the nature of the data but also backwards historical compatibility with CRSS's predecessor databases going back to 1982.  See the CRSS technical report on imputation for fuller details.  \citep{CRSS_Imputation}
+
+% See Imputed_Features_Count.xlsx for count
+
+An interesting question arises, of whether the order of operations matters.  Does it make a difference whether we impute first, then bin, or bin first, then impute?  We tested by removing all samples with a missing value, deleting 15\% of known values, running impute/bin and bin/impute, then comparing the success rates of the imputations.  We found that the difference between the two methods is negligible, that the randomness caused as much difference as the order of operations.  For full details see the attached code, 
+\verb|CRSS_11_09_22_Bin_Impute.ipynb|.  We decided to bin then impute, because IVEware could not handle categorical features with more than about forty unique values, so we had to bin some of the features before imputing anyway.
+
+We compared three methods for imputing missing values.  The first method was to impute to mode:  Assign to each missing value the most common value in that feature.  This method is not only easy but widely used.  The second method was IVEware, using the same hyperparameters as the CRSS authors used.  The third method was Random Forest Classifier, using the mode as the starting guess.  Random Forest and IVEware were both better than Mode, and Random Forest was arguably better than IVEware, but not by much and not in all features.  Both Random Forest and IVEware correctly imputed about 77\% of missing values.  For full details, see the attached code, 
+\verb|CRSS_05_Impute_Random_Forest_12_22_22|.
+
+To bin the values in each feature into fewer categories, for some features the best binning was straightforward.  The \verb|HOSPITAL| feature in the \verb|Person| dataset, which we made the target variable for our models, has nine values, one signifying that the person did not go to the hospital, six telling how the person got to the hospital (by air, by law enforcement, by emergency medical services but unknown mode, by EMS ground, transported by other method, or other), and two values signifying that the report didn't say whether the person went to the hospital.  For our purposes, it does not matter how the person got to the hospital, only that the person went.  We reduced the nine values to three:  Hospital True, Hospital False, and Hospital Unknown.  Many features were this straightforward.  
+
+Other features were like \verb|MAKE|, which has sixty-seven unique values with no clear order.   The chart below shows the major maufacturers.  To avoid the curse of dimensionality when we change the bins to dummy variables, we ideally want to put the sixty-seven values into five to ten bins, but does Toyota go in the same bin with Ford or Hyundai?  We imposed an ordering on the set, based on how likely someone in that make of car was to go to the hospital.  We then put them into nine bins, and one bin for ``Unknown Make.''  we divided the nine bins first along significant changes in the percent hospitalized, like the one between the motorcycles and the passenger cars and the one between the cars and the heavy trucks, and then into approximately even numbers of persons in each group when there was no clear line.  
+
+Note that ``Bluebird'' here is a school bus, not the Nissan Bluebird.  Also, some of the makes, like Volvo and Mercedes-Benz, include both passenger cars and heavy trucks.  
+
+ The feature \verb|MAK_MOD|, make and model, has 1200 categories that we similarly mapped into five bins of approximately equal number of persons by their hospitalization rates.  
+ 
+ For full details on the binning, see the code, \verb|CRSS_04_Discretize_11_19_22|.
+
+% from the Correlation folder in Summer_2022 folder
+% TODO:  Make code match what I've said here
+
+\hfil\begin{tabular}{p{1in}rr}
+&& Percent of \cr
+& Percent of & those Persons  \cr
+\bf MAKE & Persons & Hospitalized \cr\hline
+% Moto-Guzzi  & 0 &  68.75 \cr
+ Yamaha  & 0.33 &  63.16 \cr
+% Ducati  & 0.02 &  62.67 \cr
+ Harley-Davidson  & 0.82 &  61.86 \cr
+% Triumph  & 0.03 &  60.67 \cr
+ Kawasaki  & 0.26 &  60.61 \cr
+% Victory  & 0.02 &  51.18 \cr
+%43 & 0 &  50.00 \cr
+ Suzuki  & 0.44 &  45.11 \cr
+ Other Make  & 0.63 &  30.46 \cr
+ \hline
+% Daewoo  & 0 &  28.57 \cr
+% Smart  & 0.01 &  22.99 \cr
+% Oldsmobile  & 0.18 &  19.47 \cr
+% Plymouth  & 0.04 &  19.10 \cr
+ Mitsubishi  & 0.78 &  16.66 \cr
+ Pontiac  & 0.87 &  16.56 \cr
+ Mercury  & 0.54 &  16.29 \cr
+% Gillig  & 0.09 &  16.15 \cr
+ Buick / Opel  & 1.36 &  16.07 \cr
+ Saturn  & 0.50 &  15.89 \cr
+ Honda  & 8.85 &  15.81 \cr
+% Jaguar  & 0.1 &  15.47 \cr
+ KIA  & 2.95 &  15.46 \cr
+ \hline
+ Nissan/Datsun  & 7.71 &  15.23 \cr
+ Chrysler  & 1.95 &  15.07 \cr
+ Fiat  & 0.06 &  15.00 \cr
+ Hyundai  & 3.67 &  14.87 \cr
+ \hline
+% Scion  & 0.13 &  14.51 \cr
+ Chevrolet  & 11.93 &  14.25 \cr
+ Lincoln  & 0.56 &  13.99 \cr
+ \hline
+% Other Import  & 0.16 &  13.80 \cr
+ BMW  & 1.21 &  13.69 \cr
+ Toyota  & 11.09 &  13.34 \cr
+ Volkswagen  & 1.42 &  13.29 \cr
+ \hline
+ Ford  & 12.67 &  13.16 \cr
+ \hline
+ Cadillac  & 0.87 &  12.95 \cr
+% Jeep / Kaiser-Jeep / Willys- Jeep  & 3.03 &  12.76 \cr
+ Jeep  & 3.03 &  12.76 \cr
+ Mazda  & 1.4 &  12.70 \cr
+ Infiniti  & 0.82 &  12.66 \cr
+ Dodge  & 5.56 &  12.44 \cr
+ \hline
+ Mercedes-Benz  & 1.23 &  12.39 \cr
+ Acura  & 0.94 &  12.35 \cr
+% Grumman  & 0.01 &  12.28 \cr
+% Saab  & 0.05 &  12.26 \cr
+ GMC  & 2.49 &  11.95 \cr
+% MCI  & 0.01 &  11.76 \cr
+ Lexus  & 1.34 &  11.58 \cr
+ Subaru  & 1.22 &  10.58 \cr
+% Isuzu  & 0.18 &  10.43 \cr
+% Land Rover  & 0.17 &  10.03 \cr
+% AM General  & 0.06 &  10.03 \cr
+ Audi  & 0.48 &  9.59 \cr
+% Other Domestic Manufacturers  & 0.06 &  9.38 \cr
+ Volvo  & 0.57 &  9.02 \cr
+% Alfa Romeo  & 0.01 &  8.82 \cr
+% Porsche  & 0.08 &  8.01 \cr
+\hline
+ Bluebird  & 0.05 &  7.88 \cr
+% Eagle  & 0 &  7.69 \cr
+ Thomas Built  & 0.02 &  7.52 \cr
+ Mack  & 0.17 &  4.35 \cr
+% White/Autocar White/GMC  & 0.01 &  4.29 \cr
+ International Harvester/Navistar  & 0.48 &  4.06 \cr
+ Freightliner  & 0.85 &  4.03 \cr
+ Kenworth  & 0.26 &  3.92 \cr
+ Peterbilt  & 0.31 &  3.11 \cr
+\hline
+ Not Reported  & 0.27 &  1.20 \cr
+% nan  & 0 &  0.00 \cr
+%33 & 0 &  0.00 \cr
+%46 & 0 &  0.00 \cr
+% American Motors  & 0 &  0.00 \cr
+ Unknown Make  & 2.07 &  3.24 \cr
+ \end{tabular}
+ 

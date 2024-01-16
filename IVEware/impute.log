@@ -1,0 +1,4752 @@
+IVEware Statistical Procedures
+Survey Research Center, Institute for Social Research
+University of Michigan
+Version 0.3, Copyright (c) 2023
+
+
+Sat Nov 18 17:31:12 2023
+  Begin setup checking
+  Read setup
+  Seed 1700350272
+  Write setup
+  End setup checking
+
+Sat Nov 18 17:31:12 2023
+  Begin execution
+  Read setup
+  Read data
+Sat Nov 18 17:31:13 2023
+  Mult 1, Iter 1, Imp 1
+  Impute URBANICITY
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:31:13 2023
+  Mult 1, Iter 1, Imp 2
+  Impute VEH_ALCH
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:31:13 2023
+  Mult 1, Iter 1, Imp 3
+  Impute NUM_INJV
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:31:13 2023
+  Mult 1, Iter 1, Imp 4
+  Impute PERNOTMVIT
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:31:13 2023
+  Mult 1, Iter 1, Imp 5
+  Impute M_HARM
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:31:14 2023
+  Mult 1, Iter 1, Imp 6
+  Impute PER_TYP
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:31:14 2023
+  Mult 1, Iter 1, Imp 7
+  Impute P_CRASH1
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:31:15 2023
+  Mult 1, Iter 1, Imp 8
+  Impute ALC_STATUS
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:31:15 2023
+  Mult 1, Iter 1, Imp 9
+  Impute FIRE_EXP
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:31:15 2023
+  Mult 1, Iter 1, Imp 10
+  Impute PSU
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:31:15 2023
+  Mult 1, Iter 1, Imp 11
+  Impute WEATHER
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:31:16 2023
+  Mult 1, Iter 1, Imp 12
+  Impute SPEC_USE
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:31:16 2023
+  Mult 1, Iter 1, Imp 13
+  Impute VE_FORMS
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:31:17 2023
+  Mult 1, Iter 1, Imp 14
+  Impute SEX
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:31:17 2023
+  Mult 1, Iter 1, Imp 15
+  Impute AIR_BAG
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:31:17 2023
+  Mult 1, Iter 1, Imp 16
+  Impute SEAT_POS
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:31:18 2023
+  Mult 1, Iter 1, Imp 17
+  Impute VEH_AGE
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:31:18 2023
+  Mult 1, Iter 1, Imp 18
+  Impute CARGO_BT
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:31:18 2023
+  Mult 1, Iter 1, Imp 19
+  Impute HOSPITAL
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:31:19 2023
+  Mult 1, Iter 1, Imp 20
+  Impute HARM_EV
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:31:19 2023
+  Mult 1, Iter 1, Imp 21
+  Impute PJ
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:31:20 2023
+  Mult 1, Iter 1, Imp 22
+  Impute HAZ_PLAC
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:31:20 2023
+  Mult 1, Iter 1, Imp 23
+  Impute PVH_INVL
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:31:20 2023
+  Mult 1, Iter 1, Imp 24
+  Impute MAX_VSEV
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:31:21 2023
+  Mult 1, Iter 1, Imp 25
+  Impute SPEEDREL
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:31:21 2023
+  Mult 1, Iter 1, Imp 26
+  Impute MAN_COLL
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:31:22 2023
+  Mult 1, Iter 1, Imp 27
+  Impute BUS_USE
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:31:22 2023
+  Mult 1, Iter 1, Imp 28
+  Impute BODY_TYP
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:31:23 2023
+  Mult 1, Iter 1, Imp 29
+  Impute TOWED
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:31:23 2023
+  Mult 1, Iter 1, Imp 30
+  Impute MAKE
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:31:24 2023
+  Mult 1, Iter 1, Imp 31
+  Impute ROLLOVER
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:31:24 2023
+  Mult 1, Iter 1, Imp 32
+  Impute TYP_INT
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:31:24 2023
+  Mult 1, Iter 1, Imp 33
+  Impute PCRASH5
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:31:25 2023
+  Mult 1, Iter 1, Imp 34
+  Impute TOW_VEH
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:31:25 2023
+  Mult 1, Iter 1, Imp 35
+  Impute HIT_RUN
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:31:26 2023
+  Mult 1, Iter 1, Imp 36
+  Impute AGE
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:31:26 2023
+  Mult 1, Iter 1, Imp 37
+  Impute EMER_USE
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:31:27 2023
+  Mult 1, Iter 1, Imp 38
+  Impute PCRASH4
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:31:27 2023
+  Mult 1, Iter 1, Imp 39
+  Impute REST_MIS
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:31:27 2023
+  Mult 1, Iter 1, Imp 40
+  Impute WRK_ZONE
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:31:28 2023
+  Mult 1, Iter 1, Imp 41
+  Impute HAZ_CNO
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:31:29 2023
+  Mult 1, Iter 1, Imp 42
+  Impute IMPACT1
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:31:29 2023
+  Mult 1, Iter 1, Imp 43
+  Impute DAY_WEEK
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:31:30 2023
+  Mult 1, Iter 1, Imp 44
+  Impute P_CRASH2
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:31:31 2023
+  Mult 1, Iter 1, Imp 45
+  Impute RELJCT1
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:31:31 2023
+  Mult 1, Iter 1, Imp 46
+  Impute VSURCOND
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:31:32 2023
+  Mult 1, Iter 1, Imp 47
+  Impute VTRAFWAY
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:31:33 2023
+  Mult 1, Iter 1, Imp 48
+  Impute HOUR
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:31:33 2023
+  Mult 1, Iter 1, Imp 49
+  Impute REST_USE
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:31:34 2023
+  Mult 1, Iter 1, Imp 50
+  Impute YEAR
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:31:35 2023
+  Mult 1, Iter 1, Imp 51
+  Impute VTRAFCON
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:31:35 2023
+  Mult 1, Iter 1, Imp 52
+  Impute HAZ_INV
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:31:36 2023
+  Mult 1, Iter 1, Imp 53
+  Impute DR_PRES
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:31:36 2023
+  Mult 1, Iter 1, Imp 54
+  Impute VALIGN
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:31:37 2023
+  Mult 1, Iter 1, Imp 55
+  Impute VTCONT_F
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:31:38 2023
+  Mult 1, Iter 1, Imp 56
+  Impute INJ_SEV
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:31:39 2023
+  Mult 1, Iter 1, Imp 57
+  Impute MONTH
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:31:39 2023
+  Mult 1, Iter 1, Imp 58
+  Impute LGT_COND
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:31:40 2023
+  Mult 1, Iter 1, Imp 59
+  Impute RELJCT2
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:31:41 2023
+  Mult 1, Iter 1, Imp 60
+  Impute NUM_INJ
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:31:43 2023
+  Mult 1, Iter 1, Imp 61
+  Impute MAX_SEV
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:31:44 2023
+  Mult 1, Iter 1, Imp 62
+  Impute VSPD_LIM
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:31:45 2023
+  Mult 1, Iter 1, Imp 63
+  Impute INT_HWY
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:31:46 2023
+  Mult 1, Iter 1, Imp 64
+  Impute ALC_RES
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:31:46 2023
+  Mult 1, Iter 1, Imp 65
+  Impute PERMVIT
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:31:47 2023
+  Mult 1, Iter 1, Imp 66
+  Impute MAK_MOD
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:31:49 2023
+  Mult 1, Iter 1, Imp 67
+  Impute EJECTION
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:31:50 2023
+  Mult 1, Iter 1, Imp 68
+  Impute J_KNIFE
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:31:51 2023
+  Mult 1, Iter 1, Imp 69
+  Impute MODEL
+  Update data
+  Polytomous regression
+  Warning: Too many iterations, probably due to
+           colinearity with dependent variable
+  Correct data
+Sat Nov 18 17:31:53 2023
+  Mult 1, Iter 1, Imp 70
+  Impute VPROFILE
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:31:54 2023
+  Mult 1, Iter 1, Imp 71
+  Impute REL_ROAD
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:31:56 2023
+  Mult 1, Iter 1, Imp 72
+  Impute ACC_TYPE
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:31:57 2023
+  Mult 1, Iter 1, Imp 73
+  Impute NUMOCCS
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:31:59 2023
+  Mult 1, Iter 1, Imp 74
+  Impute REGION
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:32:00 2023
+  Mult 1, Iter 1, Imp 75
+  Impute HAZ_REL
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:32:01 2023
+  Mult 1, Iter 1, Imp 76
+  Impute VE_TOTAL
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:32:02 2023
+  Mult 1, Iter 1, Imp 77
+  Impute ALCOHOL
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:32:04 2023
+  Mult 1, Iter 1, Imp 78
+  Impute SCH_BUS
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:32:05 2023
+  Mult 1, Iter 2, Imp 1
+  Impute URBANICITY
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:32:06 2023
+  Mult 1, Iter 2, Imp 2
+  Impute VEH_ALCH
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:32:07 2023
+  Mult 1, Iter 2, Imp 3
+  Impute NUM_INJV
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:32:09 2023
+  Mult 1, Iter 2, Imp 4
+  Impute PERNOTMVIT
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:32:10 2023
+  Mult 1, Iter 2, Imp 5
+  Impute M_HARM
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:32:11 2023
+  Mult 1, Iter 2, Imp 6
+  Impute PER_TYP
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:32:13 2023
+  Mult 1, Iter 2, Imp 7
+  Impute P_CRASH1
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:32:15 2023
+  Mult 1, Iter 2, Imp 8
+  Impute ALC_STATUS
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:32:16 2023
+  Mult 1, Iter 2, Imp 9
+  Impute FIRE_EXP
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:32:17 2023
+  Mult 1, Iter 2, Imp 10
+  Impute PSU
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:32:18 2023
+  Mult 1, Iter 2, Imp 11
+  Impute WEATHER
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:32:20 2023
+  Mult 1, Iter 2, Imp 12
+  Impute SPEC_USE
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:32:21 2023
+  Mult 1, Iter 2, Imp 13
+  Impute VE_FORMS
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:32:23 2023
+  Mult 1, Iter 2, Imp 14
+  Impute SEX
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:32:23 2023
+  Mult 1, Iter 2, Imp 15
+  Impute AIR_BAG
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:32:24 2023
+  Mult 1, Iter 2, Imp 16
+  Impute SEAT_POS
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:32:27 2023
+  Mult 1, Iter 2, Imp 17
+  Impute VEH_AGE
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:32:28 2023
+  Mult 1, Iter 2, Imp 18
+  Impute CARGO_BT
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:32:29 2023
+  Mult 1, Iter 2, Imp 19
+  Impute HOSPITAL
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:32:30 2023
+  Mult 1, Iter 2, Imp 20
+  Impute HARM_EV
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:32:31 2023
+  Mult 1, Iter 2, Imp 21
+  Impute PJ
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:32:33 2023
+  Mult 1, Iter 2, Imp 22
+  Impute HAZ_PLAC
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:32:34 2023
+  Mult 1, Iter 2, Imp 23
+  Impute PVH_INVL
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:32:35 2023
+  Mult 1, Iter 2, Imp 24
+  Impute MAX_VSEV
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:32:37 2023
+  Mult 1, Iter 2, Imp 25
+  Impute SPEEDREL
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:32:38 2023
+  Mult 1, Iter 2, Imp 26
+  Impute MAN_COLL
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:32:41 2023
+  Mult 1, Iter 2, Imp 27
+  Impute BUS_USE
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:32:42 2023
+  Mult 1, Iter 2, Imp 28
+  Impute BODY_TYP
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:32:45 2023
+  Mult 1, Iter 2, Imp 29
+  Impute TOWED
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:32:46 2023
+  Mult 1, Iter 2, Imp 30
+  Impute MAKE
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:32:49 2023
+  Mult 1, Iter 2, Imp 31
+  Impute ROLLOVER
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:32:50 2023
+  Mult 1, Iter 2, Imp 32
+  Impute TYP_INT
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:32:51 2023
+  Mult 1, Iter 2, Imp 33
+  Impute PCRASH5
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:32:53 2023
+  Mult 1, Iter 2, Imp 34
+  Impute TOW_VEH
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:32:54 2023
+  Mult 1, Iter 2, Imp 35
+  Impute HIT_RUN
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:32:55 2023
+  Mult 1, Iter 2, Imp 36
+  Impute AGE
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:32:56 2023
+  Mult 1, Iter 2, Imp 37
+  Impute EMER_USE
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:32:58 2023
+  Mult 1, Iter 2, Imp 38
+  Impute PCRASH4
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:32:59 2023
+  Mult 1, Iter 2, Imp 39
+  Impute REST_MIS
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:33:00 2023
+  Mult 1, Iter 2, Imp 40
+  Impute WRK_ZONE
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:33:01 2023
+  Mult 1, Iter 2, Imp 41
+  Impute HAZ_CNO
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:33:03 2023
+  Mult 1, Iter 2, Imp 42
+  Impute IMPACT1
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:33:05 2023
+  Mult 1, Iter 2, Imp 43
+  Impute DAY_WEEK
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:33:06 2023
+  Mult 1, Iter 2, Imp 44
+  Impute P_CRASH2
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:33:07 2023
+  Mult 1, Iter 2, Imp 45
+  Impute RELJCT1
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:33:09 2023
+  Mult 1, Iter 2, Imp 46
+  Impute VSURCOND
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:33:10 2023
+  Mult 1, Iter 2, Imp 47
+  Impute VTRAFWAY
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:33:12 2023
+  Mult 1, Iter 2, Imp 48
+  Impute HOUR
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:33:13 2023
+  Mult 1, Iter 2, Imp 49
+  Impute REST_USE
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:33:14 2023
+  Mult 1, Iter 2, Imp 50
+  Impute YEAR
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:33:16 2023
+  Mult 1, Iter 2, Imp 51
+  Impute VTRAFCON
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:33:17 2023
+  Mult 1, Iter 2, Imp 52
+  Impute HAZ_INV
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:33:18 2023
+  Mult 1, Iter 2, Imp 53
+  Impute DR_PRES
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:33:19 2023
+  Mult 1, Iter 2, Imp 54
+  Impute VALIGN
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:33:21 2023
+  Mult 1, Iter 2, Imp 55
+  Impute VTCONT_F
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:33:23 2023
+  Mult 1, Iter 2, Imp 56
+  Impute INJ_SEV
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:33:24 2023
+  Mult 1, Iter 2, Imp 57
+  Impute MONTH
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:33:25 2023
+  Mult 1, Iter 2, Imp 58
+  Impute LGT_COND
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:33:27 2023
+  Mult 1, Iter 2, Imp 59
+  Impute RELJCT2
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:33:28 2023
+  Mult 1, Iter 2, Imp 60
+  Impute NUM_INJ
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:33:30 2023
+  Mult 1, Iter 2, Imp 61
+  Impute MAX_SEV
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:33:32 2023
+  Mult 1, Iter 2, Imp 62
+  Impute VSPD_LIM
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:33:34 2023
+  Mult 1, Iter 2, Imp 63
+  Impute INT_HWY
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:33:35 2023
+  Mult 1, Iter 2, Imp 64
+  Impute ALC_RES
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:33:36 2023
+  Mult 1, Iter 2, Imp 65
+  Impute PERMVIT
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:33:37 2023
+  Mult 1, Iter 2, Imp 66
+  Impute MAK_MOD
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:33:40 2023
+  Mult 1, Iter 2, Imp 67
+  Impute EJECTION
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:33:41 2023
+  Mult 1, Iter 2, Imp 68
+  Impute J_KNIFE
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:33:43 2023
+  Mult 1, Iter 2, Imp 69
+  Impute MODEL
+  Update data
+  Polytomous regression
+  Warning: Too many iterations, probably due to
+           colinearity with dependent variable
+  Correct data
+Sat Nov 18 17:33:45 2023
+  Mult 1, Iter 2, Imp 70
+  Impute VPROFILE
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:33:46 2023
+  Mult 1, Iter 2, Imp 71
+  Impute REL_ROAD
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:33:48 2023
+  Mult 1, Iter 2, Imp 72
+  Impute ACC_TYPE
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:33:49 2023
+  Mult 1, Iter 2, Imp 73
+  Impute NUMOCCS
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:33:51 2023
+  Mult 1, Iter 2, Imp 74
+  Impute REGION
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:33:53 2023
+  Mult 1, Iter 2, Imp 75
+  Impute HAZ_REL
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:33:54 2023
+  Mult 1, Iter 2, Imp 76
+  Impute VE_TOTAL
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:33:56 2023
+  Mult 1, Iter 2, Imp 77
+  Impute ALCOHOL
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:33:57 2023
+  Mult 1, Iter 2, Imp 78
+  Impute SCH_BUS
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:33:58 2023
+  Mult 1, Iter 3, Imp 1
+  Impute URBANICITY
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:33:59 2023
+  Mult 1, Iter 3, Imp 2
+  Impute VEH_ALCH
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:34:00 2023
+  Mult 1, Iter 3, Imp 3
+  Impute NUM_INJV
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:34:02 2023
+  Mult 1, Iter 3, Imp 4
+  Impute PERNOTMVIT
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:34:03 2023
+  Mult 1, Iter 3, Imp 5
+  Impute M_HARM
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:34:05 2023
+  Mult 1, Iter 3, Imp 6
+  Impute PER_TYP
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:34:06 2023
+  Mult 1, Iter 3, Imp 7
+  Impute P_CRASH1
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:34:08 2023
+  Mult 1, Iter 3, Imp 8
+  Impute ALC_STATUS
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:34:10 2023
+  Mult 1, Iter 3, Imp 9
+  Impute FIRE_EXP
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:34:11 2023
+  Mult 1, Iter 3, Imp 10
+  Impute PSU
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:34:13 2023
+  Mult 1, Iter 3, Imp 11
+  Impute WEATHER
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:34:14 2023
+  Mult 1, Iter 3, Imp 12
+  Impute SPEC_USE
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:34:16 2023
+  Mult 1, Iter 3, Imp 13
+  Impute VE_FORMS
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:34:18 2023
+  Mult 1, Iter 3, Imp 14
+  Impute SEX
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:34:19 2023
+  Mult 1, Iter 3, Imp 15
+  Impute AIR_BAG
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:34:20 2023
+  Mult 1, Iter 3, Imp 16
+  Impute SEAT_POS
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:34:22 2023
+  Mult 1, Iter 3, Imp 17
+  Impute VEH_AGE
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:34:23 2023
+  Mult 1, Iter 3, Imp 18
+  Impute CARGO_BT
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:34:24 2023
+  Mult 1, Iter 3, Imp 19
+  Impute HOSPITAL
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:34:25 2023
+  Mult 1, Iter 3, Imp 20
+  Impute HARM_EV
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:34:28 2023
+  Mult 1, Iter 3, Imp 21
+  Impute PJ
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:34:29 2023
+  Mult 1, Iter 3, Imp 22
+  Impute HAZ_PLAC
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:34:30 2023
+  Mult 1, Iter 3, Imp 23
+  Impute PVH_INVL
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:34:32 2023
+  Mult 1, Iter 3, Imp 24
+  Impute MAX_VSEV
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:34:33 2023
+  Mult 1, Iter 3, Imp 25
+  Impute SPEEDREL
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:34:34 2023
+  Mult 1, Iter 3, Imp 26
+  Impute MAN_COLL
+  Update data
+  Polytomous regression
+  Warning: Too many iterations, probably due to
+           colinearity with dependent variable
+  Correct data
+Sat Nov 18 17:34:38 2023
+  Mult 1, Iter 3, Imp 27
+  Impute BUS_USE
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:34:39 2023
+  Mult 1, Iter 3, Imp 28
+  Impute BODY_TYP
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:34:42 2023
+  Mult 1, Iter 3, Imp 29
+  Impute TOWED
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:34:43 2023
+  Mult 1, Iter 3, Imp 30
+  Impute MAKE
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:34:46 2023
+  Mult 1, Iter 3, Imp 31
+  Impute ROLLOVER
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:34:47 2023
+  Mult 1, Iter 3, Imp 32
+  Impute TYP_INT
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:34:48 2023
+  Mult 1, Iter 3, Imp 33
+  Impute PCRASH5
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:34:51 2023
+  Mult 1, Iter 3, Imp 34
+  Impute TOW_VEH
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:34:52 2023
+  Mult 1, Iter 3, Imp 35
+  Impute HIT_RUN
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:34:53 2023
+  Mult 1, Iter 3, Imp 36
+  Impute AGE
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:34:54 2023
+  Mult 1, Iter 3, Imp 37
+  Impute EMER_USE
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:34:56 2023
+  Mult 1, Iter 3, Imp 38
+  Impute PCRASH4
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:34:57 2023
+  Mult 1, Iter 3, Imp 39
+  Impute REST_MIS
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:34:58 2023
+  Mult 1, Iter 3, Imp 40
+  Impute WRK_ZONE
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:34:59 2023
+  Mult 1, Iter 3, Imp 41
+  Impute HAZ_CNO
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:35:01 2023
+  Mult 1, Iter 3, Imp 42
+  Impute IMPACT1
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:35:03 2023
+  Mult 1, Iter 3, Imp 43
+  Impute DAY_WEEK
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:35:04 2023
+  Mult 1, Iter 3, Imp 44
+  Impute P_CRASH2
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:35:05 2023
+  Mult 1, Iter 3, Imp 45
+  Impute RELJCT1
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:35:07 2023
+  Mult 1, Iter 3, Imp 46
+  Impute VSURCOND
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:35:09 2023
+  Mult 1, Iter 3, Imp 47
+  Impute VTRAFWAY
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:35:11 2023
+  Mult 1, Iter 3, Imp 48
+  Impute HOUR
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:35:13 2023
+  Mult 1, Iter 3, Imp 49
+  Impute REST_USE
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:35:14 2023
+  Mult 1, Iter 3, Imp 50
+  Impute YEAR
+  Update data
+  Polytomous regression
+  Warning: Too many iterations, probably due to
+           colinearity with dependent variable
+  Correct data
+Sat Nov 18 17:35:16 2023
+  Mult 1, Iter 3, Imp 51
+  Impute VTRAFCON
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:35:17 2023
+  Mult 1, Iter 3, Imp 52
+  Impute HAZ_INV
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:35:18 2023
+  Mult 1, Iter 3, Imp 53
+  Impute DR_PRES
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:35:19 2023
+  Mult 1, Iter 3, Imp 54
+  Impute VALIGN
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:35:21 2023
+  Mult 1, Iter 3, Imp 55
+  Impute VTCONT_F
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:35:23 2023
+  Mult 1, Iter 3, Imp 56
+  Impute INJ_SEV
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:35:25 2023
+  Mult 1, Iter 3, Imp 57
+  Impute MONTH
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:35:25 2023
+  Mult 1, Iter 3, Imp 58
+  Impute LGT_COND
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:35:27 2023
+  Mult 1, Iter 3, Imp 59
+  Impute RELJCT2
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:35:29 2023
+  Mult 1, Iter 3, Imp 60
+  Impute NUM_INJ
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:35:31 2023
+  Mult 1, Iter 3, Imp 61
+  Impute MAX_SEV
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:35:34 2023
+  Mult 1, Iter 3, Imp 62
+  Impute VSPD_LIM
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:35:35 2023
+  Mult 1, Iter 3, Imp 63
+  Impute INT_HWY
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:35:36 2023
+  Mult 1, Iter 3, Imp 64
+  Impute ALC_RES
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:35:37 2023
+  Mult 1, Iter 3, Imp 65
+  Impute PERMVIT
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:35:38 2023
+  Mult 1, Iter 3, Imp 66
+  Impute MAK_MOD
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:35:41 2023
+  Mult 1, Iter 3, Imp 67
+  Impute EJECTION
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:35:42 2023
+  Mult 1, Iter 3, Imp 68
+  Impute J_KNIFE
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:35:43 2023
+  Mult 1, Iter 3, Imp 69
+  Impute MODEL
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:35:46 2023
+  Mult 1, Iter 3, Imp 70
+  Impute VPROFILE
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:35:47 2023
+  Mult 1, Iter 3, Imp 71
+  Impute REL_ROAD
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:35:48 2023
+  Mult 1, Iter 3, Imp 72
+  Impute ACC_TYPE
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:35:50 2023
+  Mult 1, Iter 3, Imp 73
+  Impute NUMOCCS
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:35:52 2023
+  Mult 1, Iter 3, Imp 74
+  Impute REGION
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:35:54 2023
+  Mult 1, Iter 3, Imp 75
+  Impute HAZ_REL
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:35:55 2023
+  Mult 1, Iter 3, Imp 76
+  Impute VE_TOTAL
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:35:57 2023
+  Mult 1, Iter 3, Imp 77
+  Impute ALCOHOL
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:35:59 2023
+  Mult 1, Iter 3, Imp 78
+  Impute SCH_BUS
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:36:00 2023
+  Mult 1, Iter 4, Imp 1
+  Impute URBANICITY
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:36:01 2023
+  Mult 1, Iter 4, Imp 2
+  Impute VEH_ALCH
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:36:02 2023
+  Mult 1, Iter 4, Imp 3
+  Impute NUM_INJV
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:36:05 2023
+  Mult 1, Iter 4, Imp 4
+  Impute PERNOTMVIT
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:36:06 2023
+  Mult 1, Iter 4, Imp 5
+  Impute M_HARM
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:36:07 2023
+  Mult 1, Iter 4, Imp 6
+  Impute PER_TYP
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:36:08 2023
+  Mult 1, Iter 4, Imp 7
+  Impute P_CRASH1
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:36:10 2023
+  Mult 1, Iter 4, Imp 8
+  Impute ALC_STATUS
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:36:11 2023
+  Mult 1, Iter 4, Imp 9
+  Impute FIRE_EXP
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:36:12 2023
+  Mult 1, Iter 4, Imp 10
+  Impute PSU
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:36:15 2023
+  Mult 1, Iter 4, Imp 11
+  Impute WEATHER
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:36:16 2023
+  Mult 1, Iter 4, Imp 12
+  Impute SPEC_USE
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:36:18 2023
+  Mult 1, Iter 4, Imp 13
+  Impute VE_FORMS
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:36:19 2023
+  Mult 1, Iter 4, Imp 14
+  Impute SEX
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:36:20 2023
+  Mult 1, Iter 4, Imp 15
+  Impute AIR_BAG
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:36:21 2023
+  Mult 1, Iter 4, Imp 16
+  Impute SEAT_POS
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:36:24 2023
+  Mult 1, Iter 4, Imp 17
+  Impute VEH_AGE
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:36:25 2023
+  Mult 1, Iter 4, Imp 18
+  Impute CARGO_BT
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:36:26 2023
+  Mult 1, Iter 4, Imp 19
+  Impute HOSPITAL
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:36:27 2023
+  Mult 1, Iter 4, Imp 20
+  Impute HARM_EV
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:36:29 2023
+  Mult 1, Iter 4, Imp 21
+  Impute PJ
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:36:31 2023
+  Mult 1, Iter 4, Imp 22
+  Impute HAZ_PLAC
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:36:32 2023
+  Mult 1, Iter 4, Imp 23
+  Impute PVH_INVL
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:36:33 2023
+  Mult 1, Iter 4, Imp 24
+  Impute MAX_VSEV
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:36:35 2023
+  Mult 1, Iter 4, Imp 25
+  Impute SPEEDREL
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:36:36 2023
+  Mult 1, Iter 4, Imp 26
+  Impute MAN_COLL
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:36:39 2023
+  Mult 1, Iter 4, Imp 27
+  Impute BUS_USE
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:36:40 2023
+  Mult 1, Iter 4, Imp 28
+  Impute BODY_TYP
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:36:43 2023
+  Mult 1, Iter 4, Imp 29
+  Impute TOWED
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:36:45 2023
+  Mult 1, Iter 4, Imp 30
+  Impute MAKE
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:36:47 2023
+  Mult 1, Iter 4, Imp 31
+  Impute ROLLOVER
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:36:48 2023
+  Mult 1, Iter 4, Imp 32
+  Impute TYP_INT
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:36:50 2023
+  Mult 1, Iter 4, Imp 33
+  Impute PCRASH5
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:36:53 2023
+  Mult 1, Iter 4, Imp 34
+  Impute TOW_VEH
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:36:54 2023
+  Mult 1, Iter 4, Imp 35
+  Impute HIT_RUN
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:36:55 2023
+  Mult 1, Iter 4, Imp 36
+  Impute AGE
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:36:56 2023
+  Mult 1, Iter 4, Imp 37
+  Impute EMER_USE
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:36:58 2023
+  Mult 1, Iter 4, Imp 38
+  Impute PCRASH4
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:36:59 2023
+  Mult 1, Iter 4, Imp 39
+  Impute REST_MIS
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:37:00 2023
+  Mult 1, Iter 4, Imp 40
+  Impute WRK_ZONE
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:37:01 2023
+  Mult 1, Iter 4, Imp 41
+  Impute HAZ_CNO
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:37:03 2023
+  Mult 1, Iter 4, Imp 42
+  Impute IMPACT1
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:37:04 2023
+  Mult 1, Iter 4, Imp 43
+  Impute DAY_WEEK
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:37:05 2023
+  Mult 1, Iter 4, Imp 44
+  Impute P_CRASH2
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:37:07 2023
+  Mult 1, Iter 4, Imp 45
+  Impute RELJCT1
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:37:09 2023
+  Mult 1, Iter 4, Imp 46
+  Impute VSURCOND
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:37:10 2023
+  Mult 1, Iter 4, Imp 47
+  Impute VTRAFWAY
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:37:13 2023
+  Mult 1, Iter 4, Imp 48
+  Impute HOUR
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:37:14 2023
+  Mult 1, Iter 4, Imp 49
+  Impute REST_USE
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:37:15 2023
+  Mult 1, Iter 4, Imp 50
+  Impute YEAR
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:37:17 2023
+  Mult 1, Iter 4, Imp 51
+  Impute VTRAFCON
+  Update data
+  Polytomous regression
+  Warning: Too many iterations, probably due to
+           colinearity with dependent variable
+  Correct data
+Sat Nov 18 17:37:19 2023
+  Mult 1, Iter 4, Imp 52
+  Impute HAZ_INV
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:37:20 2023
+  Mult 1, Iter 4, Imp 53
+  Impute DR_PRES
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:37:21 2023
+  Mult 1, Iter 4, Imp 54
+  Impute VALIGN
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:37:23 2023
+  Mult 1, Iter 4, Imp 55
+  Impute VTCONT_F
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:37:25 2023
+  Mult 1, Iter 4, Imp 56
+  Impute INJ_SEV
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:37:26 2023
+  Mult 1, Iter 4, Imp 57
+  Impute MONTH
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:37:27 2023
+  Mult 1, Iter 4, Imp 58
+  Impute LGT_COND
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:37:29 2023
+  Mult 1, Iter 4, Imp 59
+  Impute RELJCT2
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:37:31 2023
+  Mult 1, Iter 4, Imp 60
+  Impute NUM_INJ
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:37:33 2023
+  Mult 1, Iter 4, Imp 61
+  Impute MAX_SEV
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:37:35 2023
+  Mult 1, Iter 4, Imp 62
+  Impute VSPD_LIM
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:37:36 2023
+  Mult 1, Iter 4, Imp 63
+  Impute INT_HWY
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:37:37 2023
+  Mult 1, Iter 4, Imp 64
+  Impute ALC_RES
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:37:38 2023
+  Mult 1, Iter 4, Imp 65
+  Impute PERMVIT
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:37:40 2023
+  Mult 1, Iter 4, Imp 66
+  Impute MAK_MOD
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:37:42 2023
+  Mult 1, Iter 4, Imp 67
+  Impute EJECTION
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:37:43 2023
+  Mult 1, Iter 4, Imp 68
+  Impute J_KNIFE
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:37:45 2023
+  Mult 1, Iter 4, Imp 69
+  Impute MODEL
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:37:47 2023
+  Mult 1, Iter 4, Imp 70
+  Impute VPROFILE
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:37:48 2023
+  Mult 1, Iter 4, Imp 71
+  Impute REL_ROAD
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:37:50 2023
+  Mult 1, Iter 4, Imp 72
+  Impute ACC_TYPE
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:37:51 2023
+  Mult 1, Iter 4, Imp 73
+  Impute NUMOCCS
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:37:53 2023
+  Mult 1, Iter 4, Imp 74
+  Impute REGION
+  Update data
+  Polytomous regression
+  Warning: Too many iterations, probably due to
+           colinearity with dependent variable
+  Correct data
+Sat Nov 18 17:37:56 2023
+  Mult 1, Iter 4, Imp 75
+  Impute HAZ_REL
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:37:58 2023
+  Mult 1, Iter 4, Imp 76
+  Impute VE_TOTAL
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:38:00 2023
+  Mult 1, Iter 4, Imp 77
+  Impute ALCOHOL
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:38:01 2023
+  Mult 1, Iter 4, Imp 78
+  Impute SCH_BUS
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:38:02 2023
+  Mult 1, Iter 5, Imp 1
+  Impute URBANICITY
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:38:03 2023
+  Mult 1, Iter 5, Imp 2
+  Impute VEH_ALCH
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:38:04 2023
+  Mult 1, Iter 5, Imp 3
+  Impute NUM_INJV
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:38:07 2023
+  Mult 1, Iter 5, Imp 4
+  Impute PERNOTMVIT
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:38:08 2023
+  Mult 1, Iter 5, Imp 5
+  Impute M_HARM
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:38:09 2023
+  Mult 1, Iter 5, Imp 6
+  Impute PER_TYP
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:38:10 2023
+  Mult 1, Iter 5, Imp 7
+  Impute P_CRASH1
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:38:12 2023
+  Mult 1, Iter 5, Imp 8
+  Impute ALC_STATUS
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:38:13 2023
+  Mult 1, Iter 5, Imp 9
+  Impute FIRE_EXP
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:38:14 2023
+  Mult 1, Iter 5, Imp 10
+  Impute PSU
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:38:17 2023
+  Mult 1, Iter 5, Imp 11
+  Impute WEATHER
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:38:18 2023
+  Mult 1, Iter 5, Imp 12
+  Impute SPEC_USE
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:38:19 2023
+  Mult 1, Iter 5, Imp 13
+  Impute VE_FORMS
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:38:22 2023
+  Mult 1, Iter 5, Imp 14
+  Impute SEX
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:38:23 2023
+  Mult 1, Iter 5, Imp 15
+  Impute AIR_BAG
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:38:24 2023
+  Mult 1, Iter 5, Imp 16
+  Impute SEAT_POS
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:38:26 2023
+  Mult 1, Iter 5, Imp 17
+  Impute VEH_AGE
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:38:27 2023
+  Mult 1, Iter 5, Imp 18
+  Impute CARGO_BT
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:38:28 2023
+  Mult 1, Iter 5, Imp 19
+  Impute HOSPITAL
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:38:30 2023
+  Mult 1, Iter 5, Imp 20
+  Impute HARM_EV
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:38:32 2023
+  Mult 1, Iter 5, Imp 21
+  Impute PJ
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:38:34 2023
+  Mult 1, Iter 5, Imp 22
+  Impute HAZ_PLAC
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:38:35 2023
+  Mult 1, Iter 5, Imp 23
+  Impute PVH_INVL
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:38:36 2023
+  Mult 1, Iter 5, Imp 24
+  Impute MAX_VSEV
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:38:37 2023
+  Mult 1, Iter 5, Imp 25
+  Impute SPEEDREL
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:38:38 2023
+  Mult 1, Iter 5, Imp 26
+  Impute MAN_COLL
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:38:41 2023
+  Mult 1, Iter 5, Imp 27
+  Impute BUS_USE
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:38:43 2023
+  Mult 1, Iter 5, Imp 28
+  Impute BODY_TYP
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:38:46 2023
+  Mult 1, Iter 5, Imp 29
+  Impute TOWED
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:38:47 2023
+  Mult 1, Iter 5, Imp 30
+  Impute MAKE
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:38:50 2023
+  Mult 1, Iter 5, Imp 31
+  Impute ROLLOVER
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:38:51 2023
+  Mult 1, Iter 5, Imp 32
+  Impute TYP_INT
+  Update data
+  Polytomous regression
+  Warning: Too many iterations, probably due to
+           colinearity with dependent variable
+  Correct data
+Sat Nov 18 17:38:53 2023
+  Mult 1, Iter 5, Imp 33
+  Impute PCRASH5
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:38:56 2023
+  Mult 1, Iter 5, Imp 34
+  Impute TOW_VEH
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:38:57 2023
+  Mult 1, Iter 5, Imp 35
+  Impute HIT_RUN
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:38:58 2023
+  Mult 1, Iter 5, Imp 36
+  Impute AGE
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:38:59 2023
+  Mult 1, Iter 5, Imp 37
+  Impute EMER_USE
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:39:01 2023
+  Mult 1, Iter 5, Imp 38
+  Impute PCRASH4
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:39:02 2023
+  Mult 1, Iter 5, Imp 39
+  Impute REST_MIS
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:39:03 2023
+  Mult 1, Iter 5, Imp 40
+  Impute WRK_ZONE
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:39:04 2023
+  Mult 1, Iter 5, Imp 41
+  Impute HAZ_CNO
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:39:06 2023
+  Mult 1, Iter 5, Imp 42
+  Impute IMPACT1
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:39:08 2023
+  Mult 1, Iter 5, Imp 43
+  Impute DAY_WEEK
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:39:09 2023
+  Mult 1, Iter 5, Imp 44
+  Impute P_CRASH2
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:39:10 2023
+  Mult 1, Iter 5, Imp 45
+  Impute RELJCT1
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:39:12 2023
+  Mult 1, Iter 5, Imp 46
+  Impute VSURCOND
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:39:14 2023
+  Mult 1, Iter 5, Imp 47
+  Impute VTRAFWAY
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:39:16 2023
+  Mult 1, Iter 5, Imp 48
+  Impute HOUR
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:39:18 2023
+  Mult 1, Iter 5, Imp 49
+  Impute REST_USE
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:39:19 2023
+  Mult 1, Iter 5, Imp 50
+  Impute YEAR
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:39:20 2023
+  Mult 1, Iter 5, Imp 51
+  Impute VTRAFCON
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:39:22 2023
+  Mult 1, Iter 5, Imp 52
+  Impute HAZ_INV
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:39:23 2023
+  Mult 1, Iter 5, Imp 53
+  Impute DR_PRES
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:39:24 2023
+  Mult 1, Iter 5, Imp 54
+  Impute VALIGN
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:39:26 2023
+  Mult 1, Iter 5, Imp 55
+  Impute VTCONT_F
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:39:28 2023
+  Mult 1, Iter 5, Imp 56
+  Impute INJ_SEV
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:39:29 2023
+  Mult 1, Iter 5, Imp 57
+  Impute MONTH
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:39:30 2023
+  Mult 1, Iter 5, Imp 58
+  Impute LGT_COND
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:39:32 2023
+  Mult 1, Iter 5, Imp 59
+  Impute RELJCT2
+  Update data
+  Polytomous regression
+  Warning: Too many iterations, probably due to
+           colinearity with dependent variable
+  Correct data
+Sat Nov 18 17:39:34 2023
+  Mult 1, Iter 5, Imp 60
+  Impute NUM_INJ
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:39:36 2023
+  Mult 1, Iter 5, Imp 61
+  Impute MAX_SEV
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:39:39 2023
+  Mult 1, Iter 5, Imp 62
+  Impute VSPD_LIM
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:39:40 2023
+  Mult 1, Iter 5, Imp 63
+  Impute INT_HWY
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:39:41 2023
+  Mult 1, Iter 5, Imp 64
+  Impute ALC_RES
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:39:42 2023
+  Mult 1, Iter 5, Imp 65
+  Impute PERMVIT
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:39:43 2023
+  Mult 1, Iter 5, Imp 66
+  Impute MAK_MOD
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:39:46 2023
+  Mult 1, Iter 5, Imp 67
+  Impute EJECTION
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:39:47 2023
+  Mult 1, Iter 5, Imp 68
+  Impute J_KNIFE
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:39:48 2023
+  Mult 1, Iter 5, Imp 69
+  Impute MODEL
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:39:51 2023
+  Mult 1, Iter 5, Imp 70
+  Impute VPROFILE
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:39:52 2023
+  Mult 1, Iter 5, Imp 71
+  Impute REL_ROAD
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:39:53 2023
+  Mult 1, Iter 5, Imp 72
+  Impute ACC_TYPE
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:39:55 2023
+  Mult 1, Iter 5, Imp 73
+  Impute NUMOCCS
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:39:57 2023
+  Mult 1, Iter 5, Imp 74
+  Impute REGION
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:40:00 2023
+  Mult 1, Iter 5, Imp 75
+  Impute HAZ_REL
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:40:01 2023
+  Mult 1, Iter 5, Imp 76
+  Impute VE_TOTAL
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:40:03 2023
+  Mult 1, Iter 5, Imp 77
+  Impute ALCOHOL
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:40:04 2023
+  Mult 1, Iter 5, Imp 78
+  Impute SCH_BUS
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:40:05 2023
+  Mult 1, Iter 6, Imp 1
+  Impute URBANICITY
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:40:07 2023
+  Mult 1, Iter 6, Imp 2
+  Impute VEH_ALCH
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:40:08 2023
+  Mult 1, Iter 6, Imp 3
+  Impute NUM_INJV
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:40:10 2023
+  Mult 1, Iter 6, Imp 4
+  Impute PERNOTMVIT
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:40:11 2023
+  Mult 1, Iter 6, Imp 5
+  Impute M_HARM
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:40:12 2023
+  Mult 1, Iter 6, Imp 6
+  Impute PER_TYP
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:40:14 2023
+  Mult 1, Iter 6, Imp 7
+  Impute P_CRASH1
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:40:16 2023
+  Mult 1, Iter 6, Imp 8
+  Impute ALC_STATUS
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:40:17 2023
+  Mult 1, Iter 6, Imp 9
+  Impute FIRE_EXP
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:40:18 2023
+  Mult 1, Iter 6, Imp 10
+  Impute PSU
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:40:20 2023
+  Mult 1, Iter 6, Imp 11
+  Impute WEATHER
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:40:21 2023
+  Mult 1, Iter 6, Imp 12
+  Impute SPEC_USE
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:40:23 2023
+  Mult 1, Iter 6, Imp 13
+  Impute VE_FORMS
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:40:25 2023
+  Mult 1, Iter 6, Imp 14
+  Impute SEX
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:40:26 2023
+  Mult 1, Iter 6, Imp 15
+  Impute AIR_BAG
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:40:27 2023
+  Mult 1, Iter 6, Imp 16
+  Impute SEAT_POS
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:40:29 2023
+  Mult 1, Iter 6, Imp 17
+  Impute VEH_AGE
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:40:31 2023
+  Mult 1, Iter 6, Imp 18
+  Impute CARGO_BT
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:40:32 2023
+  Mult 1, Iter 6, Imp 19
+  Impute HOSPITAL
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:40:33 2023
+  Mult 1, Iter 6, Imp 20
+  Impute HARM_EV
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:40:35 2023
+  Mult 1, Iter 6, Imp 21
+  Impute PJ
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:40:37 2023
+  Mult 1, Iter 6, Imp 22
+  Impute HAZ_PLAC
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:40:38 2023
+  Mult 1, Iter 6, Imp 23
+  Impute PVH_INVL
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:40:39 2023
+  Mult 1, Iter 6, Imp 24
+  Impute MAX_VSEV
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:40:41 2023
+  Mult 1, Iter 6, Imp 25
+  Impute SPEEDREL
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:40:42 2023
+  Mult 1, Iter 6, Imp 26
+  Impute MAN_COLL
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:40:45 2023
+  Mult 1, Iter 6, Imp 27
+  Impute BUS_USE
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:40:46 2023
+  Mult 1, Iter 6, Imp 28
+  Impute BODY_TYP
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:40:49 2023
+  Mult 1, Iter 6, Imp 29
+  Impute TOWED
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:40:50 2023
+  Mult 1, Iter 6, Imp 30
+  Impute MAKE
+  Update data
+  Polytomous regression
+  Warning: Too many iterations, probably due to
+           colinearity with dependent variable
+  Correct data
+Sat Nov 18 17:40:53 2023
+  Mult 1, Iter 6, Imp 31
+  Impute ROLLOVER
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:40:54 2023
+  Mult 1, Iter 6, Imp 32
+  Impute TYP_INT
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:40:56 2023
+  Mult 1, Iter 6, Imp 33
+  Impute PCRASH5
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:40:59 2023
+  Mult 1, Iter 6, Imp 34
+  Impute TOW_VEH
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:41:00 2023
+  Mult 1, Iter 6, Imp 35
+  Impute HIT_RUN
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:41:01 2023
+  Mult 1, Iter 6, Imp 36
+  Impute AGE
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:41:02 2023
+  Mult 1, Iter 6, Imp 37
+  Impute EMER_USE
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:41:04 2023
+  Mult 1, Iter 6, Imp 38
+  Impute PCRASH4
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:41:05 2023
+  Mult 1, Iter 6, Imp 39
+  Impute REST_MIS
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:41:06 2023
+  Mult 1, Iter 6, Imp 40
+  Impute WRK_ZONE
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:41:07 2023
+  Mult 1, Iter 6, Imp 41
+  Impute HAZ_CNO
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:41:09 2023
+  Mult 1, Iter 6, Imp 42
+  Impute IMPACT1
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:41:10 2023
+  Mult 1, Iter 6, Imp 43
+  Impute DAY_WEEK
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:41:11 2023
+  Mult 1, Iter 6, Imp 44
+  Impute P_CRASH2
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:41:13 2023
+  Mult 1, Iter 6, Imp 45
+  Impute RELJCT1
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:41:15 2023
+  Mult 1, Iter 6, Imp 46
+  Impute VSURCOND
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:41:16 2023
+  Mult 1, Iter 6, Imp 47
+  Impute VTRAFWAY
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:41:19 2023
+  Mult 1, Iter 6, Imp 48
+  Impute HOUR
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:41:20 2023
+  Mult 1, Iter 6, Imp 49
+  Impute REST_USE
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:41:21 2023
+  Mult 1, Iter 6, Imp 50
+  Impute YEAR
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:41:23 2023
+  Mult 1, Iter 6, Imp 51
+  Impute VTRAFCON
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:41:25 2023
+  Mult 1, Iter 6, Imp 52
+  Impute HAZ_INV
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:41:26 2023
+  Mult 1, Iter 6, Imp 53
+  Impute DR_PRES
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:41:27 2023
+  Mult 1, Iter 6, Imp 54
+  Impute VALIGN
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:41:28 2023
+  Mult 1, Iter 6, Imp 55
+  Impute VTCONT_F
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:41:30 2023
+  Mult 1, Iter 6, Imp 56
+  Impute INJ_SEV
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:41:32 2023
+  Mult 1, Iter 6, Imp 57
+  Impute MONTH
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:41:33 2023
+  Mult 1, Iter 6, Imp 58
+  Impute LGT_COND
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:41:34 2023
+  Mult 1, Iter 6, Imp 59
+  Impute RELJCT2
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:41:36 2023
+  Mult 1, Iter 6, Imp 60
+  Impute NUM_INJ
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:41:38 2023
+  Mult 1, Iter 6, Imp 61
+  Impute MAX_SEV
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:41:41 2023
+  Mult 1, Iter 6, Imp 62
+  Impute VSPD_LIM
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:41:43 2023
+  Mult 1, Iter 6, Imp 63
+  Impute INT_HWY
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:41:44 2023
+  Mult 1, Iter 6, Imp 64
+  Impute ALC_RES
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:41:45 2023
+  Mult 1, Iter 6, Imp 65
+  Impute PERMVIT
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:41:46 2023
+  Mult 1, Iter 6, Imp 66
+  Impute MAK_MOD
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:41:48 2023
+  Mult 1, Iter 6, Imp 67
+  Impute EJECTION
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:41:49 2023
+  Mult 1, Iter 6, Imp 68
+  Impute J_KNIFE
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:41:51 2023
+  Mult 1, Iter 6, Imp 69
+  Impute MODEL
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:41:53 2023
+  Mult 1, Iter 6, Imp 70
+  Impute VPROFILE
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:41:54 2023
+  Mult 1, Iter 6, Imp 71
+  Impute REL_ROAD
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:41:56 2023
+  Mult 1, Iter 6, Imp 72
+  Impute ACC_TYPE
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:41:58 2023
+  Mult 1, Iter 6, Imp 73
+  Impute NUMOCCS
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:42:00 2023
+  Mult 1, Iter 6, Imp 74
+  Impute REGION
+  Update data
+  Polytomous regression
+  Warning: Too many iterations, probably due to
+           colinearity with dependent variable
+  Correct data
+Sat Nov 18 17:42:03 2023
+  Mult 1, Iter 6, Imp 75
+  Impute HAZ_REL
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:42:04 2023
+  Mult 1, Iter 6, Imp 76
+  Impute VE_TOTAL
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:42:06 2023
+  Mult 1, Iter 6, Imp 77
+  Impute ALCOHOL
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:42:08 2023
+  Mult 1, Iter 6, Imp 78
+  Impute SCH_BUS
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:42:09 2023
+  Mult 1, Iter 7, Imp 1
+  Impute URBANICITY
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:42:10 2023
+  Mult 1, Iter 7, Imp 2
+  Impute VEH_ALCH
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:42:11 2023
+  Mult 1, Iter 7, Imp 3
+  Impute NUM_INJV
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:42:14 2023
+  Mult 1, Iter 7, Imp 4
+  Impute PERNOTMVIT
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:42:15 2023
+  Mult 1, Iter 7, Imp 5
+  Impute M_HARM
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:42:16 2023
+  Mult 1, Iter 7, Imp 6
+  Impute PER_TYP
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:42:17 2023
+  Mult 1, Iter 7, Imp 7
+  Impute P_CRASH1
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:42:19 2023
+  Mult 1, Iter 7, Imp 8
+  Impute ALC_STATUS
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:42:20 2023
+  Mult 1, Iter 7, Imp 9
+  Impute FIRE_EXP
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:42:21 2023
+  Mult 1, Iter 7, Imp 10
+  Impute PSU
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:42:24 2023
+  Mult 1, Iter 7, Imp 11
+  Impute WEATHER
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:42:25 2023
+  Mult 1, Iter 7, Imp 12
+  Impute SPEC_USE
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:42:26 2023
+  Mult 1, Iter 7, Imp 13
+  Impute VE_FORMS
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:42:29 2023
+  Mult 1, Iter 7, Imp 14
+  Impute SEX
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:42:30 2023
+  Mult 1, Iter 7, Imp 15
+  Impute AIR_BAG
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:42:31 2023
+  Mult 1, Iter 7, Imp 16
+  Impute SEAT_POS
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:42:33 2023
+  Mult 1, Iter 7, Imp 17
+  Impute VEH_AGE
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:42:34 2023
+  Mult 1, Iter 7, Imp 18
+  Impute CARGO_BT
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:42:35 2023
+  Mult 1, Iter 7, Imp 19
+  Impute HOSPITAL
+  Update data
+  Logistic regression
+  Warning: Too many iterations, probably due to
+           colinearity with dependent variable
+  Correct data
+Sat Nov 18 17:42:37 2023
+  Mult 1, Iter 7, Imp 20
+  Impute HARM_EV
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:42:39 2023
+  Mult 1, Iter 7, Imp 21
+  Impute PJ
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:42:41 2023
+  Mult 1, Iter 7, Imp 22
+  Impute HAZ_PLAC
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:42:42 2023
+  Mult 1, Iter 7, Imp 23
+  Impute PVH_INVL
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:42:43 2023
+  Mult 1, Iter 7, Imp 24
+  Impute MAX_VSEV
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:42:44 2023
+  Mult 1, Iter 7, Imp 25
+  Impute SPEEDREL
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:42:45 2023
+  Mult 1, Iter 7, Imp 26
+  Impute MAN_COLL
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:42:48 2023
+  Mult 1, Iter 7, Imp 27
+  Impute BUS_USE
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:42:50 2023
+  Mult 1, Iter 7, Imp 28
+  Impute BODY_TYP
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:42:53 2023
+  Mult 1, Iter 7, Imp 29
+  Impute TOWED
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:42:54 2023
+  Mult 1, Iter 7, Imp 30
+  Impute MAKE
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:42:57 2023
+  Mult 1, Iter 7, Imp 31
+  Impute ROLLOVER
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:42:58 2023
+  Mult 1, Iter 7, Imp 32
+  Impute TYP_INT
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:43:00 2023
+  Mult 1, Iter 7, Imp 33
+  Impute PCRASH5
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:43:02 2023
+  Mult 1, Iter 7, Imp 34
+  Impute TOW_VEH
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:43:03 2023
+  Mult 1, Iter 7, Imp 35
+  Impute HIT_RUN
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:43:04 2023
+  Mult 1, Iter 7, Imp 36
+  Impute AGE
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:43:06 2023
+  Mult 1, Iter 7, Imp 37
+  Impute EMER_USE
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:43:07 2023
+  Mult 1, Iter 7, Imp 38
+  Impute PCRASH4
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:43:08 2023
+  Mult 1, Iter 7, Imp 39
+  Impute REST_MIS
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:43:09 2023
+  Mult 1, Iter 7, Imp 40
+  Impute WRK_ZONE
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:43:11 2023
+  Mult 1, Iter 7, Imp 41
+  Impute HAZ_CNO
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:43:12 2023
+  Mult 1, Iter 7, Imp 42
+  Impute IMPACT1
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:43:14 2023
+  Mult 1, Iter 7, Imp 43
+  Impute DAY_WEEK
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:43:15 2023
+  Mult 1, Iter 7, Imp 44
+  Impute P_CRASH2
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:43:16 2023
+  Mult 1, Iter 7, Imp 45
+  Impute RELJCT1
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:43:19 2023
+  Mult 1, Iter 7, Imp 46
+  Impute VSURCOND
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:43:20 2023
+  Mult 1, Iter 7, Imp 47
+  Impute VTRAFWAY
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:43:22 2023
+  Mult 1, Iter 7, Imp 48
+  Impute HOUR
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:43:23 2023
+  Mult 1, Iter 7, Imp 49
+  Impute REST_USE
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:43:25 2023
+  Mult 1, Iter 7, Imp 50
+  Impute YEAR
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:43:26 2023
+  Mult 1, Iter 7, Imp 51
+  Impute VTRAFCON
+  Update data
+  Polytomous regression
+  Warning: Too many iterations, probably due to
+           colinearity with dependent variable
+  Correct data
+Sat Nov 18 17:43:28 2023
+  Mult 1, Iter 7, Imp 52
+  Impute HAZ_INV
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:43:29 2023
+  Mult 1, Iter 7, Imp 53
+  Impute DR_PRES
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:43:31 2023
+  Mult 1, Iter 7, Imp 54
+  Impute VALIGN
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:43:32 2023
+  Mult 1, Iter 7, Imp 55
+  Impute VTCONT_F
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:43:34 2023
+  Mult 1, Iter 7, Imp 56
+  Impute INJ_SEV
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:43:36 2023
+  Mult 1, Iter 7, Imp 57
+  Impute MONTH
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:43:37 2023
+  Mult 1, Iter 7, Imp 58
+  Impute LGT_COND
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:43:38 2023
+  Mult 1, Iter 7, Imp 59
+  Impute RELJCT2
+  Update data
+  Polytomous regression
+  Warning: Too many iterations, probably due to
+           colinearity with dependent variable
+  Correct data
+Sat Nov 18 17:43:41 2023
+  Mult 1, Iter 7, Imp 60
+  Impute NUM_INJ
+  Update data
+  Polytomous regression
+  Warning: Too many iterations, probably due to
+           colinearity with dependent variable
+  Correct data
+Sat Nov 18 17:43:43 2023
+  Mult 1, Iter 7, Imp 61
+  Impute MAX_SEV
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:43:46 2023
+  Mult 1, Iter 7, Imp 62
+  Impute VSPD_LIM
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:43:48 2023
+  Mult 1, Iter 7, Imp 63
+  Impute INT_HWY
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:43:49 2023
+  Mult 1, Iter 7, Imp 64
+  Impute ALC_RES
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:43:50 2023
+  Mult 1, Iter 7, Imp 65
+  Impute PERMVIT
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:43:51 2023
+  Mult 1, Iter 7, Imp 66
+  Impute MAK_MOD
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:43:54 2023
+  Mult 1, Iter 7, Imp 67
+  Impute EJECTION
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:43:55 2023
+  Mult 1, Iter 7, Imp 68
+  Impute J_KNIFE
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:43:56 2023
+  Mult 1, Iter 7, Imp 69
+  Impute MODEL
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:43:59 2023
+  Mult 1, Iter 7, Imp 70
+  Impute VPROFILE
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:44:00 2023
+  Mult 1, Iter 7, Imp 71
+  Impute REL_ROAD
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:44:01 2023
+  Mult 1, Iter 7, Imp 72
+  Impute ACC_TYPE
+  Update data
+  Polytomous regression
+  Warning: Too many iterations, probably due to
+           colinearity with dependent variable
+  Correct data
+Sat Nov 18 17:44:03 2023
+  Mult 1, Iter 7, Imp 73
+  Impute NUMOCCS
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:44:05 2023
+  Mult 1, Iter 7, Imp 74
+  Impute REGION
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:44:08 2023
+  Mult 1, Iter 7, Imp 75
+  Impute HAZ_REL
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:44:10 2023
+  Mult 1, Iter 7, Imp 76
+  Impute VE_TOTAL
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:44:12 2023
+  Mult 1, Iter 7, Imp 77
+  Impute ALCOHOL
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:44:13 2023
+  Mult 1, Iter 7, Imp 78
+  Impute SCH_BUS
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:44:14 2023
+  Mult 1, Iter 8, Imp 1
+  Impute URBANICITY
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:44:15 2023
+  Mult 1, Iter 8, Imp 2
+  Impute VEH_ALCH
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:44:16 2023
+  Mult 1, Iter 8, Imp 3
+  Impute NUM_INJV
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:44:19 2023
+  Mult 1, Iter 8, Imp 4
+  Impute PERNOTMVIT
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:44:20 2023
+  Mult 1, Iter 8, Imp 5
+  Impute M_HARM
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:44:21 2023
+  Mult 1, Iter 8, Imp 6
+  Impute PER_TYP
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:44:23 2023
+  Mult 1, Iter 8, Imp 7
+  Impute P_CRASH1
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:44:25 2023
+  Mult 1, Iter 8, Imp 8
+  Impute ALC_STATUS
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:44:26 2023
+  Mult 1, Iter 8, Imp 9
+  Impute FIRE_EXP
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:44:27 2023
+  Mult 1, Iter 8, Imp 10
+  Impute PSU
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:44:29 2023
+  Mult 1, Iter 8, Imp 11
+  Impute WEATHER
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:44:31 2023
+  Mult 1, Iter 8, Imp 12
+  Impute SPEC_USE
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:44:32 2023
+  Mult 1, Iter 8, Imp 13
+  Impute VE_FORMS
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:44:34 2023
+  Mult 1, Iter 8, Imp 14
+  Impute SEX
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:44:35 2023
+  Mult 1, Iter 8, Imp 15
+  Impute AIR_BAG
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:44:36 2023
+  Mult 1, Iter 8, Imp 16
+  Impute SEAT_POS
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:44:39 2023
+  Mult 1, Iter 8, Imp 17
+  Impute VEH_AGE
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:44:40 2023
+  Mult 1, Iter 8, Imp 18
+  Impute CARGO_BT
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:44:41 2023
+  Mult 1, Iter 8, Imp 19
+  Impute HOSPITAL
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:44:42 2023
+  Mult 1, Iter 8, Imp 20
+  Impute HARM_EV
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:44:44 2023
+  Mult 1, Iter 8, Imp 21
+  Impute PJ
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:44:46 2023
+  Mult 1, Iter 8, Imp 22
+  Impute HAZ_PLAC
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:44:47 2023
+  Mult 1, Iter 8, Imp 23
+  Impute PVH_INVL
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:44:48 2023
+  Mult 1, Iter 8, Imp 24
+  Impute MAX_VSEV
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:44:50 2023
+  Mult 1, Iter 8, Imp 25
+  Impute SPEEDREL
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:44:51 2023
+  Mult 1, Iter 8, Imp 26
+  Impute MAN_COLL
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:44:54 2023
+  Mult 1, Iter 8, Imp 27
+  Impute BUS_USE
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:44:55 2023
+  Mult 1, Iter 8, Imp 28
+  Impute BODY_TYP
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:44:58 2023
+  Mult 1, Iter 8, Imp 29
+  Impute TOWED
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:44:59 2023
+  Mult 1, Iter 8, Imp 30
+  Impute MAKE
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:45:02 2023
+  Mult 1, Iter 8, Imp 31
+  Impute ROLLOVER
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:45:03 2023
+  Mult 1, Iter 8, Imp 32
+  Impute TYP_INT
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:45:05 2023
+  Mult 1, Iter 8, Imp 33
+  Impute PCRASH5
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:45:07 2023
+  Mult 1, Iter 8, Imp 34
+  Impute TOW_VEH
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:45:09 2023
+  Mult 1, Iter 8, Imp 35
+  Impute HIT_RUN
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:45:10 2023
+  Mult 1, Iter 8, Imp 36
+  Impute AGE
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:45:11 2023
+  Mult 1, Iter 8, Imp 37
+  Impute EMER_USE
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:45:13 2023
+  Mult 1, Iter 8, Imp 38
+  Impute PCRASH4
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:45:14 2023
+  Mult 1, Iter 8, Imp 39
+  Impute REST_MIS
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:45:15 2023
+  Mult 1, Iter 8, Imp 40
+  Impute WRK_ZONE
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:45:16 2023
+  Mult 1, Iter 8, Imp 41
+  Impute HAZ_CNO
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:45:18 2023
+  Mult 1, Iter 8, Imp 42
+  Impute IMPACT1
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:45:19 2023
+  Mult 1, Iter 8, Imp 43
+  Impute DAY_WEEK
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:45:20 2023
+  Mult 1, Iter 8, Imp 44
+  Impute P_CRASH2
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:45:22 2023
+  Mult 1, Iter 8, Imp 45
+  Impute RELJCT1
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:45:24 2023
+  Mult 1, Iter 8, Imp 46
+  Impute VSURCOND
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:45:25 2023
+  Mult 1, Iter 8, Imp 47
+  Impute VTRAFWAY
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:45:28 2023
+  Mult 1, Iter 8, Imp 48
+  Impute HOUR
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:45:29 2023
+  Mult 1, Iter 8, Imp 49
+  Impute REST_USE
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:45:30 2023
+  Mult 1, Iter 8, Imp 50
+  Impute YEAR
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:45:32 2023
+  Mult 1, Iter 8, Imp 51
+  Impute VTRAFCON
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:45:34 2023
+  Mult 1, Iter 8, Imp 52
+  Impute HAZ_INV
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:45:35 2023
+  Mult 1, Iter 8, Imp 53
+  Impute DR_PRES
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:45:36 2023
+  Mult 1, Iter 8, Imp 54
+  Impute VALIGN
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:45:37 2023
+  Mult 1, Iter 8, Imp 55
+  Impute VTCONT_F
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:45:40 2023
+  Mult 1, Iter 8, Imp 56
+  Impute INJ_SEV
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:45:41 2023
+  Mult 1, Iter 8, Imp 57
+  Impute MONTH
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:45:42 2023
+  Mult 1, Iter 8, Imp 58
+  Impute LGT_COND
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:45:44 2023
+  Mult 1, Iter 8, Imp 59
+  Impute RELJCT2
+  Update data
+  Polytomous regression
+  Warning: Too many iterations, probably due to
+           colinearity with dependent variable
+  Correct data
+Sat Nov 18 17:45:46 2023
+  Mult 1, Iter 8, Imp 60
+  Impute NUM_INJ
+  Update data
+  Polytomous regression
+  Warning: Too many iterations, probably due to
+           colinearity with dependent variable
+  Correct data
+Sat Nov 18 17:45:49 2023
+  Mult 1, Iter 8, Imp 61
+  Impute MAX_SEV
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:45:52 2023
+  Mult 1, Iter 8, Imp 62
+  Impute VSPD_LIM
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:45:53 2023
+  Mult 1, Iter 8, Imp 63
+  Impute INT_HWY
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:45:54 2023
+  Mult 1, Iter 8, Imp 64
+  Impute ALC_RES
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:45:55 2023
+  Mult 1, Iter 8, Imp 65
+  Impute PERMVIT
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:45:56 2023
+  Mult 1, Iter 8, Imp 66
+  Impute MAK_MOD
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:45:59 2023
+  Mult 1, Iter 8, Imp 67
+  Impute EJECTION
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:46:00 2023
+  Mult 1, Iter 8, Imp 68
+  Impute J_KNIFE
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:46:02 2023
+  Mult 1, Iter 8, Imp 69
+  Impute MODEL
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:46:04 2023
+  Mult 1, Iter 8, Imp 70
+  Impute VPROFILE
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:46:05 2023
+  Mult 1, Iter 8, Imp 71
+  Impute REL_ROAD
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:46:07 2023
+  Mult 1, Iter 8, Imp 72
+  Impute ACC_TYPE
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:46:08 2023
+  Mult 1, Iter 8, Imp 73
+  Impute NUMOCCS
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:46:10 2023
+  Mult 1, Iter 8, Imp 74
+  Impute REGION
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:46:13 2023
+  Mult 1, Iter 8, Imp 75
+  Impute HAZ_REL
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:46:15 2023
+  Mult 1, Iter 8, Imp 76
+  Impute VE_TOTAL
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:46:17 2023
+  Mult 1, Iter 8, Imp 77
+  Impute ALCOHOL
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:46:18 2023
+  Mult 1, Iter 8, Imp 78
+  Impute SCH_BUS
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:46:19 2023
+  Mult 1, Iter 9, Imp 1
+  Impute URBANICITY
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:46:20 2023
+  Mult 1, Iter 9, Imp 2
+  Impute VEH_ALCH
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:46:21 2023
+  Mult 1, Iter 9, Imp 3
+  Impute NUM_INJV
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:46:24 2023
+  Mult 1, Iter 9, Imp 4
+  Impute PERNOTMVIT
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:46:25 2023
+  Mult 1, Iter 9, Imp 5
+  Impute M_HARM
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:46:26 2023
+  Mult 1, Iter 9, Imp 6
+  Impute PER_TYP
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:46:28 2023
+  Mult 1, Iter 9, Imp 7
+  Impute P_CRASH1
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:46:30 2023
+  Mult 1, Iter 9, Imp 8
+  Impute ALC_STATUS
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:46:31 2023
+  Mult 1, Iter 9, Imp 9
+  Impute FIRE_EXP
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:46:32 2023
+  Mult 1, Iter 9, Imp 10
+  Impute PSU
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:46:34 2023
+  Mult 1, Iter 9, Imp 11
+  Impute WEATHER
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:46:36 2023
+  Mult 1, Iter 9, Imp 12
+  Impute SPEC_USE
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:46:37 2023
+  Mult 1, Iter 9, Imp 13
+  Impute VE_FORMS
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:46:39 2023
+  Mult 1, Iter 9, Imp 14
+  Impute SEX
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:46:40 2023
+  Mult 1, Iter 9, Imp 15
+  Impute AIR_BAG
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:46:41 2023
+  Mult 1, Iter 9, Imp 16
+  Impute SEAT_POS
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:46:44 2023
+  Mult 1, Iter 9, Imp 17
+  Impute VEH_AGE
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:46:45 2023
+  Mult 1, Iter 9, Imp 18
+  Impute CARGO_BT
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:46:46 2023
+  Mult 1, Iter 9, Imp 19
+  Impute HOSPITAL
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:46:47 2023
+  Mult 1, Iter 9, Imp 20
+  Impute HARM_EV
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:46:49 2023
+  Mult 1, Iter 9, Imp 21
+  Impute PJ
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:46:51 2023
+  Mult 1, Iter 9, Imp 22
+  Impute HAZ_PLAC
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:46:52 2023
+  Mult 1, Iter 9, Imp 23
+  Impute PVH_INVL
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:46:53 2023
+  Mult 1, Iter 9, Imp 24
+  Impute MAX_VSEV
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:46:55 2023
+  Mult 1, Iter 9, Imp 25
+  Impute SPEEDREL
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:46:56 2023
+  Mult 1, Iter 9, Imp 26
+  Impute MAN_COLL
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:46:59 2023
+  Mult 1, Iter 9, Imp 27
+  Impute BUS_USE
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:47:00 2023
+  Mult 1, Iter 9, Imp 28
+  Impute BODY_TYP
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:47:03 2023
+  Mult 1, Iter 9, Imp 29
+  Impute TOWED
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:47:04 2023
+  Mult 1, Iter 9, Imp 30
+  Impute MAKE
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:47:07 2023
+  Mult 1, Iter 9, Imp 31
+  Impute ROLLOVER
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:47:08 2023
+  Mult 1, Iter 9, Imp 32
+  Impute TYP_INT
+  Update data
+  Polytomous regression
+  Warning: Too many iterations, probably due to
+           colinearity with dependent variable
+  Correct data
+Sat Nov 18 17:47:10 2023
+  Mult 1, Iter 9, Imp 33
+  Impute PCRASH5
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:47:13 2023
+  Mult 1, Iter 9, Imp 34
+  Impute TOW_VEH
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:47:14 2023
+  Mult 1, Iter 9, Imp 35
+  Impute HIT_RUN
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:47:15 2023
+  Mult 1, Iter 9, Imp 36
+  Impute AGE
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:47:16 2023
+  Mult 1, Iter 9, Imp 37
+  Impute EMER_USE
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:47:18 2023
+  Mult 1, Iter 9, Imp 38
+  Impute PCRASH4
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:47:19 2023
+  Mult 1, Iter 9, Imp 39
+  Impute REST_MIS
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:47:20 2023
+  Mult 1, Iter 9, Imp 40
+  Impute WRK_ZONE
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:47:21 2023
+  Mult 1, Iter 9, Imp 41
+  Impute HAZ_CNO
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:47:23 2023
+  Mult 1, Iter 9, Imp 42
+  Impute IMPACT1
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:47:24 2023
+  Mult 1, Iter 9, Imp 43
+  Impute DAY_WEEK
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:47:25 2023
+  Mult 1, Iter 9, Imp 44
+  Impute P_CRASH2
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:47:27 2023
+  Mult 1, Iter 9, Imp 45
+  Impute RELJCT1
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:47:28 2023
+  Mult 1, Iter 9, Imp 46
+  Impute VSURCOND
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:47:30 2023
+  Mult 1, Iter 9, Imp 47
+  Impute VTRAFWAY
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:47:33 2023
+  Mult 1, Iter 9, Imp 48
+  Impute HOUR
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:47:34 2023
+  Mult 1, Iter 9, Imp 49
+  Impute REST_USE
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:47:35 2023
+  Mult 1, Iter 9, Imp 50
+  Impute YEAR
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:47:37 2023
+  Mult 1, Iter 9, Imp 51
+  Impute VTRAFCON
+  Update data
+  Polytomous regression
+  Warning: Too many iterations, probably due to
+           colinearity with dependent variable
+  Warning: Too many iterations, probably due to
+           colinearity with dependent variable
+  Correct data
+Sat Nov 18 17:47:40 2023
+  Mult 1, Iter 9, Imp 52
+  Impute HAZ_INV
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:47:41 2023
+  Mult 1, Iter 9, Imp 53
+  Impute DR_PRES
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:47:42 2023
+  Mult 1, Iter 9, Imp 54
+  Impute VALIGN
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:47:43 2023
+  Mult 1, Iter 9, Imp 55
+  Impute VTCONT_F
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:47:45 2023
+  Mult 1, Iter 9, Imp 56
+  Impute INJ_SEV
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:47:47 2023
+  Mult 1, Iter 9, Imp 57
+  Impute MONTH
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:47:48 2023
+  Mult 1, Iter 9, Imp 58
+  Impute LGT_COND
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:47:50 2023
+  Mult 1, Iter 9, Imp 59
+  Impute RELJCT2
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:47:51 2023
+  Mult 1, Iter 9, Imp 60
+  Impute NUM_INJ
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:47:54 2023
+  Mult 1, Iter 9, Imp 61
+  Impute MAX_SEV
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:47:57 2023
+  Mult 1, Iter 9, Imp 62
+  Impute VSPD_LIM
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:47:58 2023
+  Mult 1, Iter 9, Imp 63
+  Impute INT_HWY
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:47:59 2023
+  Mult 1, Iter 9, Imp 64
+  Impute ALC_RES
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:48:00 2023
+  Mult 1, Iter 9, Imp 65
+  Impute PERMVIT
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:48:01 2023
+  Mult 1, Iter 9, Imp 66
+  Impute MAK_MOD
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:48:04 2023
+  Mult 1, Iter 9, Imp 67
+  Impute EJECTION
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:48:05 2023
+  Mult 1, Iter 9, Imp 68
+  Impute J_KNIFE
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:48:06 2023
+  Mult 1, Iter 9, Imp 69
+  Impute MODEL
+  Update data
+  Polytomous regression
+  Warning: Too many iterations, probably due to
+           colinearity with dependent variable
+  Correct data
+Sat Nov 18 17:48:09 2023
+  Mult 1, Iter 9, Imp 70
+  Impute VPROFILE
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:48:10 2023
+  Mult 1, Iter 9, Imp 71
+  Impute REL_ROAD
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:48:12 2023
+  Mult 1, Iter 9, Imp 72
+  Impute ACC_TYPE
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:48:14 2023
+  Mult 1, Iter 9, Imp 73
+  Impute NUMOCCS
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:48:16 2023
+  Mult 1, Iter 9, Imp 74
+  Impute REGION
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:48:18 2023
+  Mult 1, Iter 9, Imp 75
+  Impute HAZ_REL
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:48:20 2023
+  Mult 1, Iter 9, Imp 76
+  Impute VE_TOTAL
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:48:22 2023
+  Mult 1, Iter 9, Imp 77
+  Impute ALCOHOL
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:48:23 2023
+  Mult 1, Iter 9, Imp 78
+  Impute SCH_BUS
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:48:24 2023
+  Mult 1, Iter 10, Imp 1
+  Impute URBANICITY
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:48:26 2023
+  Mult 1, Iter 10, Imp 2
+  Impute VEH_ALCH
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:48:27 2023
+  Mult 1, Iter 10, Imp 3
+  Impute NUM_INJV
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:48:29 2023
+  Mult 1, Iter 10, Imp 4
+  Impute PERNOTMVIT
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:48:30 2023
+  Mult 1, Iter 10, Imp 5
+  Impute M_HARM
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:48:32 2023
+  Mult 1, Iter 10, Imp 6
+  Impute PER_TYP
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:48:33 2023
+  Mult 1, Iter 10, Imp 7
+  Impute P_CRASH1
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:48:35 2023
+  Mult 1, Iter 10, Imp 8
+  Impute ALC_STATUS
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:48:36 2023
+  Mult 1, Iter 10, Imp 9
+  Impute FIRE_EXP
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:48:37 2023
+  Mult 1, Iter 10, Imp 10
+  Impute PSU
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:48:40 2023
+  Mult 1, Iter 10, Imp 11
+  Impute WEATHER
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:48:41 2023
+  Mult 1, Iter 10, Imp 12
+  Impute SPEC_USE
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:48:43 2023
+  Mult 1, Iter 10, Imp 13
+  Impute VE_FORMS
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:48:45 2023
+  Mult 1, Iter 10, Imp 14
+  Impute SEX
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:48:46 2023
+  Mult 1, Iter 10, Imp 15
+  Impute AIR_BAG
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:48:47 2023
+  Mult 1, Iter 10, Imp 16
+  Impute SEAT_POS
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:48:49 2023
+  Mult 1, Iter 10, Imp 17
+  Impute VEH_AGE
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:48:50 2023
+  Mult 1, Iter 10, Imp 18
+  Impute CARGO_BT
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:48:51 2023
+  Mult 1, Iter 10, Imp 19
+  Impute HOSPITAL
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:48:52 2023
+  Mult 1, Iter 10, Imp 20
+  Impute HARM_EV
+  Update data
+  Polytomous regression
+  Warning: Too many iterations, probably due to
+           colinearity with dependent variable
+  Correct data
+Sat Nov 18 17:48:55 2023
+  Mult 1, Iter 10, Imp 21
+  Impute PJ
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:48:57 2023
+  Mult 1, Iter 10, Imp 22
+  Impute HAZ_PLAC
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:48:58 2023
+  Mult 1, Iter 10, Imp 23
+  Impute PVH_INVL
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:48:59 2023
+  Mult 1, Iter 10, Imp 24
+  Impute MAX_VSEV
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:49:01 2023
+  Mult 1, Iter 10, Imp 25
+  Impute SPEEDREL
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:49:02 2023
+  Mult 1, Iter 10, Imp 26
+  Impute MAN_COLL
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:49:04 2023
+  Mult 1, Iter 10, Imp 27
+  Impute BUS_USE
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:49:06 2023
+  Mult 1, Iter 10, Imp 28
+  Impute BODY_TYP
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:49:08 2023
+  Mult 1, Iter 10, Imp 29
+  Impute TOWED
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:49:10 2023
+  Mult 1, Iter 10, Imp 30
+  Impute MAKE
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:49:12 2023
+  Mult 1, Iter 10, Imp 31
+  Impute ROLLOVER
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:49:13 2023
+  Mult 1, Iter 10, Imp 32
+  Impute TYP_INT
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:49:15 2023
+  Mult 1, Iter 10, Imp 33
+  Impute PCRASH5
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:49:17 2023
+  Mult 1, Iter 10, Imp 34
+  Impute TOW_VEH
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:49:19 2023
+  Mult 1, Iter 10, Imp 35
+  Impute HIT_RUN
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:49:20 2023
+  Mult 1, Iter 10, Imp 36
+  Impute AGE
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:49:21 2023
+  Mult 1, Iter 10, Imp 37
+  Impute EMER_USE
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:49:23 2023
+  Mult 1, Iter 10, Imp 38
+  Impute PCRASH4
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:49:24 2023
+  Mult 1, Iter 10, Imp 39
+  Impute REST_MIS
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:49:25 2023
+  Mult 1, Iter 10, Imp 40
+  Impute WRK_ZONE
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:49:26 2023
+  Mult 1, Iter 10, Imp 41
+  Impute HAZ_CNO
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:49:28 2023
+  Mult 1, Iter 10, Imp 42
+  Impute IMPACT1
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:49:29 2023
+  Mult 1, Iter 10, Imp 43
+  Impute DAY_WEEK
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:49:30 2023
+  Mult 1, Iter 10, Imp 44
+  Impute P_CRASH2
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:49:32 2023
+  Mult 1, Iter 10, Imp 45
+  Impute RELJCT1
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:49:34 2023
+  Mult 1, Iter 10, Imp 46
+  Impute VSURCOND
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:49:35 2023
+  Mult 1, Iter 10, Imp 47
+  Impute VTRAFWAY
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:49:38 2023
+  Mult 1, Iter 10, Imp 48
+  Impute HOUR
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:49:39 2023
+  Mult 1, Iter 10, Imp 49
+  Impute REST_USE
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:49:41 2023
+  Mult 1, Iter 10, Imp 50
+  Impute YEAR
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:49:42 2023
+  Mult 1, Iter 10, Imp 51
+  Impute VTRAFCON
+  Update data
+  Polytomous regression
+  Warning: Too many iterations, probably due to
+           colinearity with dependent variable
+  Correct data
+Sat Nov 18 17:49:45 2023
+  Mult 1, Iter 10, Imp 52
+  Impute HAZ_INV
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:49:46 2023
+  Mult 1, Iter 10, Imp 53
+  Impute DR_PRES
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:49:47 2023
+  Mult 1, Iter 10, Imp 54
+  Impute VALIGN
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:49:48 2023
+  Mult 1, Iter 10, Imp 55
+  Impute VTCONT_F
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:49:51 2023
+  Mult 1, Iter 10, Imp 56
+  Impute INJ_SEV
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:49:52 2023
+  Mult 1, Iter 10, Imp 57
+  Impute MONTH
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:49:53 2023
+  Mult 1, Iter 10, Imp 58
+  Impute LGT_COND
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:49:55 2023
+  Mult 1, Iter 10, Imp 59
+  Impute RELJCT2
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:49:57 2023
+  Mult 1, Iter 10, Imp 60
+  Impute NUM_INJ
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:49:59 2023
+  Mult 1, Iter 10, Imp 61
+  Impute MAX_SEV
+  Update data
+  Polytomous regression
+  Warning: Too many iterations, probably due to
+           colinearity with dependent variable
+  Correct data
+Sat Nov 18 17:50:03 2023
+  Mult 1, Iter 10, Imp 62
+  Impute VSPD_LIM
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:50:04 2023
+  Mult 1, Iter 10, Imp 63
+  Impute INT_HWY
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:50:05 2023
+  Mult 1, Iter 10, Imp 64
+  Impute ALC_RES
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:50:06 2023
+  Mult 1, Iter 10, Imp 65
+  Impute PERMVIT
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:50:07 2023
+  Mult 1, Iter 10, Imp 66
+  Impute MAK_MOD
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:50:10 2023
+  Mult 1, Iter 10, Imp 67
+  Impute EJECTION
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:50:11 2023
+  Mult 1, Iter 10, Imp 68
+  Impute J_KNIFE
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:50:12 2023
+  Mult 1, Iter 10, Imp 69
+  Impute MODEL
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:50:15 2023
+  Mult 1, Iter 10, Imp 70
+  Impute VPROFILE
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:50:16 2023
+  Mult 1, Iter 10, Imp 71
+  Impute REL_ROAD
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:50:17 2023
+  Mult 1, Iter 10, Imp 72
+  Impute ACC_TYPE
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:50:19 2023
+  Mult 1, Iter 10, Imp 73
+  Impute NUMOCCS
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:50:21 2023
+  Mult 1, Iter 10, Imp 74
+  Impute REGION
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:50:24 2023
+  Mult 1, Iter 10, Imp 75
+  Impute HAZ_REL
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:50:26 2023
+  Mult 1, Iter 10, Imp 76
+  Impute VE_TOTAL
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:50:28 2023
+  Mult 1, Iter 10, Imp 77
+  Impute ALCOHOL
+  Update data
+  Polytomous regression
+  Correct data
+Sat Nov 18 17:50:29 2023
+  Mult 1, Iter 10, Imp 78
+  Impute SCH_BUS
+  Update data
+  Logistic regression
+  Correct data
+Sat Nov 18 17:50:30 2023
+  Output data
+  End execution
+
+Sat Nov 18 17:50:30 2023
+  Begin Putdata execution
+  End execution

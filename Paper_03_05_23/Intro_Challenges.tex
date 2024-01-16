@@ -1,0 +1,25 @@
+%%%
+\subsection{Machine Learning Challenges}
+
+We deal with several machine learning challenges in our study, and their solutions are often as much art as science.  
+
+\begin{description}
+
+	\item [Feature Selection]  We need to select the features most relevant to crash severity; too many less-relevant features will muddle the model building.  CRSS has both ``Make'' and ``Body Type.''  Do these two features give enough different information 
+that we should use both?  If not, which is more useful?
+
+\item [Feature Engineering]
+We can also merge features into useful new features.  In both data sets, we have ``Day of Week'' and ``Hour.''  We would like to take from each to make ``Rush Hour,'' if it has a different hospitalization profile.  When does it start and end?  Is morning rush hour different from evening?  Does it start earlier on Fridays?  
+
+\item [Binning]
+Some features have many values that we can usefully combine into bins or bands.  The \verb|AGE| feature has values 0-120.   A simple approach would be to put it in decade bands, but in most states in the US, the driving age is 16.  The crash severity profiles for new drivers are different than for experienced drivers, so a split at 15/16 makes sense.  In our analysis, the crash severity profiles for ages 52-70 are similar to each other but different from 71+, so we broke them into bands there.  
+	
+\item [Missing Data]  As with all real data, many samples (records) have missing values.  The CRSS authors imputed missing values in some but not all features, for historical reasons going back to 1982.  \citep{CRSS_Imputation}  We compared their method with two others and imputed missing values in all of the features we used.  
+
+\item [Imbalanced Data]	
+Only a small proportion of crashes require immediate medical attention.  In the CRSS data, about 15\% of persons involved in a crash were transported by ambulance.  If we built a model that classified all crashes as ``Ambulance Not Needed,'' the model would have 85\% accuracy, which would be excellent in some other applications, but not here.  The toolkit for building models on imbalanced data is well established, but many of the tools only work for continuous data (our data is all categorical).
+	
+	
+\end{description}
+
+
