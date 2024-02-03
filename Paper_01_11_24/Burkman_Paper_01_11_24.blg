@@ -2,48 +2,46 @@ This is BibTeX, Version 0.99d (TeX Live 2021)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: Burkman_Paper_01_11_24.aux
 The style file: cas-model2-names.bst
-I found no \citation commands---while reading file Burkman_Paper_01_11_24.aux
-Database file #1: Paper_Summer_2022.bib
+Database file #1: Ambulance_Dispatch.bib
 Reallocated singl_function (elt_size=4) to 100 items from 50.
-You've used 0 entries,
+You've used 6 entries,
             2990 wiz_defined-function locations,
-            733 strings with 6301 characters,
-and the built_in function-call counts, 49 in all, are:
-= -- 0
-> -- 0
-< -- 0
-+ -- 0
-- -- 0
-* -- 2
-:= -- 12
-add.period$ -- 0
-call.type$ -- 0
-change.case$ -- 0
-chr.to.int$ -- 0
-cite$ -- 0
-duplicate$ -- 0
-empty$ -- 1
-format.name$ -- 0
-if$ -- 1
+            775 strings with 7615 characters,
+and the built_in function-call counts, 4928 in all, are:
+= -- 342
+> -- 276
+< -- 3
++ -- 105
+- -- 99
+* -- 575
+:= -- 726
+add.period$ -- 18
+call.type$ -- 6
+change.case$ -- 62
+chr.to.int$ -- 6
+cite$ -- 6
+duplicate$ -- 335
+empty$ -- 306
+format.name$ -- 115
+if$ -- 893
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 0
-newline$ -- 15
-num.names$ -- 0
-pop$ -- 0
+missing$ -- 72
+newline$ -- 45
+num.names$ -- 24
+pop$ -- 133
 preamble$ -- 1
-purify$ -- 0
+purify$ -- 57
 quote$ -- 0
-skip$ -- 1
+skip$ -- 95
 stack$ -- 0
-substring$ -- 0
-swap$ -- 0
-text.length$ -- 0
+substring$ -- 173
+swap$ -- 274
+text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 0
+type$ -- 54
 warning$ -- 0
-while$ -- 0
+while$ -- 25
 width$ -- 0
-write$ -- 14
-(There was 1 error message)
+write$ -- 98

@@ -1,8 +1,0 @@
-New Google Pixel phones can automatically notify police if the phone detects the deceleration profile of a crash.  From the data available from such an automatic notification, can we build a machine-learning model that will recommend whether police should immediately, perhaps automatically, dispatch an ambulance?  If the injuries are serious, time to medical care is critical, but few crashes result in serious injuries, and ambulances are in limited supply and expensive.  %Such a model will not be perfect, with many false positives (sending an ambulance when one is not needed) and some false negatives (not sending an ambulance when one is needed), but better than random.  How much better depends on several things that we will investigate.
-
-The costs of the false positives and false negatives are very different.  The cost of sending an ambulance when one is not needed is measured in dollars, but the cost of not sending an ambulance when one is needed is measured in lives.  Each society chooses a marginal ethical tradeoff rate $\omega = \Delta FP/\Delta TP$ when it sets government budgets.  For our work we arbitrarily chose $\omega=2.0$ and incorporated it into the model in the class weight and decision threshold.
-
-We will show that the quality of the model depends mostly on what information is available to inform the decision of whether to immediately dispatch an ambulance.
-We used the data of the Crash Report Sampling System (CRSS), which is freely available online.  We have applied new methods (for this dataset in the literature) to handle missing data, and we have investigated several methods for handling the data imbalance.  To promote discussion and future research, we have included all of the code we used in our analysis.
-%\vskip 1in
-

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.10.6)  12 JAN 2024 06:28
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.10.6)  3 FEB 2024 11:18
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1037,70 +1037,85 @@ Package: longtable 2020/01/07 v4.13 Multi-page Table package (DPC)
 \c@LT@chunks=\count348
 \LT@p@ftn=\toks43
 )
+(/usr/local/texlive/2021/texmf-dist/tex/latex/enumitem/enumitem.sty
+Package: enumitem 2019/06/20 v3.9 Customized lists
+\labelindent=\skip73
+\enit@outerparindent=\dimen319
+\enit@toks=\toks44
+\enit@inbox=\box97
+\enit@count@id=\count349
+\enitdp@description=\count350
+)
+(/usr/local/texlive/2021/texmf-dist/tex/latex/placeins/placeins.sty
+Package: placeins 2005/04/18  v 2.2
+)
 (/usr/local/texlive/2021/texmf-dist/tex/latex/natbib/natbib.sty
 Package: natbib 2010/09/13 8.31b (PWD, AO)
-\bibhang=\skip73
-\bibsep=\skip74
+\bibhang=\skip74
+\bibsep=\skip75
 LaTeX Info: Redefining \cite on input line 694.
-\c@NAT@ctr=\count349
+\c@NAT@ctr=\count351
 )
-LaTeX Font Info:    Trying to load font information for T1+stix on input line 4
-9.
+LaTeX Font Info:    Trying to load font information for T1+stix on input line 5
+1.
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/stix/t1stix.fd
 File: t1stix.fd 2015/04/17 v1.1.2-latex STIX T1 font definitions
 )
-(./Burkman_Paper_01_11_24.aux)
+(./Burkman_Paper_01_11_24.aux
+
+LaTeX Warning: Label `models' multiply defined.
+
+)
 \openout1 = `Burkman_Paper_01_11_24.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for LS1/stix/m/n on input line 49.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for LS1/stix/m/n on input line 51.
 LaTeX Font Info:    Trying to load font information for LS1+stix on input line 
-49.
-
-(/usr/local/texlive/2021/texmf-dist/tex/latex/stix/ls1stix.fd
+51.
+ (/usr/local/texlive/2021/texmf-dist/tex/latex/stix/ls1stix.fd
 File: ls1stix.fd 2015/04/17 v1.1.2-latex STIX LS1 font definitions
 )
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for LS2/stix/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for LS2/stix/m/n on input line 51.
 LaTeX Font Info:    Trying to load font information for LS2+stix on input line 
-49.
+51.
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/stix/ls2stix.fd
 File: ls2stix.fd 2015/04/17 v1.1.2-latex STIX LS2 font definitions
 )
-LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    ... okay on input line 51.
 
 (/usr/local/texlive/2021/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count350
-\scratchdimen=\dimen319
-\scratchbox=\box97
-\nofMPsegments=\count351
-\nofMParguments=\count352
-\everyMPshowfont=\toks44
-\MPscratchCnt=\count353
-\MPscratchDim=\dimen320
-\MPnumerator=\count354
-\makeMPintoPDFobject=\count355
-\everyMPtoPDFconversion=\toks45
+\scratchcounter=\count352
+\scratchdimen=\dimen320
+\scratchbox=\box98
+\nofMPsegments=\count353
+\nofMParguments=\count354
+\everyMPshowfont=\toks45
+\MPscratchCnt=\count355
+\MPscratchDim=\dimen321
+\MPnumerator=\count356
+\makeMPintoPDFobject=\count357
+\everyMPtoPDFconversion=\toks46
 ) (/usr/local/texlive/2021/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 
@@ -1118,7 +1133,7 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Package hyperref Info: Link coloring ON on input line 49.
+Package hyperref Info: Link coloring ON on input line 51.
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
@@ -1130,11 +1145,11 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count356
+\c@section@level=\count358
 )
-LaTeX Info: Redefining \ref on input line 49.
-LaTeX Info: Redefining \pageref on input line 49.
-LaTeX Info: Redefining \nameref on input line 49.
+LaTeX Info: Redefining \ref on input line 51.
+LaTeX Info: Redefining \pageref on input line 51.
+LaTeX Info: Redefining \nameref on input line 51.
  (./Burkman_Paper_01_11_24.out) (./Burkman_Paper_01_11_24.out)
 \@outlinefile=\write4
 \openout4 = `Burkman_Paper_01_11_24.out'.
@@ -1179,66 +1194,66 @@ LaTeX Info: Redefining \nameref on input line 49.
 
 (./Graphical_Abstract.tex
 LaTeX Font Info:    Trying to load font information for LS1+stixscr on input li
-ne 41.
+ne 23.
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/stix/ls1stixscr.fd
 File: ls1stixscr.fd 2015/04/17 v1.1.2-latex STIX script LS1 font definitions
 )
 LaTeX Font Info:    Trying to load font information for LS2+stixex on input lin
-e 41.
+e 23.
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/stix/ls2stixex.fd
 File: ls2stixex.fd 2015/04/17 v1.1.2-latex STIX extentions LS2 font definitions
 
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 41.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 23.
 
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 41.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 23.
 
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Trying to load font information for LS1+stixfrak on input l
-ine 41.
+ine 23.
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/stix/ls1stixfrak.fd
 File: ls1stixfrak.fd 2015/04/17 v1.1.2-latex STIX fraktur LS1 font definitions
 )
 LaTeX Font Info:    Trying to load font information for LS1+stixbb on input lin
-e 41.
+e 23.
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/stix/ls1stixbb.fd
 File: ls1stixbb.fd 2015/04/17 v1.1.2-latex STIX blackboard LS1 font definitions
 
 )
 LaTeX Font Info:    Trying to load font information for LS2+stixcal on input li
-ne 41.
+ne 23.
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/stix/ls2stixcal.fd
 File: ls2stixcal.fd 2015/04/17 v1.1.2-latex STIX calligraphic LS2 font definiti
 ons
 )
 LaTeX Font Info:    Trying to load font information for LS1+stixsf on input lin
-e 41.
+e 23.
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/stix/ls1stixsf.fd
 File: ls1stixsf.fd 2015/04/17 v1.1.2-latex STIX sans-serif LS1 font definitions
 
 )
 LaTeX Font Info:    Trying to load font information for LS2+stixtt on input lin
-e 41.
+e 23.
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/stix/ls2stixtt.fd
 File: ls2stixtt.fd 2015/04/17 v1.1.2-latex STIX typewriter LS2 font definitions
 
 ))
 LaTeX Font Info:    Trying to load font information for TS1+stix on input line 
-200.
+202.
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/stix/ts1stix.fd
 File: ts1stix.fd 2015/04/17 v1.1.2-latex STIX TS1 font definitions
@@ -1249,76 +1264,184 @@ arning (ext4): destination with the same identifier (name{page.0}) has been alr
 eady used, duplicate ignored
 <to be read again> 
                    \relax 
-l.221 \maketitle
+l.223 \maketitle
                  [0]
-Overfull \hbox (117.0831pt too wide) detected at line 221
+Overfull \hbox (117.0831pt too wide) detected at line 223
 []
  []
 
 (./Burkman_Paper_01_11_24.abs)
 
-Package hyperref Warning: Ignoring empty anchor on input line 221.
+Package hyperref Warning: Ignoring empty anchor on input line 223.
 
 <thumbnails/cas-email.jpeg, id=22, 225.84375pt x 225.84375pt>
 File: thumbnails/cas-email.jpeg Graphic file (type jpg)
 <use thumbnails/cas-email.jpeg>
-Package pdftex.def Info: thumbnails/cas-email.jpeg  used on input line 221.
+Package pdftex.def Info: thumbnails/cas-email.jpeg  used on input line 223.
 (pdftex.def)             Requested size: 7.99838pt x 8.0pt.
 LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 2
-21.
+23.
 (/usr/local/texlive/2021/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
 
-Package hyperref Warning: Ignoring empty anchor on input line 221.
+Package hyperref Warning: Ignoring empty anchor on input line 223.
 
 <thumbnails/cas-url.jpeg, id=23, 225.84375pt x 225.84375pt>
 File: thumbnails/cas-url.jpeg Graphic file (type jpg)
 <use thumbnails/cas-url.jpeg>
-Package pdftex.def Info: thumbnails/cas-url.jpeg  used on input line 221.
+Package pdftex.def Info: thumbnails/cas-url.jpeg  used on input line 223.
 (pdftex.def)             Requested size: 7.99838pt x 8.0pt.
 
-Package hyperref Warning: Ignoring empty anchor on input line 221.
+Package hyperref Warning: Ignoring empty anchor on input line 223.
 
-(./Methods_Graphical_Abstract.tex) (./Methods_01_11_24.tex
+(./Burkman_Paper_01_11_24.toc
 LaTeX Font Info:    Trying to load font information for T1+cmss on input line 3
 .
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/base/t1cmss.fd
 File: t1cmss.fd 2019/12/16 v2.5j Standard LaTeX font definitions
-) [1 <./thumbnails/cas-email.jpeg> <./thumbnails/cas-url.jpeg>]) (./Burkman_Pap
-er_01_11_24.bbl
+) [1 <./thumbnails/cas-email.jpeg> <./thumbnails/cas-url.jpeg>])
+\tf@toc=\write6
+\openout6 = `Burkman_Paper_01_11_24.toc'.
 
-Package natbib Warning: Empty `thebibliography' environment on input line 15.
+ (./Burkman_Paper_01_11_24.lof)
+\tf@lof=\write7
+\openout7 = `Burkman_Paper_01_11_24.lof'.
 
-) [2] [3] (./Burkman_Paper_01_11_24.aux)
+
+(./Burkman_Paper_01_11_24.lot [2])
+\tf@lot=\write8
+\openout8 = `Burkman_Paper_01_11_24.lot'.
+
+ (./Introduction.tex [3]
+(./Springfield_Before_Figure.tex) (./Springfield_After_Figure.tex)
+Overfull \hbox (53.61996pt too wide) in paragraph at lines 75--84
+[]|[]| 
+ []
+
+[4] (../Keras/Images/Ideal_Pred_Wide.pgf)) (./Methods_Outline.tex [5])
+(./Methods_Graphical_Abstract.tex) (./Methods_Political_Decisions.tex
+(./Springfield_After_Figure.tex) [6] [7]) (./Methods_Dataset.tex)
+(./Methods_Features.tex [8]) (./Methods_Models.tex [9]
+(../Keras/Images/Ideal_Pred.pgf) (../Keras/Images/Ideal_ROC.pgf)
+Overfull \hbox (8.80658pt too wide) in paragraph at lines 1017--83
+[][]| 
+ []
+
+
+Overfull \vbox (2.56pt too high) detected at line 95
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[10] (./Methods_Models_Raw_Figure_Short.tex
+(../Keras/Images/AdaBoost_5_Fold_Hard_Test_Pred.pgf)
+(../Keras/Images/BalBag_5_Fold_Hard_Test_Pred.pgf)
+(../Keras/Images/BRFC_5_Fold_alpha_0_5_Hard_Test_Pred.pgf)
+(../Keras/Images/EEC_5_Fold_Hard_Test_Pred.pgf)
+(../Keras/Images/KBFC_5_Fold_alpha_0_5_gamma_0_0_Hard_Test_Pred.pgf)
+(../Keras/Images/LogReg_5_Fold_alpha_0_5_Hard_Test_Pred.pgf)
+(../Keras/Images/RFC_5_Fold_Hard_Test_Pred.pgf)
+(../Keras/Images/RUSBoost_5_Fold_Hard_Test_Pred.pgf)
+Overfull \hbox (18.33122pt too wide) in paragraph at lines 3--57
+ []
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+) [11] [12] (./Methods_Models_Numerics_Table.tex)
+(../Keras/Images/RUSBoost_5_Fold_Hard_Test_Pred.pgf)
+(../Keras/Images/RUSBoost_5_Fold_Hard_Test_Transformed_98_Pred_Wide.pgf)
+Overfull \hbox (2.65002pt too wide) in paragraph at lines 158--170
+ []
+ []
+
+(../Keras/Images/LogReg_5_Fold_alpha_0_5_Hard_Test_Pred.pgf)
+(../Keras/Images/LogReg_5_Fold_alpha_0_5_Hard_Test_Transformed_90_Pred_Wide.pgf
+)
+Overfull \hbox (2.65002pt too wide) in paragraph at lines 182--194
+ []
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[13] (../Keras/Images/RFC_5_Fold_Hard_Test_Pred.pgf)
+(../Keras/Images/RFC_5_Fold_Hard_Test_Transformed_90_Pred_Wide.pgf)
+Overfull \hbox (2.65002pt too wide) in paragraph at lines 205--216
+ []
+ []
+
+(../Keras/Images/EEC_5_Fold_Hard_Test_Pred.pgf)
+(../Keras/Images/EEC_5_Fold_Hard_Test_Transformed_100_Pred_Wide.pgf)
+Overfull \hbox (2.65002pt too wide) in paragraph at lines 229--241
+ []
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+(../Keras/Images/EEC_5_Fold_Hard_Test_Pred.pgf)
+(../Keras/Images/EEC_5_Fold_Hard_Test_Transformed_98_Pred_Wide.pgf)
+Overfull \hbox (2.65002pt too wide) in paragraph at lines 248--260
+ []
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[14] (../Keras/Images/KBFC_5_Fold_alpha_0_5_gamma_0_0_Hard_Test_Pred.pgf)
+(../Keras/Images/KBFC_5_Fold_alpha_0_5_gamma_2_0_Hard_Test_Pred.pgf)
+(../Keras/Images/KBFC_5_Fold_alpha_balanced_gamma_0_0_Hard_Test_Pred.pgf)
+Overfull \hbox (18.33122pt too wide) in paragraph at lines 288--307
+ []
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[15]
+LaTeX Font Info:    Calculating math sizes for size <10.5> on input line 314.
+ [16] [17] [18] [19]) (./Simplifying_Assumptions.tex) (./Results.tex
+[20]) [21] (./Burkman_Paper_01_11_24.bbl) [22] (./Burkman_Paper_01_11_24.aux)
+
+LaTeX Warning: There were multiply-defined labels.
+
 Package rerunfilecheck Info: File `Burkman_Paper_01_11_24.out' has not changed.
 
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 28621 strings out of 478994
- 529317 string characters out of 5858184
- 920150 words of memory out of 5000000
- 45495 multiletter control sequences out of 15000+600000
- 493864 words of font info for 134 fonts, out of 8000000 for 9000
+ 29362 strings out of 478994
+ 544731 string characters out of 5858184
+ 1062759 words of memory out of 5000000
+ 46036 multiletter control sequences out of 15000+600000
+ 530307 words of font info for 194 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 87i,12n,88p,1024b,872s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 87i,22n,88p,1457b,946s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
 {/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/stix/stix-t1.enc}{/usr/loca
 l/texlive/2021/texmf-dist/fonts/enc/dvips/stix/stix-ts1.enc}</usr/local/texlive
 /2021/texmf-dist/fonts/type1/public/stix/STIXGeneral-Bold.pfb></usr/local/texli
-ve/2021/texmf-dist/fonts/type1/public/stix/STIXGeneral-Italic.pfb></usr/local/t
-exlive/2021/texmf-dist/fonts/type1/public/stix/STIXGeneral-Regular.pfb></usr/lo
-cal/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfss0900.pfb></usr/loca
-l/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sftt0800.pfb></usr/local/
-texlive/2021/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb></usr/local/te
-xlive/2021/texmf-dist/fonts/type1/public/stix/stix-mathit.pfb></usr/local/texli
-ve/2021/texmf-dist/fonts/type1/public/stix/stix-mathrm.pfb>
-Output written on Burkman_Paper_01_11_24.pdf (5 pages, 221377 bytes).
+ve/2021/texmf-dist/fonts/type1/public/stix/STIXGeneral-BoldItalic.pfb></usr/loc
+al/texlive/2021/texmf-dist/fonts/type1/public/stix/STIXGeneral-Italic.pfb></usr
+/local/texlive/2021/texmf-dist/fonts/type1/public/stix/STIXGeneral-Regular.pfb>
+</usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfss0900.pfb></
+usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfsx0900.pfb></us
+r/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sftt0800.pfb></usr/
+local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb></usr/lo
+cal/texlive/2021/texmf-dist/fonts/type1/public/stix/stix-mathcal.pfb></usr/loca
+l/texlive/2021/texmf-dist/fonts/type1/public/stix/stix-mathit.pfb></usr/local/t
+exlive/2021/texmf-dist/fonts/type1/public/stix/stix-mathrm.pfb></usr/local/texl
+ive/2021/texmf-dist/fonts/type1/public/stix/stix-mathscr.pfb></usr/local/texliv
+e/2021/texmf-dist/fonts/type1/public/stix/stix-mathsf.pfb>
+Output written on Burkman_Paper_01_11_24.pdf (24 pages, 423720 bytes).
 PDF statistics:
- 102 PDF objects out of 1000 (max. 8388607)
- 84 compressed objects within 1 object stream
- 29 named destinations out of 1000 (max. 500000)
+ 444 PDF objects out of 1000 (max. 8388607)
+ 386 compressed objects within 4 object streams
+ 107 named destinations out of 1000 (max. 500000)
  23 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -23,6 +23,8 @@
 \usepackage{tikz}
 \usetikzlibrary{shapes, snakes, calc, positioning}
 \usepackage{longtable}
+\usepackage{enumitem}
+\usepackage[section]{placeins}
 
 % If the frontmatter runs over more than one page
 % use the longmktitle option.
@@ -95,7 +97,7 @@
 \ead{bradburkman@gmail.com}
 %\ead{FirstAuthor@gmail.com}
 % URL of the first author
-\ead[url]{http://www.github.com/bburkman}
+\ead[url]{http://www.github.com/bburkman/Ambulance_Dispatch}
 
 % Credit authorship
 % eg: \credit{Conceptualization of this study, Methodology, Software}
@@ -229,24 +231,31 @@ We used the data of the Crash Report Sampling System (CRSS) to validate our appr
 %
 %%%%%
 
-%\tableofcontents
+\tableofcontents
+\listoffigures
+\listoftables
 
 %%%%% Introduction
-\section{Introduction}\label{sec:Introduction}
-%%%%%~\nameref{sec:Introduction}
-%\input{Introduction}
+\input{Introduction}
+
+
 
 %%%%% Methods
 \section{Methods}\label{sec:Methods}
+
+\input{Methods_Outline}
 \input{Methods_Graphical_Abstract}
-\input{Methods_01_11_24}
-%\section{Methods\_Old}
-%\input{Methods_Old}
-%\section{Methods\_for\_TRpC}
-%\input{Methods_for_TRpC}
+\input{Methods_Political_Decisions}
+\input{Methods_Dataset}
+\input{Methods_Features}
+\input{Methods_Models}
+
+\input{Simplifying_Assumptions}
+
 
 %%%%% Results
-\section{Results}\label{sec:Results}
+\section{Results}\label{Results}
+\input{Results}
 
 %%%%% Conclusions
 \section{Conclusions}\label{Conclusions}
@@ -288,7 +297,7 @@ The CRSS data is publicly available at
 \url{https://www.nhtsa.gov/crash-data-systems/crash-report-sampling-system}
 
 All of the code and generated data, tables, and graphs are available at 
-\url{http://www.github.com/bburkman}
+\url{http://www.github.com/bburkman/Ambulance_Dispatch}
 
 %%%%% Declaration of Generative AI and AI-assisted technologies in the writing process
 %\section*{Declaration of Generative AI and AI-assisted technologies in the writing process}
@@ -341,7 +350,7 @@ All of the code and generated data, tables, and graphs are available at
 \bibliographystyle{cas-model2-names}
 
 % Loading bibliography database
-\bibliography{Paper_Summer_2022.bib}
+\bibliography{Ambulance_Dispatch.bib}
 
 \begin{comment}
 % Biography

@@ -1,0 +1,67 @@
+\begin{tikzpicture}[x=0.075cm, y=0.6cm, font=\normalfont\normalsize] % 15 cm wide
+	\path (207,0) circle (0pt);
+	\draw [color=black] (0,0) -- (190,0);
+	\draw [color=black, dashed] (190,0) -- (200,0);
+	\draw [color=black] (0,2) -- (0,-1);
+	\draw [color=black] (50,2) -- (50,-1);
+	\draw [color=black] (100,2) -- (100,-1.5);
+	\draw [color=black] (120,2) -- (120,-1);
+	\node (A) at (25,0) {};
+	\node (B) [above=-2pt of A, align=center, text=black] {
+		Non-Crash \\ Needs Ambulance \\[0.5em] 50
+	};
+	\node (C) at (75,0) {};
+	\node (D) [above=-2pt of C, align=center, text=black] {
+		Crash \\ Needs Ambulance \\[0.5em] 50
+	};
+	\node (E) at (200,0) {};
+	\node (F) [above left =-2pt and 0pt of E, align=right, text=black] {
+		Crash Does Not Need Ambulance \\ No Ambulance Sent \\[0.5em] 450
+	};
+	\node (G) at (110,0) {};
+	\node (H) [above=-2pt of G, align=center, text=black] {
+		False \\ Alarm \\[0.5em] ?
+	};
+
+	\draw [color=black] (85,0) -- (85,-1.5);
+	\draw [color=black] (185,0) -- (185,-1.5);
+%	\path (85,-2) -- (100,-2) node [below, midway, color=black] {15};
+%	\path (100,-1) -- (185,-1) node [below, midway, color=black] {85};
+	
+	\draw [<->, color=black]  (100.5,-2) -- (185,-2) 
+		node [midway, color=black, fill=white, align=center] 
+		{85};
+
+	\draw [<->, color=black]  (85,-2) -- (99.5,-2) 
+		node [midway, color=black, fill=white, align=center] 
+		{15};
+
+	\draw [<->, color=black]  (50,-3) -- (92,-3) 
+		node [midway, color=black, fill=white, align=center] 
+		{Eyewitness};
+
+	\draw [<->, color=black]  (93,-3) -- (120,-3) 
+		node [midway, color=black, fill=white, align=center] 
+		{Immediate};
+
+	\draw [<->, color=black]  (85,-4) -- (185,-4) 
+		node [midway, color=black, fill=white, align=center] 
+		{Automated Notifications};
+
+	\draw [<->, color=black]  (0,3) -- (100,3) 
+		node [midway, color=black, fill=white, align=center] 
+		{Ambulance Needed};
+
+	\draw [<->, color=black]  (0,4) -- (120,4) 
+		node [midway, color=black, fill=white, align=center] 
+		{Ambulance Sent};
+
+%	\node (G) at (110,2) [color=black, align=left] {False \\  Alarm};
+	\path (100,-0.5) -- (120,-0.5) node [midway, color=black] {FP};
+	\path (120,-0.5) -- (185,-0.5) node [midway, color=black] {TN};
+	\draw [color=black] (92.5,0) -- (92.5,-1.5);
+	\path (85,-0.5) -- (92.5,-0.5) node [midway, color=black] {F};
+	\path (85,-1.2) -- (92.5,-1.0) node [midway, color=black] {N};
+	\path (100,-0.5) -- (92.5,-0.5) node [midway, color=black] {T};
+	\path (100,-1.2) -- (92.5,-1.0) node [midway, color=black] {P};
+\end{tikzpicture}

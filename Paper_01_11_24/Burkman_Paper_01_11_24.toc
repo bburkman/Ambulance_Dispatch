@@ -1,0 +1,29 @@
+\contentsline {section}{\numberline {1}Introduction}{3}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Overview}{3}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Scenario}{3}{subsection.1.2}%
+\contentsline {section}{\numberline {2}Methods}{5}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Outline}{5}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Budgetary Decision Thresholds and Corresponding Metrics}{6}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}Budgetary Decision Metric I: Percent Increased Number of Ambulance Calls}{7}{subsubsection.2.2.1}%
+\contentsline {subsubsection}{\numberline {2.2.2}Budgetary Decision Metric II: Percent of Immediately Dispatched Ambulances Actually Needed}{7}{subsubsection.2.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.3}Budgetary Decision Metric III: Minimum Probability that Each Immediately Dispatched Ambulance is Needed}{7}{subsubsection.2.2.3}%
+\contentsline {subsection}{\numberline {2.3}Dataset}{8}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Choosing Features}{9}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}Models}{9}{subsection.2.5}%
+\contentsline {subsubsection}{\numberline {2.5.1}Binary Classification Algorithms and Hyperparameters}{9}{subsubsection.2.5.1}%
+\contentsline {subsubsection}{\numberline {2.5.2}Five-Fold Cross Validation}{10}{subsubsection.2.5.2}%
+\contentsline {subsubsection}{\numberline {2.5.3}Interpreting Supervised Learning Binary Classification Results}{10}{subsubsection.2.5.3}%
+\contentsline {subsection}{\numberline {2.6}Comparing Outputs of Different Models}{11}{subsection.2.6}%
+\contentsline {subsubsection}{\numberline {2.6.1}Raw Model Outputs}{11}{subsubsection.2.6.1}%
+\contentsline {subsubsection}{\numberline {2.6.2}Numerics}{12}{subsubsection.2.6.2}%
+\contentsline {subsubsection}{\numberline {2.6.3}Transforming Model Outputs}{13}{subsubsection.2.6.3}%
+\contentsline {subsubsection}{\numberline {2.6.4}Hyperparameters}{15}{subsubsection.2.6.4}%
+\contentsline {subsubsection}{\numberline {2.6.5}Understanding the Metrics in Bands of Values of $p$}{16}{subsubsection.2.6.5}%
+\contentsline {subsubsection}{\numberline {2.6.6}Choosing Values of $\theta $ for each Budgetary Decision Metric}{17}{subsubsection.2.6.6}%
+\contentsline {subsubsection}{\numberline {2.6.7}Challenges in $p$-Transformations}{18}{subsubsection.2.6.7}%
+\contentsline {subsubsection}{\numberline {2.6.8}Choosing the Best Model for each Budgetary Decision Metric}{19}{subsubsection.2.6.8}%
+\contentsline {section}{\numberline {3}Simplifying Assumptions and Opportunities for Future Research}{20}{section.3}%
+\contentsline {section}{\numberline {4}Results}{20}{section.4}%
+\contentsline {section}{\numberline {5}Conclusions}{21}{section.5}%
+\contentsline {section}{\numberline {6}Discussion}{21}{section.6}%
+\contentsline {section}{\numberline {7}Future Work}{21}{section.7}%

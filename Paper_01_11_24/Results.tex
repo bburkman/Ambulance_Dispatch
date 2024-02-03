@@ -1,0 +1,96 @@
+% Results
+
+\begin{table}[h]
+\caption{\normalfont\normalsize Best models and transformations for $\text{FP}/\text{P} = 0.05$ for each algorithm.  Table accompanies \S\ref{choosing_theta}}
+\label{FP_P_0_05_Results}
+
+{\normalfont\normalsize
+\begin{tabular}{cccc rlrrrr r}
+\toprule
+	Algorithm & 
+	Features & 
+	$\alpha$ & 
+	$\gamma$ & 
+	\multicolumn{1}{c}{Trans} &
+	\multicolumn{1}{c}{$p$} & 
+	\multicolumn{1}{c}{Neg} & 
+	\multicolumn{1}{c}{Pos} & 
+	\multicolumn{1}{c}{$\text{FP} / \text{P}$} & 
+	\multicolumn{1}{c}{TP} &
+\cr
+\noalign{\vskip 2pt}
+\hline
+\noalign{\vskip 2pt}
+BRFC & Easy & 0.50 & 0 & 98 & 0.93 & 997 & 564 & 0.052 & 4270\cr
+BalBag & Easy & 0 & 0 & 95 & 0.97 & 755 & 389 & 0.056 & 4197\cr
+KBFC & Easy & 0.85 & 0.0 & None & 0.75 & 2345 & 1106 & 0.058 & 3469\cr
+LogReg & Easy & 0.50 & 0 & None & 0.35 & 1360 & 624 & 0.055 & 2998\cr
+EasyEns & Easy & 0 & 0 & 100 & 0.92 & 1513 & 638 & 0.051 & 2768\cr
+AdaBoost & Easy & 0 & 0 & 100 & 0.85 & 877 & 453 & 0.05 & 2712\cr
+RFC & Easy & 0 & 0 & 100 & 0.89 & 938 & 452 & 0.051 & 2600\cr
+RUSBoost & Easy & 0 & 0 & 98 & 0.96 & 1512 & 589 & 0.047 & 1849\cr\bottomrule
+\end{tabular}
+
+\
+
+\begin{tabular}{cccc rlrrrr r}
+\toprule
+	Algorithm & 
+	Features & 
+	$\alpha$ & 
+	$\gamma$ & 
+	\multicolumn{1}{c}{Trans} &
+	\multicolumn{1}{c}{$p$} & 
+	\multicolumn{1}{c}{Neg} & 
+	\multicolumn{1}{c}{Pos} & 
+	\multicolumn{1}{c}{$\text{FP} / \text{P}$} & 
+	\multicolumn{1}{c}{TP} &
+\cr
+\noalign{\vskip 2pt}
+\hline
+\noalign{\vskip 2pt}
+BRFC & Medium & 0.50 & 0 & 95 & 0.94 & 679 & 523 & 0.055 & 7290\cr
+KBFC & Medium & 0.50 & 2.0 & 100 & 0.69 & 1328 & 1134 & 0.055 & 6595\cr
+AdaBoost & Medium & 0 & 0 & 100 & 0.74 & 1114 & 992 & 0.053 & 5699\cr
+LogReg & Medium & 0.85 & 0 & 98 & 0.93 & 1016 & 861 & 0.053 & 5623\cr
+EasyEns & Medium & 0 & 0 & 98 & 0.91 & 812 & 800 & 0.057 & 5259\cr
+RFC & Medium & 0 & 0 & 100 & 0.74 & 734 & 671 & 0.052 & 5152\cr
+BalBag & Medium & 0 & 0 & None & 0.94 & 113 & 66 & 0.05 & 5120\cr
+RUSBoost & Medium & 0 & 0 & 100 & 0.48 & 1702 & 439 & 0.053 & 2112\cr
+\bottomrule
+\end{tabular}
+
+
+\
+
+\begin{tabular}{cccc rlrrrr r}
+\toprule
+	Algorithm & 
+	Features & 
+	$\alpha$ & 
+	$\gamma$ & 
+	\multicolumn{1}{c}{Trans} &
+	\multicolumn{1}{c}{$p$} & 
+	\multicolumn{1}{c}{Neg} & 
+	\multicolumn{1}{c}{Pos} & 
+	\multicolumn{1}{c}{$\text{FP} / \text{P}$} & 
+	\multicolumn{1}{c}{TP} &
+\cr
+\noalign{\vskip 2pt}
+\hline
+\noalign{\vskip 2pt}
+BRFC & Hard & 0.50 & 0 & None & 0.86 & 938 & 1508 & 0.047 & 12447\cr
+KBFC & Hard & 0.50 & 2.0 & 100 & 0.58 & 1264 & 1556 & 0.054 & 11287\cr
+RUSBoost & Hard & 0 & 0 & 100 & 0.71 & 1245 & 1200 & 0.054 & 7336\cr
+LogReg & Hard & 0.50 & 0 & 95 & 0.81 & 348 & 393 & 0.051 & 7278\cr
+AdaBoost & Hard & 0 & 0 & 98 & 0.83 & 768 & 735 & 0.053 & 7097\cr
+BalBag & Hard & 0 & 0 & None & 0.9 & 8548 & 10487 & 0.03 & 6610\cr
+RFC & Hard & 0 & 0 & 100 & 0.74 & 923 & 673 & 0.051 & 5909\cr
+EasyEns & Hard & 0 & 0 & 100 & 0.72 & 2378 & 2296 & 0.048 & 5306\cr
+\bottomrule
+\end{tabular}
+
+}
+\end{table}
+
+\FloatBarrier
