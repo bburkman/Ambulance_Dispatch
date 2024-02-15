@@ -2,19 +2,7 @@
 \section{Introduction}
 \label{intro}
 
-\subsection{Overview}
-\label{intro_overview}
-
-[Write overview]
-
-To train the models we would wish to have actual data on crashes with automated crash reports from cell phones, but no large public dataset exists.  As a proxy, we used the 2016-2021 data from the Crash Report Sampling System.  In \S \ref{dataset} we describe the dataset and how we binned features and imputed missing data.  
-
-We will also consider the cost of the data inputs.  The emergency dispatcher has some information before the notification comes in, like day of week, time of day, and weather.  Some data features would require significant budgets to obtain and maintain.  There are other features useful in predicting whether the crash person needs an ambulance that, to have the data instantaneously available to emergency dispatchers might pose privacy and data security concerns.  We will call these three categories of data features Easy, Medium, and Hard, but could also describe them as Free, Expensive, and Problematic.  We discuss the data features in \S \ref{features}.
-
-We used eight supervised learning algorithms, some with class weights and focal loss, to give 13 different models.   (See \S \ref{models}) For each of the three political criteria we find the best model based on how many ambulances it correctly recommends for immediate dispatch within the limits of the criterion.  We do this for the three sets of data features to show whether increasing the budget for data acquisition improves the system sufficiently to justify the cost, understanding that ``sufficiently'' is a political, not technical, decision.  
-
-
-
+%%%
 \subsection{Scenario}
 \label{intro_scenario}
 
@@ -113,6 +101,21 @@ We will consider three ways the leaders of Springfield can think about how to ch
 	\item Percent of immediately dispatched ambulances that are actually needed
 	\item Minimum probability that an immediately dispatched ambulance is actually needed
 \end{enumerate}
+
+\subsection{Overview}
+\label{intro_overview}
+
+In this paper we explore building a machine learning model to recommend whether to immediately dispatch an ambulance upon an automated notification from a cell phone rather than waiting for a call from an eyewitness.
+
+Such a model would be trained on historical data.  We have used the Crash Report Sampling System (CRSS) 2016-2021 data, and, in ways that we have not seen in the literature, recreated the method used by the authors of the dataset to impute missing values and compared it against other methods.  
+
+The criteria for the decision threshold (when to recommend immediately dispatching an ambulance) are political, not technical, decisions, and we posit three budgetary criteria and for each have created metrics to serve as a decision threshold on the $p$ returned by the model for a new sample (crash).  Two metrics measure the entire dataset on either side of the thrreshold, and one measures marginal effect at the threshold.  We develop a method for measuring such marginal effects using the model output. 
+
+An automated crash notification from a cell phone will give the location, and perhaps some more information about the primary user of the phone, but the emergency dispatcher already has some useful information, like time of day and weather.  If the notification comes with the identification of the phone's primary user, the system could be set up to instantaneously correlate with vehicle registration records to get more useful information, but a more sophisticated system would be expensive.  Would having better data increase the number of needed ambulances sent faster to crash scenes?  We consider three sets of data features and compare the results of models trained on those features.  
+
+Since most crashes do not require an ambulance, the dataset is slightly imbalanced (5:1).  We report on several methods we tried, with mixed success, to handle the imbalance.
+
+To support transferability, we have used a public dataset and made public all of the code we used in our investigation and all of the output data.  This paper gives some results to support the conclusions and invites the interested reader to explore the full results, tinker with the code, and use any of it to investigate further topics.  Some opportunities for future research are given in \S \ref{simplifying_assumptions}.
 
 
 

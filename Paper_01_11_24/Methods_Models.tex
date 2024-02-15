@@ -17,30 +17,30 @@ For each of the three sets of features we used eight binary classification algor
 \caption{\normalsize\normalfont Models Tested for Recommendation System.  Table accompanies \S \ref{algorithms}}
 \centering
 \normalsize\normalfont
-\begin{tabular}{llcc}
-&& \bf Class &\bf Focal  \cr
-\bf Model &\bf Source &\bf Weight $\alpha$ &\bf Loss $\gamma$ \cr\hline
+\begin{tabular}{lllcc}
+&&& \bf Class &\bf Focal  \cr
+\bf Model & \bf Abbreviation&\bf Source &\bf Weight $\alpha$ &\bf Loss $\gamma$ \cr\hline
 
-AdaBoost  Classifier & Scikit-Learn &  \cr\hline
+AdaBoost  Classifier & AdaBoost & Scikit-Learn &  \cr\hline
 
-Balanced Bagging Classifier & Imbalanced-Learn &  \cr\hline
+Balanced Bagging Classifier & Bal Bag & Imbalanced-Learn &  \cr\hline
 
-Balanced Random Forest Classifier & Imbalanced-Learn & 0.5 \cr
+Balanced Random Forest Classifier & Bal RF & Imbalanced-Learn & 0.5 \cr
 	&& 0.85 \cr\hline
 
-Easy Ensemble Classifier with AdaBoost Estimator & Imbalanced-Learn &  \cr\hline
+Easy Ensemble Classifier with AdaBoost Estimator & Easy Ens & Imbalanced-Learn &  \cr\hline
 
-KerasClassifier with the  & Keras & 0.5 & 0.0 \cr
+KerasClassifier with the  & Keras & Keras & 0.5 & 0.0 \cr
 \qquad Binary Focal Crossentropy loss function && 0.5 & 1.0  \cr
 	&& 0.5 & 2.0 \cr
 	&& 0.85 & 0.0 \cr\hline
 
-Logistic Regression Classifier & Scikit-Learn & 0.5 \cr
+Logistic Regression Classifier & Log Reg & Scikit-Learn & 0.5 \cr
 	&& 0.85 \cr\hline
 
-Random Forest Classifier & Scikit-Learn &  \cr\hline
+Random Forest Classifier & RF & Scikit-Learn &  \cr\hline
 
-RUSBoost Classifier & Imbalanced-Learn &  \cr
+RUSBoost Classifier & RUSBoost & Imbalanced-Learn &  \cr
 
 \end{tabular}
 \end{table}
@@ -504,14 +504,14 @@ Table \ref{FP_P_0_05_hard} shows the best results for each model algorithm.  Wit
 \hline
 \noalign{\vskip 2pt}
 
-BRFC & Hard & 0.50 & 0 & None & 0.86 & 938 & 1,508 & 0.047 & 12,447\cr
-KBFC & Hard & 0.50 & 2.0 & 100 & 0.58 & 1,264 & 1,556 & 0.054 & 11,287\cr
+Bal RF & Hard & 0.50 & 0 & None & 0.86 & 938 & 1,508 & 0.047 & 12,447\cr
+Keras & Hard & 0.50 & 2.0 & 100 & 0.58 & 1,264 & 1,556 & 0.054 & 11,287\cr
 RUSBoost & Hard & 0 & 0 & 100 & 0.71 & 1,245 & 1,200 & 0.054 & 7,336\cr
-LogReg & Hard & 0.50 & 0 & 95 & 0.81 & 348 & 393 & 0.051 & 7,278\cr
+Log Reg & Hard & 0.50 & 0 & 95 & 0.81 & 348 & 393 & 0.051 & 7,278\cr
 AdaBoost & Hard & 0 & 0 & 98 & 0.83 & 768 & 735 & 0.053 & 7,097\cr
-BalBag & Hard & 0 & 0 & None & 0.9 & 8,548 & 10,487 & 0.03 & 6,610\cr
-RFC & Hard & 0 & 0 & 100 & 0.74 & 923 & 673 & 0.051 & 5,909\cr
-EasyEns & Hard & 0 & 0 & 100 & 0.72 & 2,378 & 2,296 & 0.048 & 5,306\cr
+Bal Bag & Hard & 0 & 0 & None & 0.9 & 8,548 & 10,487 & 0.03 & 6,610\cr
+RF & Hard & 0 & 0 & 100 & 0.74 & 923 & 673 & 0.051 & 5,909\cr
+Easy Ens & Hard & 0 & 0 & 100 & 0.72 & 2,378 & 2,296 & 0.048 & 5,306\cr
 \bottomrule
 \end{tabular}
 }

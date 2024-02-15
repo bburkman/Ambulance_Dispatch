@@ -1,0 +1,76 @@
+%%%%% Methods_for_TRpC
+
+\subsection{Goal}
+
+The goal of this paper is to show one method for determining, for different levels of available data and criteria reflecting different political choices, how well a machine learning model can predict whether an emergency call center should automatically dispatch an ambulance based on an automated crash notification.  
+
+Usually a crash notification comes to an emergency dispatcher from an eyewitness who can say whether there are injuries requiring medical attention.  With an automated crash notification, however, that information is not available.  We want to know whether, or to what degree, we can infer from information that is available whether it is likely that the phone's user needs an ambulance, and thus whether we should automatically dispatch an ambulance to the scene.  
+
+We will use an existing dataset to build models that give us the probability.  For each of several different political realities and goals, we will choose the most useful model and find a threshold above which the emergency call center should automatically dispatch an ambulance.  We will consider three different levels of available information, with ``Easy'' using information already available, ``Medium'' adding information that requires a higher level of planning and preparation, and ``Hard'' requiring cooperation between public and private data sources with possible conflicts of privacy and confidentiality.  
+
+From the results, a local government would have information on which to base a decision about whether to implement an automated dispatch system and what level of data to provide.  The ultimate decision is political, weighing lives against money.
+
+\subsection{Dataset}
+
+Ideally, we would use a dataset of crashes with an automated notification, but we have not found such a dataset that is publicly available.  Working with such a private dataset would be an important avenue of future research.
+
+We will use the Crash Report Sampling System (CRSS) from 2016 to 2021.  The CRSS is a curated sample of crashes in the US, weighted to more serious crashes such that 17\% of the crash persons needed an ambulance, significantly more than the proportion of all reported crashes needing an ambulance, between 2 and 3 percent.  Since most low-speed crashes would have a crash profile similar to hard braking, they would not spawn an automated notification, so it is reasonable to assume that the set of crashes with automated notifications would have a higher percentage of persons needing an ambulance.  
+
+We will use the CRSS as a proxy for the set of crashes with automatic crash notifications, acknowledging that we do not know how good of a proxy it is.  The primary merit of CRSS for our work is that it is publicly available so that our work can be critiqued, adapted, and expanded by others.  
+
+We merged the \verb|accident.csv|, \verb|vehicle.csv|, and \verb|person.csv| files in the six years.  We dropped many features that were irrelevant, most because they were unique to each vehicle like a VIN (Vehicle Identification Number), with no predictive power, just random noise.  We also dropped the 33,776 persons in crashes involving a pedestrian, because the deceleration profile of hitting a pedestrian or bicycle would not be different enough from hard braking to trigger an automated crash notification.  
+
+After removing repeated and irrelevant features and pedestrian crashes, we have 118 features describing 713,566 crash persons.  Later we removed more that have more than 20\% of the values missing or only have data for some years, and features with imputed missing values to get 78 features.
+
+For full details, see the \verb|Ambulance_Dispatch_01_Get_Data.ipynb| file.  
+
+\subsection{Binning Categories}
+
+All of the CRSS data is discrete, but some features are ordered, like \verb|HOUR| and \verb|AGE|, and others are unordered, like \verb|MAKE_MOD|.  Reducing the dimensionality of the machine learning modeling by binning the categories into less than ten per feature is ideal.  
+
+Some features like \verb|HOUR| we binned by hand.  We looked at the proportion of crash persons hospitalized at each hour and found clear places to break it into seven contiguous but not equal blocks.  When we looked at \verb|AGE|, we considered breaking it into decades, but found that ages 15-18 have a far lower hospitalization rate than those a little younger or older, and there was a shift at about age 53 and again around age 74, so we binned it accordingly.  
+
+Some features like \verb|MAKE_MOD|m which has 1,210 unique values, we binned by imposing an order, ordering by the proportion of crash persons hospitalized, then cutting the ordered list into five new categories plus ``Unknown.''  
+
+
+
+For full details, see 
+\verb|Ambulance_Dispatch_02_Correlation.ipynb| and 
+\verb|Ambulance_Dispatch_03_Bin_Data.ipynb|.
+
+\subsection{Imputing Missing Data}
+
+For reasons of historical consistency going back to 1982 with the predecessors of CRSS, CRSS imputes missing values for some features but not others, using IVEware, Imputation and Variation Estimation Software from the Institute for Social Research at the University of Michigan.  Fortunately, when CRSS gives a feature with imputed values, it also retains the feature with values signifying ``Unknown.'' CRSS has a very helpful report on its imputation methods.  We have not seen in the literature where someone has used IVEware to impute the other features and compared it to other methods.  
+
+At this point we have 78 unimputed features, and only 250,389 out of 713,566 samples (35\%) did not have missing values in those 78 features.  We compared three methods for imputing missing values.  
+
+\begin{itemize}
+	\item IVEware
+	\item Imputation to Mode
+	\item Round-Robin Random Forest using Imputation to Mode as the starting point
+\end{itemize}
+
+We found that the Random Forest method was best.  
+
+For full details and analysis, see 
+\verb|Ambulance_Dispatch_04_Impute_Missing_Data.ipynb|.
+
+\subsection{Order of Operations}
+
+We also considered whether the order of operations made a difference, whether we should bin first, then impute, or impute using the raw data, then bin.  We tried both methods over several runs and found that the difference between methods was about the same as the difference between runs of the same method with different random seeds.  Since IVEware can only handle up to about forty categories in each categorical field, we had had to bin some fields first either way, so we chose to bin first, then impute.  
+
+For full details and analysis, see 
+\verb|Ambulance_Dispatch_05_IVEware_Order_of_Operations.ipynb|.
+
+
+
+
+
+
+
+
+
+
+
+
+

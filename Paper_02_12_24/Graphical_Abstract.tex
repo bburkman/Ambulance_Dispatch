@@ -1,0 +1,69 @@
+{
+\footnotesize
+\begin{tikzpicture}[x=10mm, y=10mm, node distance = 3mm]
+%	\clip (0,0) rectangle (13,5);
+
+	\draw (0,0) rectangle (13,5);
+	
+	\node (Title) at (6.5,4.4) [
+		align=center, 
+		fill=red!20, 
+		inner sep = 1.5mm,
+		rounded corners=2mm
+	] {  
+	\bf Ambulance Dispatch Recommendation System based on \\   
+	\bf Automated Crash Reports from Cell Phones
+	};
+	
+	\node (A) at (3.8,3.1) [
+		fill=blue!20, 
+		inner sep = 1.5 mm, 
+		rounded corners=2mm
+	] {
+		\begin{tabular}{@{}p{6.7cm}@{}}
+			Police receive an automated crash report from a cell phone.  
+			An AI system recommends whether to immediately dispatch an ambulance.
+			%Should they immediately dispatch an ambulance?
+		\end{tabular}
+	};
+	
+	\node [
+		below  = 1.8cm of A.west, 
+		anchor=west, 
+		fill=green!30,
+		inner sep = 1.5mm,
+		rounded corners=2mm
+	] (B) {
+		\begin{tabular}{@{} c @{} c @{\hspace{2pt}} | @{} c @{} | @{} c @{} | @{}c}
+		\multicolumn{2}{@{}l}{Recommendation} & \multicolumn{1}{ @{} c @{} }{Wait for Call} & \multicolumn{1}{ @{} c @{} }{Immediately}   \cr
+		&\multicolumn{1}{ @{} c @{} }{} & \multicolumn{1}{ @{} c @{} }{from Eyewitness} & \multicolumn{1}{ @{} c @{} }{Dispatch} \cr\cline{3-4}
+		Needs & No & Correct & Increased Cost
+			\vrule width 0pt height 9pt depth 2pt \cr\cline{3-4}
+		Ambulance? \ \ &Yes & 
+			Normal Delay & \ Prompt Medical Help \
+			\vrule width 0pt height 9pt depth 4pt \cr\cline{3-4}
+			\noalign{\vskip 2pt}
+		\end{tabular}
+		
+	};
+
+	\node (C) [
+		right = 3mm of A.north east, 
+		anchor = north west, 
+		text width = 5cm, 
+		fill=orange!30,
+		rounded corners=2mm
+	] {
+		\vspace{-\topsep}
+		\vspace{4pt}
+		\begin{enumerate}[leftmargin=*]
+			\item Political entities provide criteria for tradeoff of lives and money
+			\item Find metrics for the criteria 
+			\item Choose input data features; some are easily available (\$), some are not (\$\$\$)
+			\item Build a recommendation system based on historical data that satisfies the criteria and saves the most lives
+		\end{enumerate}
+		\vspace{4pt}
+	};
+
+\end{tikzpicture}
+}

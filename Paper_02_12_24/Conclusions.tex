@@ -1,0 +1,14 @@
+%%%
+\section{Conclusions and Discussion}
+\label{conclusions}
+
+Choosing a tradeoff between saving lives and saving money is a political decision, but the decision can be informed with models showing the likely outcomes of the possible choices.  
+
+Many cell phones can automatically notify the emergency dispatcher when they detect the deceleration profile of a crash.  The dispatcher will immediately send police to investigate, but should they also immediately dispatch an ambulance, which has about a 15\% chance of being needed, or wait for a call from an eyewitness?  We have explored options for an AI recommendation system that would take the known information about the crash, a model built on historical crash data, and a decision criterion chosen by the political decision makers, and return a recommendation for whether to immediately dispatch an ambulance or to wait.  
+
+The main problem with such a recommendation system is that it will recommend sending some ambulances that are not needed.  Budgets are limited, and priorities have to be chosen.  We showed how to incorporate three kinds of decision criterion:  Percent increase in number of ambulance calls, percent of immediately dispatched ambulances actually needed, and minimum probability that each immediately dispatched ambulance is needed.  
+
+We considered many challenges, including the randomness inherent in machine learning models and how the numerics severely limit the precision we can claim in our results.  The most significant challenge we considered was the input data required to make a useful recommendation system.  We considered three sets of input features that we called Easy, Medium, and Hard, but that can also be thought of as Free, Expensive, and Problematic.  
+
+Even through the randomness and numerics, the results show that the results of models built on the Hard features are clearly better than those built on the Medium features, which are clearly better than those built on the Easy features.  The models built on the Easy features, however, are still better than random guessing, and a recommendation system built on just those features may be worth the expense, especially since the emergency dispatcher already has that information.  
+

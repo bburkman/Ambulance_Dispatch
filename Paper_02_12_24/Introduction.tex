@@ -1,0 +1,125 @@
+% Introduction
+\section{Introduction}
+\label{intro}
+
+%%%
+\subsection{Scenario}
+\label{intro_scenario}
+
+In the (fictitious) city of Springfield, the city council and mayor are debating whether to immediately dispatch ambulances based on automated notifications from cell phones.  Many residents have cell phones (iPhones and Google Pixels) whose accelerometers will detect the deceleration profile of a crash and automatically notify the emergency call center, which immediately dispatches a police officer.  The city leaders are pleased that, because of the automated notifications, the police response to the crash scene is faster.  Should they also immediately dispatch an ambulance, making the medical response faster?
+
+Traditionally, the emergency call center did not know about a crash until an eyewitness called, and the eyewitness could say whether the crash persons needed an ambulance, but that information does not come with an automated crash notification from a cell phone. The notification will come with a location, the emergency dispatcher already has some information (time of day, day of week, weather, urbanicity), and the cell service provider may provide some information about the primary user of the cell phone (age, sex).  With that information, the emergency dispatcher has three options.
+
+\begin{description}
+	\item [Always] immediately dispatch an ambulance, most of which will not be needed
+	\item [Never] immediately dispatch an ambulance; instead, wait for a call from an eyewitness.  Many of the ambulances eventually sent to crashes had a cell phone notification and could have been sent sooner.  
+	\item [Sometimes]  Develop and implement an AI recommendation system to decide which to send immediately, reserving the option to send an ambulance later based on information from an eyewitness.  
+\end{description}
+
+
+In Springfield today, without immediate ambulance dispatch based on automated crash notifications from cell phones, 50\% of dispatched ambulances go to automobile crashes and 10\% of crash persons need an ambulance.  Twenty percent of the crashes first have an automated notification from a cell phone before a call from an eyewitness telling whether or not the crash person needs an ambulance.  The other 80\% of crashes only have an eyewitness call.  Of the crashes with automated notifications from cell phones, 15\% will need an ambulance, 
+%($\text{P} = \text{FN} + \text{TP}$), 
+and 85\% will not. 
+%($\text{N} = \text{TN} + \text{FP}$).  
+In Figure \ref{intro_springfield_before} we have scaled the numbers per 100 ambulances sent before implementation of immediate ambulance dispatch.  
+
+[We chose these numbers for clarity of illustration; an actual implementation would use local data.  For details on the 85/15 split, see \S\ref{dataset} Dataset and \S\ref{simplifying_assumptions} Simplifying Assumptions.]
+
+\begin{figure}[h]
+	\input{Springfield_Before_Figure}
+\caption{\normalfont\normalsize Springfield before implementing immediate dispatch of ambulances.  Figure accompanies \S\ref{intro_scenario}}
+\label{intro_springfield_before}
+\end{figure}
+
+\FloatBarrier
+
+If Springfield were to implement an AI recommendation system to immediately dispatch ambulances based on automated calls from cell phones, the recommendations would not perfectly predict which crash persons need an ambulance.    See Figure \ref{intro_springfield_after}, where we have zoomed in on the left side of Figure \ref{intro_springfield_before}. In our per-100-ambulances-currently-sent proportions, the recommendation system would classify each of the automated notifications as needing or not needing an ambulance.  
+
+Of the fifteen automated crash notifications that need an ambulance, the system would correctly classify some of them as needing an ambulance (True Positive, TP), and those crash persons would get medical attention more promptly, which is the goal and benefit of the recommendation system.  The rest of those fifteen would be incorrectly classified as probably not needing an ambulance with a recommendation to wait for a call from an eyewitness before sending one (False Negative, FN).  Note that the false negatives get an ambulance just as quickly under the new system as under the old,  with an ambulance dispatched upon call from an eyewitness.  
+
+Of the 85 automated notifications that do not need an ambulance, some would be correctly classified (True Negative, TN), but some would be incorrectly classified and we would immediately dispatch an unneeded ambulance (False Positive, FP).  Besides the cost of administration, those additional ambulance runs are the cost of immediately dispatching ambulances.  In the short term those additional ambulance runs could be more than current resources (ambulances and their teams) could handle, and in the long term could be unnacceptably expensive.  
+
+\begin{figure}[h]
+	\input{Springfield_After_Figure}
+\caption{\normalfont\normalsize Springfield after implementing immediate dispatch of ambulances.  Figure accompanies \S\ref{intro_scenario}}
+\label{intro_springfield_after}
+\end{figure}
+
+\FloatBarrier
+
+The leaders of Springfield need to choose a balance between the benefit of more prompt medical attention and the cost of sending more ambulances.  The tradeoff of lives and money is not ethically or morally comfortable, but that is the choice governments make when they set budgets for health care and emergency services.  In the confusion matrices in Figure \ref{intro_confusion}, Springfield would love to increase TP without increasing FP, but the recommendation system will not give perfect predictions.  
+
+\begin{figure}[h]
+\begin{minipage}{\linewidth}
+{\normalfont\normalsize
+\begin{tabular}{p{2in}p{3in}}
+\begin{tabular}{c c  | c | c | c}
+	& \multicolumn{1}{c}{} & \multicolumn{2}{c}{Prediction}  \cr
+	&\multicolumn{1}{c}{} & \multicolumn{1}{c}{PN} & \multicolumn{1}{c}{PP} \cr\cline{3-4}
+	\multirow{2}{*}{Actual} & N & TN & FP \vrule width 0pt height 10pt depth 2pt \cr\cline{3-4}
+	 & P & FN & TP	\vrule width 0pt height 10pt depth 4pt \cr\cline{3-4}
+\end{tabular}
+&
+\begin{tabular}{c c  | c | c | c}
+	\multicolumn{2}{@{}l}{Recommendation} & \multicolumn{1}{ @{} c @{} }{Wait for Call} & \multicolumn{1}{ @{} c @{} }{Immediately}   \cr
+	&\multicolumn{1}{ @{} c @{} }{} & \multicolumn{1}{ @{} c @{} }{from Eyewitness} & \multicolumn{1}{ @{} c @{} }{Dispatch} \cr\cline{3-4}
+	Needs & No & Correct & Increased Cost
+		\vrule width 0pt height 10pt depth 2pt \cr\cline{3-4}
+	Ambulance? \ \ &Yes & 
+		Normal Delay & \ Prompt Medical Help \
+		\vrule width 0pt height 10pt depth 4pt \cr\cline{3-4}
+\end{tabular}
+\cr		
+\end{tabular}
+}
+\end{minipage}
+\caption{\normalfont\normalsize Confusion matrix for ambulance dispatch.  Figure accompanies \S\ref{intro_scenario}}
+\label{intro_confusion}
+\end{figure}
+
+\FloatBarrier
+
+Building Springfield's AI recommendation system starts with an historical dataset with the features the emergency dispatchers will have at the time of the automated notification, (time of day, weather, maybe age and sex, possibly more information) and whether that historical crash person needed an ambulance (supervised learning).  A machine learning algorithm learns a model of the data, and when an automated crash notification comes in, given the data available, the model returns a value $p \in [0,1]$ that increases with the probability that the crash person needs an ambulance.  The city council and mayor need to choose a decision threshold $\theta$ such that if, for a particular crash notification, $p>\theta$, then immediately dispatch an ambulance; if $p<\theta$, wait for a call from an eyewitness.  Choosing a decision threshold of $p=1$ would mean never immediately dispatching an ambulance, and choosing $p=0$ would be always; the town leaders want to know how to choose a $p$ between the two extremes that fits their values and their budget.
+
+The histogram in Figure \ref{intro_ideal} shows typical model output.  The model generally gives lower $p$ values to crash persons who do not need an ambulance (Neg) and higher $p$ values to crash persons who do need an ambulance (Pos), but there is significant overlap.  The most obvious feature of the histogram is the class imbalance, that there are many more Neg than Pos, in fact $85/15 \approx 6$ Neg for each Pos.  
+
+Given a choice of decision threshold $\theta$, Springfield would immediately dispatch ambulances to all of the crashes with a $p$ value to the right of $\theta$.  The Pos (Needs ambulance) to the right of $\theta$ would get more prompt medical attention (TP), but the Neg (Does not need ambulance) to the right of $\theta$ would be wasted ambulance runs (FP) .  At $\theta = 0.8$, TP and FP are about equal, but as we consider smaller $\theta$ the number of TP increases by smaller and smaller amounts while the number of FP grows dramatically.  
+
+\begin{figure}[h]
+\centering
+	\input{../Keras/Images/Ideal_Pred_Wide.pgf}	
+\caption{\normalfont\normalsize Example model test results.  Figure accompanies \S\ref{intro_scenario}}
+\label{intro_ideal}
+\end{figure}
+
+\FloatBarrier
+
+We will consider three ways the leaders of Springfield can think about how to choose $\theta$, three metrics for political decision thresholds, detailed in \S \ref{political_decisions}.
+
+\begin{enumerate}
+	\item Percent increase in number of ambulance calls
+	\item Percent of immediately dispatched ambulances that are actually needed
+	\item Minimum probability that an immediately dispatched ambulance is actually needed
+\end{enumerate}
+
+\subsection{Overview}
+\label{intro_overview}
+
+In this paper we explore building a machine learning model to recommend whether to immediately dispatch an ambulance upon an automated notification from a cell phone rather than waiting for a call from an eyewitness.
+
+Such a model would be trained on historical data.  We have used the Crash Report Sampling System (CRSS) 2016-2021 data, and, in ways that we have not seen in the literature, recreated the method used by the authors of the dataset to impute missing values and compared it against other methods.  
+
+The criteria for the decision threshold (when to recommend immediately dispatching an ambulance) are political, not technical, decisions, and we posit three budgetary criteria and for each criterion have created a metric to serve as a decision threshold on the $p$ returned by the model for a new crash.  Two metrics measure the entire dataset on either side of the threshold, and one measures marginal effect at the threshold.  We develop a method for measuring such marginal effects using the model output. 
+
+An automated crash notification from a cell phone will give the location, and perhaps some more information about the primary user of the phone, but the emergency dispatcher already has some useful information, like time of day and weather.  If the notification comes with the identification of the phone's primary user, the system could be set up to instantaneously correlate with vehicle registration records to get more useful information, like make, model, and age of the car, but a more sophisticated system would be expensive.  Would having better data increase the number of needed ambulances sent faster to crash scenes?  We consider three sets of data features and compare the results of models trained on those features.  
+
+Since most crashes do not require an ambulance, the dataset is slightly imbalanced (5:1).  We report on several methods we tried, with mixed success, to handle the imbalance.
+
+To support transferability, we have used a public dataset and made public all of the code we used in our investigation and all of the output data.  This paper gives some results to support the conclusions and invites the interested reader to explore the full results, tinker with the code, and use any of it to investigate further topics.  Simplifying assumptions and opportunities for future research are given in \S \ref{simplifying_assumptions}.
+
+
+
+
+
+
+
