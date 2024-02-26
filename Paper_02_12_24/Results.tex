@@ -5,46 +5,79 @@
 \subsection{Data and Image Files}
 \label{data_files}
 
-The results in tables \ref{FP_P_0_05_Results}, \ref{Prec_0_667_Results}, and \ref{mProb_0_5_Results} are selections from the 
-\verb|FP_P_0_05.csv|, 
-\verb|Prec_0_667.csv|, and
-\verb|mProb_0_5.csv| files in the 
-\verb|./Keras/Analyze_Proba| folder at
-\url{www.github.com/bburkman/Ambulance_Dispatch}
+Results data and images are in the \verb|Keras/Analyze_Proba| and \verb|Keras/Images| folders at \
+\url{www.github.com/bburkman/Ambulance_Dispatch}.  The results data are in \verb|.csv| format, and the images in both \verb|.png| and \verb|.pgf|.
 
-Each row of each of those three files represents a different combination of algorithm, hyperparameters, features and transformation; for instance the 
-\verb|LogReg_5_Fold_alpha_0_5_Easy_Test_Transformed_98| is the logistic regression algorithm with $\alpha = 0.5$ on the Easy features transformed with $0.01 \text{ quantile } \to 0$ and $0.99 \text{ quantile } \to 1.0$.  
 
-Each row of \verb|FP_P_0_05.csv| gives, for that (algorithm, hyperparameter, feature, transformation) combination the value of $p$ where, on $[p, p+0.01)$, the value of $\text{FP}/\text{P}$ is closest to 0.05, along with other metrics at that $p$-interval.  Similarly, the other files give metrics at the $p$-interval where precision is closest to 0.667 and marginal probability is closest to 0.5.  
+\begin{comment}
+The results in tables \ref{FP_P_0_05_Results}, \ref{Prec_0_667_Results}, and \ref{mProb_0_5_Results} are selections from the \
+\verb|FP_P_0_05.csv|, \ 
+\verb|Prec_0_667.csv|, and \
+\verb|mProb_0_5.csv| files in the \ 
+\verb|./Keras/Analyze_Proba| folder at \
+\url{www.github.com/bburkman/Ambulance_Dispatch}.  
+Each row of each of those three files represents a different combination of algorithm, hyperparameters, features, and run with different random seeds; for instance, the 
+\verb|LogReg_alpha_0_5_Easy_Run_0| is the first run of the logistic regression algorithm with class weight $\alpha = 0.5$ on the Easy features.  
 
-For more details on the results of each (algorithm, hyperparameters, features, transformation) combination for all hundred intervals of $[p, p+0.01)$, see, for example, 
+\end{comment}
 
-\noindent\verb|LogReg_5_Fold_alpha_0_5_Easy_Test_Transformed_98_100.csv|.  Most of those data files also come in a \verb|.tex| version in the same directory.  
+The results of each (algorithm, hyperparameters, features, random seed) combination are in, for example, 
 
-The area under the ROC curve for each of the 13 models on each of the three sets of data features is given in \verb|ROC_AUC.csv|.
 
-The plots for the model output are in the \verb|./Keras/Images| folder.  For each model on each set of data features there are five images, for instance, 
+\qquad \verb|LogReg_alpha_0_5_Easy_Run_0.csv| with $p$ in its full precision,
 
-\verb|BRFC_alpha_0_5_Easy_Pred|,
+\qquad \verb|LogReg_alpha_0_5_Easy_Run_0_Round_4.csv| with $p$ rounded and grouped,
 
-\verb|BRFC_alpha_0_5_Easy_Test_Pred_Wide|, and
+\qquad \verb|LogReg_alpha_0_5_Easy_Run_0_Rolling_Intervals.csv|, 
 
-\verb|BRFC_alpha_0_5_Easy_Pred_Zoom|,
+\qquad \verb|LogReg_alpha_0_5_Easy_Run_0_Round_4_Rolling_Intervals.csv|, 
 
-\verb|BRFC_alpha_0_5_Easy_Test_Pred_Zoom_Wide|, and
+\qquad \verb|LogReg_alpha_0_5_Easy_Run_0_Value_Counts_head_100.csv|
 
-\verb|BRFC_alpha_0_5_Easy_Test_ROC|, 
+\qquad \qquad  with the hundred most frequent values of $p$,
 
-\noindent and each image comes in a \verb|.png| and \verb|.pgf| version.  The \verb|Wide| pictures are 4.5 inches wide, and the others 2.0 inches.  The first two images have a domain of $p \in [0,1]$, and the \verb|Zoom| images from the minimum to maximum values of $p$.  
+\qquad \verb|LogReg_alpha_0_5_Easy_Run_0_{0,5,10,25,50,100,200,...,6400}_Slices.csv| 
+
+\qquad \qquad that each have $p$ cut into intervals with at least $n$ samples of each of the two classes.
+
+For each (model, hyperparameters, features set, random seed) combination there are five images, for instance, 
+
+\qquad \verb|BRFC_alpha_0_85_Easy_Run_0_Pred|,
+
+\qquad \verb|BRFC_alpha_0_85_Easy_Run_0_Pred_Wide|, 
+
+\qquad \verb|BRFC_alpha_0_85_Easy_Run_0_Pred_Zoom|,
+
+\qquad \verb|BRFC_alpha_0_85_Easy_Run_0_Pred_Zoom_Wide|, and
+
+\qquad \verb|BRFC_alpha_0_85_Easy_Run_0_ROC|, 
+
+\noindent and each image comes in a \verb|.png| and \verb|.pgf| version.  The \verb|Wide| pictures are 4.5 inches wide, and the others 2.0 inches.  The first two images show $p$ from 0 to 1, and the \verb|Zoom| images from the minimum to maximum values of $p$.  
+
+The summary tables, all \verb|.csv| files, have one row for each (model, hyperparameters, features set, random seed) combination.  
+
+\
+
+\begin{tabular}{p{1.5in}p{4.5in}}
+	\verb|FP_P_0_05| & Value of $p$ with FP/P closest to 0.05 \cr
+%	\verb|FP_P_0_10| & Value of $p$ with FP/P closest to 0.10 \cr
+	\verb|mProb_Rolling_0_500| & For each model and each window length in \{1, 10, 20, 50, 100, 200, 500, 1000, 2000\}, the first and last value of $p$ for which Pos/(Neg + Pos) is within 0.01 of 0.50. \cr
+	\verb|Prec_Rolling_0_667| & Same for Precision within 0.01 of 0.667 \cr
+	\verb|ROC_AUC| & ROC AUC \cr
+%	\verb|Lengths_of_fpr_tpr| & Number of unique values for $p$ and the FPR and TPR that go into calculating ROC AUC.  We wanted to know the maximum precision we could hope for in that metric. \cr
+\end{tabular}
+
+\
+
 
 
 %%%
 \subsection{Easy, Medium, and Hard Features}
 \label{results_EMH}
 
-Figure \ref{EMH_BRFC} shows the raw model output and ROC curves for the Balanced Random Forest Classifier model trained on the Easy, Medium, and Hard feature sets.  All three have significant overlap of the negative (does not need an ambulance) and positive (needs an ambulance) classes, but comparing the Hard to the Easy, the negative class in the Hard is pushed to the left and the positive to the right, better separating the two classes and giving a space (up to about $p=0.8$) to choose a decision threshold $\theta$ that will send more needed than unneeded ambulances.  
+Figure \ref{EMH_BRFC} shows the raw model output and ROC curves for the Balanced Random Forest Classifier model trained on the Easy, Medium, and Hard feature sets.  All three have significant overlap of the negative (does not need an ambulance) and positive (needs an ambulance) classes, but comparing the Hard to the Easy, the negative class in the Hard is pushed more to the left and the positive more to the right, better separating the two classes and giving a space (up to about $p=0.8$) to choose a decision threshold $\theta$ that will send more needed than unneeded ambulances.  
 
-The ROC (Receiver Operating Characteristic) curves illustrate how well the models separate the positive and negative classes, with area under the curve (AUC) of 0.5 being no better than random and 1.0 being perfect separation.  The ROC AUC also support the idea that the models built on the Hard features set are much more predictive than the Medium, which are better than the Easy.
+The ROC (Receiver Operating Characteristic) curves illustrate how well the models separate the positive and negative classes, with area under the curve (AUC) of 0.5, shown by the dashed line, being no better than random and 1.0 being perfect separation.  The ROC AUC also support the idea that the models built on the Hard features set are much more predictive than the Medium, which are better than the Easy.
 
 The thirteen models built on the Easy feature set had AUC in $[0.552,0.665]$, Medium in $[0.640,0.729]$, 
 and Hard in $[0.708,0.801]$.  If we take out the worst Hard model and the worst Medium model, the ranges do not overlap.  
@@ -55,12 +88,12 @@ and Hard in $[0.708,0.801]$.  If we take out the worst Hard model and the worst 
 	\vskip 0pt
 	\hfil {\normalfont\normalsize Easy Features Model Output}
 	
-	\input{../Keras/Images/BRFC_alpha_0_5_Easy_Pred_Wide.pgf}	
+	\input{../Keras/Images/BRFC_alpha_0_5_Easy_Run_0_Pred_Wide.pgf}	
 &
 	\vskip 0pt
 	\hfil {\normalfont\normalsize ROC Curve}
 	
-	\input{../Keras/Images/BRFC_alpha_0_5_Easy_ROC.pgf}
+	\input{../Keras/Images/BRFC_alpha_0_5_Easy_Run_0_ROC.pgf}
 \cr
 \end{tabular}
 
@@ -68,12 +101,12 @@ and Hard in $[0.708,0.801]$.  If we take out the worst Hard model and the worst 
 	\vskip 0pt
 	\hfil {\normalfont\normalsize Medium Features Model Output}
 	
-	\input{../Keras/Images/BRFC_alpha_0_5_Medium_Pred_Wide.pgf}	
+	\input{../Keras/Images/BRFC_alpha_0_5_Medium_Run_0_Pred_Wide.pgf}	
 &
 	\vskip 0pt
 	\hfil {\normalfont\normalsize ROC Curve}
 	
-	\input{../Keras/Images/BRFC_alpha_0_5_Medium_ROC.pgf}
+	\input{../Keras/Images/BRFC_alpha_0_5_Medium_Run_0_ROC.pgf}
 \cr
 \end{tabular}
 
@@ -81,12 +114,12 @@ and Hard in $[0.708,0.801]$.  If we take out the worst Hard model and the worst 
 	\vskip 0pt
 	\hfil {\normalfont\normalsize Hard Features Model Output}
 	
-	\input{../Keras/Images/BRFC_alpha_0_5_Hard_Pred_Wide.pgf}	
+	\input{../Keras/Images/BRFC_alpha_0_5_Hard_Run_0_Pred_Wide.pgf}	
 &
 	\vskip 0pt
 	\hfil {\normalfont\normalsize ROC Curve}
 	
-	\input{../Keras/Images/BRFC_alpha_0_5_Hard_ROC.pgf}
+	\input{../Keras/Images/BRFC_alpha_0_5_Hard_Run_0_ROC.pgf}
 \cr
 \end{tabular}
 
@@ -101,11 +134,9 @@ and Hard in $[0.708,0.801]$.  If we take out the worst Hard model and the worst 
 \subsection{Best Model for Each Budgetary Criterion and Feature Set}
 \label{results_best_model}
 
-Our first budgetary decision criterion was that the increase in number of ambulances sent to crash persons with automated notifications from cell phones should be not more than 5\%.  Table \ref{FP_P_0_05_Results} gives, for each feature set (Easy, Medium, Hard) the best models, with ``best'' meaning that the model recommends sending the most ambulances that are actually needed (TP) subject to the constraint that we choose our decision threshold $\theta$ to be the value of $p$ such that  $\text{FP}/\text{P}$ is closest to $0.05$ on the interval $[p, p+0.01)$,
+Our {\bf first budgetary decision criterion} was that the increase in number of ambulances sent to crash persons with automated notifications from cell phones should be not more than 5\%, with metric $\text{FP}/\text{P} \le 0.05$.  Table \ref{FP_P_0_05_Results} gives, for each feature set (Easy, Medium, Hard) the best models, with ``best'' meaning that the model recommends sending the most ambulances that are actually needed (TP) subject to the constraint that we choose our decision threshold $\theta$ to be the value of $p$ such that  $\text{FP}/\text{P}$ is closest to $0.05$.  In Table \ref{FP_P_0_05_Results} we have included the best three models for each set of data features.
 
-In Table \ref{FP_P_0_05_Results} we have included the best three models for each set of data features, ``best'' in that those models immediately dispatch the most needed ambulances (TP) while keeping within the budgetary constraint $\text{FP}/\text{P} \approx 0.05$.  
-
-We have not here included similar results, like the Balanced Random Forest model with different hyperparameters, because the differences between the results of very similar models is more about the numerics and randomness than predictive of what a similar model on a slightly different dataset with different random seeds would produce.  
+We have not here included similar results, like the Balanced Random Forest models with different hyperparameters, because the data shows that the differences between the results of very similar models is more about the numerics and randomness than predictive of what a similar model on a slightly different dataset with different random seeds would produce.  For full results see \verb|Keras/Analyze_Proba/FP_P_0_05.csv|.
 
 
 \begin{table}[h]
@@ -113,135 +144,130 @@ We have not here included similar results, like the Balanced Random Forest model
 \label{FP_P_0_05_Results}
 
 {\normalfont\normalsize
-\begin{tabular}{cccc rlrrrr r}
+\begin{tabular}{lclrrrrll}
 \toprule
-	Algorithm & 
+	Model & 
 	Features & 
-	$\alpha$ & 
-	$\gamma$ & 
-	\multicolumn{1}{c}{Trans} &
 	\multicolumn{1}{c}{$p$} & 
-	\multicolumn{1}{c}{Neg} & 
-	\multicolumn{1}{c}{Pos} & 
+	\multicolumn{1}{c}{TN} & 
+	\multicolumn{1}{c}{FP} & 
+	\multicolumn{1}{c}{FN} & 
+	\multicolumn{1}{c}{TP} & 
 	\multicolumn{1}{c}{$\text{FP} / \text{P}$} & 
-	\multicolumn{1}{c}{TP} &
+	\multicolumn{1}{c}{Recall} 
 \cr
 \noalign{\vskip 2pt}
 \hline
 \noalign{\vskip 2pt}
-Bal RF & Easy & 0.50 &  & 98 & 0.93 & 997 & 564 & 0.052 & 4,270\cr
-Bal Bag & Easy &  &  & 95 & 0.97 & 755 & 389 & 0.056 & 4,197\cr
-Keras & Easy & 0.85 & 0.0 & None & 0.75 & 2,345 & 1,106 & 0.058 & 3,469\cr
-\noalign{\vskip 2pt}
+ 
+Bal RF, $\alpha = 0.5$ & Hard & 0.86 & 600,519 & 5,091 & 95,468 & 12,488 & 0.0472 & 0.1157 \cr
+Keras, $\alpha = 0.5$, $\gamma = 1.0$ & Hard & 0.5643 & 600,212 & 5,398 & 97,010 & 10,946 & 0.05 & 0.1014 \cr
+Log Reg, $\alpha  = 0.5$ & Hard & 0.5477 & 600,212 & 5,398 & 100,715 & 7,241 & 0.05 & 0.0671 \cr
 \hline
 \noalign{\vskip 2pt}
-Bal RF & Medium & 0.50 & 0 & 95 & 0.94 & 679 & 523 & 0.055 & 7,290\cr
-Keras & Medium & 0.50 & 2.0 & 100 & 0.69 & 1,328 & 1,134 & 0.055 & 6,595\cr
-AdaBoost & Medium & 0 & 0 & 100 & 0.74 & 1,114 & 992 & 0.053 & 5,699\cr
-\noalign{\vskip 2pt}
+Bal RF, $\alpha = 0.5$ & Medium & 0.89 & 600,288 & 5,322 & 101,267 & 6,689 & 0.0493 & 0.062 \cr
+Keras, $\alpha = 0.5$, $\gamma = 0.0$ & Medium & 0.5117 & 600,212 & 5,398 & 101,643 & 6,313 & 0.05 & 0.0585 \cr
+RF & Medium & 0.2581 & 600,212 & 5,398 & 102,135 & 5,821 & 0.05 & 0.0539 \cr
 \hline
 \noalign{\vskip 2pt}
-Bal RF & Hard & 0.50 & 0 & None & 0.86 & 938 & 1,508 & 0.047 & 12,447\cr
-Keras & Hard & 0.50 & 2.0 & 100 & 0.58 & 1,264 & 1,556 & 0.054 & 11,287\cr
-RUSBoost & Hard & 0 & 0 & 100 & 0.71 & 1,245 & 1,200 & 0.054 & 7,336\cr
+Bal RF, $\alpha = 0.5$ & Easy & 0.8887 & 600,213 & 5,397 & 103,717 & 4,239 & 0.05 & 0.0393 \cr
+Bal Bag & Easy & 0.9 & 600,476 & 5,134 & 104,345 & 3,611 & 0.0476 & 0.0334 \cr
+Keras, $\alpha = 0.5$, $\gamma = 1.0$ & Easy & 0.4193 & 600,217 & 5,393 & 104,763 & 3,193 & 0.05 & 0.0296 \cr\noalign{\vskip 2pt}
+\hline
+\noalign{\vskip 2pt}
 \bottomrule
 \end{tabular}
 
 }
 \end{table}
 
-%\FloatBarrier
+\FloatBarrier
 
-Our second budgetary decision criterion was that, of the ambulances immediately dispatched, at least 2/3 should be actually needed.  Table \ref{Prec_0_667_Results} gives, for each feature set (Easy, Medium, Hard) the best models, 
-with ``best'' meaning that the model recommends sending the most ambulances that are actually needed (TP) subject to the constraint that we choose our decision threshold $\theta$ to be the value of $p$ such that $\text{Precision} = \text{TP}/(\text{FP} + \text{TP})$ is closest to $0.667$ on the interval $[p, p+0.01)$.
+Our {\bf second budgetary decision criterion} was that, of the ambulances immediately dispatched, at least 2/3 should be actually needed.  Table \ref{Prec_0_667_Results} gives, for each feature set the best models, with ``best'' meaning that the model recommends sending the most ambulances that are actually needed (TP) subject to the constraint that we choose our decision threshold $\theta$ to be the value of $p$ such that $\text{Precision} = \text{TP}/(\text{FP} + \text{TP})$ is closest to $0.667$ when Precision converges in rolling averages of FP and TP of increasing window size.  For full results see \verb|Keras/Analyze_Proba/Prec_Rolling_0_667.csv|.
 
-Note that in the Easy features in Table \ref{Prec_0_667_Results}, none of the models attain $\text{Precision} = \text{TP}/(\text{FP} + \text{TP})$ close to $2/3$.  A city wanting to build a recommendation system on the Easy features would need to be satisfied with $\text{Precision} \approx 0.5$, that only half of the ambulances immediately dispatched would be needed.  
-
+The Hard features give robust models that immediately dispatch up to 19\% of the needed ambulances while staying within the budgetary decision criterion, but the Medium models are bad and the Easy worthless.  Most of the thirteen Easy models do not even get close to finding a $p$ where Precision is 2/3.  Governments that wanted to consider models built on the Easy features could consider Precision of 1/2 as an attainable target.  
 
 \begin{table}
 \caption{\normalfont\normalsize Best models and transformations for $\text{Precision} = \text{TP} / (\text{FP} + \text{TP}) = 2/3$ for each algorithm.  Table accompanies \S\ref{results_best_model}}
 \label{Prec_0_667_Results}
 
 {\normalfont\normalsize
-\begin{tabular}{cccc rlrrrr r}
+\begin{tabular}{lclrrrrll}
 \toprule
-	Algorithm & 
+	\multicolumn{1}{c}{Model} & 
 	Features & 
-	$\alpha$ & 
-	$\gamma$ & 
-	\multicolumn{1}{c}{Trans} &
 	\multicolumn{1}{c}{$p$} & 
-	\multicolumn{1}{c}{Neg} & 
-	\multicolumn{1}{c}{Pos} & 
+	\multicolumn{1}{c}{TN} & 
+	\multicolumn{1}{c}{FP} & 
+	\multicolumn{1}{c}{FN} & 
+	\multicolumn{1}{c}{TP} & 
 	\multicolumn{1}{c}{Prec} & 
-	\multicolumn{1}{c}{TP} &
+	\multicolumn{1}{c}{Recall} 
 \cr
 \noalign{\vskip 2pt}
 \hline
 \noalign{\vskip 2pt}
-Bal RF & Easy & 0.5 &  & 98 & 0.99 & 430 & 343 & 0.507 & 1,411\cr
-Bal Bag & Easy &  &  & None & 0.99 & 220 & 191 & 0.49 & 835\cr
-Keras & Easy & 0.5 & 2.0 & None & 0.51 & 102 & 43 & 0.497 & 79\cr
-\noalign{\vskip 2pt}
+Bal RF, $\alpha = 0.5$ & Hard & 0.8199 & 594,922 & 10,688 & 87,467 & 20,489 & 0.6572 & 0.1898 \cr
+Keras, $\alpha = 0.5$, $\gamma = 1.0$ & Hard & 0.5631 & 599,135 & 6,475 & 95,560 & 12,396 & 0.6571 & 0.1148 \cr
+Bal Bag & Hard & 0.9567 & 602,204 & 3,406 & 101,142 & 6,814 & 0.6666 & 0.0631 \cr
 \hline
 \noalign{\vskip 2pt}
-Bal RF & Medium & 0.5 &  & 98 & 0.99 & 347 & 557 & 0.65 & 1554\cr
-Keras & Medium & 0.5 & 0.0 & None & 0.73 & 51 & 55 & 0.664 & 326\cr
-Log Reg & Medium & 0.5 & 0.0 & 100 & 0.83 & 25 & 22 & 0.623 & 114\cr
-\noalign{\vskip 2pt}
+Bal RF, $\alpha = 0.5$ & Medium & 0.9671 & 604,992 & 618 & 106,770 & 1,186 & 0.6574 & 0.011 \cr
+Keras, $\alpha = 0.5$, $\gamma = 0.0$ & Medium & 0.749 & 605,478 & 132 & 107,705 & 251 & 0.6571 & 0.0023 \cr
+Log Reg, $\alpha = 0.5$ & Medium & 0.727 & 605,596 & 14 & 107,927 & 29 & 0.6574 & 0.0003 \cr
+%AdaBoost & Medium & 0.503 & 605,609 & 1 & 107,954 & 2 & 0.6667 & 0 \cr
 \hline
 \noalign{\vskip 2pt}
-Bal RF & Hard & 0.5 &  & None & 0.82 & 1,321 & 1,697 & 0.667 & 18,708\cr
-Keras & Hard & 0.5 & 2.0 & 95 & 0.85 & 617 & 769 & 0.666 & 10,701\cr
-Log Reg & Hard & 0.5 &  & None & 0.69 & 144 & 235 & 0.666 & 2,269\cr
+AdaBoost & Easy & 0.4997 & 605,608 & 2 & 107,952 & 4 & 0.6667 & 0 \cr
+Keras, $\alpha = 0.5$, $\gamma = 1.0$ & Easy & 0.5445 & 605,608 & 2 & 107,952 & 4 & 0.6667 & 0 \cr
+Log Reg, $\alpha = 0.5$ & Easy & 0.4708 & 605,609 & 1 & 107,954 & 2 & 0.6667 & 0 \cr
+
 \bottomrule
 \end{tabular}
 
 }
 \end{table}
 
-%\FloatBarrier
+\FloatBarrier
 
-Our third budgetary decision criterion was that each ambulance immediately dispatched should have at least a 50\% chance of being needed.  Table \ref{mProb_0_5_Results} gives, for each feature set (Easy, Medium, Hard) the best models, 
-with ``best'' meaning that the model recommends sending the most ambulances that are actually needed (TP) subject to the constraint that we choose our decision threshold $\theta$ to be the value of $p$ such that $m\text{Prob} = \text{Pos}/(\text{Neg} + \text{Pos})$ is closest to $0.50$ on the interval $[p, p+0.01)$.
+Our {\bf third budgetary decision criterion} was that each ambulance immediately dispatched should have at least a 50\% chance of being needed.  Table \ref{mProb_0_5_Results} gives, for each feature set the best models, 
+with ``best'' meaning that the model recommends sending the most ambulances that are actually needed (TP) subject to the constraint that we choose our decision threshold $\theta$ to be the value of $p$ such that the marginal probability, $m\text{Prob} = \text{Pos}/(\text{Neg} + \text{Pos})$, is closest to $0.50$  when mProb converges in rolling sums of Neg and Pos of increasing window size.  For full results see \verb|Keras/Analyze_Proba/mProb_Rolling_0_500.csv|.
+
 
 
 \begin{table}[h]
-\caption{\normalfont\normalsize Best models and transformations for $m\text{Prob}= \text{Pos}/(\text{Neg} + \text{Pos}) \approx 0.5$ for each algorithm.  Table accompanies \S\ref{results_best_model}}
+\caption{\normalfont\normalsize Best models for $m\text{Prob}= \text{Pos}/(\text{Neg} + \text{Pos}) \approx 0.5$ for each algorithm with length of rolling sum.  Table accompanies \S\ref{results_best_model}}
 \label{mProb_0_5_Results}
 
 {\normalfont\normalsize
-\begin{tabular}{cccc rlrrrr r}
+\begin{tabular}{lcrlrrlrl}
 \toprule
-	Algorithm & 
-	Features & 
-	$\alpha$ & 
-	$\gamma$ & 
-	\multicolumn{1}{c}{Trans} &
-	\multicolumn{1}{c}{$p$} & 
+	\multicolumn{1}{c}{Model} &
+	\multicolumn{1}{c}{Features} &
+	\multicolumn{1}{c}{Roll} &
+	\multicolumn{1}{c}{$p$} &
 	\multicolumn{1}{c}{Neg} & 
 	\multicolumn{1}{c}{Pos} & 
 	\multicolumn{1}{c}{$m$Prob} & 
 	\multicolumn{1}{c}{TP} &
+	\multicolumn{1}{c}{Recall} 
 \cr
 \noalign{\vskip 2pt}
 \hline
 \noalign{\vskip 2pt}
-Bal RF & Easy & 0.5 & 0 & None & 0.98 & 228 & 228 & 0.5 & 395\cr
-AdaBoost & Easy & 0 & 0 & 100 & 0.93 & 244 & 167 & 0.406 & 169\cr
-Log Reg & Easy & 0.5 & 0 & 100 & 0.87 & 81 & 62 & 0.434 & 147\cr
-\noalign{\vskip 2pt}
+Bal RF, $\alpha = 0.5$ & Hard & 50 & 0.5214 & 3,217 & 3,275 & 0.5045 & 23,732 & 0.2198\cr
+Keras, $\alpha = 0.5$, $\gamma = 1.0$ & Hard & 200 & 0.5415 & 2,446 & 2,535 & 0.5089 & 15,007 & 0.139\cr
+Log Reg, $\alpha = 0.5$ & Hard & 500 & 0.5005 & 2,518 & 2,613 & 0.5093 & 6,916 & 0.0641\cr
+RUSBoost & Hard & 100 & 0.8858 & 3,980 & 4,142 & 0.51 & 5,529 & 0.0512\cr
 \hline
 \noalign{\vskip 2pt}
-Bal RF & Medium & 0.5 & 0 & 95 & 0.93 & 1,211 & 1,191 & 0.496 & 7,813\cr
-Keras & Medium & 0.5 & 1.0 & 90 & 0.97 & 444 & 457 & 0.507 & 6,521\cr
-Easy Ens & Medium & 0 & 0 & 98 & 0.91 & 812 & 800 & 0.496 & 5,259\cr
-\noalign{\vskip 2pt}
+Bal RF, $\alpha = 0.5$ & Medium & 200 & 0.5006 & 2,266 & 2,339 & 0.5079 & 6,364 & 0.0589\cr
+BalBag, $\alpha = 0.85$ & Medium & 20 & 0.5195 & 4,727 & 4,864 & 0.5071 & 4,668 & 0.0432\cr
+Keras, $\alpha = 0.5$, $\gamma = 0.0$ & Medium & 500 & 0.5222 & 2,352 & 2,442 & 0.5094 & 4,409 & 0.0408\cr
 \hline
 \noalign{\vskip 2pt}
-Bal RF & Hard & 0.5 & 0 & None & 0.78 & 1,882 & 1,817 & 0.491 & 25,371\cr
-Bal Bag & Hard & 0 & 0 & None & 0.85 & 97 & 86 & 0.47 & 17,160\cr
-Keras & Hard & 0.5 & 2.0 & 95 & 0.78 & 1,104 & 1,099 & 0.499 & 16,869\cr
+Bal RF, $\alpha = 0.5$ & Easy & 500 & 0.5522 & 1,610 & 1,601 & 0.4986 & 760 & 0.007\cr
+Keras, $\alpha = 0.85$, $\gamma = 0.0$ & Easy & 10 & 0.5174 & 12 & 12 & 0.5 & 33 & 0.0003\cr
 \bottomrule
 \end{tabular}
 

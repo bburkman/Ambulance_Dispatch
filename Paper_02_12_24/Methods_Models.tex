@@ -50,37 +50,42 @@ RUSBoost Classifier & RUSBoost & Imbalanced-Learn &  \cr
 \subsubsection{Hyperparameter Effects}
 \label{hyperparameters}
 
-Our experience with varying the class weight and focal loss parameters was that they shifted the entire $p$ distribution, both the positive and negative class, but did not do a better job of separating the positive and negative class, as measured by the area under the curve (AUC) of the receiver operating characteristic (ROC), as illustrated in Figure \ref{hyperparameters_figure} below. 
+Our experience with varying the class weight and focal loss parameters was that they shifted the entire $p$ distribution, both the positive and negative class, but did not do a better job of separating the positive and negative class, as measured by the area under the curve (AUC) of the receiver operating characteristic (ROC), as illustrated in Figure \ref{hyperparameters_figure} below.  
 
-The KerasClassifier with the Binary Focal Crossentropy loss function takes both a class weight parameter $\alpha$ and a focal loss parameter $\gamma$.  Varying these parameters gave us different shapes of distributions of $p$, but all three versions of the model on the hard features had ROC AUC between 0.7781 and 0.7785, a difference within the normal ranges of randomness in machine learning models.  
+The KerasClassifier with the Binary Focal Crossentropy loss function takes both a class weight hyperparameter $\alpha$ and a focal loss parameter $\gamma$.  Varying these hyperparameters gave us different shapes of distributions of $p$, as shown in Figure \ref{hyperparameters_figure}, which also gives the ROC AUC for two runs of each model with different random seeds.  That the model on the left has both the least and the greatest ROC AUC illustrates that, between models of the same algorithm with different class and focal weights, the effectiveness of the model in separating the positive and negative classes depends as much on the random seed as on the choice of weights.  
 
 If one is using the default decision threshold $\theta = 0.5$, then these hyperparameters are useful for shifting the distribution to meet the threshold, but since we are taking the liberty to move the threshold, varying the hyperparameters may be of little use.  Since the ROC AUC quantifies how well the algorithm separates the positive and negative classes over the whole range of $p$, and we are most interested in a small range of $p$ on the right end, the weights may yet have some useful effect, a topic for future investigation (\S\ref{simplifying_assumptions}).
-
-
-\
 
 %%%
 \begin{figure}[h]
 \noindent\begin{tabular}{@{\hspace{-6pt}}p{2.3in} @{\hspace{-6pt}}p{2.3in} @{\hspace{-6pt}}p{2.3in} }
 	\vskip 0pt
 	\hfil {\normalfont\normalsize $\alpha = 0.5$, $\gamma = 0.0$}
+	\vskip 4pt
+	
+	{\normalfont\normalsize \ $\text{ROC AUC} \in \{ 0.777402, 0.778653 \}$ }
 	
 	
-	\input{../Keras/Images/KBFC_alpha_0_5_gamma_0_0_Hard_Pred.pgf}	
+	\input{../Keras/Images/KBFC_alpha_0_5_gamma_0_0_Hard_Run_0_Pred.pgf}	
 &
 	\vskip 0pt
 	\hfil {\normalfont\normalsize $\alpha = 0.5$, $\gamma = 2.0$}
+	
+	\vskip 4pt
+	{\normalfont\normalsize \ $\text{ROC AUC} \in \{0.777903, 0.777626\}$}
 		
-	\input{../Keras/Images/KBFC_alpha_0_5_gamma_2_0_Hard_Pred.pgf}	
+	\input{../Keras/Images/KBFC_alpha_0_5_gamma_2_0_Hard_Run_0_Pred.pgf}	
 &
 	\vskip 0pt
 	\hfil {\normalfont\normalsize $\alpha = 0.85$, $\gamma = 0.0$}
 	
+	\vskip 4pt
+	{\normalfont\normalsize \ $\text{ROC AUC} \in \{0.7779, 0.778199\}$}
 	
-	\input{../Keras/Images/KBFC_alpha_balanced_gamma_0_0_Hard_Pred.pgf}	
+	\input{../Keras/Images/KBFC_alpha_balanced_gamma_0_0_Hard_Run_0_Pred.pgf}	
 \cr
 \end{tabular}
-	  \caption{\normalfont\normalsize KerasClassifier with Different Hyperparameters.  Figure accompanies \S\ref{hyperparameters}}\label{hyperparameters_figure}
+	  \caption{\normalfont\normalsize KerasClassifier with Different Hyperparameters with ROC AUC for Two Model Runs with Different Random Seeds.  Figure accompanies \S\ref{hyperparameters}}\label{hyperparameters_figure}
 \end{figure}
 
 \FloatBarrier
@@ -152,212 +157,24 @@ The ROC (Receiver Operating Characteristic) curve is a parameterized curve showi
 
 %%%%%
 \FloatBarrier
-\subsection{Comparing Outputs of Different Models}
+\subsubsection{Comparing Outputs of Different Models}
 \label{comparing_outputs}
 
-\subsubsection{Raw Model Outputs}
-\label{raw_output}
-
-The eight model algorithms not only give different results, but different kinds of results, and we have to find a way to compare them.  See Figure \ref{raw_output_figure}.  For the illustrations we have used models built on the Hard features with no class balance nor focal loss.
+The eight model algorithms not only give different results, but different kinds of results, and we have to find a way to compare them.  Ideally, we will find ways to evaluate the results that will apply to all of the kinds of model output. See Figure \ref{raw_output_figure}.  For the illustrations we have used models built on the Hard features with no class balance nor focal loss.
 
 The ranges and shapes of the distributions are significantly different.  The Balanced Bagging and  Balanced Random Forest classifiers gives a nice spread from 0.0 to 1.0, but the AdaBoost, Easy Ensemble, and RUSBoost results are clustered in the middle, and the Random Forest on the left.  If we used the Random Forest results with the default decision threshold $\theta = 0.5$, we would never immediately dispatch an ambulance.  The KerasClassifier and Logistic Regression Classifier tend towards the left with long tails to the right.  
+
+To give appropriate results for Balanced Bagging with a $p$ range of width 1.0 and RUSBoost with a range of width 0.002, we built into the code a variable for numerical precision that depends on the range of $p$ for that model, $\text{num\_prec} = - \lceil \log_{10} ( \text{max}(p) - \text{min}(p) )  \rceil$, to which we can then add the number of digits appropriate for the purpose.  
+
+The numerics in the model results are also different.  Most of the models give, for the 713,566 samples, at least 100,000 unique values of $p \in [0,1]$, making the discrete results nearly continuous.  The AdaBoost, KerasClassifier, Logistic Regression, and RUSBoost algorithms are fairly consistent with about 140,000 unique values of $p$ for results on the Easy features, 640,000 for the results on the Medium features, and 700,000 on the Hard features.  The Random Forest classifier gives about half as many unique results, but proportionally for the three features sets.
+
+The outliers in the numerics are the Balanced Random Forest, Balanced Bagging, and Easy Ensemble.  The Balanced Random Forest method on the Hard features gives less than 4,000 unique values of $p$ on the Hard features because 93\% of its $p$ values are rounded to two decimal places.  The Balanced Bagging results on the Hard features have less than 300 unique values because 99\% of its $p$ values are rounded to one decimal place.  While the other algorithms had fewer unique values for the Medium features and far fewer for the Easy, the Balanced Random Forest and Balanced Bagging have more for the Medium and far more for the Easy, with the number of unique Easy results being comparable to those of the other algorithms.  The Easy Ensemble results for all three features sets have about 50\% of the results rounded to two decimal places.  For full details see \verb|Analyze_Proba/Value_Counts_y_proba.csv|.
+
+
+
+
 
 \input{Methods_Models_Raw_Figure_Short}
 
 \FloatBarrier
 
-\subsubsection{Numerics}
-\label{numerics}
-
-We also need to be careful with the numerics, because the results could depend on how we slice $p$ into intervals.  Table \ref{numerics_table} shows, for each of the eight classifiers with the hard features and no class weights nor focal loss, the number of samples (always 713,566), the number of unique values of $p$, the sum of the value counts of the ten (and hundred) most common values of $p$, the min and max of $p$, and the area under the ROC curve.  
-
-
-The $p$ distribution from RUSBoost only ranges from 0.4990 to 0.5011, but within that 0.0021 range, the 713,566 samples have 706,938 unique values of $p$, which is as close to ``continuous'' as we can hope.  On the other extreme, the Balanced Bagging distribution has only 270 unique values of $p$, and the ten most common values comprise 99\% of the set, making it very discrete.  Almost all of the values of $p$ for Balanced Bagging are rounded to one decimal placeand 93\% of the $p$ values from Balanced Random Forest are rounded to two decimal places, which is important to acknowledge because we cannot claim to find a best value of $\theta$ with more precision than the outputs of the model.
-
-The table gives the area under the ROC curve, a common metric for comparing models in terms of how well they separate the positive and negative classes over the entire interval $p \in [0,1]$.  All of the models in this table are ``good,'' with the Balanced Random Forest best and Random Forest worst, but the differences we are interested in are in a small intervals of $p$ that satisfy the budgetary decision criteria, so the AUC will not be the primary metric we use.  
-
-\
-
-\input{Methods_Models_Numerics_Table}
-
-\FloatBarrier
-
-%%%%%
-\subsubsection{Splitting $p$ into Bands}
-\label{p_bands}
-
-The goal is to split the values of $p$ into the smallest possible bands such that the target metrics are monotonic (increasing or decreasing) functions of the bands of $p$.  As $p$ increases, as we go from one band of $p$ to the next we want 
-$\text{TP}/(\text{FP} + \text{TP})$ 
-and
-$\text{Pos}/(\text{Neg} + \text{Pos})$ 
-to increase and 
-$\text{FP}/(\text{FN} + \text{TP})$ 
-to decrease, which they will do if the bands are large enough, but if the bands are too small the randomness and numerics will distort the results.  
-
-We tried two ways to split $p$ into bands.  The first was to cut it into bands of fixed width $\delta$, but that posed several problems getting enough samples in each band to overcome the randomness while having small enough $\delta$ to give numerical precision to our choice of $\theta$.  It also would have required choosing a different $\delta$ for each model algorithm.
-
-The method we chose was to vary the width of the bands based on the number of elements in the band and not splitting samples with the same value of $p$ across two bands.  We sorted the samples by decreasing $p$ and, starting at the maximum value of $p$, went down the list until we had at least one thousand Neg samples and at least one thousand Pos samples in the band, then continued until we reached a different value of $p$.  This method accommodated the Balanced Bagging results having most $p$ rounded to one decimal place, giving eleven bands of $p$, while also slicing the $p \in [0.4990,0.5011]$ of the RUSBoost results into 107 intervals with at least 1000 elements of each of the negative and positive classes.  
-
-The choice of 1000 for the minimum number of elements of the negative and positive classes was somewhat arbitrary, and more sophisticated methods could find an optimal size, an opportunity for future research (\S\ref{simplifying_assumptions}).
-
-
-
-%%%%%
-\subsubsection{Understanding the Metrics in Bands of Values of $p$}
-\label{understand_bands}
-
-In Table \ref{BRFC_20_table} we have various metrics as a function of $p$ returned by the Balanced Forest Classifier.  When choosing the best model for each metric we will use $p$-intervals of width 0.01, but for illustration purposes here we use intervals of width 0.05.  
-
-The ``Neg'' and ``Pos'' are the number of elements of each class in that interval of $p$.  The $\text{Pos}/( \text{Neg} + \text{Pos})$ is one of our target metrics.  The True Negatives (TN) are a running sum of Neg, and the False Positives (FP) are $\text{N} - \text{TN}$.  Similarly, the False Negatives (FN) are a running sum of Pos, and the True Positives (TP) are $\text{P} - \text{FN}$.  Precision, one of our target metrics is $\text{TP}/(\text{FP} + \text{TP})$, is the proportion of ambulances immediately dispatched that are needed.  Recall, $\text{TP}/(\text{FN} + \text{TP})$, is the proportion of needed ambulances that are immediately dispatched. The last of our target metrics, FP/P, is the proportional increase in the number of ambulances sent (immediately or upon call from an eyewitness) when we automatically dispatch some ambulances based on an automated notification from a cell phone.  
-
-For example, if we set $\theta = 0.50$, then out of $n = 713,566$ automated crash notifications from cell phones, of the $P=107,956$ that need an ambulance, we will send $\text{TP} = 77,763$  immediately and send the other $\text{FN} = 30,193$ after hearing from an eyewitness that an ambulance is needed.  Additionally, we will send $\text{FP} = 163,691$ ambulances to crash persons who do not need one.  Of the ambulances we immediately dispatched, $\text{Precision} = 32\%$ of them were needed, and of the crash persons who needed an ambulance, we immediately dispatched ambulances to $\text{Recall} = 72\%$ of them.  The $\text{FP} = 163,691$ unnecessarily sent ambulances represent a $\text{FP}/\text{P} = 152\%$ increase in the number of ambulances sent to those crash persons with automated crash notifications, an increase over just ignoring the automated notifications and always waiting for a call from an eyewitness.
-
-If we were to move from $\theta = 0.50$ to $\theta=0.55$, then we would immediately dispatch far fewer ($\text{Neg} + \text{Pos} = 43,098 + 8,652 = 51,750$) ambulances.  $\text{Pos} = 8,652$, or $\text{Pos}/(\text{Neg} + \text{Pos}) = 17\%$ of the ambulances we decided to not send because we moved from $\theta = 0.50$ to $\theta = 0.55$, were needed.  In that band of $\theta$, automated calls from cell phones have a 17\% chance of needing an ambulance.  
-
-\begin{table}[]
-\caption{\normalfont\normalsize Various Metrics as a Function of $p$ returned by the Balanced Random Forest Classifier on the Hard Features.  Table accompanies \S\ref{understand_bands}}
-\label{BRFC_20_table}
-
-\begin{tabular}{
-	*{4}{>{\normalfont\normalsize}r}
-	*{1}{>{\normalfont\normalsize}c}
-	*{7}{>{\normalfont\normalsize}r}
-}
-\toprule
-\multicolumn{1}{c}{\normalsize\normalfont $p$} & 
-\multicolumn{1}{c}{\normalsize\normalfont Neg} &    
-\multicolumn{1}{c}{\normalsize\normalfont Pos} & 
-\multicolumn{1}{c}{\normalsize\normalfont $\frac{\text{Pos}}{\text{Neg}+ \text{Pos}}$} &       
-\multicolumn{1}{c}{\normalsize\normalfont TN} &       
-\multicolumn{1}{c}{\normalsize\normalfont FP} &       
-\multicolumn{1}{c}{\normalsize\normalfont FN} &       
-\multicolumn{1}{c}{\normalsize\normalfont TP} &  
-\multicolumn{1}{c}{\normalsize\normalfont Prec} &   
-\multicolumn{1}{c}{\normalsize\normalfont Rec} & 
-\multicolumn{1}{c}{\normalsize\normalfont $\frac{\text{FP}}{\text{P}}$} 
-\\
-\midrule
-0.00 & 188,067 & 5,119 & 0.0265 & 188,067 & 417,543 & 5,119 & 102,837 & 0.1976 & 0.9526 & 3.8677\cr
-0.28 & 105,036 & 6,814 & 0.0609 & 293,103 & 312,507 & 11,933 & 96,023 & 0.2351 & 0.8895 & 2.8948\cr
-0.37 & 68,460 & 6,661 & 0.0887 & 361,563 & 244,047 & 18,594 & 89,362 & 0.268 & 0.8278 & 2.2606\cr
-0.43 & 52,376 & 6,894 & 0.1163 & 413,939 & 191,671 & 25,488 & 82,468 & 0.3008 & 0.7639 & 1.7755\cr
-0.48 & 38,235 & 6,464 & 0.1446 & 452,174 & 153,436 & 31,952 & 76,004 & 0.3313 & 0.7040 & 1.4213\cr
-0.52 & 33,681 & 7,045 & 0.1730 & 485,855 & 119,755 & 38,997 & 68,959 & 0.3654 & 0.6388 & 1.1093\cr
-0.56 & 28,986 & 7,597 & 0.2077 & 514,841 & 90,769 & 46,594 & 61,362 & 0.4034 & 0.5684 & 0.8408\cr
-0.60 & 24,231 & 7,849 & 0.2447 & 539,072 & 66,538 & 54,443 & 53,513 & 0.4458 & 0.4957 & 0.6163\cr
-0.64 & 19,354 & 7,996 & 0.2924 & 558,426 & 47,184 & 62,439 & 45,517 & 0.491 & 0.4216 & 0.4371\cr
-0.68 & 14,740 & 7,538 & 0.3384 & 573,166 & 32,444 & 69,977 & 37,979 & 0.5393 & 0.3518 & 0.3005\cr
-0.72 & 10,812 & 7,358 & 0.4050 & 583,978 & 21,632 & 77,335 & 30,621 & 0.586 & 0.2836 & 0.2004\cr
-0.76 & 7,896 & 6,939 & 0.4677 & 591,874 & 13,736 & 84,274 & 23,682 & 0.6329 & 0.2194 & 0.1272\cr
-0.80 & 6,710 & 8,163 & 0.5488 & 598,584 & 7,026 & 92,437 & 15,519 & 0.6884 & 0.1438 & 0.0651\cr
-0.85 & 7,026 & 15,519 & 0.6884 & 605,610 & 0 & 107,956 & 0 & nan & 0 & 0\cr
-\bottomrule
-\end{tabular}
-\end{table}
-
-\FloatBarrier
-
-%%%
-\subsubsection{Choosing Values of $\theta$ for each Budgetary Decision Metric}
-\label{choosing_theta}
-
-Using the Balanced Random Forest Classifier trained on the Hard features as an example, from the data in Table \ref{BRFC_20_table} we can find the decision thresholds $\theta$ that satisfy each of our three political decision criteria.  In the table, $\frac{\text{FP}}{\text{P}} = 0.05$ somewhere in the interval $p \in [0.85,0.90)$.  Zooming in on that interval in Table \ref{BRFC_100_table_85_90}, we see that if we wanted to satisfy that criterion, we would choose $\theta = 0.86$ as our decision threshold.  In the table we can also see the marginal effects on $\text{FP}/\text{P}$ of choosing a slightly larger or smaller $\theta$ instead.  
-
-Similarly, for our second political criterion $\text{Precision} = \frac{\text{TP}}{\text{FP} + \text{TP}} = \frac{2}{3}$, we would choose $\theta = 0.81$ as our decision threshold, and for marginal probability, $\frac{\text{Pos}}{\text{Neg} + \text{Pos}} = 0.50$, we would choose $\theta = 0.79$.  
-
-We cannot get more detailed values of $\theta$ for the Balanced Random Forest Classifier because almost all of the values of $p$ in the model output are rounded to two decimal places.  For all of our models, though, we would be stretching our credibility to give more precise answers because we just do not have enough data to give our criteria as monotonic functions of $p$ over much smaller intervals of $p$.  
- 
-\begin{table}[h]
-\caption{\normalfont\normalsize Various Metrics as a Function of $p$, in more detail.  Table accompanies \S\ref{choosing_theta}}
-\label{BRFC_100_table_85_90}
-
-\begin{tabular}{
-	*{3}{>{\normalfont\normalsize}r}
-	*{1}{>{\normalfont\normalsize}c}
-	*{7}{>{\normalfont\normalsize}r}
-}
-\toprule
-\multicolumn{1}{c}{\normalsize\normalfont p} & 
-\multicolumn{1}{c}{\normalsize\normalfont Neg} &    
-\multicolumn{1}{c}{\normalsize\normalfont Pos} & 
-\multicolumn{1}{c}{\normalsize\normalfont $\frac{\text{Pos}}{\text{Neg}+ \text{Pos}}$} &       
-\multicolumn{1}{c}{\normalsize\normalfont TN} &       
-\multicolumn{1}{c}{\normalsize\normalfont FP} &       
-\multicolumn{1}{c}{\normalsize\normalfont FN} &       
-\multicolumn{1}{c}{\normalsize\normalfont TP} &  
-\multicolumn{1}{c}{\normalsize\normalfont Prec} &   
-\multicolumn{1}{c}{\normalsize\normalfont Rec} & 
-\multicolumn{1}{c}{\normalsize\normalfont $\frac{\text{FP}}{\text{P}}$} 
-\\
-\midrule
-0.75 &   2,495 &  1,804 &                                       0.42 &  583,902 &   21,708 &   77,268 &   30,688 &  0.59 &  0.28 &                         0.20 \\
-0.76 &   2,259 &  1,721 &                                       0.43 &  586,161 &   19,449 &   78,989 &   28,967 &  0.60 &  0.27 &                         0.18 \\
-0.77 &   2,041 &  1,779 &                                       0.47 &  588,202 &   17,408 &   80,768 &   27,188 &  0.61 &  0.25 &                         0.16 \\
-0.78 &   1,882 &  1,817 &                                       0.49 &  590,084 &   15,526 &   82,585 &   25,371 &  0.62 &  0.24 &                         0.14 \\
-0.79 &   1,805 &  1,706 &                                       0.49 &  591,889 &   13,721 &   84,291 &   23,665 &  0.63 &  0.22 &                         0.13 \\
-0.80 &   1,604 &  1,675 &                                       0.51 &  593,493 &   12,117 &   85,966 &   21,990 &  0.64 &  0.20 &                         0.11 \\
-0.81 &   1,440 &  1,585 &                                       0.52 &  594,933 &   10,677 &   87,551 &   20,405 &  0.66 &  0.19 &                         0.10 \\
-0.82 &   1,321 &  1,697 &                                       0.56 &  596,254 &    9,356 &   89,248 &   18,708 &  0.67 &  0.17 &                         0.09 \\
-0.83 &   1,162 &  1,639 &                                       0.59 &  597,416 &    8,194 &   90,887 &   17,069 &  0.68 &  0.16 &                         0.08 \\
-0.84 &   1,171 &  1,566 &                                       0.57 &  598,587 &    7,023 &   92,453 &   15,503 &  0.69 &  0.14 &                         0.07 \\
-0.85 &     970 &  1,548 &                                       0.61 &  599,557 &    6,053 &   94,001 &   13,955 &  0.70 &  0.13 &                         0.06 \\
-0.86 &     938 &  1,508 &                                       0.62 &  600,495 &    5,115 &   95,509 &   12,447 &  0.71 &  0.12 &                         0.05 \\
-0.87 &     784 &  1,475 &                                       0.65 &  601,279 &    4,331 &   96,984 &   10,972 &  0.72 &  0.10 &                         0.04 \\
-0.88 &     764 &  1,367 &                                       0.64 &  602,043 &    3,567 &   98,351 &    9,605 &  0.73 &  0.09 &                         0.03 \\
-0.89 &     695 &  1,383 &                                       0.67 &  602,738 &    2,872 &   99,734 &    8,222 &  0.74 &  0.08 &                         0.03 \\
-0.90 &     559 &  1,318 &                                       0.70 &  603,297 &    2,313 &  101,052 &    6,904 &  0.75 &  0.06 &                         0.02 \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-\FloatBarrier
-
-%%%
-\subsubsection{Choosing the Best Model for each Budgetary Decision Metric}
-\label{choosing_model}
-
-For each budgetary constraint we want to find the model that, within the constraint, will immediately dispatch the most ambulances to crash persons who need them (TP).  Using as an example our first budgetary constraint, $\text{FP}/\text{P} = 0.05$, we need to find, for each model, each set of hyperparameters for the model, and each transformation of the $p$ outputs, whether there exists a neighborhood of $p$ where $\text{FP}/\text{P}$ is close to 0.05, then find the best $\theta$ interval in that neighborhood.  Of those valid results, find the model that gives the most TP.  
-
-Table \ref{FP_P_0_05_hard} shows the best results for each model algorithm.  Within these, the Balanced Random Forest Classifier gives the best results, sending more needed ambulances while staying within the budgetary constraint.  The KerasClassifier with the Binary Focal Crossentropy loss function is a close second, and those two are clearly better than the other six models.  
-
-\begin{table}[h]
-\caption{\normalfont\normalsize Comparing Models:  Best results for each model for budgetary criterion $\text{FP}/\text{P}$ closest to $0.05$.  Table accompanies \S\ref{choosing_model}}
-\label{FP_P_0_05_hard}
-
-{\normalfont\normalsize
-\begin{tabular}{cccc rlrrrr r}
-\toprule
-	Algorithm & 
-	Features & 
-	$\alpha$ & 
-	$\gamma$ & 
-	\multicolumn{1}{c}{Trans} &
-	\multicolumn{1}{c}{$p$} & 
-	\multicolumn{1}{c}{Neg} & 
-	\multicolumn{1}{c}{Pos} & 
-	\multicolumn{1}{c}{$\text{FP} / \text{P}$} & 
-	\multicolumn{1}{c}{TP} &
-\cr
-\noalign{\vskip 2pt}
-\hline
-\noalign{\vskip 2pt}
-
-Bal RF & Hard & 0.50 & 0 & None & 0.86 & 938 & 1,508 & 0.047 & 12,447\cr
-Keras & Hard & 0.50 & 2.0 & 100 & 0.58 & 1,264 & 1,556 & 0.054 & 11,287\cr
-RUSBoost & Hard & 0 & 0 & 100 & 0.71 & 1,245 & 1,200 & 0.054 & 7,336\cr
-Log Reg & Hard & 0.50 & 0 & 95 & 0.81 & 348 & 393 & 0.051 & 7,278\cr
-AdaBoost & Hard & 0 & 0 & 98 & 0.83 & 768 & 735 & 0.053 & 7,097\cr
-Bal Bag & Hard & 0 & 0 & None & 0.9 & 8,548 & 10,487 & 0.03 & 6,610\cr
-RF & Hard & 0 & 0 & 100 & 0.74 & 923 & 673 & 0.051 & 5,909\cr
-Easy Ens & Hard & 0 & 0 & 100 & 0.72 & 2,378 & 2,296 & 0.048 & 5,306\cr
-\bottomrule
-\end{tabular}
-}
-\end{table}
-
-\FloatBarrier
-
-
-
-
- 
