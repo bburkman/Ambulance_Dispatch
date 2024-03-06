@@ -24,8 +24,9 @@ All models are simplifications, and we should acknowledge the most egregious of 
 	\bf Section & \bf Opportunities for Future Research \cr \hline
 	\S\ref{dataset} & Find data on crashes that spawned an automated notification from a cell phone. \cr
 	\S\ref{features} & We tested only three sets of features and did not test to see which features or combinations of features were most useful in predicting needing an ambulance.  \cr
+	\S\ref{hyperparameters} & We found that varying the hyperparameters for class weight and focal loss did not significantly vary the ROC AUC, a measure of how well the model separates the positive and negative classes over the whole range $p \in [0,1]$.  Do those hyperparameters make a difference in how well the model separates the positive and negative classes on the right tail of the $p$ distribution, the part relevant to our work? \cr
 	\S\ref{finding_theta} & Find a better way to slice the $p$-values into intervals such that the target metrics are monotonic functions of the intervals.  \cr
-	\S\ref{hyperparameters} & We found that varying the hyperparameters for class weight and focal loss did not significantly vary the ROC AUC, a measure of how well the model separates the positive and negative classes over the whole range $p \in [0,1]$.  Do those hyperparameters make a difference in how well the model separates the positive and negative classes on the right tail of the $p$ distribution, the part relevant to our work?
+	\S\ref{scenario_reprise} & Can we find better combinations of data and model algorithms that will better separate the positive and negative classes? \cr
 \end{tabular}	
 %\end{longtable}
 

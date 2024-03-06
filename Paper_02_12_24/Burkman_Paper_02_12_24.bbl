@@ -1,4 +1,4 @@
-\begin{thebibliography}{6}
+\begin{thebibliography}{23}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \providecommand{\url}[1]{\texttt{#1}}
 \providecommand{\href}[2]{#2}
@@ -12,6 +12,45 @@
 \providecommand{\bibinfo}[2]{#2}
 \ifx\xfnm\relax \def\xfnm[#1]{\unskip,\space#1}\fi
 %Type = Article
+\bibitem[{Bertsimas and Ng(2019)}]{BERTSIMAS2019557}
+\bibinfo{author}{Bertsimas, D.}, \bibinfo{author}{Ng, Y.},
+  \bibinfo{year}{2019}.
+\newblock \bibinfo{title}{Robust and stochastic formulations for ambulance
+  deployment and dispatch}.
+\newblock \bibinfo{journal}{European Journal of Operational Research}
+  \bibinfo{volume}{279}, \bibinfo{pages}{557--571}.
+\newblock \URLprefix
+  \url{https://www.sciencedirect.com/science/article/pii/S0377221719304138},
+  \DOIprefix\doi{https://doi.org/10.1016/j.ejor.2019.05.011}.
+%Type = Article
+\bibitem[{Bose et~al.(2011)Bose, Crandall, McGwin, Goldman, Foster and
+  Fine}]{BOSE20111048}
+\bibinfo{author}{Bose, D.}, \bibinfo{author}{Crandall, J.},
+  \bibinfo{author}{McGwin, G.}, \bibinfo{author}{Goldman, J.},
+  \bibinfo{author}{Foster, J.}, \bibinfo{author}{Fine, P.},
+  \bibinfo{year}{2011}.
+\newblock \bibinfo{title}{Computational methodology to predict injury risk for
+  motor vehicle crash victims: A framework for improving advanced automatic
+  crash notification systems}.
+\newblock \bibinfo{journal}{Transportation Research Part C: Emerging
+  Technologies} \bibinfo{volume}{19}, \bibinfo{pages}{1048--1059}.
+\newblock \URLprefix
+  \url{https://www.sciencedirect.com/science/article/pii/S0968090X11000891},
+  \DOIprefix\doi{https://doi.org/10.1016/j.trc.2011.06.001}.
+%Type = Article
+\bibitem[{Candefjord et~al.(2021)Candefjord, {Sheikh Muhammad}, Bangalore and
+  Buendia}]{CANDEFJORD2021101124}
+\bibinfo{author}{Candefjord, S.}, \bibinfo{author}{{Sheikh Muhammad}, A.},
+  \bibinfo{author}{Bangalore, P.}, \bibinfo{author}{Buendia, R.},
+  \bibinfo{year}{2021}.
+\newblock \bibinfo{title}{On scene injury severity prediction (osisp) machine
+  learning algorithms for motor vehicle crash occupants in us}.
+\newblock \bibinfo{journal}{Journal of Transport \& Health}
+  \bibinfo{volume}{22}, \bibinfo{pages}{101124}.
+\newblock \URLprefix
+  \url{https://www.sciencedirect.com/science/article/pii/S2214140521001547},
+  \DOIprefix\doi{https://doi.org/10.1016/j.jth.2021.101124}.
+%Type = Article
 \bibitem[{Chawla et~al.(2002)Chawla, Bowyer, Hall and Kegelmeyer}]{Chawla_2002}
 \bibinfo{author}{Chawla, N.}, \bibinfo{author}{Bowyer, K.},
   \bibinfo{author}{Hall, L.}, \bibinfo{author}{Kegelmeyer, W.},
@@ -19,12 +58,75 @@
 \newblock \bibinfo{title}{Smote: Synthetic minority over-sampling technique.}
 \newblock \bibinfo{journal}{JOURNAL OF ARTIFICIAL INTELLIGENCE RESEARCH}
   \bibinfo{volume}{16}, \bibinfo{pages}{321 -- 357}.
+%Type = Article
+\bibitem[{Geuens and Dumortier(2010)}]{GEUENS2010385}
+\bibinfo{author}{Geuens, C.}, \bibinfo{author}{Dumortier, J.},
+  \bibinfo{year}{2010}.
+\newblock \bibinfo{title}{Mandatory implementation for in-vehicle ecall:
+  Privacy compatible?}
+\newblock \bibinfo{journal}{Computer Law \& Security Review}
+  \bibinfo{volume}{26}, \bibinfo{pages}{385--390}.
+\newblock \URLprefix
+  \url{https://www.sciencedirect.com/science/article/pii/S0267364910000580},
+  \DOIprefix\doi{https://doi.org/10.1016/j.clsr.2010.03.009}.
+%Type = Article
+\bibitem[{He et~al.(2019)He, Zhang and Wang}]{13793173920190801}
+\bibinfo{author}{He, K.}, \bibinfo{author}{Zhang, P.}, \bibinfo{author}{Wang,
+  S.C.}, \bibinfo{year}{2019}.
+\newblock \bibinfo{title}{Crash telemetry-based injury severity prediction is
+  equivalent to or out-performs field protocols in triage of planar vehicle
+  collisions.}
+\newblock \bibinfo{journal}{Prehospital \& Disaster Medicine}
+  \bibinfo{volume}{34}, \bibinfo{pages}{356 -- 362}.
+\newblock \URLprefix
+  \url{https://ezproxyprod.ucs.louisiana.edu:2443/login?url=https://search.ebscohost.com/login.aspx?direct=true&amp;AuthType=ip,cookie,uid,url&amp;db=cul&amp;AN=137931739&amp;site=eds-live&amp;scope=site}.
 %Type = Techreport
 \bibitem[{Herbert(2019)}]{CRSS_Imputation}
 \bibinfo{author}{Herbert, G.}, \bibinfo{year}{2019}.
 \newblock \bibinfo{title}{Crash Report Sampling System: Imputation}.
 \newblock \bibinfo{type}{Technical Report} \bibinfo{number}{DOT HS 812 795}.
   National Highway Traffic Safety Administration.
+%Type = Article
+\bibitem[{Jagtenberg et~al.(2015)Jagtenberg, Bhulai and {van der
+  Mei}}]{JAGTENBERG201527}
+\bibinfo{author}{Jagtenberg, C.}, \bibinfo{author}{Bhulai, S.},
+  \bibinfo{author}{{van der Mei}, R.}, \bibinfo{year}{2015}.
+\newblock \bibinfo{title}{An efficient heuristic for real-time ambulance
+  redeployment}.
+\newblock \bibinfo{journal}{Operations Research for Health Care}
+  \bibinfo{volume}{4}, \bibinfo{pages}{27--35}.
+\newblock \URLprefix
+  \url{https://www.sciencedirect.com/science/article/pii/S2211692314200075},
+  \DOIprefix\doi{https://doi.org/10.1016/j.orhc.2015.01.001}.
+%Type = Article
+\bibitem[{Kong et~al.(2023)Kong, Lee, Kim, Lee, Kang, Choi, Kim, Jeong, Kang
+  and Sung}]{KONG2023106393}
+\bibinfo{author}{Kong, J.S.}, \bibinfo{author}{Lee, K.H.},
+  \bibinfo{author}{Kim, O.H.}, \bibinfo{author}{Lee, H.Y.},
+  \bibinfo{author}{Kang, C.Y.}, \bibinfo{author}{Choi, D.},
+  \bibinfo{author}{Kim, S.C.}, \bibinfo{author}{Jeong, H.},
+  \bibinfo{author}{Kang, D.R.}, \bibinfo{author}{Sung, T.E.},
+  \bibinfo{year}{2023}.
+\newblock \bibinfo{title}{Machine learning-based injury severity prediction of
+  level 1 trauma center enrolled patients associated with car-to-car crashes in
+  korea}.
+\newblock \bibinfo{journal}{Computers in Biology and Medicine}
+  \bibinfo{volume}{153}, \bibinfo{pages}{106393}.
+\newblock \URLprefix
+  \url{https://www.sciencedirect.com/science/article/pii/S0010482522011015},
+  \DOIprefix\doi{https://doi.org/10.1016/j.compbiomed.2022.106393}.
+%Type = Article
+\bibitem[{Kononen et~al.(2011)Kononen, Flannagan and Wang}]{KONONEN2011112}
+\bibinfo{author}{Kononen, D.W.}, \bibinfo{author}{Flannagan, C.A.},
+  \bibinfo{author}{Wang, S.C.}, \bibinfo{year}{2011}.
+\newblock \bibinfo{title}{Identification and validation of a logistic
+  regression model for predicting serious injuries associated with motor
+  vehicle crashes}.
+\newblock \bibinfo{journal}{Accident Analysis \& Prevention}
+  \bibinfo{volume}{43}, \bibinfo{pages}{112--122}.
+\newblock \URLprefix
+  \url{https://www.sciencedirect.com/science/article/pii/S000145751000206X},
+  \DOIprefix\doi{https://doi.org/10.1016/j.aap.2010.07.018}.
 %Type = Article
 \bibitem[{Lema{{\^i}}tre et~al.(2017)Lema{{\^i}}tre, Nogueira and
   Aridas}]{Imblearn}
@@ -45,6 +147,52 @@
   \bibinfo{booktitle}{Proceedings of the IEEE international conference on
   computer vision}, pp. \bibinfo{pages}{2980--2988}.
 %Type = Article
+\bibitem[{Liu et~al.(2023)Liu, Racz, Vaillancourt, Michelman, Barnes, Mellem,
+  Eastham, Green, Armstrong, Bal, O’Banion and Guo}]{LIU2023103949}
+\bibinfo{author}{Liu, L.}, \bibinfo{author}{Racz, D.},
+  \bibinfo{author}{Vaillancourt, K.}, \bibinfo{author}{Michelman, J.},
+  \bibinfo{author}{Barnes, M.}, \bibinfo{author}{Mellem, S.},
+  \bibinfo{author}{Eastham, P.}, \bibinfo{author}{Green, B.},
+  \bibinfo{author}{Armstrong, C.}, \bibinfo{author}{Bal, R.},
+  \bibinfo{author}{O’Banion, S.}, \bibinfo{author}{Guo, F.},
+  \bibinfo{year}{2023}.
+\newblock \bibinfo{title}{Smartphone-based hard-braking event detection at
+  scale for road safety services}.
+\newblock \bibinfo{journal}{Transportation Research Part C: Emerging
+  Technologies} \bibinfo{volume}{146}, \bibinfo{pages}{103949}.
+\newblock \URLprefix
+  \url{https://www.sciencedirect.com/science/article/pii/S0968090X2200362X},
+  \DOIprefix\doi{https://doi.org/10.1016/j.trc.2022.103949}.
+%Type = Article
+\bibitem[{Liu et~al.(2016)Liu, Li, Liu and Patel}]{LIU2016120}
+\bibinfo{author}{Liu, Y.}, \bibinfo{author}{Li, Z.}, \bibinfo{author}{Liu, J.},
+  \bibinfo{author}{Patel, H.}, \bibinfo{year}{2016}.
+\newblock \bibinfo{title}{A double standard model for allocating limited
+  emergency medical service vehicle resources ensuring service reliability}.
+\newblock \bibinfo{journal}{Transportation Research Part C: Emerging
+  Technologies} \bibinfo{volume}{69}, \bibinfo{pages}{120--133}.
+\newblock \URLprefix
+  \url{https://www.sciencedirect.com/science/article/pii/S0968090X16300602},
+  \DOIprefix\doi{https://doi.org/10.1016/j.trc.2016.05.023}.
+%Type = Article
+\bibitem[{Nadar et~al.(2023)Nadar, Jha and Thakkar}]{NADAR2023106355}
+\bibinfo{author}{Nadar, R.A.}, \bibinfo{author}{Jha, J.},
+  \bibinfo{author}{Thakkar, J.J.}, \bibinfo{year}{2023}.
+\newblock \bibinfo{title}{Adaptive variable neighbourhood search approach for
+  time-dependent joint location and dispatching problem in a multi-tier
+  ambulance system}.
+\newblock \bibinfo{journal}{Computers \& Operations Research}
+  \bibinfo{volume}{159}, \bibinfo{pages}{106355}.
+\newblock \URLprefix
+  \url{https://www.sciencedirect.com/science/article/pii/S0305054823002198},
+  \DOIprefix\doi{https://doi.org/10.1016/j.cor.2023.106355}.
+%Type = Misc
+\bibitem[{NHTSA(2016-2020)}]{CRSS}
+\bibinfo{author}{NHTSA}, \bibinfo{year}{2016-2020}.
+\newblock \bibinfo{title}{Crash report sampling system}.
+\newblock
+  \bibinfo{note}{\url{https://www.nhtsa.gov/crash-data-systems/crash-report-sampling-system}}.
+%Type = Article
 \bibitem[{Pedregosa et~al.(2011)Pedregosa, Varoquaux, Gramfort, Michel,
   Thirion, Grisel, Blondel, Prettenhofer, Weiss, Dubourg, Vanderplas, Passos,
   Cournapeau, Brucher, Perrot and Duchesnay}]{scikit-learn}
@@ -60,6 +208,28 @@
 \newblock \bibinfo{title}{Scikit-learn: Machine learning in {P}ython}.
 \newblock \bibinfo{journal}{Journal of Machine Learning Research}
   \bibinfo{volume}{12}, \bibinfo{pages}{2825--2830}.
+%Type = Article
+\bibitem[{Plevin et~al.(2017)Plevin, Kaufman, Fraade-Blanar and
+  Bulger}]{15857782520170401}
+\bibinfo{author}{Plevin, R.E.}, \bibinfo{author}{Kaufman, R.},
+  \bibinfo{author}{Fraade-Blanar, L.}, \bibinfo{author}{Bulger, E.M.},
+  \bibinfo{year}{2017}.
+\newblock \bibinfo{title}{Evaluating the potential benefits of advanced
+  automatic crash notification.}
+\newblock \bibinfo{journal}{Prehospital \& Disaster Medicine}
+  \bibinfo{volume}{32}, \bibinfo{pages}{156 -- 164}.
+\newblock \URLprefix
+  \url{https://ezproxyprod.ucs.louisiana.edu:2443/login?url=https://search.ebscohost.com/login.aspx?direct=true&amp;AuthType=ip,cookie,uid,url&amp;db=cul&amp;AN=158577825&amp;site=eds-live&amp;scope=site}.
+%Type = Article
+\bibitem[{Qin and Khan(2012)}]{QIN20121}
+\bibinfo{author}{Qin, X.}, \bibinfo{author}{Khan, A.M.}, \bibinfo{year}{2012}.
+\newblock \bibinfo{title}{Control strategies of traffic signal timing
+  transition for emergency vehicle preemption}.
+\newblock \bibinfo{journal}{Transportation Research Part C: Emerging
+  Technologies} \bibinfo{volume}{25}, \bibinfo{pages}{1--17}.
+\newblock \URLprefix
+  \url{https://www.sciencedirect.com/science/article/pii/S0968090X1200054X},
+  \DOIprefix\doi{https://doi.org/10.1016/j.trc.2012.04.004}.
 %Type = Misc
 \bibitem[{Raghunathan et~al.()Raghunathan, Solenberger, Berglund and van
   Hoewyk}]{IVEware}
@@ -68,5 +238,45 @@
 \newblock \bibinfo{title}{Iveware: Imputation and variation estimation
   software}.
 \newblock \URLprefix \url{https://www.src.isr.umich.edu/software/iveware/}.
+%Type = Article
+\bibitem[{Su et~al.(2023)Su, Zhong, Chow, Dey and Jin}]{SU2023103955}
+\bibinfo{author}{Su, H.}, \bibinfo{author}{Zhong, Y.D.}, \bibinfo{author}{Chow,
+  J.Y.}, \bibinfo{author}{Dey, B.}, \bibinfo{author}{Jin, L.},
+  \bibinfo{year}{2023}.
+\newblock \bibinfo{title}{Emvlight: A multi-agent reinforcement learning
+  framework for an emergency vehicle decentralized routing and traffic signal
+  control system}.
+\newblock \bibinfo{journal}{Transportation Research Part C: Emerging
+  Technologies} \bibinfo{volume}{146}, \bibinfo{pages}{103955}.
+\newblock \URLprefix
+  \url{https://www.sciencedirect.com/science/article/pii/S0968090X22003680},
+  \DOIprefix\doi{https://doi.org/10.1016/j.trc.2022.103955}.
+%Type = Article
+\bibitem[{Weaver et~al.(2022)Weaver, Talton, Barnard, Gaffley, Doud, Schoell,
+  Petty, Martin, Meredith and Stitzel}]{WEAVER20221057}
+\bibinfo{author}{Weaver, A.A.}, \bibinfo{author}{Talton, J.W.},
+  \bibinfo{author}{Barnard, R.T.}, \bibinfo{author}{Gaffley, M.},
+  \bibinfo{author}{Doud, A.N.}, \bibinfo{author}{Schoell, S.L.},
+  \bibinfo{author}{Petty, J.K.}, \bibinfo{author}{Martin, R.S.},
+  \bibinfo{author}{Meredith, J.W.}, \bibinfo{author}{Stitzel, J.D.},
+  \bibinfo{year}{2022}.
+\newblock \bibinfo{title}{Advanced automatic crash notification algorithm for
+  children}.
+\newblock \bibinfo{journal}{Academic Pediatrics} \bibinfo{volume}{22},
+  \bibinfo{pages}{1057--1064}.
+\newblock \URLprefix
+  \url{https://www.sciencedirect.com/science/article/pii/S1876285922000845},
+  \DOIprefix\doi{https://doi.org/10.1016/j.acap.2022.02.016}.
+%Type = Article
+\bibitem[{Zhang et~al.(2016)Zhang, He, Gou and Li}]{ZHANG201697}
+\bibinfo{author}{Zhang, Z.}, \bibinfo{author}{He, Q.}, \bibinfo{author}{Gou,
+  J.}, \bibinfo{author}{Li, X.}, \bibinfo{year}{2016}.
+\newblock \bibinfo{title}{Performance measure for reliable travel time of
+  emergency vehicles}.
+\newblock \bibinfo{journal}{Transportation Research Part C: Emerging
+  Technologies} \bibinfo{volume}{65}, \bibinfo{pages}{97--110}.
+\newblock \URLprefix
+  \url{https://www.sciencedirect.com/science/article/pii/S0968090X16000346},
+  \DOIprefix\doi{https://doi.org/10.1016/j.trc.2016.01.015}.
 
 \end{thebibliography}

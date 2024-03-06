@@ -8,21 +8,9 @@
 Results data and images are in the \verb|Keras/Analyze_Proba| and \verb|Keras/Images| folders at \
 \url{www.github.com/bburkman/Ambulance_Dispatch}.  The results data are in \verb|.csv| format, and the images in both \verb|.png| and \verb|.pgf|.
 
-
-\begin{comment}
-The results in tables \ref{FP_P_0_05_Results}, \ref{Prec_0_667_Results}, and \ref{mProb_0_5_Results} are selections from the \
-\verb|FP_P_0_05.csv|, \ 
-\verb|Prec_0_667.csv|, and \
-\verb|mProb_0_5.csv| files in the \ 
-\verb|./Keras/Analyze_Proba| folder at \
-\url{www.github.com/bburkman/Ambulance_Dispatch}.  
-Each row of each of those three files represents a different combination of algorithm, hyperparameters, features, and run with different random seeds; for instance, the 
-\verb|LogReg_alpha_0_5_Easy_Run_0| is the first run of the logistic regression algorithm with class weight $\alpha = 0.5$ on the Easy features.  
-
-\end{comment}
-
 The results of each (algorithm, hyperparameters, features, random seed) combination are in, for example, 
 
+\
 
 \qquad \verb|LogReg_alpha_0_5_Easy_Run_0.csv| with $p$ in its full precision,
 
@@ -40,7 +28,11 @@ The results of each (algorithm, hyperparameters, features, random seed) combinat
 
 \qquad \qquad that each have $p$ cut into intervals with at least $n$ samples of each of the two classes.
 
+\
+
 For each (model, hyperparameters, features set, random seed) combination there are five images, for instance, 
+
+\
 
 \qquad \verb|BRFC_alpha_0_85_Easy_Run_0_Pred|,
 
@@ -52,18 +44,20 @@ For each (model, hyperparameters, features set, random seed) combination there a
 
 \qquad \verb|BRFC_alpha_0_85_Easy_Run_0_ROC|, 
 
-\noindent and each image comes in a \verb|.png| and \verb|.pgf| version.  The \verb|Wide| pictures are 4.5 inches wide, and the others 2.0 inches.  The first two images show $p$ from 0 to 1, and the \verb|Zoom| images from the minimum to maximum values of $p$.  
+\
 
-The summary tables, all \verb|.csv| files, have one row for each (model, hyperparameters, features set, random seed) combination.  
+\noindent and each image comes in a \verb|.png| and \verb|.pgf| version.  The \verb|Wide| pictures are 4.5 inches wide, and the others 2.0 inches.  The \verb|Pred| and \verb|Pred_Wide| images show $p$ from 0 to 1 as in Figure \ref{hyperparameters_figure}, and the \verb|Zoom| images from the minimum to maximum values of $p$, as in Figure \ref{raw_output_figure}.  
+
+These summary tables, all \verb|.csv| files, have one row for each (model, hyperparameters, features set, random seed) combination:
 
 \
 
-\begin{tabular}{p{1.5in}p{4.5in}}
+\begin{tabular}{p{1.5in}>{\hangindent = 1em}p{4.5in}}
 	\verb|FP_P_0_05| & Value of $p$ with FP/P closest to 0.05 \cr
-%	\verb|FP_P_0_10| & Value of $p$ with FP/P closest to 0.10 \cr
-	\verb|mProb_Rolling_0_500| & For each model and each window length in \{1, 10, 20, 50, 100, 200, 500, 1000, 2000\}, the first and last value of $p$ for which Pos/(Neg + Pos) is within 0.01 of 0.50. \cr
-	\verb|Prec_Rolling_0_667| & Same for Precision within 0.01 of 0.667 \cr
-	\verb|ROC_AUC| & ROC AUC \cr
+	\verb|FP_P_0_10| & Value of $p$ with FP/P closest to 0.10 \cr
+	\verb|Prec_Rolling_0_667| & For each model and each window length in \{1, 10, 20, 50, 100, 200, 500, 1000, 2000\}, the first and last value of $p$ for which Precision is within 0.01 of 0.667, if such $p$ exist for that window length. \cr
+	\verb|mProb_Rolling_0_500| & Same for marginal probability within 0.01 of 0.50 \cr
+	\verb|ROC_AUC| & Area Under the Curve of the Receiver Operating Characteristic curve \cr
 %	\verb|Lengths_of_fpr_tpr| & Number of unique values for $p$ and the FPR and TPR that go into calculating ROC AUC.  We wanted to know the maximum precision we could hope for in that metric. \cr
 \end{tabular}
 
@@ -134,13 +128,13 @@ and Hard in $[0.708,0.801]$.  If we take out the worst Hard model and the worst 
 \subsection{Best Model for Each Budgetary Criterion and Feature Set}
 \label{results_best_model}
 
-Our {\bf first budgetary decision criterion} was that the increase in number of ambulances sent to crash persons with automated notifications from cell phones should be not more than 5\%, with metric $\text{FP}/\text{P} \le 0.05$.  Table \ref{FP_P_0_05_Results} gives, for each feature set (Easy, Medium, Hard) the best models, with ``best'' meaning that the model recommends sending the most ambulances that are actually needed (TP) subject to the constraint that we choose our decision threshold $\theta$ to be the value of $p$ such that  $\text{FP}/\text{P}$ is closest to $0.05$.  In Table \ref{FP_P_0_05_Results} we have included the best three models for each set of data features.
+Our {\bf first budgetary decision criterion} was that the increase in number of ambulances sent to crash persons with automated notifications from cell phones should be not more than 5\%, with metric $\text{FP}/\text{P} \le 0.05$.  Table \ref{FP_P_0_05_Results} gives, for each feature set (Easy, Medium, Hard) the best models, with ``best'' meaning that the model recommends sending the most ambulances that are actually needed (TP) subject to the constraint that we choose our decision threshold $\theta$ to be the value of $p$ such that  $\text{FP}/\text{P}$ is closest to $0.05$.  In Table \ref{FP_P_0_05_Results} we have included the best three models for each set of data features.  The numbers for the Hard features vary slightly from Table \ref{FP_P_0_05_hard} because the run used a different random seed.
 
 We have not here included similar results, like the Balanced Random Forest models with different hyperparameters, because the data shows that the differences between the results of very similar models is more about the numerics and randomness than predictive of what a similar model on a slightly different dataset with different random seeds would produce.  For full results see \verb|Keras/Analyze_Proba/FP_P_0_05.csv|.
 
 
 \begin{table}[h]
-\caption{\normalfont\normalsize Best models and transformations for $\text{FP}/\text{P} = 0.05$ for each algorithm.  Table accompanies \S\ref{results_best_model}}
+\caption{\normalfont\normalsize Best models and transformations for $\text{FP}/\text{P} = 0.05$ for each algorithm.   Table accompanies \S\ref{results_best_model}}
 \label{FP_P_0_05_Results}
 
 {\normalfont\normalsize

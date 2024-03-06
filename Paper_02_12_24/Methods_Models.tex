@@ -50,7 +50,7 @@ RUSBoost Classifier & RUSBoost & Imbalanced-Learn &  \cr
 \subsubsection{Hyperparameter Effects}
 \label{hyperparameters}
 
-Our experience with varying the class weight and focal loss parameters was that they shifted the entire $p$ distribution, both the positive and negative class, but did not do a better job of separating the positive and negative class, as measured by the area under the curve (AUC) of the receiver operating characteristic (ROC), as illustrated in Figure \ref{hyperparameters_figure} below.  
+Our experience with varying the class weight and focal loss parameters was that they shifted the entire $p$ distribution, both the positive and negative class, but did not do a better job of separating the positive and negative class, as measured by the area under the curve (AUC) of the receiver operating characteristic (ROC) curve, as illustrated in Figure \ref{hyperparameters_figure}.  
 
 The KerasClassifier with the Binary Focal Crossentropy loss function takes both a class weight hyperparameter $\alpha$ and a focal loss parameter $\gamma$.  Varying these hyperparameters gave us different shapes of distributions of $p$, as shown in Figure \ref{hyperparameters_figure}, which also gives the ROC AUC for two runs of each model with different random seeds.  That the model on the left has both the least and the greatest ROC AUC illustrates that, between models of the same algorithm with different class and focal weights, the effectiveness of the model in separating the positive and negative classes depends as much on the random seed as on the choice of weights.  
 
@@ -85,7 +85,7 @@ If one is using the default decision threshold $\theta = 0.5$, then these hyperp
 	\input{../Keras/Images/KBFC_alpha_balanced_gamma_0_0_Hard_Run_0_Pred.pgf}	
 \cr
 \end{tabular}
-	  \caption{\normalfont\normalsize KerasClassifier with Different Hyperparameters with ROC AUC for Two Model Runs with Different Random Seeds.  Figure accompanies \S\ref{hyperparameters}}\label{hyperparameters_figure}
+	  \caption{\normalfont\normalsize Histograms of $p$ results for KerasClassifier with Different Hyperparameters, with ROC AUC values for Two Model Runs with Different Random Seeds.  Figure accompanies \S\ref{hyperparameters}}\label{hyperparameters_figure}
 \end{figure}
 
 \FloatBarrier
@@ -109,7 +109,7 @@ A perfect model would entirely separate the negative and positive classes, but t
 
 If this ideal model were our recommendation system with $\theta = 0.5$, then 38.5\% of the ambulances we immediately dispatched would be needed (Precision), and 73\% of the needed ambulances would be immediately dispatched (Recall).  If we chose a higher value of $\theta$, we would increase TN, decrease FP, increase FN, and decrease TP.  Recall would decrease, but the effect on precision is uncertain as FP and TP would both decrease.
 
-The ROC (Receiver Operating Characteristic) curve is a parameterized curve showing the True Positive Rate (TP/P) versus the False Positive Rate (FP/N) as $p$ varies from 0 (upper right) to 1 (lower left).  The area under the curve (AUC) is widely used to compare the quality of models in terms of how well they separate the negative and positive classes over the entire range of $p \in [0,1]$.  For our work, however, given real-life budgetary constraints on expanding ambulance fleets, we are only interested in a small range of $p$ on the right side of the distribution, so the ROC AUC is not the primary measure we will use to choose the best model.
+The ROC (Receiver Operating Characteristic) curve is a parameterized curve showing the True Positive Rate (TP/P) versus the False Positive Rate (FP/N) as $p$ varies from 0 (upper right) to 1 (lower left).  The area under the curve (AUC) is widely used to compare the quality of models in terms of how well they separate the negative and positive classes over the entire range of $p \in [0,1]$.  For our work, however, given real-life budgetary constraints on expanding ambulance fleets, we are only interested in a small range of $p$ on the right side of the distribution, so the ROC AUC is not the primary measure we use to choose the best model.
 
 \begin{figure}[h]
 \noindent\begin{tabular}{@{\hspace{-6pt}}p{2.3in} @{\hspace{-6pt}}p{2.0in} p{1.8in}}
@@ -160,7 +160,7 @@ The ROC (Receiver Operating Characteristic) curve is a parameterized curve showi
 \subsubsection{Comparing Outputs of Different Models}
 \label{comparing_outputs}
 
-The eight model algorithms not only give different results, but different kinds of results, and we have to find a way to compare them.  Ideally, we will find ways to evaluate the results that will apply to all of the kinds of model output. See Figure \ref{raw_output_figure}.  For the illustrations we have used models built on the Hard features with no class balance nor focal loss.
+The eight model algorithms not only give different results, but different kinds of results, and we find a way to compare them.  See Figure \ref{raw_output_figure}.  For the illustrations we have used models built on the Hard features with no class balance nor focal loss.
 
 The ranges and shapes of the distributions are significantly different.  The Balanced Bagging and  Balanced Random Forest classifiers gives a nice spread from 0.0 to 1.0, but the AdaBoost, Easy Ensemble, and RUSBoost results are clustered in the middle, and the Random Forest on the left.  If we used the Random Forest results with the default decision threshold $\theta = 0.5$, we would never immediately dispatch an ambulance.  The KerasClassifier and Logistic Regression Classifier tend towards the left with long tails to the right.  
 
@@ -168,7 +168,7 @@ To give appropriate results for Balanced Bagging with a $p$ range of width 1.0 a
 
 The numerics in the model results are also different.  Most of the models give, for the 713,566 samples, at least 100,000 unique values of $p \in [0,1]$, making the discrete results nearly continuous.  The AdaBoost, KerasClassifier, Logistic Regression, and RUSBoost algorithms are fairly consistent with about 140,000 unique values of $p$ for results on the Easy features, 640,000 for the results on the Medium features, and 700,000 on the Hard features.  The Random Forest classifier gives about half as many unique results, but proportionally for the three features sets.
 
-The outliers in the numerics are the Balanced Random Forest, Balanced Bagging, and Easy Ensemble.  The Balanced Random Forest method on the Hard features gives less than 4,000 unique values of $p$ on the Hard features because 93\% of its $p$ values are rounded to two decimal places.  The Balanced Bagging results on the Hard features have less than 300 unique values because 99\% of its $p$ values are rounded to one decimal place.  While the other algorithms had fewer unique values for the Medium features and far fewer for the Easy, the Balanced Random Forest and Balanced Bagging have more for the Medium and far more for the Easy, with the number of unique Easy results being comparable to those of the other algorithms.  The Easy Ensemble results for all three features sets have about 50\% of the results rounded to two decimal places.  For full details see \verb|Analyze_Proba/Value_Counts_y_proba.csv|.
+The outliers in the numerics are the Balanced Random Forest, Balanced Bagging, and Easy Ensemble.  The Balanced Random Forest method on the Hard features gives fewer than 4,000 unique values of $p$ on the Hard features because 93\% of its $p$ values are rounded to two decimal places.  The Balanced Bagging results on the Hard features have fewer than 300 unique values because 99\% of its $p$ values are rounded to one decimal place.  While the other algorithms had fewer unique values for the Medium features and far fewer for the Easy, the Balanced Random Forest and Balanced Bagging have more for the Medium and far more for the Easy, with the number of unique Easy results being comparable to those of the other algorithms.  The Easy Ensemble results for all three features sets have about 50\% of the results rounded to two decimal places.  For full details see \verb|Analyze_Proba/Value_Counts_y_proba.csv|.
 
 
 

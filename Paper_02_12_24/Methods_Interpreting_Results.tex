@@ -6,13 +6,13 @@
 \subsubsection{Finding $\theta$ for Each Budgetary Decision Metric}
 \label{finding_theta}
 
-For each budgetary metric and each model we need to find a corresponding decision threshold $\theta$.  For each new crash notification the model will output a prediction value $p$, and if $p \ge \theta$ the system will recommend immediately dispatching an ambulance.  
+For each budgetary metric and each model we need to find a corresponding decision threshold $\theta$.  For each new crash notification the model outputs a prediction value $p$, and if $p \ge \theta$ the system recommends immediately dispatching an ambulance.  
 
 For each of the 713,566 samples we use from the CRSS dataset we have a target value $y \in \{0,1\}$ that tells whether the sample is in the Neg or Pos class.  Each model returns for each of those historical samples a value $p \in [0,1]$ that indicates whether the model predicts that the sample is in the positive and negative class.  For each model we need to find the value of $p$ that corresponds to each of the budgetary decision criteria to set as the decision threshold $\theta$.  
 
-To illustrate our methods for finding $\theta$ for each budgetary decision metric and each model we will use the results of the Random Forest Classifier on the hard features, which returns values  $p \in [0.10619,0.311074]$.  Table \ref{RFC_Hard_0_Slices}  shows some of the results.  We have rounded $p$ to four decimal places and sorted model results by increasing $p$, giving the number of elements of the negative and positive classes for each $p$.  From Neg and Pos we can calculate the TN, FP, FN, and TP we would have if we chose $\theta$ to be that value of $p$.  The number of negative and positive samples are constant at $N=605,610$ and $P=107,956$. TN is the cumulative sum of Neg, and $\text{FP} = \text{N} - \text{TN}$; similarly for FN and TP.  
+To illustrate our methods for finding $\theta$ for each budgetary decision metric and each model we use the results of the Random Forest Classifier on the hard features, which returns values  $p \in [0.10619,0.311074]$.  Table \ref{RFC_Hard_0_Slices}  shows some of the results.  We have rounded $p$ to four decimal places and sorted model results by increasing $p$, giving the number of elements of the negative and positive classes for each $p$.  From Neg and Pos we can calculate the TN, FP, FN, and TP we would have if we chose $\theta$ to be that value of $p$.  The number of negative and positive samples are constant at $N=605,610$ and $P=107,956$. TN is the cumulative sum of Neg, and $\text{FP} = \text{N} - \text{TN}$; similarly for FN and TP.  
 
-In Table \ref{RFC_Hard_0_Slices}, we have shown the results for four bands of $p$.  The first and fourth are the beginning and end of the range of $p$.  The second range shows where $\text{FP/P} \approx 0.05$, the first budgetary decision metric.  The third range illustrates that while Precision generally increases from 0.15 (the class ratio) to 1, it is not perfectly nondecreasing, even with $p$ rounded to four decimal places.  Note in the fourth column, Pos/(Neg+Pos), (marginal probability), the values generally increase from 0 to 1 but not in a smooth way.  We will have to significantly smooth that metric to find the value of $p$ where it equals 50\%.  The full table is at 
+In Table \ref{RFC_Hard_0_Slices}, we have shown the results for four bands of $p$.  The first and fourth are the beginning and end of the range of $p$.  The second range shows where $\text{FP/P} \approx 0.05$, the first budgetary decision metric.  The third range illustrates that while Precision generally increases from 0.15 (the class ratio) to 1, it is not perfectly nondecreasing, even with $p$ rounded to four decimal places.  Note in the fourth column, $m$Prob, the values generally increase from 0 to 1 but not in a smooth way.  We have to significantly smooth that metric to find the value of $p$ where it equals 50\%.  The full table is at 
 \verb|Analyze_Proba/RFC_Hard_Run_0_Round_4_Rolling_Intervals|.
 
 Our {\bf first budgetary decision metric}, $\text{FP}/\text{P}$, is a nonincreasing function of $p$ because $P$ is constant and FP is P minus the cumulative sum of nonnegative integers Neg.  Because $\text{FP}/\text{P}$ is a nonincreasing function of $p$, we can choose $\theta$ to be the value of $p$ where $\text{FP}/\text{P}$ is closest to $0.05$.  For this run of the Random Forest Classifier with the hard features we can choose $\theta = 0.2580$, and a second run with a different random seed gave $\theta = 0.2583$, so we can say with some confidence that we should choose $\theta = 0.258$ for this model.  
@@ -31,18 +31,18 @@ Our {\bf first budgetary decision metric}, $\text{FP}/\text{P}$, is a nonincreas
 	\multicolumn{1}{c}{$p$} &     
 	\multicolumn{1}{c}{Neg} &   
 	\multicolumn{1}{c}{Pos} & 
-	\multicolumn{1}{c}{$\frac{\text{Pos}}{\text{Neg}+\text{Pos}}$} &     
+	\multicolumn{1}{c}{$m$Prob} &     
 	\multicolumn{1}{c}{TN} &      
 	\multicolumn{1}{c}{FP} &      
 	\multicolumn{1}{c}{FN} &      
 	\multicolumn{1}{c}{TP} &   
 	\multicolumn{1}{c}{Prec} &    
-%	\multicolumn{1}{c}{Rec} &   
+	\multicolumn{1}{c}{Rec} &   
 	\multicolumn{1}{c}{FP/P} \\
 \midrule
-0.1062 & 1 & 0 & 0 & 1 & 605,609 & 0 & 107,956 & 0.1513 & 5.6098\cr
-0.1063 & 86 & 2 & 0.0227 & 87 & 605,523 & 2 & 107,954 & 0.1513 & 5.609\cr
-0.1064 & 51 & 0 & 0 & 138 & 605,472 & 2 & 107,954 & 0.1513 & 5.6085\cr
+0.1062 & 1 & 0 & 0.0000 & 1 & 605,609 & 0 & 107,956 & 0.1513 & 1.0000 & 5.6098\cr
+0.1063 & 86 & 2 & 0.0227 & 87 & 605,523 & 2 & 107,954 & 0.1513  & 1.0000 & 5.609\cr
+0.1064 & 51 & 0 & 0.0000 & 138 & 605,472 & 2 & 107,954 & 0.1513 & 1.0000 & 5.6085\cr
 %0.1065 & 110 & 0 & 0 & 248 & 605,362 & 2 & 107,954 & 0.1513 & 5.6075\cr
 \multicolumn{1}{c}{\vdots} & 
 \multicolumn{1}{r}{\vdots} & 
@@ -56,10 +56,10 @@ Our {\bf first budgetary decision metric}, $\text{FP}/\text{P}$, is a nonincreas
 %\multicolumn{1}{c}{\vdots} & 
 \multicolumn{1}{c}{\vdots} \cr
 
-0.2579 & 33 & 40 & 0.5479 & 600,161 & 5,449 & 102,100 & 5,856 & 0.518 & 0.0505\cr
-0.258 & 39 & 26 & 0.4 & 600,200 & 5,410 & 102,126 & 5,830 & 0.5187 & 0.0501\cr
-0.2581 & 39 & 25 & 0.3906 & 600,239 & 5,371 & 102,151 & 5,805 & 0.5194 & 0.0498\cr
-0.2582 & 42 & 31 & 0.4247 & 600,281 & 5,329 & 102,182 & 5,774 & 0.52 & 0.0494\cr
+0.2579 & 33 & 40 & 0.5479 & 600,161 & 5,449 & 102,100 & 5,856 & 0.518 & 0.0542 & 0.0505\cr
+0.258 & 39 & 26 & 0.4000 & 600,200 & 5,410 & 102,126 & 5,830 & 0.5187 & 0.0540 & 0.0501\cr
+0.2581 & 39 & 25 & 0.3906 & 600,239 & 5,371 & 102,151 & 5,805 & 0.5194 & 0.0538 & 0.0498\cr
+0.2582 & 42 & 31 & 0.4247 & 600,281 & 5,329 & 102,182 & 5,774 & 0.5200 & 0.0535 & 0.0494\cr
 
 \multicolumn{1}{c}{\vdots} & 
 \multicolumn{1}{r}{\vdots} & 
@@ -73,11 +73,11 @@ Our {\bf first budgetary decision metric}, $\text{FP}/\text{P}$, is a nonincreas
 %\multicolumn{1}{c}{\vdots} & 
 \multicolumn{1}{c}{\vdots} \cr
 
-0.2858 & 4 & 8 & 0.6667 & 605,179 & 431 & 106,858 & 1,098 & 0.7181 & 0.004\cr
-0.2859 & 1 & 9 & 0.9 & 605,180 & 430 & 106,867 & 1,089 & 0.7169 & 0.004\cr
-0.286 & 4 & 11 & 0.7333 & 605,184 & 426 & 106,878 & 1,078 & 0.7168 & 0.0039\cr
-0.2861 & 1 & 10 & 0.9091 & 605,185 & 425 & 106,888 & 1,068 & 0.7153 & 0.0039\cr
-0.2862 & 5 & 6 & 0.5455 & 605,190 & 420 & 106,894 & 1,062 & 0.7166 & 0.0039\cr
+0.2858 & 4 & 8 & 0.6667 & 605,179 & 431 & 106,858 & 1,098 & 0.7181 & 0.0102 & 0.0040\cr
+0.2859 & 1 & 9 & 0.9000 & 605,180 & 430 & 106,867 & 1,089 & 0.7169 & 0.0101 & 0.0040\cr
+0.286 & 4 & 11 & 0.7333 & 605,184 & 426 & 106,878 & 1,078 & 0.7168 & 0.0100 & 0.0039\cr
+0.2861 & 1 & 10 & 0.9091 & 605,185 & 425 & 106,888 & 1,068 & 0.7153 & 0.0099 & 0.0039\cr
+0.2862 & 5 & 6 & 0.5455 & 605,190 & 420 & 106,894 & 1,062 & 0.7166 & 0.0098 & 0.0039\cr
 
 
 \multicolumn{1}{c}{\vdots} & 
@@ -96,9 +96,9 @@ Our {\bf first budgetary decision metric}, $\text{FP}/\text{P}$, is a nonincreas
 %0.3086 & 1 & 0 & 0 & 605,610 & 0 & 107,950 & 6 & 1 & 0\cr
 %0.3087 & 0 & 1 & 1 & 605,610 & 0 & 107,951 & 5 & 1 & 0\cr
 %0.3092 & 0 & 1 & 1 & 605,610 & 0 & 107,952 & 4 & 1 & 0\cr
-0.3097 & 0 & 1 & 1 & 605,610 & 0 & 107,953 & 3 & 1 & 0\cr
-0.3108 & 0 & 1 & 1 & 605,610 & 0 & 107,954 & 2 & 1 & 0\cr
-0.3111 & 0 & 2 & 1 & 605,610 & 0 & 107,956 & 0 & nan & 0\cr
+0.3097 & 0 & 1 & 1.0000 & 605,610 & 0 & 107,953 & 3 & 1.0000 & 0.0000 & 0.0000\cr
+0.3108 & 0 & 1 & 1.0000 & 605,610 & 0 & 107,954 & 2 & 1.0000 & 0.0000 & 0.0000\cr
+0.3111 & 0 & 2 & 1.0000 & 605,610 & 0 & 107,956 & 0  & nan & 0.0000 & 0.0000\cr
 
 \bottomrule
 \end{tabular}
@@ -117,7 +117,9 @@ To go from one $p$ to the next, or from one band of $p$ to the next,
 \frac{\Delta \text{FP}}{\Delta p} = -\text{Pos} 
 \end{equation}
 
-For large changes in $p$, $\text{Prec}(p)$ is an increasing function, but what do we mean by ``large''?  There is a condition on our $p$-interval such that $\text{Prec}(p)$ will be an increasing function.
+\FloatBarrier
+
+For large changes in $p$, $\text{Prec}(p)$ is an increasing function, but what do we mean by ``large''?  In Equation \ref{eq:delta_p_2} we assume that $\text{Prec}(p)$ increases on an interval of length $\Delta p$, then we derive a relationship that tells us the proportion of Neg to Pos we need in that interval:  
 
 \begin{equation} \label{eq:delta_p_2}\hfil
 \begin{aligned}
@@ -130,7 +132,9 @@ For large changes in $p$, $\text{Prec}(p)$ is an increasing function, but what d
 \end{aligned}
 \end{equation}
 
-Having no elements of the negative class in a $p$-interval will make precision decrease, so we will cut the $p$-values into bands with some minimum number of elements of each class.  For each model, the \verb|Keras/Analyze_Proba| directory has a spreadsheet like Table \ref{RFC_Hard_50_Slices} for minimum number of class elements 5, 10, 25, 50, 100, 200, 400, 800, 1600, 3200, and 6400.  An opportunity for future research (\S\ref{simplifying_assumptions}) is to develop a method to cut the $p$ output into the smallest possible bands such that $\text{Prec}(p)$ is an increasing function.  
+\FloatBarrier
+
+Having no elements of the negative class in a $p$-interval would make precision decrease, so we cut the $p$-values into bands with some minimum number of elements of each class.  For each model, the \verb|Keras/Analyze_Proba| directory has a spreadsheet like Table \ref{RFC_Hard_50_Slices} for minimum number of class elements 5, 10, 25, 50, 100, 200, 400, 800, 1600, 3200, and 6400.  An opportunity for future research (\S\ref{simplifying_assumptions}) is to develop a method to cut the $p$ output into the smallest possible bands such that $\text{Prec}(p)$ is an increasing function.  
 
 
 In Table \ref{RFC_Hard_50_Slices}, we have cut $p$ into bands such that each band has at least fifty elements of each of the negative and positive classes.  The $p$ values in the table are the average of the minimum and maximum values of $p$ in the band.  The full table is at \verb|Analyze_Proba/RFC_Easy_Run_0_50_Slices.csv|.
@@ -153,7 +157,7 @@ At this level of granularity and in this range of $p$, the precision is an incre
 	\multicolumn{1}{c}{$p$} &     
 	\multicolumn{1}{c}{Neg} &   
 	\multicolumn{1}{c}{Pos} & 
-	\multicolumn{1}{c}{$\frac{\text{Pos}}{\text{Neg}+\text{Pos}}$} &     
+	\multicolumn{1}{c}{$m$Prob} &     
 	\multicolumn{1}{c}{TN} &      
 	\multicolumn{1}{c}{FP} &      
 	\multicolumn{1}{c}{FN} &      
@@ -175,9 +179,9 @@ At this level of granularity and in this range of $p$, the precision is an incre
 
 \FloatBarrier
 
-For the the {\bf third budgetary decision criterion}, that the minimum probability that each immediately dispatched ambulance is needed is at least 50\%, with the metric $\text{Pos}/(\text{Neg}+\text{Pos}) \ge 0.50$, equivalent to $\text{Pos} \ge \text{Neg}$.  
+For the the {\bf third budgetary decision criterion}, that the minimum probability that each immediately dispatched ambulance is needed is at least 50\%, with the metric $m\text{Prob} = \text{Pos}/(\text{Neg}+\text{Pos}) \ge 0.50$, equivalent to $\text{Pos} \ge \text{Neg}$.  
 
-Table \ref{RFC_Hard_6400_Slices} shows that, if we zoom out to where each band has at least 6,400 elements in each class, cutting $p$ into only seventeen intervals, $\text{Pos}/(\text{Neg}+\text{Pos})$ generally increases, but even at this high level the metric decreases between $p=0.1606$ and $p = 0.1689$.  This third metric is highly volatile.  
+Table \ref{RFC_Hard_6400_Slices} shows that, if we zoom out to where each band has at least 6,400 elements in each class, cutting $p$ into only seventeen intervals, $m\text{Prob}$ generally increases, but even at this high level the metric decreases between $p=0.1606$ and $p = 0.1689$.  This third metric is highly volatile.  
 
 
 \begin{table}
@@ -194,7 +198,7 @@ Table \ref{RFC_Hard_6400_Slices} shows that, if we zoom out to where each band h
 	\multicolumn{1}{c}{$p$} &     
 	\multicolumn{1}{c}{Neg} &   
 	\multicolumn{1}{c}{Pos} & 
-	\multicolumn{1}{c}{$\frac{\text{Pos}}{\text{Neg}+\text{Pos}}$} &     
+	\multicolumn{1}{c}{$m$Prob} &     
 	\multicolumn{1}{c}{TN} &      
 	\multicolumn{1}{c}{FP} &      
 	\multicolumn{1}{c}{FN} &      
@@ -227,9 +231,9 @@ Table \ref{RFC_Hard_6400_Slices} shows that, if we zoom out to where each band h
 
 \FloatBarrier
 
-We tried two ways to estimate where $\text{Pos}/(\text{Neg}+\text{Pos}) = 0.50$, and both gave the same result.  
+We tried two ways to estimate where $m\text{Prob} = 0.50$, and both gave the same result.  
 
-Method 1:  If we slice the $p$ results into bands with at least 100 elements of each class, partly shown in Table \ref{RFC_Hard_100_Slices}, there is no band with $p<0.2692$ with $\text{Pos}/(\text{Neg}+\text{Pos})\ge 0.5$ and no band with $p > 0.2733$ with $\text{Pos}/(\text{Neg}+\text{Pos}) \le 0.5$, so we can say with some confidence that if we chose $\theta \approx 0.271$, each ambulance immediately dispatched will have at least a 50\% chance of being needed.
+Method 1:  If we slice the $p$ results into bands with at least 100 elements of each class, partly shown in Table \ref{RFC_Hard_100_Slices}, there is no band with $p<0.2692$ with $m\text{Prob} \ge 0.5$ and no band with $p > 0.2733$ with $m\text{Prob} \le 0.5$, so we can say with some confidence that if we chose $\theta \approx 0.271$, each ambulance immediately dispatched has at least a 50\% chance of being needed.
 
 
 \begin{table}
@@ -246,7 +250,7 @@ Method 1:  If we slice the $p$ results into bands with at least 100 elements of 
 	\multicolumn{1}{c}{$p$} &     
 	\multicolumn{1}{c}{Neg} &   
 	\multicolumn{1}{c}{Pos} & 
-	\multicolumn{1}{c}{$\frac{\text{Pos}}{\text{Neg}+\text{Pos}}$} &     
+	\multicolumn{1}{c}{$m$Prob} &     
 	\multicolumn{1}{c}{TN} &      
 	\multicolumn{1}{c}{FP} &      
 	\multicolumn{1}{c}{FN} &      
@@ -270,7 +274,7 @@ Method 1:  If we slice the $p$ results into bands with at least 100 elements of 
 \FloatBarrier
 
 
-Method 2:  We used a rolling sum of the Neg and Pos to intervals with enough Neg and Pos to smooth out the metric Pos/(Neg+Pos).  With $p$ rounded to four decimal places we still have volatility at each value of $p$, and the metric gets close to the target value (0.50) many times over a large range.  If we take the rolling average of the ten or twenty rows centered at that value of $p$, we see less volatility, but even in this small interval the Pos/(Neg+Pos) increases and decreases.  With a window size of 20, however, the only values of $p$ where the metric is close to the target are in this range, so we can choose $\theta = 0.272$, and our two methods agree.  The full chart, up to a window of size 2,000, is in \verb|Analyze_Proba/RFC_Hard_Run_0_Round_4_Rolling_Intervals|.
+Method 2:  We used a rolling sum of the Neg and Pos to intervals with enough Neg and Pos to smooth out the metric $m$Prob.  With $p$ rounded to four decimal places we still have volatility at each value of $p$, and the metric gets close to the target value (0.50) many times over a large range.  If we take the rolling average of the ten or twenty rows centered at that value of $p$, we see less volatility, but even in this small interval the $m$Prob increases and decreases.  With a window size of 20, however, the only values of $p$ where the metric is close to the target are in this range, so we can choose $\theta = 0.272$, and our two methods agree.  The full chart, up to a window of size 2,000, is in \verb|Analyze_Proba/RFC_Hard_Run_0_Round_4_Rolling_Intervals|.
 
 
 
@@ -278,7 +282,7 @@ Method 2:  We used a rolling sum of the Neg and Pos to intervals with enough Neg
 \begin{table}
 \caption{
 	\normalsize\normalfont
-	Smoothing Pos/(Neg+Pos) with Rolling Sums of Different Window Sizes.
+	Smoothing $m$Prob with Rolling Sums of Different Window Sizes.
 	Table accompanies \S\ref{finding_theta}
 }
 \label{RFC_Hard_Run_0_Round_4_Rolling_Intervals}
@@ -296,16 +300,16 @@ Method 2:  We used a rolling sum of the Neg and Pos to intervals with enough Neg
 	\multicolumn{1}{c}{$p$} &     
 	\multicolumn{1}{|c}{Neg} &   
 	\multicolumn{1}{c}{Pos} & 
-	\multicolumn{1}{c}{$\frac{\text{Pos}}{\text{Neg}+\text{Pos}}$} &     
+	\multicolumn{1}{c}{$m$Prob} & 
 	\multicolumn{1}{|c}{Neg} &   
 	\multicolumn{1}{c}{Pos} & 
-	\multicolumn{1}{c}{$\frac{\text{Pos}}{\text{Neg}+\text{Pos}}$} &     
+	\multicolumn{1}{c}{$m$Prob} & 
 	\multicolumn{1}{|c}{Neg} &   
 	\multicolumn{1}{c}{Pos} & 
-	\multicolumn{1}{c}{$\frac{\text{Pos}}{\text{Neg}+\text{Pos}}$} &     
+	\multicolumn{1}{c}{$m$Prob} & 
 	\multicolumn{1}{|c}{Neg} &   
 	\multicolumn{1}{c}{Pos} & 
-	\multicolumn{1}{c}{$\frac{\text{Pos}}{\text{Neg}+\text{Pos}}$} \cr    
+	\multicolumn{1}{c}{$m$Prob} \cr
 \midrule
 0.2717 & 14 & 22 & 0.6111 & 144 & 166 & 0.4645 & 303 & 320 & 0.4864 & 754 & 771 & 0.4944 \cr
 0.2718 & 12 & 18 & 0.6 & 153 & 159 & 0.4904 & 310 & 315 & 0.496 & 754 & 768 & 0.4954 \cr
@@ -318,7 +322,7 @@ Method 2:  We used a rolling sum of the Neg and Pos to intervals with enough Neg
 \hline
 \multicolumn{6}{c}{} &&&&&&\cr
 \multicolumn{6}{l}{
-	Range of $p$ where $\left|\frac{\text{Pos}}{\text{Neg}+\text{Pos}} - 0.50 \right| < 0.01$
+	Range of $p$ where $\left| m\text{Prob} - 0.50 \right| < 0.01$
 } &&&&&&\cr
 \multicolumn{6}{c}{} &&&&&&\cr
 
@@ -348,25 +352,25 @@ Method 2:  This method is worked out in the
 
 The Random Forest Classifier on the Hard features returns 458,530 unique values of $p$ with between 1 and 83 samples per value of $p$.  For each value of $p$ we know how many samples are in the Neg and Pos classes.  Order the $p$ values increasing.  For each value of $p$, make an interval with the thousand nearest values of $p$ (500 above and 500 below), and find the total number of elements of the positive and negative classes in that neighborhood.  Using those Neg and Pos values, calculate  $\text{Pos}/(\text{Neg}+\text{Pos})$ for each $p$.  Then see whether there is a small interval where $\text{Pos}/(\text{Neg}+\text{Pos}) \approx 0.50$.  We chose ``within 0.001'' to mean ``approximately.''
 
-The first value of $p$ with $|\text{Pos}/(\text{Neg}+\text{Pos}) - 0.50| < 0.001$ was at $p=0.271584$, and the last at $p = 0.27174$.  In that range of 49 values of $p$, 21 of them satisfied the criterion.  Given those results, it is reasonable to say that $\theta \approx 0.272$ will satisfy the criterion.  
+The first value of $p$ with $|\text{Pos}/(\text{Neg}+\text{Pos}) - 0.50| < 0.001$ was at $p=0.271584$, and the last at $p = 0.27174$.  In that range of 49 values of $p$, 21 of them satisfied the criterion.  Given those results, it is reasonable to say that $\theta \approx 0.272$ satisfies the criterion.  
 \end{comment}
 
 %%%
 \subsubsection{Choosing the Best Model for each Budgetary Decision Metric}
 \label{choosing_model}
 
-For each budgetary constraint we want to find the model that, within the constraint, will immediately dispatch the most ambulances to crash persons who need them (TP).  Using as an example our first budgetary constraint, $\text{FP}/\text{P} = 0.05$, we need to find, for each model whether there exists a value of $p$ where $\text{FP}/\text{P}$ is close to 0.05, then find the best $\theta$ interval in that neighborhood.  Of those valid results, find the model that gives the most TP.  
+For each budgetary constraint we want to find the model that, within the constraint, immediately dispatches the most ambulances to crash persons who need them, which is given as a proportion in Recall = TP/P.  Using as an example our first budgetary constraint, $\text{FP}/\text{P} = 0.05$, we need to find, for each model whether there exists a value of $p$ where $\text{FP}/\text{P}$ is close to 0.05, then find the best $\theta$ interval in that neighborhood.  Of those valid results, find the model that gives the highest Recall.  
 
-Table \ref{FP_P_0_05_hard} shows the best results for each model algorithm.  Within these, the Balanced Random Forest Classifier gives the best results, sending more needed ambulances while staying within the budgetary constraint.  The KerasClassifier with the Binary Focal Crossentropy loss function is a close second, and those two are clearly better than the other six models.  
+Table \ref{FP_P_0_05_hard} shows the best results for each model algorithm.  Within these, the Balanced Random Forest Classifier gives the best results, immediately dispatching the largest proportion (11.67\%) of needed ambulances while staying within the budgetary constraint.  The KerasClassifier with the Binary Focal Crossentropy loss function is a close second, and those two are clearly better than the other six models.  
 
-The Balanced Bagging model here is an interesting case that we will cover in the next section, \S \ref{Methods_Model_Failure}.
+The Balanced Bagging model here is an interesting case that we cover in the next section, \S \ref{Methods_Model_Failure}.
 
 \begin{table}[h]
 \caption{\normalfont\normalsize Comparing Models:  Best results for each algorithm on the Hard features for budgetary criterion $\text{FP}/\text{P}$ closest to $0.05$.  Table accompanies \S\ref{choosing_model}}
 \label{FP_P_0_05_hard}
 
 {\normalfont\normalsize
-\begin{tabular}{lcclrrrrl}
+\begin{tabular}{lcclrrrrll}
 \toprule
 	Algorithm & 
 	\multicolumn{1}{c}{$\alpha$} & 
@@ -376,25 +380,26 @@ The Balanced Bagging model here is an interesting case that we will cover in the
 	\multicolumn{1}{c}{FP} & 
 	\multicolumn{1}{c}{FN} & 
 	\multicolumn{1}{c}{TP} & 
+	\multicolumn{1}{c}{Recall} & 
 	\multicolumn{1}{c}{$\text{FP} / \text{P}$} 
 \cr
 \noalign{\vskip 2pt}
 \hline
 \noalign{\vskip 2pt}
 
-Bal RF & 0.5 &  & 0.86 & 600,464 & 5,146 & 95,359 & 12,597 & 0.048\cr
+Bal RF & 0.5 &  & 0.86 & 600,464 & 5,146 & 95,359 & 12,597 & 0.1167 & 0.048\cr
 %Bal RF & 0.85 &  & 0.86 & 600,587 & 5,023 & 95,845 & 12,111 & 0.047\cr
-Keras & 0.5 & 0.0 & 0.598 & 600,212 & 5,398 & 97,029 & 10,927 & 0.05\cr
+Keras & 0.5 & 0.0 & 0.598 & 600,212 & 5,398 & 97,029 & 10,927 & 0.1012 & 0.05\cr
 %Keras & 0.5 & 2.0 & 0.547 & 600,212 & 5,398 & 97,110 & 10,846 & 0.05\cr
 %Keras & 0.5 & 1.0 & 0.56 & 600,212 & 5,398 & 97,282 & 10,674 & 0.05\cr
 %Keras & 0.85 & 0.0 & 0.899 & 600,212 & 5,398 & 97,408 & 10,548 & 0.05\cr
-Log Reg & 0.5 &  & 0.549 & 600,212 & 5,398 & 100,764 & 7,192 & 0.05\cr
-RUSBoost &  &  & 0.5 & 600,212 & 5,398 & 101,041 & 6,915 & 0.05\cr
+Log Reg & 0.5 &  & 0.549 & 600,212 & 5,398 & 100,764 & 7,192 & 0.0666 & 0.05\cr
+RUSBoost &  &  & 0.5 & 600,212 & 5,398 & 101,041 & 6,915 & 0.0641 & 0.05\cr
 %Log Reg &  &  & 0.883 & 600,212 & 5,398 & 101,124 & 6,832 & 0.05\cr
-AdaBoost &  &  & 0.501 & 600,212 & 5,398 & 101,131 & 6,825 & 0.05\cr
-Bal Bag &  &  & 0.9 & 602,185 & 3,425 & 101,272 & 6,684 & 0.032\cr
-RF &  &  & 0.258 & 600,212 & 5,398 & 102,135 & 5,821 & 0.05\cr
-Easy Ens &  &  & 0.549 & 600,155 & 5,455 & 102,322 & 5,634 & 0.051\cr
+AdaBoost &  &  & 0.501 & 600,212 & 5,398 & 101,131 & 6,825 & 0.0632 & 0.05\cr
+Bal Bag &  &  & 0.9 & 602,185 & 3,425 & 101,272 & 6,684 & 0.0619 & 0.032\cr
+RF &  &  & 0.258 & 600,212 & 5,398 & 102,135 & 5,821 & 0.0539 & 0.05\cr
+Easy Ens &  &  & 0.549 & 600,155 & 5,455 & 102,322 & 5,634 & 0.0522 & 0.051\cr
 \bottomrule
 \end{tabular}
 }
@@ -406,9 +411,9 @@ Easy Ens &  &  & 0.549 & 600,155 & 5,455 & 102,322 & 5,634 & 0.051\cr
 \subsubsection{Detecting Model Failure}
 \label{Methods_Model_Failure}
 
-We have found two ways a model can fail to give a decision threshold $\theta$ that will satisfy the budgetary criteria.  The second one we will consider is the usual problem, that the model does not sufficiently separate the positive and negative classes to give enough correct recommendations.  The other cause is more subtle, and we consider it first because we just saw it in Table \ref{FP_P_0_05_hard}, that for the Balanced Bagging algorithm, the value of FP/P closest to 0.05 (FP/P = 0.032) is not close to 0.05, and the cause of the failure is the numerics in the algorithm.
+We have found two ways a model can fail to give a decision threshold $\theta$ that satisfies the budgetary criteria.  The second one we consider is the usual problem, that the model does not sufficiently separate the positive and negative classes to give enough correct recommendations.  The other cause is more subtle, and we consider it first because we just saw it in Table \ref{FP_P_0_05_hard}, that for the Balanced Bagging algorithm, the value of FP/P closest to 0.05 (FP/P = 0.032) is not close to 0.05, and the cause of the failure is the numerics in the algorithm.
 
-The RUSBoost algorithm on the hard features only gives values of $p$ in a tiny range, $p \in [0.499, 0.5011]$, but in that range of 00021 the 713,566 samples return 706,938 different values of $p$.  That's about as close to ``continuous'' as a discrete function can get.  Digging down into the results returned by the Balanced Bagging algorithm on the hard features, 99\% of the values of $p$ are rounded to the nearest tenth, making the results extremely discrete.  In Table \ref{BalBag_Hard_0_Slices}, going from $p=0.897$ to $p=0.9$ we add 19,052 new samples that change the FP/P value from 0.11 to 0.03.   The model results give no way to find a budgetary decision threshold $\theta$ that will give us a 5\% increase in the number of ambulances dispatched to automated notifications from cell phones.  This model may have too much volatility to be useful.  
+The RUSBoost algorithm on the hard features only gives values of $p$ in a tiny range, $p \in [0.499, 0.5011]$, but in that range of 00021 the 713,566 samples return 706,938 different values of $p$.  That's about as close to ``continuous'' as a discrete function can get.  Digging down into the results returned by the Balanced Bagging algorithm on the hard features, 99\% of the values of $p$ are rounded to the nearest tenth, making the results extremely discrete.  In Table \ref{BalBag_Hard_0_Slices}, going from $p=0.897$ to $p=0.9$ we add 19,052 new samples that change the FP/P value from 0.11 to 0.03.   The model results give no way to find a budgetary decision threshold $\theta$ that gives us a 5\% increase in the number of ambulances dispatched to automated notifications from cell phones.  This model may have too much volatility to be useful.  
 
 The Balanced Random Forest algorithm on the hard features has a similar quirk, that 93\% of its $p$ values are rounded to the nearest hundredth, which explains the $\text{FP}/\text{P} = 0.048$ as the closest to 0.05 in Table \ref{FP_P_0_05_hard}.  These two algorithms, Bal Bag and Bal RF, interestingly, had more detail in the Medium Features results and even more detail for the Easy features, which is the opposite of what most of the other algorithms did.  The AdaBoost, Keras, Log Reg, and RUSBoost all had, from the 713,566 samples, about 700,000 unique values of $p$ for the hard features, 650,000 for the medium features, and 150,000 for the easy features.  A breakdown of those numbers is given in 
 
@@ -456,7 +461,7 @@ The Precision values generally increase with $p$, and the table shows the end of
 
 We can see the problem also in a histogram of the model output, in Figure \ref{RFC_Medium_Zoom_Figure}, where we compare the right tails of the output of the Random Forest model on the Medium features with the Example model from Figure \ref{intro_ideal}.  The model output has a long tail to the right, and zooming in on that tail, we see that in none of those intervals are there more elements of the positive class than the negative class.  
 
-Note that this range of $p$ in Table \ref{RFC_Medium_400_Slices} is also where $\text{Pos}/(\text{Neg} + \text{Pos})$ crosses 0.50, meaning that there is a 50\% marginal probability that the last ambulance sent will be needed, so we would have the same problem for that metric, that the model would recommend immediately dispatching ambulances to only about 1\% of the automated notifications that needed an ambulance.  
+Note that this range of $p$ in Table \ref{RFC_Medium_400_Slices} is also where $\text{Pos}/(\text{Neg} + \text{Pos})$ crosses 0.50, meaning that there is a 50\% marginal probability that the last ambulance sent is needed, so we would have the same problem for that metric, that the model would recommend immediately dispatching ambulances to only about 1\% of the automated notifications that needed an ambulance.  
 
 Fortunately we do have models with better results on the Medium features set.  
 
@@ -476,7 +481,7 @@ Fortunately we do have models with better results on the Medium features set.
 	\multicolumn{1}{c}{$p$} &     
 	\multicolumn{1}{c}{Neg} &   
 	\multicolumn{1}{c}{Pos} & 
-	\multicolumn{1}{c}{$\frac{\text{Pos}}{\text{Neg}+\text{Pos}}$} &     
+	\multicolumn{1}{c}{$m$Prob} &     
 	\multicolumn{1}{c}{TN} &      
 	\multicolumn{1}{c}{FP} &      
 	\multicolumn{1}{c}{FN} &      
@@ -542,7 +547,7 @@ Fortunately we do have models with better results on the Medium features set.
 \subsubsection{Numerical Precision}
 \label{Numerical_Precision}
 
-We ran all of the models twice with different random seeds.  As an example of the difference in model results, consider the first budgetary decision metric, the values of $p$ that make FP/P closest to 0.05, because that metric is the most stable.  If there is a difference in those results between two runs of the same model for FP/P, not only can we only claim that much numerical precision in reporting our results for that metric, but we will probably need to limit ourselves to even less numerical precision in reporting results for the other budgetary decision metrics.  
+We ran all of the models twice with different random seeds.  As an example of the difference in model results, consider the first budgetary decision metric, the values of $p$ that make FP/P closest to 0.05, because that metric is the most stable.  If there is a difference in those results between two runs of the same model for FP/P, not only can we only claim that much numerical precision in reporting our results for that metric, but we may need to limit ourselves to even less numerical precision in reporting results for the other budgetary decision metrics.  
 
 Table \ref{FP_P_0_05_Numerical_Precision} shows the models with the largest changes between runs.  The median $\Delta p$ was 0.0003, the median $\Delta$ TP was 57, and the median $\Delta$ FP was 1, giving median $\Delta$ FP/P of $0.0000093$.
 

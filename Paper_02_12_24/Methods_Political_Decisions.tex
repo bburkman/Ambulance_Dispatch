@@ -4,7 +4,7 @@
 
 Saying that we trade off lives for money makes us uncomfortable, but that is what governments do when they set budgets for health care and emergency services.  All budgets are finite, and spending more money has diminishing returns, so we have to choose some criteria for our decision and accompanying metrics that let us quantify the criteria to choose an appropriate decision boundary for our recommendation system.  
 
-Our Springfield scenario illustrates the tradeoffs.  We will consider three ways to set the decision threshold.  
+Our Springfield scenario illustrates the tradeoffs.  We consider three ways to set the decision threshold.  
 
 \begin{figure}[h]
 	\input{Springfield_After_Figure}
@@ -25,7 +25,7 @@ When a city or region implements immediate dispatch of ambulances, the number of
 $\text{P} = \text{FN} + \text{TP}$
  ambulance runs becomes P + FP = FN + TP + FP ambulance runs, an increase by a rate of $\text{FP}/\text{P}$.  The increase does not include the true positives (TP), because those ambulances would go eventually with or without immediate dispatch; the increase is the number of false positives (FP).  
  
-In the short term (too short to buy more ambulances and hire more teams), the existing budget can support an increase in the number of ambulance runs to crash persons by some small percentage.  In the longer term, the city is willing to increase the budget to increase the number of ambulances going to crashes with automated notifications by a larger, but still fixed, percentage.  We will use 5\% as our example of how to implement this policy, setting the decision threshold $\theta$ where the number of false positives is 5\% of the positive class.  
+In the short term (too short to buy more ambulances and hire more teams), the existing budget can support an increase in the number of ambulance runs to crash persons by some small percentage.  In the longer term, the city is willing to increase the budget to increase the number of ambulances going to crashes with automated notifications by a larger, but still fixed, percentage.  We use 5\% as our example of how to implement this policy, setting the decision threshold $\theta$ where the number of false positives is 5\% of the positive class, giving our first budgetary decision metric,
 
 \begin{equation} \label{eq:budget_1}\hfil
 \frac{ \text{FP}}{\text{P}}
@@ -47,9 +47,9 @@ A city or region is willing to immediately dispatch ambulances based on automate
 $(\text{PP} = \text{FP} + \text{TP})$ 
 are actually needed (TP).  This proportion, 
 $\text{TP}/(\text{FP} + \text{TP})$ 
-is called the {\it precision} of a machine learning model.  In this paper we will use the term {\it precision} in this sense and {\it numerical precision} to describe the confidence we can have in a certain number of decimal places of a result.
+is called the {\it precision} of a machine learning model.  In this paper we use the term {\it precision} in this sense and {\it numerical precision} to describe the confidence we can have in a certain number of decimal places of a result.
 
-To illustrate the method, we will choose $\text{Precision} = 2/3$, being willing to immediately dispatch one unnecessary ambulance for each two necessary ones.
+To illustrate the method, we choose $\text{Precision} = 2/3$, being willing to immediately dispatch one unnecessary ambulance for each two necessary ones, giving our second budgetary decision metric,
 
 \begin{equation} \label{eq:budget_2}\hfil
 \frac{ \text{TP}}{\text{PP}}
@@ -64,20 +64,20 @@ To illustrate the method, we will choose $\text{Precision} = 2/3$, being willing
 
 The previous two decision criteria let the city leaders choose a specific dollar amount of increase in the annual ambulance budget, but for ethical reasons they may decide that, while they cannot afford to immediately dispatch an ambulance to every crash notification, they should immediately dispatch an ambulance to a crash notification with some probability (like 50\% or 80\%) of needing medical attention, and consider the total cost later.  From our model results, can we find a decision threshold $\theta$ that corresponds to such a probability?
 
-Our recommendation system will use a supervised-learning binary classification model trained on historical data. The models do not actually return a probability but return, for each sample, a value $p$ that generally increases with the probability.  For each sample we also know whether that historical crash person actually needed an ambulance (whether that sample is in the negative or positive class).  
+Our recommendation system uses a supervised-learning binary classification model trained on historical data. The models do not actually return a probability but return, for each sample, a value $p$ that generally increases with the probability.  For each sample we also know whether that historical crash person actually needed an ambulance (whether that sample is in the negative or positive class).  
 
 Consider a small band of values of $p$; the samples in that band are either in the negative or positive class.  Call the number of negative and positive samples in the band Neg and Pos, to distinguish from the total number of samples in the negative and positive classes, N and P.  The probability that a crash person in that band of $p$ needs an ambulance is given by 
-$\text{Pos}/(\text{Neg} + \text{Pos})$.  
+$\text{Pos}/(\text{Neg} + \text{Pos})$, which we call ``marginal probability,'' or ``$m$Prob.''
 
-To illustrate the method, we will choose the minimum marginal probability to be 50\%, meaning that each ambulance we immediately dispatch has at least a fifty percent chance of being needed.  
+To illustrate the method, we choose the minimum marginal probability to be 50\%, meaning that each ambulance we immediately dispatch has at least a fifty percent chance of being needed, giving our third budgetary decision metric,
 
 \begin{equation} \label{eq:budget_3}\hfil
-\frac{\text{Pos}}{\text{Neg}+\text{Pos}} \ge 0.5
+m\text{Prob} =  \frac{\text{Pos}}{\text{Neg}+\text{Pos}} \ge 0.5
 \end{equation}
 
 
-We can relate this metric to a familiar metric if we rephrase the probability as the ratio of needed to unneeded ambulances immediately dispatched.  For instance, a 50\% probability is a 1:1 ratio of needed to unneeded, and an 80\% probability is a 4:1 ratio of needed to unneeded.  
-The proportion of needed to unneeded ambulances sent in a neighborhood of $p$ is proportional to a widely used metric, the slope of the ROC curve, with the constant of proportionality being the class ratio.  
+We can relate this metric to a familiar metric if we rephrase the probability as the ratio of needed to unneeded ambulances immediately dispatched, {\it i.e.} Pos:Neg.  For instance, a 50\% probability is a 1:1 ratio of needed to unneeded, and an 80\% probability is a 4:1 ratio of needed to unneeded.  
+The proportion of needed to unneeded ambulances sent in a neighborhood of $p$ is proportional to a widely used metric, the slope of the ROC curve, with the constant of proportionality being the class ratio, as shown here:  
 
 \begin{equation} \label{eq:ROC_slope}\hfil
 \frac{\text{Pos}}{\text{Neg}}
