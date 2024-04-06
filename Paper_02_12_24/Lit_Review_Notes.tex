@@ -1,0 +1,212 @@
+%%%%%%%%%%%%%%%%%%%%%%%%
+\hrulefill
+
+%%%
+\cite{13793173920190801},
+{\it Crash Telemetry-Based Injury Severity Prediction is Equivalent to or Out-Performs Field Protocols in Triage of Planar Vehicle Collisions.},
+{\bf Prehospital \& Disaster Medicine},
+
+``Vehicle telemetry technology''
+
+``Advanced Automatic Crash Notification (AACN)''
+
+``Injury Severity Score (ISS),'' and they looked at ISS 15+ injuries
+
+Constructed an Injury Severity Prediction (ISP) model.
+
+Used sensitivity (recall) and specificity (TN/(TN+FP) = TN/N = TNR)
+
+To construct the logistic regression model, used NASS-CDS, National Automotive Sampling System Crashworthiness Data System.
+
+Used OnStar data, hospital records to validate the model.
+
+Variables:  
+\begin{tabular}{l}
+	Principal direction of force (PDOF) \cr
+	Change in Velocity ($\delta V$) = deceleration \cr
+	Multiple impacts\cr
+	Presence of any older occupant ($\ge$ 55) \cr 
+	Presence of any female occupant \cr
+	Presence of any right-sided passenger \cr
+	Seat belt use \cr
+	Vehicle type \cr
+\end{tabular}
+
+\
+
+\cite{KONONEN2011112},
+{\it Identification and validation of a logistic regression model for predicting serious injuries associated with motor vehicle crashes},
+{\bf Accident Analysis \& Prevention}
+
+2010 version of paper above, \cite{13793173920190801}
+
+\
+
+%%%
+\subsection{AACN, not OnStar}
+
+\cite{15857782520170401},
+{\it Evaluating the Potential Benefits of Advanced Automatic Crash Notification.},
+{\bf Prehospital \& Disaster Medicine}, 2017
+
+Did not use AACN data, but if we had that data we could predict whether the emergency responders would need specialized equipment to extricate the crash person from the vehicle.
+
+\
+
+\cite{BOSE20111048},
+{\it Computational methodology to predict injury risk for motor vehicle crash victims: A framework for improving Advanced Automatic Crash Notification systems},
+{\bf Transportation Research Part C: Emerging Technologies},
+
+Predict injury in specific body regions based on specific characteristics of the crash, occupant, and vehicle.
+
+\
+
+\cite{JAGTENBERG201527},
+{\it An efficient heuristic for real-time ambulance redeployment},
+{\bf Operations Research for Health Care},
+
+``Advanced automatic crash notification (AACN)''
+
+Societal benefits were assessed by comparing
+correctly triaged motor vehicle crash occupants using the
+AACN algorithm against real-world decisions.
+
+\
+
+\cite{WEAVER20221057},
+{\it Advanced Automatic Crash Notification Algorithm for Children},
+{\bf Academic Pediatrics},
+
+Pediatric version of her (Weaver's) articles for adults
+
+Algorithm inputs included: delta-v, rollover quarter-turns, belt status, multiple impacts, airbag deployment, and age.
+
+%%%
+\subsubsection{Injury Prediction Models}
+
+\cite{KONG2023106393},
+{\it Machine learning-based injury severity prediction of level 1 trauma center enrolled patients associated with car-to-car crashes in Korea},
+{\bf Computers in Biology and Medicine},
+
+To handle class-imbalanced clinical datasets, we used four data-sampling
+techniques (i.e., class-weighting, resampling, synthetic minority oversampling, and adaptive synthetic
+sampling). Machine-learning analytics based on logistic regression, extreme gradient boosting (XGBoost), and a
+multilayer perceptron model were used for the evaluations. Each model was executed using five-fold cross-validation
+to solve overfitting
+
+Age was a significant predictor
+
+\
+
+\cite{CANDEFJORD2021101124},
+{\it On Scene Injury Severity Prediction (OSISP) machine learning algorithms for motor vehicle crash occupants in US},
+{\bf Journal of Transport \& Health},
+
+In this study, we evaluate if methods employing machine learning and variables {\bf that can be assessed on the scene of accident} has
+potential to amend field triage
+
+
+%%%
+\subsection{General Dispatch Algorithms, not particularly for Crashes}
+
+\cite{ZHANG201697}
+Zhang 2016
+TRpC
+``Performance measure for reliable travel time of emergency vehicles''
+
+33 sources
+
+Travel time reliability.  Apparently a big topic.  
+
+\
+
+\cite{BERTSIMAS2019557},
+{\it Robust and stochastic formulations for ambulance deployment and dispatch},
+{\bf European Journal of Operational Research},
+
+54 Sources
+
+Set of locations for ambulances
+
+\
+
+\cite{ZHEN2024103449},
+{\it Traffic emergency vehicle deployment and dispatch under uncertainty},
+{\bf Transportation Research Part E: Logistics and Transportation Review},
+
+%%%
+\subsubsection{Privacy}
+
+\cite{GEUENS2010385},
+{\it Mandatory implementation for in-vehicle eCall: Privacy compatible?},
+{\bf Computer Law \& Security Review},
+
+An in-vehicle
+eCall would reduce road fatalities with about 2500 deaths
+every year and the severity of accidents with 15\% by reducing
+the response time of the emergency services in urban areas
+with 40\% and in rural areas with 50\%. This response time is
+reduced because the emergency services are notified instantly
+in case of an accident and are given the exact location of the accident.
+
+There is however strong resistance against in-vehicle
+eCall, especially if it would be made mandatory on all new
+cars in the Community. This resistance stems from fear for
+invasion in private life and risks regarding personal data.
+
+Possible text:
+
+A legal analysis of the possibility of mandating advanced automatic crash notification (AACN) systems in new cars sold in the EU reflected the concern that the vehicle speed data in the notification could be used to prosecute the driver and void the insurance. \cite{GEUENS2010385}
+
+%%%%
+\subsubsection{Coordinating Traffic Signals}
+
+$\times $ \quad \cite{SU2023103955}
+``EMVLight: A multi-agent reinforcement learning framework for an emergency vehicle decentralized routing and traffic signal control system''
+
+Synching emergency vehicle routing with traffic signal control.
+
+85 sources
+
+\
+
+\cite{QIN20121} Qin 2012
+{\it Control strategies of traffic signal timing transition for emergency vehicle preemption},
+
+32 sources
+
+Traffic signal preemption
+
+\
+
+
+
+%%%
+\subsubsection{Other}
+
+\begin{comment}
+
+Annals of Emergency Medicine
+Annals of Operations Research
+Computer Operations Research
+Computers and Operational Research
+European Journal of Operational Research
+IEEE Transactions on Intelligent Transportation Systems
+INFORMS Journal on Computation
+INFORMS Journal on Computing
+International Journal of Operational Research
+Journal of Algorithms
+Journal of Operations Research, 
+Journal of Transportation Engineering
+Management Science
+Mathematical Programming
+Operations Research
+Operations Research for Health Care
+Transportation Research Record
+Transportation Science
+TRpA
+TRpB
+TRpC
+TRpE
+\end{comment}
+
