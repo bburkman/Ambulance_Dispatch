@@ -12,7 +12,7 @@
 # Hello!
 
 print ("CRSS")
-CRSS <- read.delim("../../Big_Files/OoO_11_01_22_Accident_df_D2.txt")
+CRSS <- read.delim("../../Big_Files/data_IVEware.txt")
 head(CRSS)
 tail(CRSS)
 save(CRSS, file = "CRSS.rda")
@@ -25,11 +25,12 @@ default categorical;
 minrsqd 0.01;
 maxpred 15;
 iterations 10;
+seed 0;
 run;
 </impute>
 
 data <- load(file = "impute.rda")
-write.csv(get(data), file="../../Big_Files/OoO_11_01_22_Accident_df_F2.csv")
+write.csv(get(data), file="../../Big_Files/data_IVEware_seed_0.csv")
 
 </R>
 

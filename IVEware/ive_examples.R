@@ -15,7 +15,7 @@ setwd("/Users/bburkman/Documents/Research/Ambulance_Dispatch/IVEware")
 # Hello!
 
 print ("CRSS")
-CRSS <- read.delim("../../Big_Files/OoO_11_01_22_Accident_df_D2.txt")
+CRSS <- read.delim("../../Big_Files/data_IVEware.txt")
 head(CRSS)
 tail(CRSS)
 save(CRSS, file = "CRSS.rda")
@@ -23,5 +23,5 @@ save(CRSS, file = "CRSS.rda")
 impute(name="impute")
 
 data <- load(file = "impute.rda")
-write.csv(get(data), file="../../Big_Files/OoO_11_01_22_Accident_df_F2.csv")
+write.csv(get(data), file="../../Big_Files/data_IVEware_seed_0.csv")
 
