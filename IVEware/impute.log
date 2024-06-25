@@ -4,3428 +4,4084 @@ University of Michigan
 Version 0.3, Copyright (c) 2024
 
 
-Mon Jun 24 11:27:44 2024
+Tue Jun 25 10:59:55 2024
   Begin setup checking
   Read setup
   Write setup
   End setup checking
 
-Mon Jun 24 11:27:45 2024
+Tue Jun 25 10:59:56 2024
   Begin execution
   Read setup
   Read data
-Mon Jun 24 11:27:46 2024
+Tue Jun 25 10:59:56 2024
   Mult 1, Iter 1, Imp 1
-  Impute ACC_TYPE
+  Impute HOSPITAL
   Update data
-  Polytomous regression
+  Logistic regression
   Correct data
-Mon Jun 24 11:27:50 2024
+Tue Jun 25 10:59:56 2024
   Mult 1, Iter 1, Imp 2
-  Impute AGE
+  Impute ACC_TYPE
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:27:52 2024
+Tue Jun 25 10:59:57 2024
   Mult 1, Iter 1, Imp 3
-  Impute AIR_BAG
+  Impute AGE
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:27:54 2024
+Tue Jun 25 10:59:57 2024
   Mult 1, Iter 1, Imp 4
-  Impute ALC_STATUS
+  Impute AIR_BAG
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:27:55 2024
+Tue Jun 25 10:59:58 2024
   Mult 1, Iter 1, Imp 5
-  Impute BODY_TYP
+  Impute ALC_STATUS
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:27:59 2024
+Tue Jun 25 10:59:58 2024
   Mult 1, Iter 1, Imp 6
-  Impute CARGO_BT
+  Impute BODY_TYP
   Update data
   Polytomous regression
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
   Correct data
-Mon Jun 24 11:28:03 2024
+Tue Jun 25 10:59:59 2024
   Mult 1, Iter 1, Imp 7
-  Impute DEFORMED
+  Impute CARGO_BT
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:28:04 2024
+Tue Jun 25 11:00:00 2024
   Mult 1, Iter 1, Imp 8
-  Impute DR_ZIP
+  Impute DAY_WEEK
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:28:07 2024
+Tue Jun 25 11:00:00 2024
   Mult 1, Iter 1, Imp 9
-  Impute EJECTION
+  Impute DEFORMED
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:28:08 2024
+Tue Jun 25 11:00:01 2024
   Mult 1, Iter 1, Imp 10
-  Impute HARM_EV
+  Impute DR_ZIP
   Update data
   Polytomous regression
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
   Correct data
-Mon Jun 24 11:28:19 2024
+Tue Jun 25 11:00:02 2024
   Mult 1, Iter 1, Imp 11
-  Impute HIT_RUN
+  Impute EJECTION
   Update data
-  Logistic regression
+  Polytomous regression
   Correct data
-Mon Jun 24 11:28:20 2024
+Tue Jun 25 11:00:03 2024
   Mult 1, Iter 1, Imp 12
-  Impute HOUR
+  Impute HARM_EV
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:28:21 2024
+Tue Jun 25 11:00:05 2024
   Mult 1, Iter 1, Imp 13
-  Impute IMPACT1
+  Impute HIT_RUN
   Update data
-  Polytomous regression
+  Logistic regression
   Correct data
-Mon Jun 24 11:28:24 2024
+Tue Jun 25 11:00:05 2024
   Mult 1, Iter 1, Imp 14
-  Impute INJ_SEV
+  Impute HOUR
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:28:27 2024
+Tue Jun 25 11:00:05 2024
   Mult 1, Iter 1, Imp 15
-  Impute INT_HWY
+  Impute IMPACT1
   Update data
-  Logistic regression
+  Polytomous regression
   Correct data
-Mon Jun 24 11:28:28 2024
+Tue Jun 25 11:00:06 2024
   Mult 1, Iter 1, Imp 16
-  Impute LGT_COND
+  Impute INJ_SEV
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:28:30 2024
+Tue Jun 25 11:00:07 2024
   Mult 1, Iter 1, Imp 17
-  Impute MAKE
+  Impute INT_HWY
   Update data
-  Polytomous regression
+  Logistic regression
   Correct data
-Mon Jun 24 11:28:39 2024
+Tue Jun 25 11:00:07 2024
   Mult 1, Iter 1, Imp 18
-  Impute MAK_MOD
+  Impute J_KNIFE
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:28:51 2024
+Tue Jun 25 11:00:08 2024
   Mult 1, Iter 1, Imp 19
-  Impute MAN_COLL
+  Impute LGT_COND
   Update data
   Polytomous regression
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
   Correct data
-Mon Jun 24 11:29:01 2024
+Tue Jun 25 11:00:09 2024
   Mult 1, Iter 1, Imp 20
-  Impute MAX_SEV
+  Impute MAKE
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:29:03 2024
+Tue Jun 25 11:00:12 2024
   Mult 1, Iter 1, Imp 21
-  Impute MAX_VSEV
+  Impute MAK_MOD
   Update data
   Polytomous regression
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
   Correct data
-Mon Jun 24 11:29:09 2024
+Tue Jun 25 11:00:16 2024
   Mult 1, Iter 1, Imp 22
-  Impute MODEL
+  Impute MAN_COLL
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:29:24 2024
+Tue Jun 25 11:00:19 2024
   Mult 1, Iter 1, Imp 23
-  Impute M_HARM
+  Impute MAX_SEV
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:29:28 2024
+Tue Jun 25 11:00:19 2024
   Mult 1, Iter 1, Imp 24
-  Impute NUMOCCS
+  Impute MAX_VSEV
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:29:31 2024
+Tue Jun 25 11:00:20 2024
   Mult 1, Iter 1, Imp 25
-  Impute NUM_INJ
+  Impute MODEL
   Update data
   Polytomous regression
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
   Correct data
-Mon Jun 24 11:29:42 2024
+Tue Jun 25 11:00:25 2024
   Mult 1, Iter 1, Imp 26
-  Impute NUM_INJV
+  Impute MONTH
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:29:49 2024
+Tue Jun 25 11:00:25 2024
   Mult 1, Iter 1, Imp 27
-  Impute PCRASH4
+  Impute M_HARM
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:29:50 2024
+Tue Jun 25 11:00:27 2024
   Mult 1, Iter 1, Imp 28
-  Impute PCRASH5
+  Impute NUMOCCS
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:29:53 2024
+Tue Jun 25 11:00:27 2024
   Mult 1, Iter 1, Imp 29
-  Impute PER_TYP
+  Impute NUM_INJ
   Update data
-  Logistic regression
+  Polytomous regression
   Correct data
-Mon Jun 24 11:29:56 2024
+Tue Jun 25 11:00:28 2024
   Mult 1, Iter 1, Imp 30
-  Impute P_CRASH1
+  Impute NUM_INJV
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:30:02 2024
+Tue Jun 25 11:00:30 2024
   Mult 1, Iter 1, Imp 31
-  Impute P_CRASH2
+  Impute PCRASH4
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:30:08 2024
+Tue Jun 25 11:00:30 2024
   Mult 1, Iter 1, Imp 32
-  Impute RELJCT1
+  Impute PCRASH5
   Update data
-  Logistic regression
+  Polytomous regression
   Correct data
-Mon Jun 24 11:30:10 2024
+Tue Jun 25 11:00:31 2024
   Mult 1, Iter 1, Imp 33
-  Impute RELJCT2
+  Impute PERMVIT
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:30:12 2024
+Tue Jun 25 11:00:33 2024
   Mult 1, Iter 1, Imp 34
-  Impute REL_ROAD
+  Impute PER_TYP
   Update data
-  Polytomous regression
+  Logistic regression
   Correct data
-Mon Jun 24 11:30:15 2024
+Tue Jun 25 11:00:33 2024
   Mult 1, Iter 1, Imp 35
-  Impute REST_USE
+  Impute PJ
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:30:20 2024
+Tue Jun 25 11:00:34 2024
   Mult 1, Iter 1, Imp 36
-  Impute ROLINLOC
+  Impute PSU
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:30:24 2024
+Tue Jun 25 11:00:37 2024
   Mult 1, Iter 1, Imp 37
-  Impute SEAT_POS
+  Impute PVH_INVL
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:30:30 2024
+Tue Jun 25 11:00:39 2024
   Mult 1, Iter 1, Imp 38
-  Impute SEX
+  Impute P_CRASH1
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:30:33 2024
+Tue Jun 25 11:00:40 2024
   Mult 1, Iter 1, Imp 39
-  Impute SPEC_USE
+  Impute P_CRASH2
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:30:37 2024
+Tue Jun 25 11:00:43 2024
   Mult 1, Iter 1, Imp 40
-  Impute SPEEDREL
+  Impute REGION
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:30:40 2024
+Tue Jun 25 11:00:45 2024
   Mult 1, Iter 1, Imp 41
-  Impute TOWED
+  Impute RELJCT1
   Update data
-  Polytomous regression
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
+  Logistic regression
   Correct data
-Mon Jun 24 11:30:47 2024
+Tue Jun 25 11:00:45 2024
   Mult 1, Iter 1, Imp 42
-  Impute TOW_VEH
+  Impute RELJCT2
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:30:50 2024
+Tue Jun 25 11:00:46 2024
   Mult 1, Iter 1, Imp 43
-  Impute TYP_INT
+  Impute REL_ROAD
   Update data
   Polytomous regression
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
   Correct data
-Mon Jun 24 11:30:56 2024
+Tue Jun 25 11:00:47 2024
   Mult 1, Iter 1, Imp 44
-  Impute VALIGN
+  Impute REST_MIS
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:31:02 2024
+Tue Jun 25 11:00:48 2024
   Mult 1, Iter 1, Imp 45
-  Impute VEH_AGE
+  Impute REST_USE
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:31:05 2024
+Tue Jun 25 11:00:50 2024
   Mult 1, Iter 1, Imp 46
-  Impute VPROFILE
+  Impute ROLINLOC
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:31:11 2024
+Tue Jun 25 11:00:50 2024
   Mult 1, Iter 1, Imp 47
-  Impute VSPD_LIM
+  Impute ROLLOVER
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:31:17 2024
+Tue Jun 25 11:00:51 2024
   Mult 1, Iter 1, Imp 48
-  Impute VSURCOND
+  Impute SEAT_POS
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:31:20 2024
+Tue Jun 25 11:00:52 2024
   Mult 1, Iter 1, Imp 49
-  Impute VTCONT_F
+  Impute SEX
   Update data
-  Polytomous regression
+  Logistic regression
   Correct data
-Mon Jun 24 11:31:23 2024
+Tue Jun 25 11:00:53 2024
   Mult 1, Iter 1, Imp 50
-  Impute VTRAFCON
+  Impute SPEC_USE
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:31:27 2024
+Tue Jun 25 11:00:54 2024
   Mult 1, Iter 1, Imp 51
-  Impute VTRAFWAY
+  Impute SPEEDREL
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:31:32 2024
+Tue Jun 25 11:00:55 2024
   Mult 1, Iter 1, Imp 52
+  Impute TOWED
+  Update data
+  Polytomous regression
+  Warning: Too many iterations, probably due to
+           colinearity with dependent variable
+  Correct data
+Tue Jun 25 11:00:57 2024
+  Mult 1, Iter 1, Imp 53
+  Impute TOW_VEH
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:00:58 2024
+  Mult 1, Iter 1, Imp 54
+  Impute TYP_INT
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:00:59 2024
+  Mult 1, Iter 1, Imp 55
+  Impute URBANICITY
+  Update data
+  Logistic regression
+  Correct data
+Tue Jun 25 11:01:00 2024
+  Mult 1, Iter 1, Imp 56
+  Impute VALIGN
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:01:01 2024
+  Mult 1, Iter 1, Imp 57
+  Impute VEH_AGE
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:01:03 2024
+  Mult 1, Iter 1, Imp 58
+  Impute VE_FORMS
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:01:04 2024
+  Mult 1, Iter 1, Imp 59
+  Impute VE_TOTAL
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:01:06 2024
+  Mult 1, Iter 1, Imp 60
+  Impute VPROFILE
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:01:08 2024
+  Mult 1, Iter 1, Imp 61
+  Impute VSPD_LIM
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:01:11 2024
+  Mult 1, Iter 1, Imp 62
+  Impute VSURCOND
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:01:12 2024
+  Mult 1, Iter 1, Imp 63
+  Impute VTCONT_F
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:01:13 2024
+  Mult 1, Iter 1, Imp 64
+  Impute VTRAFCON
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:01:14 2024
+  Mult 1, Iter 1, Imp 65
+  Impute VTRAFWAY
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:01:16 2024
+  Mult 1, Iter 1, Imp 66
   Impute WEATHER
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:31:36 2024
+Tue Jun 25 11:01:18 2024
+  Mult 1, Iter 1, Imp 67
+  Impute WRK_ZONE
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:01:19 2024
   Mult 1, Iter 2, Imp 1
-  Impute ACC_TYPE
+  Impute HOSPITAL
   Update data
-  Polytomous regression
+  Logistic regression
   Correct data
-Mon Jun 24 11:31:48 2024
+Tue Jun 25 11:01:20 2024
   Mult 1, Iter 2, Imp 2
-  Impute AGE
+  Impute ACC_TYPE
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:31:55 2024
+Tue Jun 25 11:01:25 2024
   Mult 1, Iter 2, Imp 3
-  Impute AIR_BAG
+  Impute AGE
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:32:01 2024
+Tue Jun 25 11:01:28 2024
   Mult 1, Iter 2, Imp 4
-  Impute ALC_STATUS
+  Impute AIR_BAG
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:32:04 2024
+Tue Jun 25 11:01:30 2024
   Mult 1, Iter 2, Imp 5
-  Impute BODY_TYP
+  Impute ALC_STATUS
   Update data
   Polytomous regression
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
   Correct data
-Mon Jun 24 11:32:20 2024
+Tue Jun 25 11:01:31 2024
   Mult 1, Iter 2, Imp 6
-  Impute CARGO_BT
+  Impute BODY_TYP
   Update data
   Polytomous regression
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
   Correct data
-Mon Jun 24 11:32:27 2024
+Tue Jun 25 11:01:36 2024
   Mult 1, Iter 2, Imp 7
-  Impute DEFORMED
+  Impute CARGO_BT
   Update data
   Polytomous regression
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
   Correct data
-Mon Jun 24 11:32:35 2024
+Tue Jun 25 11:01:38 2024
   Mult 1, Iter 2, Imp 8
-  Impute DR_ZIP
+  Impute DAY_WEEK
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:32:39 2024
+Tue Jun 25 11:01:39 2024
   Mult 1, Iter 2, Imp 9
-  Impute EJECTION
+  Impute DEFORMED
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:32:42 2024
+Tue Jun 25 11:01:42 2024
   Mult 1, Iter 2, Imp 10
-  Impute HARM_EV
+  Impute DR_ZIP
   Update data
   Polytomous regression
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
   Correct data
-Mon Jun 24 11:32:54 2024
+Tue Jun 25 11:01:44 2024
   Mult 1, Iter 2, Imp 11
-  Impute HIT_RUN
+  Impute EJECTION
   Update data
-  Logistic regression
+  Polytomous regression
   Correct data
-Mon Jun 24 11:32:57 2024
+Tue Jun 25 11:01:46 2024
   Mult 1, Iter 2, Imp 12
-  Impute HOUR
+  Impute HARM_EV
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:33:01 2024
+Tue Jun 25 11:01:49 2024
   Mult 1, Iter 2, Imp 13
-  Impute IMPACT1
+  Impute HIT_RUN
   Update data
-  Polytomous regression
+  Logistic regression
   Correct data
-Mon Jun 24 11:33:09 2024
+Tue Jun 25 11:01:50 2024
   Mult 1, Iter 2, Imp 14
-  Impute INJ_SEV
+  Impute HOUR
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:33:15 2024
+Tue Jun 25 11:01:52 2024
   Mult 1, Iter 2, Imp 15
-  Impute INT_HWY
+  Impute IMPACT1
   Update data
-  Logistic regression
+  Polytomous regression
   Correct data
-Mon Jun 24 11:33:18 2024
+Tue Jun 25 11:01:56 2024
   Mult 1, Iter 2, Imp 16
-  Impute LGT_COND
+  Impute INJ_SEV
   Update data
   Polytomous regression
+  Warning: Too many iterations, probably due to
+           colinearity with dependent variable
   Correct data
-Mon Jun 24 11:33:22 2024
+Tue Jun 25 11:01:59 2024
   Mult 1, Iter 2, Imp 17
-  Impute MAKE
+  Impute INT_HWY
   Update data
-  Polytomous regression
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
+  Logistic regression
   Correct data
-Mon Jun 24 11:33:36 2024
+Tue Jun 25 11:02:00 2024
   Mult 1, Iter 2, Imp 18
-  Impute MAK_MOD
+  Impute J_KNIFE
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:33:50 2024
+Tue Jun 25 11:02:02 2024
   Mult 1, Iter 2, Imp 19
-  Impute MAN_COLL
+  Impute LGT_COND
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:34:02 2024
+Tue Jun 25 11:02:03 2024
   Mult 1, Iter 2, Imp 20
-  Impute MAX_SEV
+  Impute MAKE
   Update data
   Polytomous regression
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
   Correct data
-Mon Jun 24 11:34:10 2024
+Tue Jun 25 11:02:09 2024
   Mult 1, Iter 2, Imp 21
-  Impute MAX_VSEV
+  Impute MAK_MOD
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:34:19 2024
+Tue Jun 25 11:02:13 2024
   Mult 1, Iter 2, Imp 22
-  Impute MODEL
+  Impute MAN_COLL
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:34:35 2024
+Tue Jun 25 11:02:17 2024
   Mult 1, Iter 2, Imp 23
-  Impute M_HARM
+  Impute MAX_SEV
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:34:40 2024
+Tue Jun 25 11:02:20 2024
   Mult 1, Iter 2, Imp 24
-  Impute NUMOCCS
+  Impute MAX_VSEV
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:34:48 2024
+Tue Jun 25 11:02:23 2024
   Mult 1, Iter 2, Imp 25
-  Impute NUM_INJ
+  Impute MODEL
   Update data
   Polytomous regression
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
   Correct data
-Mon Jun 24 11:34:59 2024
+Tue Jun 25 11:02:28 2024
   Mult 1, Iter 2, Imp 26
-  Impute NUM_INJV
+  Impute MONTH
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:35:06 2024
+Tue Jun 25 11:02:29 2024
   Mult 1, Iter 2, Imp 27
-  Impute PCRASH4
+  Impute M_HARM
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:35:10 2024
+Tue Jun 25 11:02:32 2024
   Mult 1, Iter 2, Imp 28
-  Impute PCRASH5
+  Impute NUMOCCS
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:35:14 2024
+Tue Jun 25 11:02:36 2024
   Mult 1, Iter 2, Imp 29
-  Impute PER_TYP
+  Impute NUM_INJ
   Update data
-  Logistic regression
+  Polytomous regression
   Correct data
-Mon Jun 24 11:35:18 2024
+Tue Jun 25 11:02:39 2024
   Mult 1, Iter 2, Imp 30
-  Impute P_CRASH1
+  Impute NUM_INJV
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:35:27 2024
+Tue Jun 25 11:02:42 2024
   Mult 1, Iter 2, Imp 31
-  Impute P_CRASH2
+  Impute PCRASH4
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:35:35 2024
+Tue Jun 25 11:02:43 2024
   Mult 1, Iter 2, Imp 32
-  Impute RELJCT1
+  Impute PCRASH5
   Update data
-  Logistic regression
+  Polytomous regression
   Correct data
-Mon Jun 24 11:35:38 2024
+Tue Jun 25 11:02:45 2024
   Mult 1, Iter 2, Imp 33
-  Impute RELJCT2
+  Impute PERMVIT
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:35:43 2024
+Tue Jun 25 11:02:47 2024
   Mult 1, Iter 2, Imp 34
-  Impute REL_ROAD
+  Impute PER_TYP
   Update data
-  Polytomous regression
+  Logistic regression
   Correct data
-Mon Jun 24 11:35:47 2024
+Tue Jun 25 11:02:48 2024
   Mult 1, Iter 2, Imp 35
-  Impute REST_USE
+  Impute PJ
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:35:53 2024
+Tue Jun 25 11:02:53 2024
   Mult 1, Iter 2, Imp 36
-  Impute ROLINLOC
+  Impute PSU
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:35:59 2024
+Tue Jun 25 11:02:58 2024
   Mult 1, Iter 2, Imp 37
-  Impute SEAT_POS
+  Impute PVH_INVL
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:36:05 2024
+Tue Jun 25 11:03:00 2024
   Mult 1, Iter 2, Imp 38
-  Impute SEX
+  Impute P_CRASH1
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:36:09 2024
+Tue Jun 25 11:03:04 2024
   Mult 1, Iter 2, Imp 39
-  Impute SPEC_USE
+  Impute P_CRASH2
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:36:14 2024
+Tue Jun 25 11:03:06 2024
   Mult 1, Iter 2, Imp 40
-  Impute SPEEDREL
+  Impute REGION
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:36:18 2024
+Tue Jun 25 11:03:10 2024
   Mult 1, Iter 2, Imp 41
-  Impute TOWED
+  Impute RELJCT1
   Update data
-  Polytomous regression
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
+  Logistic regression
   Correct data
-Mon Jun 24 11:36:27 2024
+Tue Jun 25 11:03:11 2024
   Mult 1, Iter 2, Imp 42
-  Impute TOW_VEH
+  Impute RELJCT2
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:36:31 2024
+Tue Jun 25 11:03:13 2024
   Mult 1, Iter 2, Imp 43
-  Impute TYP_INT
+  Impute REL_ROAD
   Update data
   Polytomous regression
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
   Correct data
-Mon Jun 24 11:36:38 2024
+Tue Jun 25 11:03:15 2024
   Mult 1, Iter 2, Imp 44
-  Impute VALIGN
+  Impute REST_MIS
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:36:44 2024
+Tue Jun 25 11:03:17 2024
   Mult 1, Iter 2, Imp 45
-  Impute VEH_AGE
+  Impute REST_USE
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:36:48 2024
+Tue Jun 25 11:03:20 2024
   Mult 1, Iter 2, Imp 46
-  Impute VPROFILE
+  Impute ROLINLOC
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:36:54 2024
+Tue Jun 25 11:03:22 2024
   Mult 1, Iter 2, Imp 47
-  Impute VSPD_LIM
+  Impute ROLLOVER
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:37:03 2024
+Tue Jun 25 11:03:24 2024
   Mult 1, Iter 2, Imp 48
-  Impute VSURCOND
+  Impute SEAT_POS
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:37:07 2024
+Tue Jun 25 11:03:26 2024
   Mult 1, Iter 2, Imp 49
-  Impute VTCONT_F
+  Impute SEX
   Update data
-  Polytomous regression
+  Logistic regression
   Correct data
-Mon Jun 24 11:37:10 2024
+Tue Jun 25 11:03:27 2024
   Mult 1, Iter 2, Imp 50
-  Impute VTRAFCON
+  Impute SPEC_USE
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:37:16 2024
+Tue Jun 25 11:03:29 2024
   Mult 1, Iter 2, Imp 51
-  Impute VTRAFWAY
+  Impute SPEEDREL
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:37:23 2024
+Tue Jun 25 11:03:30 2024
   Mult 1, Iter 2, Imp 52
+  Impute TOWED
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:03:32 2024
+  Mult 1, Iter 2, Imp 53
+  Impute TOW_VEH
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:03:34 2024
+  Mult 1, Iter 2, Imp 54
+  Impute TYP_INT
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:03:36 2024
+  Mult 1, Iter 2, Imp 55
+  Impute URBANICITY
+  Update data
+  Logistic regression
+  Correct data
+Tue Jun 25 11:03:37 2024
+  Mult 1, Iter 2, Imp 56
+  Impute VALIGN
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:03:40 2024
+  Mult 1, Iter 2, Imp 57
+  Impute VEH_AGE
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:03:41 2024
+  Mult 1, Iter 2, Imp 58
+  Impute VE_FORMS
+  Update data
+  Polytomous regression
+  Warning: Too many iterations, probably due to
+           colinearity with dependent variable
+  Correct data
+Tue Jun 25 11:03:44 2024
+  Mult 1, Iter 2, Imp 59
+  Impute VE_TOTAL
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:03:47 2024
+  Mult 1, Iter 2, Imp 60
+  Impute VPROFILE
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:03:49 2024
+  Mult 1, Iter 2, Imp 61
+  Impute VSPD_LIM
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:03:53 2024
+  Mult 1, Iter 2, Imp 62
+  Impute VSURCOND
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:03:55 2024
+  Mult 1, Iter 2, Imp 63
+  Impute VTCONT_F
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:03:56 2024
+  Mult 1, Iter 2, Imp 64
+  Impute VTRAFCON
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:03:58 2024
+  Mult 1, Iter 2, Imp 65
+  Impute VTRAFWAY
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:04:01 2024
+  Mult 1, Iter 2, Imp 66
   Impute WEATHER
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:37:26 2024
+Tue Jun 25 11:04:02 2024
+  Mult 1, Iter 2, Imp 67
+  Impute WRK_ZONE
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:04:04 2024
   Mult 1, Iter 3, Imp 1
-  Impute ACC_TYPE
+  Impute HOSPITAL
   Update data
-  Polytomous regression
+  Logistic regression
   Correct data
-Mon Jun 24 11:37:39 2024
+Tue Jun 25 11:04:05 2024
   Mult 1, Iter 3, Imp 2
-  Impute AGE
+  Impute ACC_TYPE
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:37:46 2024
+Tue Jun 25 11:04:10 2024
   Mult 1, Iter 3, Imp 3
-  Impute AIR_BAG
+  Impute AGE
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:37:52 2024
+Tue Jun 25 11:04:13 2024
   Mult 1, Iter 3, Imp 4
-  Impute ALC_STATUS
+  Impute AIR_BAG
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:37:55 2024
+Tue Jun 25 11:04:15 2024
   Mult 1, Iter 3, Imp 5
-  Impute BODY_TYP
+  Impute ALC_STATUS
   Update data
   Polytomous regression
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
   Correct data
-Mon Jun 24 11:38:12 2024
+Tue Jun 25 11:04:16 2024
   Mult 1, Iter 3, Imp 6
-  Impute CARGO_BT
+  Impute BODY_TYP
   Update data
   Polytomous regression
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
   Correct data
-Mon Jun 24 11:38:19 2024
+Tue Jun 25 11:04:21 2024
   Mult 1, Iter 3, Imp 7
-  Impute DEFORMED
+  Impute CARGO_BT
   Update data
   Polytomous regression
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
   Correct data
-Mon Jun 24 11:38:26 2024
+Tue Jun 25 11:04:23 2024
   Mult 1, Iter 3, Imp 8
-  Impute DR_ZIP
+  Impute DAY_WEEK
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:38:31 2024
+Tue Jun 25 11:04:24 2024
   Mult 1, Iter 3, Imp 9
-  Impute EJECTION
+  Impute DEFORMED
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:38:34 2024
+Tue Jun 25 11:04:26 2024
   Mult 1, Iter 3, Imp 10
-  Impute HARM_EV
+  Impute DR_ZIP
   Update data
   Polytomous regression
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
   Correct data
-Mon Jun 24 11:38:45 2024
+Tue Jun 25 11:04:28 2024
   Mult 1, Iter 3, Imp 11
-  Impute HIT_RUN
+  Impute EJECTION
   Update data
-  Logistic regression
+  Polytomous regression
   Correct data
-Mon Jun 24 11:38:48 2024
+Tue Jun 25 11:04:30 2024
   Mult 1, Iter 3, Imp 12
-  Impute HOUR
+  Impute HARM_EV
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:38:52 2024
+Tue Jun 25 11:04:33 2024
   Mult 1, Iter 3, Imp 13
-  Impute IMPACT1
+  Impute HIT_RUN
   Update data
-  Polytomous regression
+  Logistic regression
   Correct data
-Mon Jun 24 11:39:00 2024
+Tue Jun 25 11:04:34 2024
   Mult 1, Iter 3, Imp 14
-  Impute INJ_SEV
+  Impute HOUR
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:39:06 2024
+Tue Jun 25 11:04:36 2024
   Mult 1, Iter 3, Imp 15
-  Impute INT_HWY
+  Impute IMPACT1
   Update data
-  Logistic regression
+  Polytomous regression
   Correct data
-Mon Jun 24 11:39:09 2024
+Tue Jun 25 11:04:43 2024
   Mult 1, Iter 3, Imp 16
-  Impute LGT_COND
+  Impute INJ_SEV
   Update data
   Polytomous regression
+  Warning: Too many iterations, probably due to
+           colinearity with dependent variable
   Correct data
-Mon Jun 24 11:39:14 2024
+Tue Jun 25 11:04:45 2024
   Mult 1, Iter 3, Imp 17
-  Impute MAKE
+  Impute INT_HWY
   Update data
-  Polytomous regression
+  Logistic regression
   Correct data
-Mon Jun 24 11:39:26 2024
+Tue Jun 25 11:04:46 2024
   Mult 1, Iter 3, Imp 18
-  Impute MAK_MOD
+  Impute J_KNIFE
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:39:40 2024
+Tue Jun 25 11:04:48 2024
   Mult 1, Iter 3, Imp 19
-  Impute MAN_COLL
+  Impute LGT_COND
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:39:52 2024
+Tue Jun 25 11:04:50 2024
   Mult 1, Iter 3, Imp 20
-  Impute MAX_SEV
+  Impute MAKE
   Update data
   Polytomous regression
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
   Correct data
-Mon Jun 24 11:40:01 2024
+Tue Jun 25 11:04:55 2024
   Mult 1, Iter 3, Imp 21
-  Impute MAX_VSEV
+  Impute MAK_MOD
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:40:10 2024
+Tue Jun 25 11:05:00 2024
   Mult 1, Iter 3, Imp 22
-  Impute MODEL
+  Impute MAN_COLL
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:40:26 2024
+Tue Jun 25 11:05:03 2024
   Mult 1, Iter 3, Imp 23
-  Impute M_HARM
+  Impute MAX_SEV
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:40:31 2024
+Tue Jun 25 11:05:06 2024
   Mult 1, Iter 3, Imp 24
-  Impute NUMOCCS
+  Impute MAX_VSEV
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:40:39 2024
+Tue Jun 25 11:05:09 2024
   Mult 1, Iter 3, Imp 25
-  Impute NUM_INJ
+  Impute MODEL
   Update data
   Polytomous regression
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
   Correct data
-Mon Jun 24 11:40:49 2024
+Tue Jun 25 11:05:14 2024
   Mult 1, Iter 3, Imp 26
-  Impute NUM_INJV
+  Impute MONTH
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:40:57 2024
+Tue Jun 25 11:05:16 2024
   Mult 1, Iter 3, Imp 27
-  Impute PCRASH4
+  Impute M_HARM
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:41:00 2024
+Tue Jun 25 11:05:18 2024
   Mult 1, Iter 3, Imp 28
-  Impute PCRASH5
+  Impute NUMOCCS
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:41:05 2024
+Tue Jun 25 11:05:22 2024
   Mult 1, Iter 3, Imp 29
-  Impute PER_TYP
+  Impute NUM_INJ
   Update data
-  Logistic regression
+  Polytomous regression
   Correct data
-Mon Jun 24 11:41:09 2024
+Tue Jun 25 11:05:25 2024
   Mult 1, Iter 3, Imp 30
-  Impute P_CRASH1
+  Impute NUM_INJV
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:41:18 2024
+Tue Jun 25 11:05:28 2024
   Mult 1, Iter 3, Imp 31
-  Impute P_CRASH2
+  Impute PCRASH4
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:41:26 2024
+Tue Jun 25 11:05:29 2024
   Mult 1, Iter 3, Imp 32
-  Impute RELJCT1
+  Impute PCRASH5
   Update data
-  Logistic regression
+  Polytomous regression
   Correct data
-Mon Jun 24 11:41:28 2024
+Tue Jun 25 11:05:31 2024
   Mult 1, Iter 3, Imp 33
-  Impute RELJCT2
+  Impute PERMVIT
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:41:34 2024
+Tue Jun 25 11:05:33 2024
   Mult 1, Iter 3, Imp 34
-  Impute REL_ROAD
+  Impute PER_TYP
   Update data
-  Polytomous regression
+  Logistic regression
   Correct data
-Mon Jun 24 11:41:38 2024
+Tue Jun 25 11:05:35 2024
   Mult 1, Iter 3, Imp 35
-  Impute REST_USE
+  Impute PJ
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:41:44 2024
+Tue Jun 25 11:05:39 2024
   Mult 1, Iter 3, Imp 36
-  Impute ROLINLOC
+  Impute PSU
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:41:49 2024
+Tue Jun 25 11:05:44 2024
   Mult 1, Iter 3, Imp 37
-  Impute SEAT_POS
+  Impute PVH_INVL
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:41:56 2024
+Tue Jun 25 11:05:47 2024
   Mult 1, Iter 3, Imp 38
-  Impute SEX
+  Impute P_CRASH1
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:42:00 2024
+Tue Jun 25 11:05:51 2024
   Mult 1, Iter 3, Imp 39
-  Impute SPEC_USE
+  Impute P_CRASH2
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:42:05 2024
+Tue Jun 25 11:05:53 2024
   Mult 1, Iter 3, Imp 40
-  Impute SPEEDREL
+  Impute REGION
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:42:09 2024
+Tue Jun 25 11:05:57 2024
   Mult 1, Iter 3, Imp 41
-  Impute TOWED
+  Impute RELJCT1
   Update data
-  Polytomous regression
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
+  Logistic regression
   Correct data
-Mon Jun 24 11:42:17 2024
+Tue Jun 25 11:05:58 2024
   Mult 1, Iter 3, Imp 42
-  Impute TOW_VEH
+  Impute RELJCT2
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:42:21 2024
+Tue Jun 25 11:06:00 2024
   Mult 1, Iter 3, Imp 43
-  Impute TYP_INT
+  Impute REL_ROAD
   Update data
   Polytomous regression
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
   Correct data
-Mon Jun 24 11:42:28 2024
+Tue Jun 25 11:06:02 2024
   Mult 1, Iter 3, Imp 44
-  Impute VALIGN
+  Impute REST_MIS
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:42:34 2024
+Tue Jun 25 11:06:04 2024
   Mult 1, Iter 3, Imp 45
-  Impute VEH_AGE
+  Impute REST_USE
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:42:38 2024
+Tue Jun 25 11:06:07 2024
   Mult 1, Iter 3, Imp 46
-  Impute VPROFILE
+  Impute ROLINLOC
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:42:44 2024
+Tue Jun 25 11:06:09 2024
   Mult 1, Iter 3, Imp 47
-  Impute VSPD_LIM
+  Impute ROLLOVER
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:42:54 2024
+Tue Jun 25 11:06:10 2024
   Mult 1, Iter 3, Imp 48
-  Impute VSURCOND
+  Impute SEAT_POS
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:42:57 2024
+Tue Jun 25 11:06:13 2024
   Mult 1, Iter 3, Imp 49
-  Impute VTCONT_F
+  Impute SEX
   Update data
-  Polytomous regression
+  Logistic regression
   Correct data
-Mon Jun 24 11:43:01 2024
+Tue Jun 25 11:06:14 2024
   Mult 1, Iter 3, Imp 50
-  Impute VTRAFCON
+  Impute SPEC_USE
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:43:06 2024
+Tue Jun 25 11:06:17 2024
   Mult 1, Iter 3, Imp 51
-  Impute VTRAFWAY
+  Impute SPEEDREL
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:43:13 2024
+Tue Jun 25 11:06:19 2024
   Mult 1, Iter 3, Imp 52
+  Impute TOWED
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:06:21 2024
+  Mult 1, Iter 3, Imp 53
+  Impute TOW_VEH
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:06:22 2024
+  Mult 1, Iter 3, Imp 54
+  Impute TYP_INT
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:06:24 2024
+  Mult 1, Iter 3, Imp 55
+  Impute URBANICITY
+  Update data
+  Logistic regression
+  Correct data
+Tue Jun 25 11:06:25 2024
+  Mult 1, Iter 3, Imp 56
+  Impute VALIGN
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:06:28 2024
+  Mult 1, Iter 3, Imp 57
+  Impute VEH_AGE
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:06:29 2024
+  Mult 1, Iter 3, Imp 58
+  Impute VE_FORMS
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:06:32 2024
+  Mult 1, Iter 3, Imp 59
+  Impute VE_TOTAL
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:06:35 2024
+  Mult 1, Iter 3, Imp 60
+  Impute VPROFILE
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:06:38 2024
+  Mult 1, Iter 3, Imp 61
+  Impute VSPD_LIM
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:06:41 2024
+  Mult 1, Iter 3, Imp 62
+  Impute VSURCOND
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:06:43 2024
+  Mult 1, Iter 3, Imp 63
+  Impute VTCONT_F
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:06:44 2024
+  Mult 1, Iter 3, Imp 64
+  Impute VTRAFCON
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:06:46 2024
+  Mult 1, Iter 3, Imp 65
+  Impute VTRAFWAY
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:06:49 2024
+  Mult 1, Iter 3, Imp 66
   Impute WEATHER
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:43:17 2024
+Tue Jun 25 11:06:51 2024
+  Mult 1, Iter 3, Imp 67
+  Impute WRK_ZONE
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:06:52 2024
   Mult 1, Iter 4, Imp 1
-  Impute ACC_TYPE
+  Impute HOSPITAL
   Update data
-  Polytomous regression
+  Logistic regression
   Correct data
-Mon Jun 24 11:43:29 2024
+Tue Jun 25 11:06:53 2024
   Mult 1, Iter 4, Imp 2
-  Impute AGE
+  Impute ACC_TYPE
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:43:36 2024
+Tue Jun 25 11:06:58 2024
   Mult 1, Iter 4, Imp 3
-  Impute AIR_BAG
+  Impute AGE
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:43:43 2024
+Tue Jun 25 11:07:01 2024
   Mult 1, Iter 4, Imp 4
-  Impute ALC_STATUS
+  Impute AIR_BAG
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:43:46 2024
+Tue Jun 25 11:07:03 2024
   Mult 1, Iter 4, Imp 5
-  Impute BODY_TYP
+  Impute ALC_STATUS
   Update data
   Polytomous regression
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
   Correct data
-Mon Jun 24 11:44:03 2024
+Tue Jun 25 11:07:04 2024
   Mult 1, Iter 4, Imp 6
-  Impute CARGO_BT
+  Impute BODY_TYP
   Update data
   Polytomous regression
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
   Correct data
-Mon Jun 24 11:44:10 2024
+Tue Jun 25 11:07:09 2024
   Mult 1, Iter 4, Imp 7
-  Impute DEFORMED
+  Impute CARGO_BT
   Update data
   Polytomous regression
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
   Correct data
-Mon Jun 24 11:44:18 2024
+Tue Jun 25 11:07:11 2024
   Mult 1, Iter 4, Imp 8
-  Impute DR_ZIP
+  Impute DAY_WEEK
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:44:22 2024
+Tue Jun 25 11:07:12 2024
   Mult 1, Iter 4, Imp 9
-  Impute EJECTION
+  Impute DEFORMED
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:44:25 2024
+Tue Jun 25 11:07:15 2024
   Mult 1, Iter 4, Imp 10
-  Impute HARM_EV
+  Impute DR_ZIP
   Update data
   Polytomous regression
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
   Correct data
-Mon Jun 24 11:44:37 2024
+Tue Jun 25 11:07:17 2024
   Mult 1, Iter 4, Imp 11
-  Impute HIT_RUN
+  Impute EJECTION
   Update data
-  Logistic regression
+  Polytomous regression
   Correct data
-Mon Jun 24 11:44:39 2024
+Tue Jun 25 11:07:18 2024
   Mult 1, Iter 4, Imp 12
-  Impute HOUR
+  Impute HARM_EV
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:44:44 2024
+Tue Jun 25 11:07:22 2024
   Mult 1, Iter 4, Imp 13
-  Impute IMPACT1
+  Impute HIT_RUN
   Update data
-  Polytomous regression
+  Logistic regression
   Correct data
-Mon Jun 24 11:44:52 2024
+Tue Jun 25 11:07:23 2024
   Mult 1, Iter 4, Imp 14
-  Impute INJ_SEV
+  Impute HOUR
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:44:58 2024
+Tue Jun 25 11:07:24 2024
   Mult 1, Iter 4, Imp 15
-  Impute INT_HWY
+  Impute IMPACT1
   Update data
-  Logistic regression
+  Polytomous regression
   Correct data
-Mon Jun 24 11:45:01 2024
+Tue Jun 25 11:07:31 2024
   Mult 1, Iter 4, Imp 16
-  Impute LGT_COND
+  Impute INJ_SEV
   Update data
   Polytomous regression
+  Warning: Too many iterations, probably due to
+           colinearity with dependent variable
   Correct data
-Mon Jun 24 11:45:05 2024
+Tue Jun 25 11:07:34 2024
   Mult 1, Iter 4, Imp 17
-  Impute MAKE
+  Impute INT_HWY
   Update data
-  Polytomous regression
+  Logistic regression
   Correct data
-Mon Jun 24 11:45:18 2024
+Tue Jun 25 11:07:35 2024
   Mult 1, Iter 4, Imp 18
-  Impute MAK_MOD
+  Impute J_KNIFE
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:45:31 2024
+Tue Jun 25 11:07:36 2024
   Mult 1, Iter 4, Imp 19
-  Impute MAN_COLL
+  Impute LGT_COND
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:45:43 2024
+Tue Jun 25 11:07:38 2024
   Mult 1, Iter 4, Imp 20
-  Impute MAX_SEV
+  Impute MAKE
   Update data
   Polytomous regression
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
   Correct data
-Mon Jun 24 11:45:53 2024
+Tue Jun 25 11:07:43 2024
   Mult 1, Iter 4, Imp 21
-  Impute MAX_VSEV
+  Impute MAK_MOD
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:46:01 2024
+Tue Jun 25 11:07:48 2024
   Mult 1, Iter 4, Imp 22
-  Impute MODEL
+  Impute MAN_COLL
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:46:17 2024
+Tue Jun 25 11:07:52 2024
   Mult 1, Iter 4, Imp 23
-  Impute M_HARM
+  Impute MAX_SEV
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:46:23 2024
+Tue Jun 25 11:07:55 2024
   Mult 1, Iter 4, Imp 24
-  Impute NUMOCCS
+  Impute MAX_VSEV
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:46:30 2024
+Tue Jun 25 11:07:57 2024
   Mult 1, Iter 4, Imp 25
-  Impute NUM_INJ
+  Impute MODEL
   Update data
   Polytomous regression
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
   Correct data
-Mon Jun 24 11:46:41 2024
+Tue Jun 25 11:08:03 2024
   Mult 1, Iter 4, Imp 26
-  Impute NUM_INJV
+  Impute MONTH
   Update data
   Polytomous regression
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
   Correct data
-Mon Jun 24 11:46:49 2024
+Tue Jun 25 11:08:04 2024
   Mult 1, Iter 4, Imp 27
-  Impute PCRASH4
+  Impute M_HARM
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:46:53 2024
+Tue Jun 25 11:08:07 2024
   Mult 1, Iter 4, Imp 28
-  Impute PCRASH5
+  Impute NUMOCCS
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:46:57 2024
+Tue Jun 25 11:08:10 2024
   Mult 1, Iter 4, Imp 29
-  Impute PER_TYP
+  Impute NUM_INJ
   Update data
-  Logistic regression
+  Polytomous regression
   Correct data
-Mon Jun 24 11:47:01 2024
+Tue Jun 25 11:08:13 2024
   Mult 1, Iter 4, Imp 30
-  Impute P_CRASH1
+  Impute NUM_INJV
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:47:11 2024
+Tue Jun 25 11:08:16 2024
   Mult 1, Iter 4, Imp 31
-  Impute P_CRASH2
+  Impute PCRASH4
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:47:18 2024
+Tue Jun 25 11:08:17 2024
   Mult 1, Iter 4, Imp 32
-  Impute RELJCT1
+  Impute PCRASH5
   Update data
-  Logistic regression
+  Polytomous regression
   Correct data
-Mon Jun 24 11:47:21 2024
+Tue Jun 25 11:08:20 2024
   Mult 1, Iter 4, Imp 33
-  Impute RELJCT2
+  Impute PERMVIT
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:47:26 2024
+Tue Jun 25 11:08:21 2024
   Mult 1, Iter 4, Imp 34
-  Impute REL_ROAD
+  Impute PER_TYP
   Update data
-  Polytomous regression
+  Logistic regression
   Correct data
-Mon Jun 24 11:47:30 2024
+Tue Jun 25 11:08:23 2024
   Mult 1, Iter 4, Imp 35
-  Impute REST_USE
+  Impute PJ
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:47:36 2024
+Tue Jun 25 11:08:28 2024
   Mult 1, Iter 4, Imp 36
-  Impute ROLINLOC
+  Impute PSU
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:47:42 2024
+Tue Jun 25 11:08:33 2024
   Mult 1, Iter 4, Imp 37
-  Impute SEAT_POS
+  Impute PVH_INVL
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:47:48 2024
+Tue Jun 25 11:08:35 2024
   Mult 1, Iter 4, Imp 38
-  Impute SEX
+  Impute P_CRASH1
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:47:52 2024
+Tue Jun 25 11:08:39 2024
   Mult 1, Iter 4, Imp 39
-  Impute SPEC_USE
+  Impute P_CRASH2
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:47:57 2024
+Tue Jun 25 11:08:42 2024
   Mult 1, Iter 4, Imp 40
-  Impute SPEEDREL
+  Impute REGION
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:48:01 2024
+Tue Jun 25 11:08:45 2024
   Mult 1, Iter 4, Imp 41
-  Impute TOWED
+  Impute RELJCT1
   Update data
-  Polytomous regression
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
+  Logistic regression
   Correct data
-Mon Jun 24 11:48:10 2024
+Tue Jun 25 11:08:46 2024
   Mult 1, Iter 4, Imp 42
-  Impute TOW_VEH
+  Impute RELJCT2
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:48:14 2024
+Tue Jun 25 11:08:48 2024
   Mult 1, Iter 4, Imp 43
-  Impute TYP_INT
+  Impute REL_ROAD
   Update data
   Polytomous regression
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
   Correct data
-Mon Jun 24 11:48:20 2024
+Tue Jun 25 11:08:50 2024
   Mult 1, Iter 4, Imp 44
-  Impute VALIGN
+  Impute REST_MIS
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:48:26 2024
+Tue Jun 25 11:08:52 2024
   Mult 1, Iter 4, Imp 45
-  Impute VEH_AGE
+  Impute REST_USE
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:48:30 2024
+Tue Jun 25 11:08:54 2024
   Mult 1, Iter 4, Imp 46
-  Impute VPROFILE
+  Impute ROLINLOC
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:48:36 2024
+Tue Jun 25 11:08:56 2024
   Mult 1, Iter 4, Imp 47
-  Impute VSPD_LIM
+  Impute ROLLOVER
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:48:46 2024
+Tue Jun 25 11:08:58 2024
   Mult 1, Iter 4, Imp 48
-  Impute VSURCOND
+  Impute SEAT_POS
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:48:50 2024
+Tue Jun 25 11:09:01 2024
   Mult 1, Iter 4, Imp 49
-  Impute VTCONT_F
+  Impute SEX
   Update data
-  Polytomous regression
+  Logistic regression
   Correct data
-Mon Jun 24 11:48:53 2024
+Tue Jun 25 11:09:02 2024
   Mult 1, Iter 4, Imp 50
-  Impute VTRAFCON
+  Impute SPEC_USE
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:48:59 2024
+Tue Jun 25 11:09:04 2024
   Mult 1, Iter 4, Imp 51
-  Impute VTRAFWAY
+  Impute SPEEDREL
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:49:06 2024
+Tue Jun 25 11:09:05 2024
   Mult 1, Iter 4, Imp 52
+  Impute TOWED
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:09:07 2024
+  Mult 1, Iter 4, Imp 53
+  Impute TOW_VEH
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:09:09 2024
+  Mult 1, Iter 4, Imp 54
+  Impute TYP_INT
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:09:11 2024
+  Mult 1, Iter 4, Imp 55
+  Impute URBANICITY
+  Update data
+  Logistic regression
+  Correct data
+Tue Jun 25 11:09:12 2024
+  Mult 1, Iter 4, Imp 56
+  Impute VALIGN
+  Update data
+  Polytomous regression
+  Warning: Too many iterations, probably due to
+           colinearity with dependent variable
+  Correct data
+Tue Jun 25 11:09:15 2024
+  Mult 1, Iter 4, Imp 57
+  Impute VEH_AGE
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:09:16 2024
+  Mult 1, Iter 4, Imp 58
+  Impute VE_FORMS
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:09:19 2024
+  Mult 1, Iter 4, Imp 59
+  Impute VE_TOTAL
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:09:22 2024
+  Mult 1, Iter 4, Imp 60
+  Impute VPROFILE
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:09:24 2024
+  Mult 1, Iter 4, Imp 61
+  Impute VSPD_LIM
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:09:28 2024
+  Mult 1, Iter 4, Imp 62
+  Impute VSURCOND
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:09:29 2024
+  Mult 1, Iter 4, Imp 63
+  Impute VTCONT_F
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:09:31 2024
+  Mult 1, Iter 4, Imp 64
+  Impute VTRAFCON
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:09:33 2024
+  Mult 1, Iter 4, Imp 65
+  Impute VTRAFWAY
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:09:36 2024
+  Mult 1, Iter 4, Imp 66
   Impute WEATHER
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:49:09 2024
+Tue Jun 25 11:09:37 2024
+  Mult 1, Iter 4, Imp 67
+  Impute WRK_ZONE
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:09:38 2024
   Mult 1, Iter 5, Imp 1
-  Impute ACC_TYPE
+  Impute HOSPITAL
   Update data
-  Polytomous regression
+  Logistic regression
   Correct data
-Mon Jun 24 11:49:21 2024
+Tue Jun 25 11:09:40 2024
   Mult 1, Iter 5, Imp 2
-  Impute AGE
+  Impute ACC_TYPE
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:49:28 2024
+Tue Jun 25 11:09:44 2024
   Mult 1, Iter 5, Imp 3
-  Impute AIR_BAG
+  Impute AGE
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:49:35 2024
+Tue Jun 25 11:09:48 2024
   Mult 1, Iter 5, Imp 4
-  Impute ALC_STATUS
+  Impute AIR_BAG
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:49:39 2024
+Tue Jun 25 11:09:49 2024
   Mult 1, Iter 5, Imp 5
-  Impute BODY_TYP
+  Impute ALC_STATUS
   Update data
   Polytomous regression
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
   Correct data
-Mon Jun 24 11:49:55 2024
+Tue Jun 25 11:09:51 2024
   Mult 1, Iter 5, Imp 6
-  Impute CARGO_BT
+  Impute BODY_TYP
   Update data
   Polytomous regression
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
   Correct data
-Mon Jun 24 11:50:02 2024
+Tue Jun 25 11:09:55 2024
   Mult 1, Iter 5, Imp 7
-  Impute DEFORMED
+  Impute CARGO_BT
   Update data
   Polytomous regression
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
   Correct data
-Mon Jun 24 11:50:10 2024
+Tue Jun 25 11:09:57 2024
   Mult 1, Iter 5, Imp 8
-  Impute DR_ZIP
+  Impute DAY_WEEK
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:50:14 2024
+Tue Jun 25 11:09:59 2024
   Mult 1, Iter 5, Imp 9
-  Impute EJECTION
+  Impute DEFORMED
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:50:18 2024
+Tue Jun 25 11:10:01 2024
   Mult 1, Iter 5, Imp 10
-  Impute HARM_EV
+  Impute DR_ZIP
   Update data
   Polytomous regression
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
   Correct data
-Mon Jun 24 11:50:29 2024
+Tue Jun 25 11:10:03 2024
   Mult 1, Iter 5, Imp 11
-  Impute HIT_RUN
+  Impute EJECTION
   Update data
-  Logistic regression
+  Polytomous regression
   Correct data
-Mon Jun 24 11:50:32 2024
+Tue Jun 25 11:10:05 2024
   Mult 1, Iter 5, Imp 12
-  Impute HOUR
+  Impute HARM_EV
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:50:36 2024
+Tue Jun 25 11:10:08 2024
   Mult 1, Iter 5, Imp 13
-  Impute IMPACT1
+  Impute HIT_RUN
   Update data
-  Polytomous regression
+  Logistic regression
   Correct data
-Mon Jun 24 11:50:44 2024
+Tue Jun 25 11:10:09 2024
   Mult 1, Iter 5, Imp 14
-  Impute INJ_SEV
+  Impute HOUR
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:50:50 2024
+Tue Jun 25 11:10:11 2024
   Mult 1, Iter 5, Imp 15
-  Impute INT_HWY
+  Impute IMPACT1
   Update data
-  Logistic regression
+  Polytomous regression
   Correct data
-Mon Jun 24 11:50:53 2024
+Tue Jun 25 11:10:17 2024
   Mult 1, Iter 5, Imp 16
-  Impute LGT_COND
+  Impute INJ_SEV
   Update data
   Polytomous regression
+  Warning: Too many iterations, probably due to
+           colinearity with dependent variable
   Correct data
-Mon Jun 24 11:50:57 2024
+Tue Jun 25 11:10:20 2024
   Mult 1, Iter 5, Imp 17
-  Impute MAKE
+  Impute INT_HWY
   Update data
-  Polytomous regression
+  Logistic regression
   Correct data
-Mon Jun 24 11:51:10 2024
+Tue Jun 25 11:10:21 2024
   Mult 1, Iter 5, Imp 18
-  Impute MAK_MOD
+  Impute J_KNIFE
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:51:23 2024
+Tue Jun 25 11:10:23 2024
   Mult 1, Iter 5, Imp 19
-  Impute MAN_COLL
+  Impute LGT_COND
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:51:35 2024
+Tue Jun 25 11:10:25 2024
   Mult 1, Iter 5, Imp 20
-  Impute MAX_SEV
+  Impute MAKE
   Update data
   Polytomous regression
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
   Correct data
-Mon Jun 24 11:51:45 2024
+Tue Jun 25 11:10:30 2024
   Mult 1, Iter 5, Imp 21
-  Impute MAX_VSEV
+  Impute MAK_MOD
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:51:53 2024
+Tue Jun 25 11:10:35 2024
   Mult 1, Iter 5, Imp 22
-  Impute MODEL
+  Impute MAN_COLL
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:52:09 2024
+Tue Jun 25 11:10:38 2024
   Mult 1, Iter 5, Imp 23
-  Impute M_HARM
+  Impute MAX_SEV
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:52:15 2024
+Tue Jun 25 11:10:41 2024
   Mult 1, Iter 5, Imp 24
-  Impute NUMOCCS
+  Impute MAX_VSEV
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:52:22 2024
+Tue Jun 25 11:10:44 2024
   Mult 1, Iter 5, Imp 25
-  Impute NUM_INJ
+  Impute MODEL
   Update data
   Polytomous regression
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
   Correct data
-Mon Jun 24 11:52:33 2024
+Tue Jun 25 11:10:49 2024
   Mult 1, Iter 5, Imp 26
-  Impute NUM_INJV
+  Impute MONTH
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:52:40 2024
+Tue Jun 25 11:10:51 2024
   Mult 1, Iter 5, Imp 27
-  Impute PCRASH4
+  Impute M_HARM
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:52:44 2024
+Tue Jun 25 11:10:53 2024
   Mult 1, Iter 5, Imp 28
-  Impute PCRASH5
+  Impute NUMOCCS
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:52:48 2024
+Tue Jun 25 11:10:57 2024
   Mult 1, Iter 5, Imp 29
-  Impute PER_TYP
+  Impute NUM_INJ
   Update data
-  Logistic regression
+  Polytomous regression
   Correct data
-Mon Jun 24 11:52:52 2024
+Tue Jun 25 11:11:00 2024
   Mult 1, Iter 5, Imp 30
-  Impute P_CRASH1
+  Impute NUM_INJV
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:53:02 2024
+Tue Jun 25 11:11:03 2024
   Mult 1, Iter 5, Imp 31
-  Impute P_CRASH2
+  Impute PCRASH4
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:53:09 2024
+Tue Jun 25 11:11:04 2024
   Mult 1, Iter 5, Imp 32
-  Impute RELJCT1
+  Impute PCRASH5
   Update data
-  Logistic regression
+  Polytomous regression
   Correct data
-Mon Jun 24 11:53:12 2024
+Tue Jun 25 11:11:06 2024
   Mult 1, Iter 5, Imp 33
-  Impute RELJCT2
+  Impute PERMVIT
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:53:17 2024
+Tue Jun 25 11:11:08 2024
   Mult 1, Iter 5, Imp 34
-  Impute REL_ROAD
+  Impute PER_TYP
   Update data
-  Polytomous regression
+  Logistic regression
   Correct data
-Mon Jun 24 11:53:21 2024
+Tue Jun 25 11:11:10 2024
   Mult 1, Iter 5, Imp 35
-  Impute REST_USE
+  Impute PJ
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:53:27 2024
+Tue Jun 25 11:11:14 2024
   Mult 1, Iter 5, Imp 36
-  Impute ROLINLOC
+  Impute PSU
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:53:33 2024
+Tue Jun 25 11:11:20 2024
   Mult 1, Iter 5, Imp 37
-  Impute SEAT_POS
+  Impute PVH_INVL
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:53:39 2024
+Tue Jun 25 11:11:22 2024
   Mult 1, Iter 5, Imp 38
-  Impute SEX
+  Impute P_CRASH1
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:53:43 2024
+Tue Jun 25 11:11:26 2024
   Mult 1, Iter 5, Imp 39
-  Impute SPEC_USE
+  Impute P_CRASH2
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:53:48 2024
+Tue Jun 25 11:11:28 2024
   Mult 1, Iter 5, Imp 40
-  Impute SPEEDREL
+  Impute REGION
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:53:52 2024
+Tue Jun 25 11:11:32 2024
   Mult 1, Iter 5, Imp 41
-  Impute TOWED
+  Impute RELJCT1
   Update data
-  Polytomous regression
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
+  Logistic regression
   Correct data
-Mon Jun 24 11:54:01 2024
+Tue Jun 25 11:11:33 2024
   Mult 1, Iter 5, Imp 42
-  Impute TOW_VEH
+  Impute RELJCT2
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:54:05 2024
+Tue Jun 25 11:11:35 2024
   Mult 1, Iter 5, Imp 43
-  Impute TYP_INT
+  Impute REL_ROAD
   Update data
   Polytomous regression
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
   Correct data
-Mon Jun 24 11:54:11 2024
+Tue Jun 25 11:11:37 2024
   Mult 1, Iter 5, Imp 44
-  Impute VALIGN
+  Impute REST_MIS
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:54:18 2024
+Tue Jun 25 11:11:38 2024
   Mult 1, Iter 5, Imp 45
-  Impute VEH_AGE
+  Impute REST_USE
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:54:21 2024
+Tue Jun 25 11:11:41 2024
   Mult 1, Iter 5, Imp 46
-  Impute VPROFILE
+  Impute ROLINLOC
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:54:27 2024
+Tue Jun 25 11:11:43 2024
   Mult 1, Iter 5, Imp 47
-  Impute VSPD_LIM
+  Impute ROLLOVER
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:54:37 2024
+Tue Jun 25 11:11:45 2024
   Mult 1, Iter 5, Imp 48
-  Impute VSURCOND
+  Impute SEAT_POS
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:54:41 2024
+Tue Jun 25 11:11:47 2024
   Mult 1, Iter 5, Imp 49
-  Impute VTCONT_F
+  Impute SEX
   Update data
-  Polytomous regression
+  Logistic regression
   Correct data
-Mon Jun 24 11:54:44 2024
+Tue Jun 25 11:11:48 2024
   Mult 1, Iter 5, Imp 50
-  Impute VTRAFCON
+  Impute SPEC_USE
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:54:50 2024
+Tue Jun 25 11:11:50 2024
   Mult 1, Iter 5, Imp 51
-  Impute VTRAFWAY
+  Impute SPEEDREL
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:54:57 2024
+Tue Jun 25 11:11:52 2024
   Mult 1, Iter 5, Imp 52
+  Impute TOWED
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:11:54 2024
+  Mult 1, Iter 5, Imp 53
+  Impute TOW_VEH
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:11:55 2024
+  Mult 1, Iter 5, Imp 54
+  Impute TYP_INT
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:11:57 2024
+  Mult 1, Iter 5, Imp 55
+  Impute URBANICITY
+  Update data
+  Logistic regression
+  Correct data
+Tue Jun 25 11:11:58 2024
+  Mult 1, Iter 5, Imp 56
+  Impute VALIGN
+  Update data
+  Polytomous regression
+  Warning: Too many iterations, probably due to
+           colinearity with dependent variable
+  Correct data
+Tue Jun 25 11:12:01 2024
+  Mult 1, Iter 5, Imp 57
+  Impute VEH_AGE
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:12:03 2024
+  Mult 1, Iter 5, Imp 58
+  Impute VE_FORMS
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:12:06 2024
+  Mult 1, Iter 5, Imp 59
+  Impute VE_TOTAL
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:12:08 2024
+  Mult 1, Iter 5, Imp 60
+  Impute VPROFILE
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:12:11 2024
+  Mult 1, Iter 5, Imp 61
+  Impute VSPD_LIM
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:12:14 2024
+  Mult 1, Iter 5, Imp 62
+  Impute VSURCOND
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:12:16 2024
+  Mult 1, Iter 5, Imp 63
+  Impute VTCONT_F
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:12:17 2024
+  Mult 1, Iter 5, Imp 64
+  Impute VTRAFCON
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:12:19 2024
+  Mult 1, Iter 5, Imp 65
+  Impute VTRAFWAY
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:12:22 2024
+  Mult 1, Iter 5, Imp 66
   Impute WEATHER
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:55:00 2024
+Tue Jun 25 11:12:24 2024
+  Mult 1, Iter 5, Imp 67
+  Impute WRK_ZONE
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:12:25 2024
   Mult 1, Iter 6, Imp 1
-  Impute ACC_TYPE
+  Impute HOSPITAL
   Update data
-  Polytomous regression
+  Logistic regression
   Correct data
-Mon Jun 24 11:55:12 2024
+Tue Jun 25 11:12:26 2024
   Mult 1, Iter 6, Imp 2
-  Impute AGE
+  Impute ACC_TYPE
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:55:19 2024
+Tue Jun 25 11:12:31 2024
   Mult 1, Iter 6, Imp 3
-  Impute AIR_BAG
+  Impute AGE
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:55:26 2024
+Tue Jun 25 11:12:34 2024
   Mult 1, Iter 6, Imp 4
-  Impute ALC_STATUS
+  Impute AIR_BAG
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:55:29 2024
+Tue Jun 25 11:12:36 2024
   Mult 1, Iter 6, Imp 5
-  Impute BODY_TYP
+  Impute ALC_STATUS
   Update data
   Polytomous regression
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
   Correct data
-Mon Jun 24 11:55:46 2024
+Tue Jun 25 11:12:37 2024
   Mult 1, Iter 6, Imp 6
-  Impute CARGO_BT
+  Impute BODY_TYP
   Update data
   Polytomous regression
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
   Correct data
-Mon Jun 24 11:55:53 2024
+Tue Jun 25 11:12:42 2024
   Mult 1, Iter 6, Imp 7
-  Impute DEFORMED
+  Impute CARGO_BT
   Update data
   Polytomous regression
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
   Correct data
-Mon Jun 24 11:56:01 2024
+Tue Jun 25 11:12:44 2024
   Mult 1, Iter 6, Imp 8
-  Impute DR_ZIP
+  Impute DAY_WEEK
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:56:05 2024
+Tue Jun 25 11:12:45 2024
   Mult 1, Iter 6, Imp 9
-  Impute EJECTION
+  Impute DEFORMED
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:56:09 2024
+Tue Jun 25 11:12:47 2024
   Mult 1, Iter 6, Imp 10
-  Impute HARM_EV
+  Impute DR_ZIP
   Update data
   Polytomous regression
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
   Correct data
-Mon Jun 24 11:56:20 2024
+Tue Jun 25 11:12:49 2024
   Mult 1, Iter 6, Imp 11
-  Impute HIT_RUN
+  Impute EJECTION
   Update data
-  Logistic regression
+  Polytomous regression
   Correct data
-Mon Jun 24 11:56:23 2024
+Tue Jun 25 11:12:51 2024
   Mult 1, Iter 6, Imp 12
-  Impute HOUR
+  Impute HARM_EV
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:56:27 2024
+Tue Jun 25 11:12:54 2024
   Mult 1, Iter 6, Imp 13
-  Impute IMPACT1
+  Impute HIT_RUN
   Update data
-  Polytomous regression
+  Logistic regression
   Correct data
-Mon Jun 24 11:56:35 2024
+Tue Jun 25 11:12:56 2024
   Mult 1, Iter 6, Imp 14
-  Impute INJ_SEV
+  Impute HOUR
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:56:41 2024
+Tue Jun 25 11:12:57 2024
   Mult 1, Iter 6, Imp 15
-  Impute INT_HWY
+  Impute IMPACT1
   Update data
-  Logistic regression
+  Polytomous regression
   Correct data
-Mon Jun 24 11:56:44 2024
+Tue Jun 25 11:13:04 2024
   Mult 1, Iter 6, Imp 16
-  Impute LGT_COND
+  Impute INJ_SEV
   Update data
   Polytomous regression
+  Warning: Too many iterations, probably due to
+           colinearity with dependent variable
   Correct data
-Mon Jun 24 11:56:48 2024
+Tue Jun 25 11:13:06 2024
   Mult 1, Iter 6, Imp 17
-  Impute MAKE
+  Impute INT_HWY
   Update data
-  Polytomous regression
+  Logistic regression
   Correct data
-Mon Jun 24 11:57:01 2024
+Tue Jun 25 11:13:07 2024
   Mult 1, Iter 6, Imp 18
-  Impute MAK_MOD
+  Impute J_KNIFE
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:57:14 2024
+Tue Jun 25 11:13:09 2024
   Mult 1, Iter 6, Imp 19
-  Impute MAN_COLL
+  Impute LGT_COND
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:57:26 2024
+Tue Jun 25 11:13:11 2024
   Mult 1, Iter 6, Imp 20
-  Impute MAX_SEV
+  Impute MAKE
   Update data
   Polytomous regression
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
   Correct data
-Mon Jun 24 11:57:36 2024
+Tue Jun 25 11:13:16 2024
   Mult 1, Iter 6, Imp 21
-  Impute MAX_VSEV
+  Impute MAK_MOD
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:57:44 2024
+Tue Jun 25 11:13:21 2024
   Mult 1, Iter 6, Imp 22
-  Impute MODEL
+  Impute MAN_COLL
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:58:00 2024
+Tue Jun 25 11:13:25 2024
   Mult 1, Iter 6, Imp 23
-  Impute M_HARM
+  Impute MAX_SEV
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:58:06 2024
+Tue Jun 25 11:13:27 2024
   Mult 1, Iter 6, Imp 24
-  Impute NUMOCCS
+  Impute MAX_VSEV
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:58:13 2024
+Tue Jun 25 11:13:30 2024
   Mult 1, Iter 6, Imp 25
-  Impute NUM_INJ
+  Impute MODEL
   Update data
   Polytomous regression
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
   Correct data
-Mon Jun 24 11:58:24 2024
+Tue Jun 25 11:13:35 2024
   Mult 1, Iter 6, Imp 26
-  Impute NUM_INJV
+  Impute MONTH
   Update data
   Polytomous regression
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
   Correct data
-Mon Jun 24 11:58:32 2024
+Tue Jun 25 11:13:37 2024
   Mult 1, Iter 6, Imp 27
-  Impute PCRASH4
+  Impute M_HARM
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:58:36 2024
+Tue Jun 25 11:13:39 2024
   Mult 1, Iter 6, Imp 28
-  Impute PCRASH5
+  Impute NUMOCCS
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:58:40 2024
+Tue Jun 25 11:13:43 2024
   Mult 1, Iter 6, Imp 29
-  Impute PER_TYP
+  Impute NUM_INJ
   Update data
-  Logistic regression
+  Polytomous regression
   Correct data
-Mon Jun 24 11:58:44 2024
+Tue Jun 25 11:13:46 2024
   Mult 1, Iter 6, Imp 30
-  Impute P_CRASH1
+  Impute NUM_INJV
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:58:53 2024
+Tue Jun 25 11:13:49 2024
   Mult 1, Iter 6, Imp 31
-  Impute P_CRASH2
+  Impute PCRASH4
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:59:01 2024
+Tue Jun 25 11:13:50 2024
   Mult 1, Iter 6, Imp 32
-  Impute RELJCT1
+  Impute PCRASH5
   Update data
-  Logistic regression
+  Polytomous regression
   Correct data
-Mon Jun 24 11:59:03 2024
+Tue Jun 25 11:13:52 2024
   Mult 1, Iter 6, Imp 33
-  Impute RELJCT2
+  Impute PERMVIT
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:59:09 2024
+Tue Jun 25 11:13:54 2024
   Mult 1, Iter 6, Imp 34
-  Impute REL_ROAD
+  Impute PER_TYP
   Update data
-  Polytomous regression
+  Logistic regression
   Correct data
-Mon Jun 24 11:59:13 2024
+Tue Jun 25 11:13:56 2024
   Mult 1, Iter 6, Imp 35
-  Impute REST_USE
+  Impute PJ
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:59:19 2024
+Tue Jun 25 11:14:00 2024
   Mult 1, Iter 6, Imp 36
-  Impute ROLINLOC
+  Impute PSU
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:59:25 2024
+Tue Jun 25 11:14:05 2024
   Mult 1, Iter 6, Imp 37
-  Impute SEAT_POS
+  Impute PVH_INVL
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:59:31 2024
+Tue Jun 25 11:14:08 2024
   Mult 1, Iter 6, Imp 38
-  Impute SEX
+  Impute P_CRASH1
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:59:35 2024
+Tue Jun 25 11:14:11 2024
   Mult 1, Iter 6, Imp 39
-  Impute SPEC_USE
+  Impute P_CRASH2
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:59:40 2024
+Tue Jun 25 11:14:14 2024
   Mult 1, Iter 6, Imp 40
-  Impute SPEEDREL
+  Impute REGION
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:59:44 2024
+Tue Jun 25 11:14:17 2024
   Mult 1, Iter 6, Imp 41
-  Impute TOWED
+  Impute RELJCT1
   Update data
-  Polytomous regression
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
+  Logistic regression
   Correct data
-Mon Jun 24 11:59:53 2024
+Tue Jun 25 11:14:19 2024
   Mult 1, Iter 6, Imp 42
-  Impute TOW_VEH
+  Impute RELJCT2
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 11:59:56 2024
+Tue Jun 25 11:14:21 2024
   Mult 1, Iter 6, Imp 43
-  Impute TYP_INT
+  Impute REL_ROAD
   Update data
   Polytomous regression
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
   Correct data
-Mon Jun 24 12:00:03 2024
+Tue Jun 25 11:14:22 2024
   Mult 1, Iter 6, Imp 44
-  Impute VALIGN
+  Impute REST_MIS
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 12:00:09 2024
+Tue Jun 25 11:14:24 2024
   Mult 1, Iter 6, Imp 45
-  Impute VEH_AGE
+  Impute REST_USE
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 12:00:13 2024
+Tue Jun 25 11:14:27 2024
   Mult 1, Iter 6, Imp 46
-  Impute VPROFILE
+  Impute ROLINLOC
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 12:00:19 2024
+Tue Jun 25 11:14:29 2024
   Mult 1, Iter 6, Imp 47
-  Impute VSPD_LIM
+  Impute ROLLOVER
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 12:00:29 2024
+Tue Jun 25 11:14:31 2024
   Mult 1, Iter 6, Imp 48
-  Impute VSURCOND
+  Impute SEAT_POS
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 12:00:33 2024
+Tue Jun 25 11:14:33 2024
   Mult 1, Iter 6, Imp 49
-  Impute VTCONT_F
+  Impute SEX
   Update data
-  Polytomous regression
+  Logistic regression
   Correct data
-Mon Jun 24 12:00:36 2024
+Tue Jun 25 11:14:34 2024
   Mult 1, Iter 6, Imp 50
-  Impute VTRAFCON
+  Impute SPEC_USE
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 12:00:41 2024
+Tue Jun 25 11:14:36 2024
   Mult 1, Iter 6, Imp 51
-  Impute VTRAFWAY
+  Impute SPEEDREL
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 12:00:49 2024
+Tue Jun 25 11:14:37 2024
   Mult 1, Iter 6, Imp 52
+  Impute TOWED
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:14:39 2024
+  Mult 1, Iter 6, Imp 53
+  Impute TOW_VEH
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:14:41 2024
+  Mult 1, Iter 6, Imp 54
+  Impute TYP_INT
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:14:43 2024
+  Mult 1, Iter 6, Imp 55
+  Impute URBANICITY
+  Update data
+  Logistic regression
+  Correct data
+Tue Jun 25 11:14:44 2024
+  Mult 1, Iter 6, Imp 56
+  Impute VALIGN
+  Update data
+  Polytomous regression
+  Warning: Too many iterations, probably due to
+           colinearity with dependent variable
+  Correct data
+Tue Jun 25 11:14:47 2024
+  Mult 1, Iter 6, Imp 57
+  Impute VEH_AGE
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:14:49 2024
+  Mult 1, Iter 6, Imp 58
+  Impute VE_FORMS
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:14:51 2024
+  Mult 1, Iter 6, Imp 59
+  Impute VE_TOTAL
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:14:54 2024
+  Mult 1, Iter 6, Imp 60
+  Impute VPROFILE
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:14:56 2024
+  Mult 1, Iter 6, Imp 61
+  Impute VSPD_LIM
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:15:00 2024
+  Mult 1, Iter 6, Imp 62
+  Impute VSURCOND
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:15:02 2024
+  Mult 1, Iter 6, Imp 63
+  Impute VTCONT_F
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:15:03 2024
+  Mult 1, Iter 6, Imp 64
+  Impute VTRAFCON
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:15:05 2024
+  Mult 1, Iter 6, Imp 65
+  Impute VTRAFWAY
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:15:08 2024
+  Mult 1, Iter 6, Imp 66
   Impute WEATHER
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 12:00:52 2024
+Tue Jun 25 11:15:10 2024
+  Mult 1, Iter 6, Imp 67
+  Impute WRK_ZONE
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:15:11 2024
   Mult 1, Iter 7, Imp 1
-  Impute ACC_TYPE
+  Impute HOSPITAL
   Update data
-  Polytomous regression
+  Logistic regression
   Correct data
-Mon Jun 24 12:01:04 2024
+Tue Jun 25 11:15:12 2024
   Mult 1, Iter 7, Imp 2
-  Impute AGE
+  Impute ACC_TYPE
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 12:01:11 2024
+Tue Jun 25 11:15:17 2024
   Mult 1, Iter 7, Imp 3
-  Impute AIR_BAG
+  Impute AGE
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 12:01:18 2024
+Tue Jun 25 11:15:20 2024
   Mult 1, Iter 7, Imp 4
-  Impute ALC_STATUS
+  Impute AIR_BAG
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 12:01:21 2024
+Tue Jun 25 11:15:22 2024
   Mult 1, Iter 7, Imp 5
-  Impute BODY_TYP
+  Impute ALC_STATUS
   Update data
   Polytomous regression
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
   Correct data
-Mon Jun 24 12:01:38 2024
+Tue Jun 25 11:15:23 2024
   Mult 1, Iter 7, Imp 6
-  Impute CARGO_BT
+  Impute BODY_TYP
   Update data
   Polytomous regression
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
   Correct data
-Mon Jun 24 12:01:45 2024
+Tue Jun 25 11:15:28 2024
   Mult 1, Iter 7, Imp 7
-  Impute DEFORMED
+  Impute CARGO_BT
   Update data
   Polytomous regression
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
   Correct data
-Mon Jun 24 12:01:53 2024
+Tue Jun 25 11:15:30 2024
   Mult 1, Iter 7, Imp 8
-  Impute DR_ZIP
+  Impute DAY_WEEK
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 12:01:57 2024
+Tue Jun 25 11:15:31 2024
   Mult 1, Iter 7, Imp 9
-  Impute EJECTION
+  Impute DEFORMED
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 12:02:01 2024
+Tue Jun 25 11:15:34 2024
   Mult 1, Iter 7, Imp 10
-  Impute HARM_EV
+  Impute DR_ZIP
   Update data
   Polytomous regression
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
   Correct data
-Mon Jun 24 12:02:12 2024
+Tue Jun 25 11:15:36 2024
   Mult 1, Iter 7, Imp 11
-  Impute HIT_RUN
+  Impute EJECTION
   Update data
-  Logistic regression
+  Polytomous regression
   Correct data
-Mon Jun 24 12:02:15 2024
+Tue Jun 25 11:15:37 2024
   Mult 1, Iter 7, Imp 12
-  Impute HOUR
+  Impute HARM_EV
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 12:02:19 2024
+Tue Jun 25 11:15:41 2024
   Mult 1, Iter 7, Imp 13
-  Impute IMPACT1
+  Impute HIT_RUN
   Update data
-  Polytomous regression
+  Logistic regression
   Correct data
-Mon Jun 24 12:02:27 2024
+Tue Jun 25 11:15:42 2024
   Mult 1, Iter 7, Imp 14
-  Impute INJ_SEV
+  Impute HOUR
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 12:02:33 2024
+Tue Jun 25 11:15:43 2024
   Mult 1, Iter 7, Imp 15
-  Impute INT_HWY
+  Impute IMPACT1
   Update data
-  Logistic regression
+  Polytomous regression
   Correct data
-Mon Jun 24 12:02:36 2024
+Tue Jun 25 11:15:50 2024
   Mult 1, Iter 7, Imp 16
-  Impute LGT_COND
+  Impute INJ_SEV
   Update data
   Polytomous regression
+  Warning: Too many iterations, probably due to
+           colinearity with dependent variable
   Correct data
-Mon Jun 24 12:02:40 2024
+Tue Jun 25 11:15:53 2024
   Mult 1, Iter 7, Imp 17
-  Impute MAKE
+  Impute INT_HWY
   Update data
-  Polytomous regression
+  Logistic regression
   Correct data
-Mon Jun 24 12:02:53 2024
+Tue Jun 25 11:15:54 2024
   Mult 1, Iter 7, Imp 18
-  Impute MAK_MOD
+  Impute J_KNIFE
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 12:03:06 2024
+Tue Jun 25 11:15:55 2024
   Mult 1, Iter 7, Imp 19
-  Impute MAN_COLL
+  Impute LGT_COND
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 12:03:18 2024
+Tue Jun 25 11:15:57 2024
   Mult 1, Iter 7, Imp 20
-  Impute MAX_SEV
+  Impute MAKE
   Update data
   Polytomous regression
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
   Correct data
-Mon Jun 24 12:03:28 2024
+Tue Jun 25 11:16:02 2024
   Mult 1, Iter 7, Imp 21
-  Impute MAX_VSEV
+  Impute MAK_MOD
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 12:03:36 2024
+Tue Jun 25 11:16:07 2024
   Mult 1, Iter 7, Imp 22
-  Impute MODEL
+  Impute MAN_COLL
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 12:03:52 2024
+Tue Jun 25 11:16:11 2024
   Mult 1, Iter 7, Imp 23
-  Impute M_HARM
+  Impute MAX_SEV
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 12:03:58 2024
+Tue Jun 25 11:16:13 2024
   Mult 1, Iter 7, Imp 24
-  Impute NUMOCCS
+  Impute MAX_VSEV
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 12:04:05 2024
+Tue Jun 25 11:16:16 2024
   Mult 1, Iter 7, Imp 25
-  Impute NUM_INJ
+  Impute MODEL
   Update data
   Polytomous regression
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
   Correct data
-Mon Jun 24 12:04:16 2024
+Tue Jun 25 11:16:22 2024
   Mult 1, Iter 7, Imp 26
-  Impute NUM_INJV
+  Impute MONTH
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 12:04:23 2024
+Tue Jun 25 11:16:23 2024
   Mult 1, Iter 7, Imp 27
-  Impute PCRASH4
+  Impute M_HARM
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 12:04:27 2024
+Tue Jun 25 11:16:26 2024
   Mult 1, Iter 7, Imp 28
-  Impute PCRASH5
+  Impute NUMOCCS
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 12:04:31 2024
+Tue Jun 25 11:16:29 2024
   Mult 1, Iter 7, Imp 29
-  Impute PER_TYP
+  Impute NUM_INJ
   Update data
-  Logistic regression
+  Polytomous regression
   Correct data
-Mon Jun 24 12:04:35 2024
+Tue Jun 25 11:16:32 2024
   Mult 1, Iter 7, Imp 30
-  Impute P_CRASH1
+  Impute NUM_INJV
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 12:04:45 2024
+Tue Jun 25 11:16:35 2024
   Mult 1, Iter 7, Imp 31
-  Impute P_CRASH2
+  Impute PCRASH4
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 12:04:52 2024
+Tue Jun 25 11:16:37 2024
   Mult 1, Iter 7, Imp 32
-  Impute RELJCT1
+  Impute PCRASH5
   Update data
-  Logistic regression
+  Polytomous regression
   Correct data
-Mon Jun 24 12:04:55 2024
+Tue Jun 25 11:16:39 2024
   Mult 1, Iter 7, Imp 33
-  Impute RELJCT2
+  Impute PERMVIT
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 12:05:00 2024
+Tue Jun 25 11:16:41 2024
   Mult 1, Iter 7, Imp 34
-  Impute REL_ROAD
+  Impute PER_TYP
   Update data
-  Polytomous regression
+  Logistic regression
   Correct data
-Mon Jun 24 12:05:04 2024
+Tue Jun 25 11:16:42 2024
   Mult 1, Iter 7, Imp 35
-  Impute REST_USE
+  Impute PJ
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 12:05:10 2024
+Tue Jun 25 11:16:47 2024
   Mult 1, Iter 7, Imp 36
-  Impute ROLINLOC
+  Impute PSU
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 12:05:16 2024
+Tue Jun 25 11:16:52 2024
   Mult 1, Iter 7, Imp 37
-  Impute SEAT_POS
+  Impute PVH_INVL
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 12:05:22 2024
+Tue Jun 25 11:16:54 2024
   Mult 1, Iter 7, Imp 38
-  Impute SEX
+  Impute P_CRASH1
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 12:05:26 2024
+Tue Jun 25 11:16:58 2024
   Mult 1, Iter 7, Imp 39
-  Impute SPEC_USE
+  Impute P_CRASH2
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 12:05:32 2024
+Tue Jun 25 11:17:01 2024
   Mult 1, Iter 7, Imp 40
-  Impute SPEEDREL
+  Impute REGION
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 12:05:35 2024
+Tue Jun 25 11:17:04 2024
   Mult 1, Iter 7, Imp 41
-  Impute TOWED
+  Impute RELJCT1
   Update data
-  Polytomous regression
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
+  Logistic regression
   Correct data
-Mon Jun 24 12:05:44 2024
+Tue Jun 25 11:17:05 2024
   Mult 1, Iter 7, Imp 42
-  Impute TOW_VEH
+  Impute RELJCT2
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 12:05:48 2024
+Tue Jun 25 11:17:07 2024
   Mult 1, Iter 7, Imp 43
-  Impute TYP_INT
+  Impute REL_ROAD
   Update data
   Polytomous regression
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
   Correct data
-Mon Jun 24 12:05:55 2024
+Tue Jun 25 11:17:09 2024
   Mult 1, Iter 7, Imp 44
-  Impute VALIGN
+  Impute REST_MIS
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 12:06:01 2024
+Tue Jun 25 11:17:11 2024
   Mult 1, Iter 7, Imp 45
-  Impute VEH_AGE
+  Impute REST_USE
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 12:06:04 2024
+Tue Jun 25 11:17:13 2024
   Mult 1, Iter 7, Imp 46
-  Impute VPROFILE
+  Impute ROLINLOC
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 12:06:11 2024
+Tue Jun 25 11:17:15 2024
   Mult 1, Iter 7, Imp 47
-  Impute VSPD_LIM
+  Impute ROLLOVER
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 12:06:20 2024
+Tue Jun 25 11:17:17 2024
   Mult 1, Iter 7, Imp 48
-  Impute VSURCOND
+  Impute SEAT_POS
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 12:06:24 2024
+Tue Jun 25 11:17:19 2024
   Mult 1, Iter 7, Imp 49
-  Impute VTCONT_F
+  Impute SEX
   Update data
-  Polytomous regression
+  Logistic regression
   Correct data
-Mon Jun 24 12:06:27 2024
+Tue Jun 25 11:17:21 2024
   Mult 1, Iter 7, Imp 50
-  Impute VTRAFCON
+  Impute SPEC_USE
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 12:06:33 2024
+Tue Jun 25 11:17:23 2024
   Mult 1, Iter 7, Imp 51
-  Impute VTRAFWAY
+  Impute SPEEDREL
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 12:06:40 2024
+Tue Jun 25 11:17:24 2024
   Mult 1, Iter 7, Imp 52
+  Impute TOWED
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:17:26 2024
+  Mult 1, Iter 7, Imp 53
+  Impute TOW_VEH
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:17:27 2024
+  Mult 1, Iter 7, Imp 54
+  Impute TYP_INT
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:17:30 2024
+  Mult 1, Iter 7, Imp 55
+  Impute URBANICITY
+  Update data
+  Logistic regression
+  Correct data
+Tue Jun 25 11:17:31 2024
+  Mult 1, Iter 7, Imp 56
+  Impute VALIGN
+  Update data
+  Polytomous regression
+  Warning: Too many iterations, probably due to
+           colinearity with dependent variable
+  Correct data
+Tue Jun 25 11:17:34 2024
+  Mult 1, Iter 7, Imp 57
+  Impute VEH_AGE
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:17:35 2024
+  Mult 1, Iter 7, Imp 58
+  Impute VE_FORMS
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:17:38 2024
+  Mult 1, Iter 7, Imp 59
+  Impute VE_TOTAL
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:17:40 2024
+  Mult 1, Iter 7, Imp 60
+  Impute VPROFILE
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:17:43 2024
+  Mult 1, Iter 7, Imp 61
+  Impute VSPD_LIM
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:17:47 2024
+  Mult 1, Iter 7, Imp 62
+  Impute VSURCOND
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:17:48 2024
+  Mult 1, Iter 7, Imp 63
+  Impute VTCONT_F
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:17:50 2024
+  Mult 1, Iter 7, Imp 64
+  Impute VTRAFCON
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:17:52 2024
+  Mult 1, Iter 7, Imp 65
+  Impute VTRAFWAY
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:17:55 2024
+  Mult 1, Iter 7, Imp 66
   Impute WEATHER
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 12:06:43 2024
+Tue Jun 25 11:17:56 2024
+  Mult 1, Iter 7, Imp 67
+  Impute WRK_ZONE
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:17:57 2024
   Mult 1, Iter 8, Imp 1
-  Impute ACC_TYPE
+  Impute HOSPITAL
   Update data
-  Polytomous regression
+  Logistic regression
   Correct data
-Mon Jun 24 12:06:55 2024
+Tue Jun 25 11:17:58 2024
   Mult 1, Iter 8, Imp 2
-  Impute AGE
+  Impute ACC_TYPE
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 12:07:02 2024
+Tue Jun 25 11:18:03 2024
   Mult 1, Iter 8, Imp 3
-  Impute AIR_BAG
+  Impute AGE
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 12:07:09 2024
+Tue Jun 25 11:18:07 2024
   Mult 1, Iter 8, Imp 4
-  Impute ALC_STATUS
+  Impute AIR_BAG
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 12:07:13 2024
+Tue Jun 25 11:18:09 2024
   Mult 1, Iter 8, Imp 5
-  Impute BODY_TYP
+  Impute ALC_STATUS
   Update data
   Polytomous regression
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
   Correct data
-Mon Jun 24 12:07:29 2024
+Tue Jun 25 11:18:10 2024
   Mult 1, Iter 8, Imp 6
-  Impute CARGO_BT
+  Impute BODY_TYP
   Update data
   Polytomous regression
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
   Correct data
-Mon Jun 24 12:07:36 2024
+Tue Jun 25 11:18:14 2024
   Mult 1, Iter 8, Imp 7
-  Impute DEFORMED
+  Impute CARGO_BT
   Update data
   Polytomous regression
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
   Correct data
-Mon Jun 24 12:07:44 2024
+Tue Jun 25 11:18:16 2024
   Mult 1, Iter 8, Imp 8
-  Impute DR_ZIP
+  Impute DAY_WEEK
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 12:07:48 2024
+Tue Jun 25 11:18:17 2024
   Mult 1, Iter 8, Imp 9
-  Impute EJECTION
+  Impute DEFORMED
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 12:07:52 2024
+Tue Jun 25 11:18:20 2024
   Mult 1, Iter 8, Imp 10
-  Impute HARM_EV
+  Impute DR_ZIP
   Update data
   Polytomous regression
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
   Correct data
-Mon Jun 24 12:08:03 2024
+Tue Jun 25 11:18:22 2024
   Mult 1, Iter 8, Imp 11
-  Impute HIT_RUN
+  Impute EJECTION
   Update data
-  Logistic regression
+  Polytomous regression
   Correct data
-Mon Jun 24 12:08:06 2024
+Tue Jun 25 11:18:24 2024
   Mult 1, Iter 8, Imp 12
-  Impute HOUR
+  Impute HARM_EV
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 12:08:10 2024
+Tue Jun 25 11:18:27 2024
   Mult 1, Iter 8, Imp 13
-  Impute IMPACT1
+  Impute HIT_RUN
   Update data
-  Polytomous regression
+  Logistic regression
   Correct data
-Mon Jun 24 12:08:18 2024
+Tue Jun 25 11:18:28 2024
   Mult 1, Iter 8, Imp 14
-  Impute INJ_SEV
+  Impute HOUR
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 12:08:24 2024
+Tue Jun 25 11:18:30 2024
   Mult 1, Iter 8, Imp 15
-  Impute INT_HWY
+  Impute IMPACT1
   Update data
-  Logistic regression
+  Polytomous regression
   Correct data
-Mon Jun 24 12:08:27 2024
+Tue Jun 25 11:18:36 2024
   Mult 1, Iter 8, Imp 16
-  Impute LGT_COND
+  Impute INJ_SEV
   Update data
   Polytomous regression
+  Warning: Too many iterations, probably due to
+           colinearity with dependent variable
   Correct data
-Mon Jun 24 12:08:31 2024
+Tue Jun 25 11:18:39 2024
   Mult 1, Iter 8, Imp 17
-  Impute MAKE
+  Impute INT_HWY
   Update data
-  Polytomous regression
+  Logistic regression
   Correct data
-Mon Jun 24 12:08:44 2024
+Tue Jun 25 11:18:40 2024
   Mult 1, Iter 8, Imp 18
-  Impute MAK_MOD
+  Impute J_KNIFE
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 12:08:58 2024
+Tue Jun 25 11:18:42 2024
   Mult 1, Iter 8, Imp 19
-  Impute MAN_COLL
+  Impute LGT_COND
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 12:09:09 2024
+Tue Jun 25 11:18:43 2024
   Mult 1, Iter 8, Imp 20
-  Impute MAX_SEV
+  Impute MAKE
   Update data
   Polytomous regression
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
   Correct data
-Mon Jun 24 12:09:19 2024
+Tue Jun 25 11:18:49 2024
   Mult 1, Iter 8, Imp 21
-  Impute MAX_VSEV
+  Impute MAK_MOD
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 12:09:27 2024
+Tue Jun 25 11:18:54 2024
   Mult 1, Iter 8, Imp 22
-  Impute MODEL
+  Impute MAN_COLL
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 12:09:43 2024
+Tue Jun 25 11:18:57 2024
   Mult 1, Iter 8, Imp 23
-  Impute M_HARM
+  Impute MAX_SEV
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 12:09:49 2024
+Tue Jun 25 11:19:00 2024
   Mult 1, Iter 8, Imp 24
-  Impute NUMOCCS
+  Impute MAX_VSEV
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 12:09:56 2024
+Tue Jun 25 11:19:03 2024
   Mult 1, Iter 8, Imp 25
-  Impute NUM_INJ
+  Impute MODEL
   Update data
   Polytomous regression
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
   Correct data
-Mon Jun 24 12:10:07 2024
+Tue Jun 25 11:19:08 2024
   Mult 1, Iter 8, Imp 26
-  Impute NUM_INJV
+  Impute MONTH
   Update data
   Polytomous regression
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
   Correct data
-Mon Jun 24 12:10:15 2024
+Tue Jun 25 11:19:10 2024
   Mult 1, Iter 8, Imp 27
-  Impute PCRASH4
+  Impute M_HARM
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 12:10:19 2024
+Tue Jun 25 11:19:12 2024
   Mult 1, Iter 8, Imp 28
-  Impute PCRASH5
+  Impute NUMOCCS
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 12:10:23 2024
+Tue Jun 25 11:19:16 2024
   Mult 1, Iter 8, Imp 29
-  Impute PER_TYP
+  Impute NUM_INJ
   Update data
-  Logistic regression
+  Polytomous regression
   Correct data
-Mon Jun 24 12:10:27 2024
+Tue Jun 25 11:19:19 2024
   Mult 1, Iter 8, Imp 30
-  Impute P_CRASH1
+  Impute NUM_INJV
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 12:10:37 2024
+Tue Jun 25 11:19:22 2024
   Mult 1, Iter 8, Imp 31
-  Impute P_CRASH2
+  Impute PCRASH4
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 12:10:44 2024
+Tue Jun 25 11:19:23 2024
   Mult 1, Iter 8, Imp 32
-  Impute RELJCT1
+  Impute PCRASH5
   Update data
-  Logistic regression
+  Polytomous regression
   Correct data
-Mon Jun 24 12:10:47 2024
+Tue Jun 25 11:19:25 2024
   Mult 1, Iter 8, Imp 33
-  Impute RELJCT2
+  Impute PERMVIT
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 12:10:52 2024
+Tue Jun 25 11:19:27 2024
   Mult 1, Iter 8, Imp 34
-  Impute REL_ROAD
+  Impute PER_TYP
   Update data
-  Polytomous regression
+  Logistic regression
   Correct data
-Mon Jun 24 12:10:56 2024
+Tue Jun 25 11:19:29 2024
   Mult 1, Iter 8, Imp 35
-  Impute REST_USE
+  Impute PJ
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 12:11:02 2024
+Tue Jun 25 11:19:33 2024
   Mult 1, Iter 8, Imp 36
-  Impute ROLINLOC
+  Impute PSU
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 12:11:08 2024
+Tue Jun 25 11:19:39 2024
   Mult 1, Iter 8, Imp 37
-  Impute SEAT_POS
+  Impute PVH_INVL
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 12:11:14 2024
+Tue Jun 25 11:19:41 2024
   Mult 1, Iter 8, Imp 38
-  Impute SEX
+  Impute P_CRASH1
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 12:11:18 2024
+Tue Jun 25 11:19:45 2024
   Mult 1, Iter 8, Imp 39
-  Impute SPEC_USE
+  Impute P_CRASH2
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 12:11:23 2024
+Tue Jun 25 11:19:47 2024
   Mult 1, Iter 8, Imp 40
-  Impute SPEEDREL
+  Impute REGION
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 12:11:27 2024
+Tue Jun 25 11:19:51 2024
   Mult 1, Iter 8, Imp 41
-  Impute TOWED
+  Impute RELJCT1
   Update data
-  Polytomous regression
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
+  Logistic regression
   Correct data
-Mon Jun 24 12:11:36 2024
+Tue Jun 25 11:19:52 2024
   Mult 1, Iter 8, Imp 42
-  Impute TOW_VEH
+  Impute RELJCT2
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 12:11:40 2024
+Tue Jun 25 11:19:54 2024
   Mult 1, Iter 8, Imp 43
-  Impute TYP_INT
+  Impute REL_ROAD
   Update data
   Polytomous regression
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
   Correct data
-Mon Jun 24 12:11:46 2024
+Tue Jun 25 11:19:56 2024
   Mult 1, Iter 8, Imp 44
-  Impute VALIGN
+  Impute REST_MIS
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 12:11:52 2024
+Tue Jun 25 11:19:58 2024
   Mult 1, Iter 8, Imp 45
-  Impute VEH_AGE
+  Impute REST_USE
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 12:11:56 2024
+Tue Jun 25 11:20:00 2024
   Mult 1, Iter 8, Imp 46
-  Impute VPROFILE
+  Impute ROLINLOC
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 12:12:02 2024
+Tue Jun 25 11:20:02 2024
   Mult 1, Iter 8, Imp 47
-  Impute VSPD_LIM
+  Impute ROLLOVER
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 12:12:12 2024
+Tue Jun 25 11:20:04 2024
   Mult 1, Iter 8, Imp 48
-  Impute VSURCOND
+  Impute SEAT_POS
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 12:12:16 2024
+Tue Jun 25 11:20:07 2024
   Mult 1, Iter 8, Imp 49
-  Impute VTCONT_F
+  Impute SEX
   Update data
-  Polytomous regression
+  Logistic regression
   Correct data
-Mon Jun 24 12:12:19 2024
+Tue Jun 25 11:20:08 2024
   Mult 1, Iter 8, Imp 50
-  Impute VTRAFCON
+  Impute SPEC_USE
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 12:12:25 2024
+Tue Jun 25 11:20:10 2024
   Mult 1, Iter 8, Imp 51
-  Impute VTRAFWAY
+  Impute SPEEDREL
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 12:12:32 2024
+Tue Jun 25 11:20:11 2024
   Mult 1, Iter 8, Imp 52
+  Impute TOWED
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:20:13 2024
+  Mult 1, Iter 8, Imp 53
+  Impute TOW_VEH
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:20:15 2024
+  Mult 1, Iter 8, Imp 54
+  Impute TYP_INT
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:20:17 2024
+  Mult 1, Iter 8, Imp 55
+  Impute URBANICITY
+  Update data
+  Logistic regression
+  Correct data
+Tue Jun 25 11:20:18 2024
+  Mult 1, Iter 8, Imp 56
+  Impute VALIGN
+  Update data
+  Polytomous regression
+  Warning: Too many iterations, probably due to
+           colinearity with dependent variable
+  Correct data
+Tue Jun 25 11:20:21 2024
+  Mult 1, Iter 8, Imp 57
+  Impute VEH_AGE
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:20:23 2024
+  Mult 1, Iter 8, Imp 58
+  Impute VE_FORMS
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:20:25 2024
+  Mult 1, Iter 8, Imp 59
+  Impute VE_TOTAL
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:20:28 2024
+  Mult 1, Iter 8, Imp 60
+  Impute VPROFILE
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:20:30 2024
+  Mult 1, Iter 8, Imp 61
+  Impute VSPD_LIM
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:20:34 2024
+  Mult 1, Iter 8, Imp 62
+  Impute VSURCOND
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:20:36 2024
+  Mult 1, Iter 8, Imp 63
+  Impute VTCONT_F
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:20:37 2024
+  Mult 1, Iter 8, Imp 64
+  Impute VTRAFCON
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:20:39 2024
+  Mult 1, Iter 8, Imp 65
+  Impute VTRAFWAY
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:20:42 2024
+  Mult 1, Iter 8, Imp 66
   Impute WEATHER
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 12:12:35 2024
+Tue Jun 25 11:20:43 2024
+  Mult 1, Iter 8, Imp 67
+  Impute WRK_ZONE
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:20:44 2024
   Mult 1, Iter 9, Imp 1
-  Impute ACC_TYPE
+  Impute HOSPITAL
   Update data
-  Polytomous regression
+  Logistic regression
   Correct data
-Mon Jun 24 12:12:47 2024
+Tue Jun 25 11:20:46 2024
   Mult 1, Iter 9, Imp 2
-  Impute AGE
-  Update data
-  Polytomous regression
-  Correct data
-Mon Jun 24 12:12:54 2024
-  Mult 1, Iter 9, Imp 3
-  Impute AIR_BAG
-  Update data
-  Polytomous regression
-  Correct data
-Mon Jun 24 12:13:01 2024
-  Mult 1, Iter 9, Imp 4
-  Impute ALC_STATUS
-  Update data
-  Polytomous regression
-  Correct data
-Mon Jun 24 12:13:04 2024
-  Mult 1, Iter 9, Imp 5
-  Impute BODY_TYP
-  Update data
-  Polytomous regression
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
-  Correct data
-Mon Jun 24 12:13:21 2024
-  Mult 1, Iter 9, Imp 6
-  Impute CARGO_BT
-  Update data
-  Polytomous regression
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
-  Correct data
-Mon Jun 24 12:13:28 2024
-  Mult 1, Iter 9, Imp 7
-  Impute DEFORMED
-  Update data
-  Polytomous regression
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
-  Correct data
-Mon Jun 24 12:13:36 2024
-  Mult 1, Iter 9, Imp 8
-  Impute DR_ZIP
-  Update data
-  Polytomous regression
-  Correct data
-Mon Jun 24 12:13:40 2024
-  Mult 1, Iter 9, Imp 9
-  Impute EJECTION
-  Update data
-  Polytomous regression
-  Correct data
-Mon Jun 24 12:13:44 2024
-  Mult 1, Iter 9, Imp 10
-  Impute HARM_EV
-  Update data
-  Polytomous regression
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
-  Correct data
-Mon Jun 24 12:13:55 2024
-  Mult 1, Iter 9, Imp 11
-  Impute HIT_RUN
-  Update data
-  Logistic regression
-  Correct data
-Mon Jun 24 12:13:58 2024
-  Mult 1, Iter 9, Imp 12
-  Impute HOUR
-  Update data
-  Polytomous regression
-  Correct data
-Mon Jun 24 12:14:02 2024
-  Mult 1, Iter 9, Imp 13
-  Impute IMPACT1
-  Update data
-  Polytomous regression
-  Correct data
-Mon Jun 24 12:14:09 2024
-  Mult 1, Iter 9, Imp 14
-  Impute INJ_SEV
-  Update data
-  Polytomous regression
-  Correct data
-Mon Jun 24 12:14:16 2024
-  Mult 1, Iter 9, Imp 15
-  Impute INT_HWY
-  Update data
-  Logistic regression
-  Correct data
-Mon Jun 24 12:14:19 2024
-  Mult 1, Iter 9, Imp 16
-  Impute LGT_COND
-  Update data
-  Polytomous regression
-  Correct data
-Mon Jun 24 12:14:23 2024
-  Mult 1, Iter 9, Imp 17
-  Impute MAKE
-  Update data
-  Polytomous regression
-  Correct data
-Mon Jun 24 12:14:36 2024
-  Mult 1, Iter 9, Imp 18
-  Impute MAK_MOD
-  Update data
-  Polytomous regression
-  Correct data
-Mon Jun 24 12:14:49 2024
-  Mult 1, Iter 9, Imp 19
-  Impute MAN_COLL
-  Update data
-  Polytomous regression
-  Correct data
-Mon Jun 24 12:15:01 2024
-  Mult 1, Iter 9, Imp 20
-  Impute MAX_SEV
-  Update data
-  Polytomous regression
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
-  Correct data
-Mon Jun 24 12:15:11 2024
-  Mult 1, Iter 9, Imp 21
-  Impute MAX_VSEV
-  Update data
-  Polytomous regression
-  Correct data
-Mon Jun 24 12:15:19 2024
-  Mult 1, Iter 9, Imp 22
-  Impute MODEL
-  Update data
-  Polytomous regression
-  Correct data
-Mon Jun 24 12:15:35 2024
-  Mult 1, Iter 9, Imp 23
-  Impute M_HARM
-  Update data
-  Polytomous regression
-  Correct data
-Mon Jun 24 12:15:41 2024
-  Mult 1, Iter 9, Imp 24
-  Impute NUMOCCS
-  Update data
-  Polytomous regression
-  Correct data
-Mon Jun 24 12:15:48 2024
-  Mult 1, Iter 9, Imp 25
-  Impute NUM_INJ
-  Update data
-  Polytomous regression
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
-  Correct data
-Mon Jun 24 12:15:59 2024
-  Mult 1, Iter 9, Imp 26
-  Impute NUM_INJV
-  Update data
-  Polytomous regression
-  Correct data
-Mon Jun 24 12:16:06 2024
-  Mult 1, Iter 9, Imp 27
-  Impute PCRASH4
-  Update data
-  Polytomous regression
-  Correct data
-Mon Jun 24 12:16:10 2024
-  Mult 1, Iter 9, Imp 28
-  Impute PCRASH5
-  Update data
-  Polytomous regression
-  Correct data
-Mon Jun 24 12:16:14 2024
-  Mult 1, Iter 9, Imp 29
-  Impute PER_TYP
-  Update data
-  Logistic regression
-  Correct data
-Mon Jun 24 12:16:18 2024
-  Mult 1, Iter 9, Imp 30
-  Impute P_CRASH1
-  Update data
-  Polytomous regression
-  Correct data
-Mon Jun 24 12:16:28 2024
-  Mult 1, Iter 9, Imp 31
-  Impute P_CRASH2
-  Update data
-  Polytomous regression
-  Correct data
-Mon Jun 24 12:16:35 2024
-  Mult 1, Iter 9, Imp 32
-  Impute RELJCT1
-  Update data
-  Logistic regression
-  Correct data
-Mon Jun 24 12:16:38 2024
-  Mult 1, Iter 9, Imp 33
-  Impute RELJCT2
-  Update data
-  Polytomous regression
-  Correct data
-Mon Jun 24 12:16:43 2024
-  Mult 1, Iter 9, Imp 34
-  Impute REL_ROAD
-  Update data
-  Polytomous regression
-  Correct data
-Mon Jun 24 12:16:47 2024
-  Mult 1, Iter 9, Imp 35
-  Impute REST_USE
-  Update data
-  Polytomous regression
-  Correct data
-Mon Jun 24 12:16:53 2024
-  Mult 1, Iter 9, Imp 36
-  Impute ROLINLOC
-  Update data
-  Polytomous regression
-  Correct data
-Mon Jun 24 12:16:59 2024
-  Mult 1, Iter 9, Imp 37
-  Impute SEAT_POS
-  Update data
-  Polytomous regression
-  Correct data
-Mon Jun 24 12:17:05 2024
-  Mult 1, Iter 9, Imp 38
-  Impute SEX
-  Update data
-  Polytomous regression
-  Correct data
-Mon Jun 24 12:17:09 2024
-  Mult 1, Iter 9, Imp 39
-  Impute SPEC_USE
-  Update data
-  Polytomous regression
-  Correct data
-Mon Jun 24 12:17:14 2024
-  Mult 1, Iter 9, Imp 40
-  Impute SPEEDREL
-  Update data
-  Polytomous regression
-  Correct data
-Mon Jun 24 12:17:18 2024
-  Mult 1, Iter 9, Imp 41
-  Impute TOWED
-  Update data
-  Polytomous regression
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
-  Correct data
-Mon Jun 24 12:17:27 2024
-  Mult 1, Iter 9, Imp 42
-  Impute TOW_VEH
-  Update data
-  Polytomous regression
-  Correct data
-Mon Jun 24 12:17:31 2024
-  Mult 1, Iter 9, Imp 43
-  Impute TYP_INT
-  Update data
-  Polytomous regression
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
-  Correct data
-Mon Jun 24 12:17:38 2024
-  Mult 1, Iter 9, Imp 44
-  Impute VALIGN
-  Update data
-  Polytomous regression
-  Correct data
-Mon Jun 24 12:17:44 2024
-  Mult 1, Iter 9, Imp 45
-  Impute VEH_AGE
-  Update data
-  Polytomous regression
-  Correct data
-Mon Jun 24 12:17:47 2024
-  Mult 1, Iter 9, Imp 46
-  Impute VPROFILE
-  Update data
-  Polytomous regression
-  Correct data
-Mon Jun 24 12:17:53 2024
-  Mult 1, Iter 9, Imp 47
-  Impute VSPD_LIM
-  Update data
-  Polytomous regression
-  Correct data
-Mon Jun 24 12:18:03 2024
-  Mult 1, Iter 9, Imp 48
-  Impute VSURCOND
-  Update data
-  Polytomous regression
-  Correct data
-Mon Jun 24 12:18:07 2024
-  Mult 1, Iter 9, Imp 49
-  Impute VTCONT_F
-  Update data
-  Polytomous regression
-  Correct data
-Mon Jun 24 12:18:10 2024
-  Mult 1, Iter 9, Imp 50
-  Impute VTRAFCON
-  Update data
-  Polytomous regression
-  Correct data
-Mon Jun 24 12:18:16 2024
-  Mult 1, Iter 9, Imp 51
-  Impute VTRAFWAY
-  Update data
-  Polytomous regression
-  Correct data
-Mon Jun 24 12:18:23 2024
-  Mult 1, Iter 9, Imp 52
-  Impute WEATHER
-  Update data
-  Polytomous regression
-  Correct data
-Mon Jun 24 12:18:26 2024
-  Mult 1, Iter 10, Imp 1
   Impute ACC_TYPE
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 12:18:38 2024
-  Mult 1, Iter 10, Imp 2
+Tue Jun 25 11:20:50 2024
+  Mult 1, Iter 9, Imp 3
   Impute AGE
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 12:18:45 2024
-  Mult 1, Iter 10, Imp 3
+Tue Jun 25 11:20:54 2024
+  Mult 1, Iter 9, Imp 4
   Impute AIR_BAG
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 12:18:52 2024
-  Mult 1, Iter 10, Imp 4
+Tue Jun 25 11:20:55 2024
+  Mult 1, Iter 9, Imp 5
   Impute ALC_STATUS
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 12:18:55 2024
-  Mult 1, Iter 10, Imp 5
+Tue Jun 25 11:20:57 2024
+  Mult 1, Iter 9, Imp 6
   Impute BODY_TYP
   Update data
   Polytomous regression
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
   Correct data
-Mon Jun 24 12:19:12 2024
-  Mult 1, Iter 10, Imp 6
+Tue Jun 25 11:21:01 2024
+  Mult 1, Iter 9, Imp 7
   Impute CARGO_BT
   Update data
   Polytomous regression
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
   Correct data
-Mon Jun 24 12:19:19 2024
-  Mult 1, Iter 10, Imp 7
+Tue Jun 25 11:21:03 2024
+  Mult 1, Iter 9, Imp 8
+  Impute DAY_WEEK
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:21:04 2024
+  Mult 1, Iter 9, Imp 9
   Impute DEFORMED
   Update data
   Polytomous regression
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
   Correct data
-Mon Jun 24 12:19:27 2024
-  Mult 1, Iter 10, Imp 8
+Tue Jun 25 11:21:07 2024
+  Mult 1, Iter 9, Imp 10
   Impute DR_ZIP
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 12:19:31 2024
-  Mult 1, Iter 10, Imp 9
+Tue Jun 25 11:21:09 2024
+  Mult 1, Iter 9, Imp 11
   Impute EJECTION
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 12:19:35 2024
-  Mult 1, Iter 10, Imp 10
+Tue Jun 25 11:21:11 2024
+  Mult 1, Iter 9, Imp 12
   Impute HARM_EV
   Update data
   Polytomous regression
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
   Correct data
-Mon Jun 24 12:19:46 2024
-  Mult 1, Iter 10, Imp 11
+Tue Jun 25 11:21:14 2024
+  Mult 1, Iter 9, Imp 13
   Impute HIT_RUN
   Update data
   Logistic regression
   Correct data
-Mon Jun 24 12:19:49 2024
-  Mult 1, Iter 10, Imp 12
+Tue Jun 25 11:21:15 2024
+  Mult 1, Iter 9, Imp 14
   Impute HOUR
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 12:19:53 2024
-  Mult 1, Iter 10, Imp 13
+Tue Jun 25 11:21:17 2024
+  Mult 1, Iter 9, Imp 15
   Impute IMPACT1
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 12:20:01 2024
-  Mult 1, Iter 10, Imp 14
+Tue Jun 25 11:21:23 2024
+  Mult 1, Iter 9, Imp 16
   Impute INJ_SEV
   Update data
   Polytomous regression
+  Warning: Too many iterations, probably due to
+           colinearity with dependent variable
   Correct data
-Mon Jun 24 12:20:07 2024
-  Mult 1, Iter 10, Imp 15
+Tue Jun 25 11:21:26 2024
+  Mult 1, Iter 9, Imp 17
   Impute INT_HWY
   Update data
   Logistic regression
   Correct data
-Mon Jun 24 12:20:10 2024
-  Mult 1, Iter 10, Imp 16
+Tue Jun 25 11:21:27 2024
+  Mult 1, Iter 9, Imp 18
+  Impute J_KNIFE
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:21:29 2024
+  Mult 1, Iter 9, Imp 19
   Impute LGT_COND
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 12:20:14 2024
-  Mult 1, Iter 10, Imp 17
+Tue Jun 25 11:21:30 2024
+  Mult 1, Iter 9, Imp 20
   Impute MAKE
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 12:20:27 2024
-  Mult 1, Iter 10, Imp 18
+Tue Jun 25 11:21:36 2024
+  Mult 1, Iter 9, Imp 21
   Impute MAK_MOD
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 12:20:41 2024
-  Mult 1, Iter 10, Imp 19
+Tue Jun 25 11:21:40 2024
+  Mult 1, Iter 9, Imp 22
   Impute MAN_COLL
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 12:20:52 2024
-  Mult 1, Iter 10, Imp 20
+Tue Jun 25 11:21:44 2024
+  Mult 1, Iter 9, Imp 23
   Impute MAX_SEV
   Update data
   Polytomous regression
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
   Correct data
-Mon Jun 24 12:21:02 2024
-  Mult 1, Iter 10, Imp 21
+Tue Jun 25 11:21:47 2024
+  Mult 1, Iter 9, Imp 24
   Impute MAX_VSEV
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 12:21:10 2024
-  Mult 1, Iter 10, Imp 22
+Tue Jun 25 11:21:49 2024
+  Mult 1, Iter 9, Imp 25
   Impute MODEL
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 12:21:26 2024
-  Mult 1, Iter 10, Imp 23
+Tue Jun 25 11:21:55 2024
+  Mult 1, Iter 9, Imp 26
+  Impute MONTH
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:21:56 2024
+  Mult 1, Iter 9, Imp 27
   Impute M_HARM
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 12:21:32 2024
-  Mult 1, Iter 10, Imp 24
+Tue Jun 25 11:21:59 2024
+  Mult 1, Iter 9, Imp 28
   Impute NUMOCCS
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 12:21:39 2024
-  Mult 1, Iter 10, Imp 25
+Tue Jun 25 11:22:02 2024
+  Mult 1, Iter 9, Imp 29
   Impute NUM_INJ
   Update data
   Polytomous regression
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
   Correct data
-Mon Jun 24 12:21:50 2024
-  Mult 1, Iter 10, Imp 26
+Tue Jun 25 11:22:06 2024
+  Mult 1, Iter 9, Imp 30
   Impute NUM_INJV
   Update data
   Polytomous regression
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
   Correct data
-Mon Jun 24 12:21:58 2024
-  Mult 1, Iter 10, Imp 27
+Tue Jun 25 11:22:08 2024
+  Mult 1, Iter 9, Imp 31
   Impute PCRASH4
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 12:22:02 2024
-  Mult 1, Iter 10, Imp 28
+Tue Jun 25 11:22:10 2024
+  Mult 1, Iter 9, Imp 32
   Impute PCRASH5
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 12:22:06 2024
-  Mult 1, Iter 10, Imp 29
+Tue Jun 25 11:22:12 2024
+  Mult 1, Iter 9, Imp 33
+  Impute PERMVIT
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:22:14 2024
+  Mult 1, Iter 9, Imp 34
   Impute PER_TYP
   Update data
   Logistic regression
   Correct data
-Mon Jun 24 12:22:10 2024
-  Mult 1, Iter 10, Imp 30
+Tue Jun 25 11:22:15 2024
+  Mult 1, Iter 9, Imp 35
+  Impute PJ
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:22:20 2024
+  Mult 1, Iter 9, Imp 36
+  Impute PSU
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:22:25 2024
+  Mult 1, Iter 9, Imp 37
+  Impute PVH_INVL
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:22:27 2024
+  Mult 1, Iter 9, Imp 38
   Impute P_CRASH1
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 12:22:20 2024
-  Mult 1, Iter 10, Imp 31
+Tue Jun 25 11:22:31 2024
+  Mult 1, Iter 9, Imp 39
   Impute P_CRASH2
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 12:22:27 2024
-  Mult 1, Iter 10, Imp 32
+Tue Jun 25 11:22:34 2024
+  Mult 1, Iter 9, Imp 40
+  Impute REGION
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:22:37 2024
+  Mult 1, Iter 9, Imp 41
   Impute RELJCT1
   Update data
   Logistic regression
   Correct data
-Mon Jun 24 12:22:30 2024
-  Mult 1, Iter 10, Imp 33
+Tue Jun 25 11:22:38 2024
+  Mult 1, Iter 9, Imp 42
   Impute RELJCT2
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 12:22:35 2024
-  Mult 1, Iter 10, Imp 34
+Tue Jun 25 11:22:40 2024
+  Mult 1, Iter 9, Imp 43
   Impute REL_ROAD
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 12:22:39 2024
-  Mult 1, Iter 10, Imp 35
+Tue Jun 25 11:22:42 2024
+  Mult 1, Iter 9, Imp 44
+  Impute REST_MIS
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:22:44 2024
+  Mult 1, Iter 9, Imp 45
   Impute REST_USE
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 12:22:45 2024
-  Mult 1, Iter 10, Imp 36
+Tue Jun 25 11:22:47 2024
+  Mult 1, Iter 9, Imp 46
   Impute ROLINLOC
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 12:22:51 2024
-  Mult 1, Iter 10, Imp 37
+Tue Jun 25 11:22:49 2024
+  Mult 1, Iter 9, Imp 47
+  Impute ROLLOVER
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:22:51 2024
+  Mult 1, Iter 9, Imp 48
   Impute SEAT_POS
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 12:22:57 2024
-  Mult 1, Iter 10, Imp 38
+Tue Jun 25 11:22:54 2024
+  Mult 1, Iter 9, Imp 49
   Impute SEX
   Update data
-  Polytomous regression
+  Logistic regression
   Correct data
-Mon Jun 24 12:23:01 2024
-  Mult 1, Iter 10, Imp 39
+Tue Jun 25 11:22:55 2024
+  Mult 1, Iter 9, Imp 50
   Impute SPEC_USE
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 12:23:06 2024
-  Mult 1, Iter 10, Imp 40
+Tue Jun 25 11:22:57 2024
+  Mult 1, Iter 9, Imp 51
   Impute SPEEDREL
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 12:23:10 2024
-  Mult 1, Iter 10, Imp 41
+Tue Jun 25 11:22:58 2024
+  Mult 1, Iter 9, Imp 52
   Impute TOWED
   Update data
   Polytomous regression
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
-  Warning: Too many iterations, probably due to
-           colinearity with dependent variable
   Correct data
-Mon Jun 24 12:23:19 2024
-  Mult 1, Iter 10, Imp 42
+Tue Jun 25 11:23:00 2024
+  Mult 1, Iter 9, Imp 53
   Impute TOW_VEH
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 12:23:22 2024
-  Mult 1, Iter 10, Imp 43
+Tue Jun 25 11:23:01 2024
+  Mult 1, Iter 9, Imp 54
   Impute TYP_INT
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:23:04 2024
+  Mult 1, Iter 9, Imp 55
+  Impute URBANICITY
+  Update data
+  Logistic regression
+  Correct data
+Tue Jun 25 11:23:05 2024
+  Mult 1, Iter 9, Imp 56
+  Impute VALIGN
   Update data
   Polytomous regression
   Warning: Too many iterations, probably due to
            colinearity with dependent variable
   Correct data
-Mon Jun 24 12:23:29 2024
-  Mult 1, Iter 10, Imp 44
-  Impute VALIGN
-  Update data
-  Polytomous regression
-  Correct data
-Mon Jun 24 12:23:35 2024
-  Mult 1, Iter 10, Imp 45
+Tue Jun 25 11:23:08 2024
+  Mult 1, Iter 9, Imp 57
   Impute VEH_AGE
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 12:23:39 2024
-  Mult 1, Iter 10, Imp 46
+Tue Jun 25 11:23:09 2024
+  Mult 1, Iter 9, Imp 58
+  Impute VE_FORMS
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:23:12 2024
+  Mult 1, Iter 9, Imp 59
+  Impute VE_TOTAL
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:23:14 2024
+  Mult 1, Iter 9, Imp 60
   Impute VPROFILE
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 12:23:45 2024
-  Mult 1, Iter 10, Imp 47
+Tue Jun 25 11:23:17 2024
+  Mult 1, Iter 9, Imp 61
   Impute VSPD_LIM
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 12:23:55 2024
-  Mult 1, Iter 10, Imp 48
+Tue Jun 25 11:23:21 2024
+  Mult 1, Iter 9, Imp 62
   Impute VSURCOND
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 12:23:59 2024
-  Mult 1, Iter 10, Imp 49
+Tue Jun 25 11:23:22 2024
+  Mult 1, Iter 9, Imp 63
   Impute VTCONT_F
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 12:24:02 2024
-  Mult 1, Iter 10, Imp 50
+Tue Jun 25 11:23:24 2024
+  Mult 1, Iter 9, Imp 64
   Impute VTRAFCON
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 12:24:07 2024
-  Mult 1, Iter 10, Imp 51
+Tue Jun 25 11:23:26 2024
+  Mult 1, Iter 9, Imp 65
   Impute VTRAFWAY
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 12:24:15 2024
-  Mult 1, Iter 10, Imp 52
+Tue Jun 25 11:23:29 2024
+  Mult 1, Iter 9, Imp 66
   Impute WEATHER
   Update data
   Polytomous regression
   Correct data
-Mon Jun 24 12:24:18 2024
+Tue Jun 25 11:23:30 2024
+  Mult 1, Iter 9, Imp 67
+  Impute WRK_ZONE
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:23:31 2024
+  Mult 1, Iter 10, Imp 1
+  Impute HOSPITAL
+  Update data
+  Logistic regression
+  Correct data
+Tue Jun 25 11:23:32 2024
+  Mult 1, Iter 10, Imp 2
+  Impute ACC_TYPE
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:23:37 2024
+  Mult 1, Iter 10, Imp 3
+  Impute AGE
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:23:40 2024
+  Mult 1, Iter 10, Imp 4
+  Impute AIR_BAG
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:23:42 2024
+  Mult 1, Iter 10, Imp 5
+  Impute ALC_STATUS
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:23:43 2024
+  Mult 1, Iter 10, Imp 6
+  Impute BODY_TYP
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:23:48 2024
+  Mult 1, Iter 10, Imp 7
+  Impute CARGO_BT
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:23:50 2024
+  Mult 1, Iter 10, Imp 8
+  Impute DAY_WEEK
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:23:51 2024
+  Mult 1, Iter 10, Imp 9
+  Impute DEFORMED
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:23:54 2024
+  Mult 1, Iter 10, Imp 10
+  Impute DR_ZIP
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:23:56 2024
+  Mult 1, Iter 10, Imp 11
+  Impute EJECTION
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:23:57 2024
+  Mult 1, Iter 10, Imp 12
+  Impute HARM_EV
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:24:01 2024
+  Mult 1, Iter 10, Imp 13
+  Impute HIT_RUN
+  Update data
+  Logistic regression
+  Correct data
+Tue Jun 25 11:24:02 2024
+  Mult 1, Iter 10, Imp 14
+  Impute HOUR
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:24:03 2024
+  Mult 1, Iter 10, Imp 15
+  Impute IMPACT1
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:24:10 2024
+  Mult 1, Iter 10, Imp 16
+  Impute INJ_SEV
+  Update data
+  Polytomous regression
+  Warning: Too many iterations, probably due to
+           colinearity with dependent variable
+  Correct data
+Tue Jun 25 11:24:13 2024
+  Mult 1, Iter 10, Imp 17
+  Impute INT_HWY
+  Update data
+  Logistic regression
+  Correct data
+Tue Jun 25 11:24:14 2024
+  Mult 1, Iter 10, Imp 18
+  Impute J_KNIFE
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:24:15 2024
+  Mult 1, Iter 10, Imp 19
+  Impute LGT_COND
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:24:17 2024
+  Mult 1, Iter 10, Imp 20
+  Impute MAKE
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:24:22 2024
+  Mult 1, Iter 10, Imp 21
+  Impute MAK_MOD
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:24:27 2024
+  Mult 1, Iter 10, Imp 22
+  Impute MAN_COLL
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:24:31 2024
+  Mult 1, Iter 10, Imp 23
+  Impute MAX_SEV
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:24:33 2024
+  Mult 1, Iter 10, Imp 24
+  Impute MAX_VSEV
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:24:36 2024
+  Mult 1, Iter 10, Imp 25
+  Impute MODEL
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:24:42 2024
+  Mult 1, Iter 10, Imp 26
+  Impute MONTH
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:24:43 2024
+  Mult 1, Iter 10, Imp 27
+  Impute M_HARM
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:24:45 2024
+  Mult 1, Iter 10, Imp 28
+  Impute NUMOCCS
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:24:49 2024
+  Mult 1, Iter 10, Imp 29
+  Impute NUM_INJ
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:24:52 2024
+  Mult 1, Iter 10, Imp 30
+  Impute NUM_INJV
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:24:55 2024
+  Mult 1, Iter 10, Imp 31
+  Impute PCRASH4
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:24:56 2024
+  Mult 1, Iter 10, Imp 32
+  Impute PCRASH5
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:24:58 2024
+  Mult 1, Iter 10, Imp 33
+  Impute PERMVIT
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:25:00 2024
+  Mult 1, Iter 10, Imp 34
+  Impute PER_TYP
+  Update data
+  Logistic regression
+  Correct data
+Tue Jun 25 11:25:02 2024
+  Mult 1, Iter 10, Imp 35
+  Impute PJ
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:25:06 2024
+  Mult 1, Iter 10, Imp 36
+  Impute PSU
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:25:11 2024
+  Mult 1, Iter 10, Imp 37
+  Impute PVH_INVL
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:25:14 2024
+  Mult 1, Iter 10, Imp 38
+  Impute P_CRASH1
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:25:17 2024
+  Mult 1, Iter 10, Imp 39
+  Impute P_CRASH2
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:25:20 2024
+  Mult 1, Iter 10, Imp 40
+  Impute REGION
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:25:23 2024
+  Mult 1, Iter 10, Imp 41
+  Impute RELJCT1
+  Update data
+  Logistic regression
+  Correct data
+Tue Jun 25 11:25:25 2024
+  Mult 1, Iter 10, Imp 42
+  Impute RELJCT2
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:25:27 2024
+  Mult 1, Iter 10, Imp 43
+  Impute REL_ROAD
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:25:28 2024
+  Mult 1, Iter 10, Imp 44
+  Impute REST_MIS
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:25:30 2024
+  Mult 1, Iter 10, Imp 45
+  Impute REST_USE
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:25:33 2024
+  Mult 1, Iter 10, Imp 46
+  Impute ROLINLOC
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:25:35 2024
+  Mult 1, Iter 10, Imp 47
+  Impute ROLLOVER
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:25:37 2024
+  Mult 1, Iter 10, Imp 48
+  Impute SEAT_POS
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:25:39 2024
+  Mult 1, Iter 10, Imp 49
+  Impute SEX
+  Update data
+  Logistic regression
+  Correct data
+Tue Jun 25 11:25:41 2024
+  Mult 1, Iter 10, Imp 50
+  Impute SPEC_USE
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:25:43 2024
+  Mult 1, Iter 10, Imp 51
+  Impute SPEEDREL
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:25:44 2024
+  Mult 1, Iter 10, Imp 52
+  Impute TOWED
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:25:46 2024
+  Mult 1, Iter 10, Imp 53
+  Impute TOW_VEH
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:25:47 2024
+  Mult 1, Iter 10, Imp 54
+  Impute TYP_INT
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:25:50 2024
+  Mult 1, Iter 10, Imp 55
+  Impute URBANICITY
+  Update data
+  Logistic regression
+  Correct data
+Tue Jun 25 11:25:51 2024
+  Mult 1, Iter 10, Imp 56
+  Impute VALIGN
+  Update data
+  Polytomous regression
+  Warning: Too many iterations, probably due to
+           colinearity with dependent variable
+  Correct data
+Tue Jun 25 11:25:54 2024
+  Mult 1, Iter 10, Imp 57
+  Impute VEH_AGE
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:25:55 2024
+  Mult 1, Iter 10, Imp 58
+  Impute VE_FORMS
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:25:58 2024
+  Mult 1, Iter 10, Imp 59
+  Impute VE_TOTAL
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:26:00 2024
+  Mult 1, Iter 10, Imp 60
+  Impute VPROFILE
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:26:03 2024
+  Mult 1, Iter 10, Imp 61
+  Impute VSPD_LIM
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:26:07 2024
+  Mult 1, Iter 10, Imp 62
+  Impute VSURCOND
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:26:08 2024
+  Mult 1, Iter 10, Imp 63
+  Impute VTCONT_F
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:26:10 2024
+  Mult 1, Iter 10, Imp 64
+  Impute VTRAFCON
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:26:12 2024
+  Mult 1, Iter 10, Imp 65
+  Impute VTRAFWAY
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:26:15 2024
+  Mult 1, Iter 10, Imp 66
+  Impute WEATHER
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:26:16 2024
+  Mult 1, Iter 10, Imp 67
+  Impute WRK_ZONE
+  Update data
+  Polytomous regression
+  Correct data
+Tue Jun 25 11:26:17 2024
   Output data
+  Warning: Only one code imputed for AIR_BAG
   Warning: Only one code imputed for ALC_STATUS
+  Warning: Only one code imputed for DAY_WEEK
   Warning: Only one code imputed for HIT_RUN
   Warning: Only one code imputed for HOUR
-  Warning: Only one code imputed for ROLINLOC
-  Warning: Only one code imputed for TOW_VEH
+  Warning: Only one code imputed for MONTH
   Warning: Only one code imputed for VEH_AGE
+  Warning: Only one code imputed for WRK_ZONE
   End execution
 
-Mon Jun 24 12:24:18 2024
+Tue Jun 25 11:26:17 2024
   Begin Putdata execution
   End execution
