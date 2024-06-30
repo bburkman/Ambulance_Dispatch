@@ -4,6 +4,6 @@ dataout impute;
 default categorical;
 minrsqd 0.01;
 maxpred 15;
-iterations 10;
-seed 0;
+iterations 1;
+seed 1;
 run;

@@ -24,13 +24,13 @@ dataout impute;
 default categorical;
 minrsqd 0.01;
 maxpred 15;
-iterations 10;
-seed 0;
+iterations 1;
+seed 1;
 run;
 </impute>
 
 data <- load(file = "impute.rda")
-write.csv(get(data), file="../../Big_Files/data_IVEware.csv")
+write.csv(get(data), file="../../Big_Files/data_IVEware_Compare_seed_1.csv")
 
 </R>
 

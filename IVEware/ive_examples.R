@@ -23,5 +23,5 @@ save(CRSS, file = "CRSS.rda")
 impute(name="impute")
 
 data <- load(file = "impute.rda")
-write.csv(get(data), file="../../Big_Files/data_IVEware.csv")
+write.csv(get(data), file="../../Big_Files/data_IVEware_Compare_seed_1.csv")
 
