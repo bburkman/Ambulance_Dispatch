@@ -1,0 +1,4 @@
+Filename,ROC_AUC
+BRFC_alpha_0_5_Hard_Run_0,0.807695
+BRFC_alpha_0_5_Medium_Run_0,0.728894
+BRFC_alpha_0_5_Easy_Run_0,0.658203

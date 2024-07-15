@@ -1,0 +1,4 @@
+Filename,len(y_proba),nUnique(y_proba),len(fpr),nUnique(fpr),len(tpr),nUnique(tpr),len(fpr tpr),nUnique(fpr tpr)
+BRFC_alpha_0_5_1_0_0_1_Hard.csv,802700,3391,2841,2403,2841,1507,2841,2841,
+BRFC_alpha_0_5_1_0_0_1_Medium.csv,802700,40306,32073,28757,32073,13875,32073,32073,
+BRFC_alpha_0_5_1_0_0_1_Easy.csv,802700,164405,145062,132858,145062,64851,145062,145062,

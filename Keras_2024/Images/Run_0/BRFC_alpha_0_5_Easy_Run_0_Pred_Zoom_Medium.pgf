@@ -19,6 +19,8 @@
 %%   \import{<path to file>}{<filename>.pgf}
 %%
 %% Matplotlib used the following preamble
+%%   \def\mathdefault#1{#1}
+%%   \everymath=\expandafter{\the\everymath\displaystyle}
 %%   
 %%   \usepackage{fontspec}
 %%   \makeatletter\@ifpackageloaded{underscore}{}{\usepackage[strings]{underscore}}\makeatother
@@ -89,8 +91,8 @@
 \pgfsetdash{}{0pt}%
 \pgfpathmoveto{\pgfqpoint{0.509043in}{0.474111in}}%
 \pgfpathlineto{\pgfqpoint{0.553541in}{0.474111in}}%
-\pgfpathlineto{\pgfqpoint{0.553541in}{0.772959in}}%
-\pgfpathlineto{\pgfqpoint{0.509043in}{0.772959in}}%
+\pgfpathlineto{\pgfqpoint{0.553541in}{0.772233in}}%
+\pgfpathlineto{\pgfqpoint{0.509043in}{0.772233in}}%
 \pgfpathlineto{\pgfqpoint{0.509043in}{0.474111in}}%
 \pgfpathclose%
 \pgfusepath{stroke}%
@@ -106,8 +108,8 @@
 \pgfsetdash{}{0pt}%
 \pgfpathmoveto{\pgfqpoint{0.620287in}{0.474111in}}%
 \pgfpathlineto{\pgfqpoint{0.664785in}{0.474111in}}%
-\pgfpathlineto{\pgfqpoint{0.664785in}{0.750531in}}%
-\pgfpathlineto{\pgfqpoint{0.620287in}{0.750531in}}%
+\pgfpathlineto{\pgfqpoint{0.664785in}{0.760367in}}%
+\pgfpathlineto{\pgfqpoint{0.620287in}{0.760367in}}%
 \pgfpathlineto{\pgfqpoint{0.620287in}{0.474111in}}%
 \pgfpathclose%
 \pgfusepath{stroke}%
@@ -123,8 +125,8 @@
 \pgfsetdash{}{0pt}%
 \pgfpathmoveto{\pgfqpoint{0.731531in}{0.474111in}}%
 \pgfpathlineto{\pgfqpoint{0.776029in}{0.474111in}}%
-\pgfpathlineto{\pgfqpoint{0.776029in}{0.807925in}}%
-\pgfpathlineto{\pgfqpoint{0.731531in}{0.807925in}}%
+\pgfpathlineto{\pgfqpoint{0.776029in}{0.822298in}}%
+\pgfpathlineto{\pgfqpoint{0.731531in}{0.822298in}}%
 \pgfpathlineto{\pgfqpoint{0.731531in}{0.474111in}}%
 \pgfpathclose%
 \pgfusepath{stroke}%
@@ -140,8 +142,8 @@
 \pgfsetdash{}{0pt}%
 \pgfpathmoveto{\pgfqpoint{0.842775in}{0.474111in}}%
 \pgfpathlineto{\pgfqpoint{0.887273in}{0.474111in}}%
-\pgfpathlineto{\pgfqpoint{0.887273in}{0.913695in}}%
-\pgfpathlineto{\pgfqpoint{0.842775in}{0.913695in}}%
+\pgfpathlineto{\pgfqpoint{0.887273in}{0.922962in}}%
+\pgfpathlineto{\pgfqpoint{0.842775in}{0.922962in}}%
 \pgfpathlineto{\pgfqpoint{0.842775in}{0.474111in}}%
 \pgfpathclose%
 \pgfusepath{stroke}%
@@ -157,8 +159,8 @@
 \pgfsetdash{}{0pt}%
 \pgfpathmoveto{\pgfqpoint{0.954019in}{0.474111in}}%
 \pgfpathlineto{\pgfqpoint{0.998517in}{0.474111in}}%
-\pgfpathlineto{\pgfqpoint{0.998517in}{1.069533in}}%
-\pgfpathlineto{\pgfqpoint{0.954019in}{1.069533in}}%
+\pgfpathlineto{\pgfqpoint{0.998517in}{1.078715in}}%
+\pgfpathlineto{\pgfqpoint{0.954019in}{1.078715in}}%
 \pgfpathlineto{\pgfqpoint{0.954019in}{0.474111in}}%
 \pgfpathclose%
 \pgfusepath{stroke}%
@@ -174,8 +176,8 @@
 \pgfsetdash{}{0pt}%
 \pgfpathmoveto{\pgfqpoint{1.065263in}{0.474111in}}%
 \pgfpathlineto{\pgfqpoint{1.109761in}{0.474111in}}%
-\pgfpathlineto{\pgfqpoint{1.109761in}{1.197714in}}%
-\pgfpathlineto{\pgfqpoint{1.065263in}{1.197714in}}%
+\pgfpathlineto{\pgfqpoint{1.109761in}{1.235186in}}%
+\pgfpathlineto{\pgfqpoint{1.065263in}{1.235186in}}%
 \pgfpathlineto{\pgfqpoint{1.065263in}{0.474111in}}%
 \pgfpathclose%
 \pgfusepath{stroke}%
@@ -191,8 +193,8 @@
 \pgfsetdash{}{0pt}%
 \pgfpathmoveto{\pgfqpoint{1.176508in}{0.474111in}}%
 \pgfpathlineto{\pgfqpoint{1.221005in}{0.474111in}}%
-\pgfpathlineto{\pgfqpoint{1.221005in}{1.288494in}}%
-\pgfpathlineto{\pgfqpoint{1.176508in}{1.288494in}}%
+\pgfpathlineto{\pgfqpoint{1.221005in}{1.278225in}}%
+\pgfpathlineto{\pgfqpoint{1.176508in}{1.278225in}}%
 \pgfpathlineto{\pgfqpoint{1.176508in}{0.474111in}}%
 \pgfpathclose%
 \pgfusepath{stroke}%
@@ -208,8 +210,8 @@
 \pgfsetdash{}{0pt}%
 \pgfpathmoveto{\pgfqpoint{1.287752in}{0.474111in}}%
 \pgfpathlineto{\pgfqpoint{1.332249in}{0.474111in}}%
-\pgfpathlineto{\pgfqpoint{1.332249in}{1.422339in}}%
-\pgfpathlineto{\pgfqpoint{1.287752in}{1.422339in}}%
+\pgfpathlineto{\pgfqpoint{1.332249in}{1.403906in}}%
+\pgfpathlineto{\pgfqpoint{1.287752in}{1.403906in}}%
 \pgfpathlineto{\pgfqpoint{1.287752in}{0.474111in}}%
 \pgfpathclose%
 \pgfusepath{stroke}%
@@ -225,8 +227,8 @@
 \pgfsetdash{}{0pt}%
 \pgfpathmoveto{\pgfqpoint{1.398996in}{0.474111in}}%
 \pgfpathlineto{\pgfqpoint{1.443493in}{0.474111in}}%
-\pgfpathlineto{\pgfqpoint{1.443493in}{1.517442in}}%
-\pgfpathlineto{\pgfqpoint{1.398996in}{1.517442in}}%
+\pgfpathlineto{\pgfqpoint{1.443493in}{1.555420in}}%
+\pgfpathlineto{\pgfqpoint{1.398996in}{1.555420in}}%
 \pgfpathlineto{\pgfqpoint{1.398996in}{0.474111in}}%
 \pgfpathclose%
 \pgfusepath{stroke}%
@@ -259,8 +261,8 @@
 \pgfsetdash{}{0pt}%
 \pgfpathmoveto{\pgfqpoint{1.621484in}{0.474111in}}%
 \pgfpathlineto{\pgfqpoint{1.665981in}{0.474111in}}%
-\pgfpathlineto{\pgfqpoint{1.665981in}{1.517410in}}%
-\pgfpathlineto{\pgfqpoint{1.621484in}{1.517410in}}%
+\pgfpathlineto{\pgfqpoint{1.665981in}{1.525831in}}%
+\pgfpathlineto{\pgfqpoint{1.621484in}{1.525831in}}%
 \pgfpathlineto{\pgfqpoint{1.621484in}{0.474111in}}%
 \pgfpathclose%
 \pgfusepath{stroke}%
@@ -276,8 +278,8 @@
 \pgfsetdash{}{0pt}%
 \pgfpathmoveto{\pgfqpoint{1.732728in}{0.474111in}}%
 \pgfpathlineto{\pgfqpoint{1.777225in}{0.474111in}}%
-\pgfpathlineto{\pgfqpoint{1.777225in}{1.416901in}}%
-\pgfpathlineto{\pgfqpoint{1.732728in}{1.416901in}}%
+\pgfpathlineto{\pgfqpoint{1.777225in}{1.430757in}}%
+\pgfpathlineto{\pgfqpoint{1.732728in}{1.430757in}}%
 \pgfpathlineto{\pgfqpoint{1.732728in}{0.474111in}}%
 \pgfpathclose%
 \pgfusepath{stroke}%
@@ -293,8 +295,8 @@
 \pgfsetdash{}{0pt}%
 \pgfpathmoveto{\pgfqpoint{1.843972in}{0.474111in}}%
 \pgfpathlineto{\pgfqpoint{1.888469in}{0.474111in}}%
-\pgfpathlineto{\pgfqpoint{1.888469in}{1.220659in}}%
-\pgfpathlineto{\pgfqpoint{1.843972in}{1.220659in}}%
+\pgfpathlineto{\pgfqpoint{1.888469in}{1.232015in}}%
+\pgfpathlineto{\pgfqpoint{1.843972in}{1.232015in}}%
 \pgfpathlineto{\pgfqpoint{1.843972in}{0.474111in}}%
 \pgfpathclose%
 \pgfusepath{stroke}%
@@ -310,8 +312,8 @@
 \pgfsetdash{}{0pt}%
 \pgfpathmoveto{\pgfqpoint{1.955216in}{0.474111in}}%
 \pgfpathlineto{\pgfqpoint{1.999713in}{0.474111in}}%
-\pgfpathlineto{\pgfqpoint{1.999713in}{1.051880in}}%
-\pgfpathlineto{\pgfqpoint{1.955216in}{1.051880in}}%
+\pgfpathlineto{\pgfqpoint{1.999713in}{1.055769in}}%
+\pgfpathlineto{\pgfqpoint{1.955216in}{1.055769in}}%
 \pgfpathlineto{\pgfqpoint{1.955216in}{0.474111in}}%
 \pgfpathclose%
 \pgfusepath{stroke}%
@@ -327,8 +329,8 @@
 \pgfsetdash{}{0pt}%
 \pgfpathmoveto{\pgfqpoint{2.066460in}{0.474111in}}%
 \pgfpathlineto{\pgfqpoint{2.110957in}{0.474111in}}%
-\pgfpathlineto{\pgfqpoint{2.110957in}{0.907773in}}%
-\pgfpathlineto{\pgfqpoint{2.066460in}{0.907773in}}%
+\pgfpathlineto{\pgfqpoint{2.110957in}{0.905840in}}%
+\pgfpathlineto{\pgfqpoint{2.066460in}{0.905840in}}%
 \pgfpathlineto{\pgfqpoint{2.066460in}{0.474111in}}%
 \pgfpathclose%
 \pgfusepath{stroke}%
@@ -344,8 +346,8 @@
 \pgfsetdash{}{0pt}%
 \pgfpathmoveto{\pgfqpoint{2.177704in}{0.474111in}}%
 \pgfpathlineto{\pgfqpoint{2.222201in}{0.474111in}}%
-\pgfpathlineto{\pgfqpoint{2.222201in}{0.795549in}}%
-\pgfpathlineto{\pgfqpoint{2.177704in}{0.795549in}}%
+\pgfpathlineto{\pgfqpoint{2.222201in}{0.799018in}}%
+\pgfpathlineto{\pgfqpoint{2.177704in}{0.799018in}}%
 \pgfpathlineto{\pgfqpoint{2.177704in}{0.474111in}}%
 \pgfpathclose%
 \pgfusepath{stroke}%
@@ -361,8 +363,8 @@
 \pgfsetdash{}{0pt}%
 \pgfpathmoveto{\pgfqpoint{2.288948in}{0.474111in}}%
 \pgfpathlineto{\pgfqpoint{2.333445in}{0.474111in}}%
-\pgfpathlineto{\pgfqpoint{2.333445in}{0.687214in}}%
-\pgfpathlineto{\pgfqpoint{2.288948in}{0.687214in}}%
+\pgfpathlineto{\pgfqpoint{2.333445in}{0.689542in}}%
+\pgfpathlineto{\pgfqpoint{2.288948in}{0.689542in}}%
 \pgfpathlineto{\pgfqpoint{2.288948in}{0.474111in}}%
 \pgfpathclose%
 \pgfusepath{stroke}%
@@ -378,8 +380,8 @@
 \pgfsetdash{}{0pt}%
 \pgfpathmoveto{\pgfqpoint{2.400192in}{0.474111in}}%
 \pgfpathlineto{\pgfqpoint{2.444689in}{0.474111in}}%
-\pgfpathlineto{\pgfqpoint{2.444689in}{0.606310in}}%
-\pgfpathlineto{\pgfqpoint{2.400192in}{0.606310in}}%
+\pgfpathlineto{\pgfqpoint{2.444689in}{0.608937in}}%
+\pgfpathlineto{\pgfqpoint{2.400192in}{0.608937in}}%
 \pgfpathlineto{\pgfqpoint{2.400192in}{0.474111in}}%
 \pgfpathclose%
 \pgfusepath{stroke}%
@@ -395,8 +397,8 @@
 \pgfsetdash{}{0pt}%
 \pgfpathmoveto{\pgfqpoint{2.511436in}{0.474111in}}%
 \pgfpathlineto{\pgfqpoint{2.555933in}{0.474111in}}%
-\pgfpathlineto{\pgfqpoint{2.555933in}{0.541397in}}%
-\pgfpathlineto{\pgfqpoint{2.511436in}{0.541397in}}%
+\pgfpathlineto{\pgfqpoint{2.555933in}{0.542166in}}%
+\pgfpathlineto{\pgfqpoint{2.511436in}{0.542166in}}%
 \pgfpathlineto{\pgfqpoint{2.511436in}{0.474111in}}%
 \pgfpathclose%
 \pgfusepath{stroke}%
@@ -412,8 +414,8 @@
 \pgfsetdash{}{0pt}%
 \pgfpathmoveto{\pgfqpoint{2.622680in}{0.474111in}}%
 \pgfpathlineto{\pgfqpoint{2.667177in}{0.474111in}}%
-\pgfpathlineto{\pgfqpoint{2.667177in}{0.498605in}}%
-\pgfpathlineto{\pgfqpoint{2.622680in}{0.498605in}}%
+\pgfpathlineto{\pgfqpoint{2.667177in}{0.499010in}}%
+\pgfpathlineto{\pgfqpoint{2.622680in}{0.499010in}}%
 \pgfpathlineto{\pgfqpoint{2.622680in}{0.474111in}}%
 \pgfpathclose%
 \pgfusepath{stroke}%
@@ -452,8 +454,8 @@
 \pgfsetdash{}{0pt}%
 \pgfpathmoveto{\pgfqpoint{0.553541in}{0.474111in}}%
 \pgfpathlineto{\pgfqpoint{0.598039in}{0.474111in}}%
-\pgfpathlineto{\pgfqpoint{0.598039in}{0.490166in}}%
-\pgfpathlineto{\pgfqpoint{0.553541in}{0.490166in}}%
+\pgfpathlineto{\pgfqpoint{0.598039in}{0.491400in}}%
+\pgfpathlineto{\pgfqpoint{0.553541in}{0.491400in}}%
 \pgfpathlineto{\pgfqpoint{0.553541in}{0.474111in}}%
 \pgfpathclose%
 \pgfusepath{fill}%
@@ -472,8 +474,8 @@
 \pgfsetdash{}{0pt}%
 \pgfpathmoveto{\pgfqpoint{0.664785in}{0.474111in}}%
 \pgfpathlineto{\pgfqpoint{0.709283in}{0.474111in}}%
-\pgfpathlineto{\pgfqpoint{0.709283in}{0.491150in}}%
-\pgfpathlineto{\pgfqpoint{0.664785in}{0.491150in}}%
+\pgfpathlineto{\pgfqpoint{0.709283in}{0.491567in}}%
+\pgfpathlineto{\pgfqpoint{0.664785in}{0.491567in}}%
 \pgfpathlineto{\pgfqpoint{0.664785in}{0.474111in}}%
 \pgfpathclose%
 \pgfusepath{fill}%
@@ -492,8 +494,8 @@
 \pgfsetdash{}{0pt}%
 \pgfpathmoveto{\pgfqpoint{0.776029in}{0.474111in}}%
 \pgfpathlineto{\pgfqpoint{0.820527in}{0.474111in}}%
-\pgfpathlineto{\pgfqpoint{0.820527in}{0.498718in}}%
-\pgfpathlineto{\pgfqpoint{0.776029in}{0.498718in}}%
+\pgfpathlineto{\pgfqpoint{0.820527in}{0.499327in}}%
+\pgfpathlineto{\pgfqpoint{0.776029in}{0.499327in}}%
 \pgfpathlineto{\pgfqpoint{0.776029in}{0.474111in}}%
 \pgfpathclose%
 \pgfusepath{fill}%
@@ -512,8 +514,8 @@
 \pgfsetdash{}{0pt}%
 \pgfpathmoveto{\pgfqpoint{0.887273in}{0.474111in}}%
 \pgfpathlineto{\pgfqpoint{0.931771in}{0.474111in}}%
-\pgfpathlineto{\pgfqpoint{0.931771in}{0.508964in}}%
-\pgfpathlineto{\pgfqpoint{0.887273in}{0.508964in}}%
+\pgfpathlineto{\pgfqpoint{0.931771in}{0.509741in}}%
+\pgfpathlineto{\pgfqpoint{0.887273in}{0.509741in}}%
 \pgfpathlineto{\pgfqpoint{0.887273in}{0.474111in}}%
 \pgfpathclose%
 \pgfusepath{fill}%
@@ -532,8 +534,8 @@
 \pgfsetdash{}{0pt}%
 \pgfpathmoveto{\pgfqpoint{0.998517in}{0.474111in}}%
 \pgfpathlineto{\pgfqpoint{1.043015in}{0.474111in}}%
-\pgfpathlineto{\pgfqpoint{1.043015in}{0.525164in}}%
-\pgfpathlineto{\pgfqpoint{0.998517in}{0.525164in}}%
+\pgfpathlineto{\pgfqpoint{1.043015in}{0.525728in}}%
+\pgfpathlineto{\pgfqpoint{0.998517in}{0.525728in}}%
 \pgfpathlineto{\pgfqpoint{0.998517in}{0.474111in}}%
 \pgfpathclose%
 \pgfusepath{fill}%
@@ -552,8 +554,8 @@
 \pgfsetdash{}{0pt}%
 \pgfpathmoveto{\pgfqpoint{1.109761in}{0.474111in}}%
 \pgfpathlineto{\pgfqpoint{1.154259in}{0.474111in}}%
-\pgfpathlineto{\pgfqpoint{1.154259in}{0.539138in}}%
-\pgfpathlineto{\pgfqpoint{1.109761in}{0.539138in}}%
+\pgfpathlineto{\pgfqpoint{1.154259in}{0.545487in}}%
+\pgfpathlineto{\pgfqpoint{1.109761in}{0.545487in}}%
 \pgfpathlineto{\pgfqpoint{1.109761in}{0.474111in}}%
 \pgfpathclose%
 \pgfusepath{fill}%
@@ -572,8 +574,8 @@
 \pgfsetdash{}{0pt}%
 \pgfpathmoveto{\pgfqpoint{1.221005in}{0.474111in}}%
 \pgfpathlineto{\pgfqpoint{1.265503in}{0.474111in}}%
-\pgfpathlineto{\pgfqpoint{1.265503in}{0.564148in}}%
-\pgfpathlineto{\pgfqpoint{1.221005in}{0.564148in}}%
+\pgfpathlineto{\pgfqpoint{1.265503in}{0.563644in}}%
+\pgfpathlineto{\pgfqpoint{1.221005in}{0.563644in}}%
 \pgfpathlineto{\pgfqpoint{1.221005in}{0.474111in}}%
 \pgfpathclose%
 \pgfusepath{fill}%
@@ -592,8 +594,8 @@
 \pgfsetdash{}{0pt}%
 \pgfpathmoveto{\pgfqpoint{1.332249in}{0.474111in}}%
 \pgfpathlineto{\pgfqpoint{1.376747in}{0.474111in}}%
-\pgfpathlineto{\pgfqpoint{1.376747in}{0.594725in}}%
-\pgfpathlineto{\pgfqpoint{1.332249in}{0.594725in}}%
+\pgfpathlineto{\pgfqpoint{1.376747in}{0.593066in}}%
+\pgfpathlineto{\pgfqpoint{1.332249in}{0.593066in}}%
 \pgfpathlineto{\pgfqpoint{1.332249in}{0.474111in}}%
 \pgfpathclose%
 \pgfusepath{fill}%
@@ -612,8 +614,8 @@
 \pgfsetdash{}{0pt}%
 \pgfpathmoveto{\pgfqpoint{1.443493in}{0.474111in}}%
 \pgfpathlineto{\pgfqpoint{1.487991in}{0.474111in}}%
-\pgfpathlineto{\pgfqpoint{1.487991in}{0.622785in}}%
-\pgfpathlineto{\pgfqpoint{1.443493in}{0.622785in}}%
+\pgfpathlineto{\pgfqpoint{1.487991in}{0.635087in}}%
+\pgfpathlineto{\pgfqpoint{1.443493in}{0.635087in}}%
 \pgfpathlineto{\pgfqpoint{1.443493in}{0.474111in}}%
 \pgfpathclose%
 \pgfusepath{fill}%
@@ -632,8 +634,8 @@
 \pgfsetdash{}{0pt}%
 \pgfpathmoveto{\pgfqpoint{1.554737in}{0.474111in}}%
 \pgfpathlineto{\pgfqpoint{1.599235in}{0.474111in}}%
-\pgfpathlineto{\pgfqpoint{1.599235in}{0.657396in}}%
-\pgfpathlineto{\pgfqpoint{1.554737in}{0.657396in}}%
+\pgfpathlineto{\pgfqpoint{1.599235in}{0.661171in}}%
+\pgfpathlineto{\pgfqpoint{1.554737in}{0.661171in}}%
 \pgfpathlineto{\pgfqpoint{1.554737in}{0.474111in}}%
 \pgfpathclose%
 \pgfusepath{fill}%
@@ -652,8 +654,8 @@
 \pgfsetdash{}{0pt}%
 \pgfpathmoveto{\pgfqpoint{1.665981in}{0.474111in}}%
 \pgfpathlineto{\pgfqpoint{1.710479in}{0.474111in}}%
-\pgfpathlineto{\pgfqpoint{1.710479in}{0.676065in}}%
-\pgfpathlineto{\pgfqpoint{1.665981in}{0.676065in}}%
+\pgfpathlineto{\pgfqpoint{1.710479in}{0.683467in}}%
+\pgfpathlineto{\pgfqpoint{1.665981in}{0.683467in}}%
 \pgfpathlineto{\pgfqpoint{1.665981in}{0.474111in}}%
 \pgfpathclose%
 \pgfusepath{fill}%
@@ -672,8 +674,8 @@
 \pgfsetdash{}{0pt}%
 \pgfpathmoveto{\pgfqpoint{1.777225in}{0.474111in}}%
 \pgfpathlineto{\pgfqpoint{1.821723in}{0.474111in}}%
-\pgfpathlineto{\pgfqpoint{1.821723in}{0.678227in}}%
-\pgfpathlineto{\pgfqpoint{1.777225in}{0.678227in}}%
+\pgfpathlineto{\pgfqpoint{1.821723in}{0.686104in}}%
+\pgfpathlineto{\pgfqpoint{1.777225in}{0.686104in}}%
 \pgfpathlineto{\pgfqpoint{1.777225in}{0.474111in}}%
 \pgfpathclose%
 \pgfusepath{fill}%
@@ -692,8 +694,8 @@
 \pgfsetdash{}{0pt}%
 \pgfpathmoveto{\pgfqpoint{1.888469in}{0.474111in}}%
 \pgfpathlineto{\pgfqpoint{1.932967in}{0.474111in}}%
-\pgfpathlineto{\pgfqpoint{1.932967in}{0.660284in}}%
-\pgfpathlineto{\pgfqpoint{1.888469in}{0.660284in}}%
+\pgfpathlineto{\pgfqpoint{1.932967in}{0.667613in}}%
+\pgfpathlineto{\pgfqpoint{1.888469in}{0.667613in}}%
 \pgfpathlineto{\pgfqpoint{1.888469in}{0.474111in}}%
 \pgfpathclose%
 \pgfusepath{fill}%
@@ -712,8 +714,8 @@
 \pgfsetdash{}{0pt}%
 \pgfpathmoveto{\pgfqpoint{1.999713in}{0.474111in}}%
 \pgfpathlineto{\pgfqpoint{2.044211in}{0.474111in}}%
-\pgfpathlineto{\pgfqpoint{2.044211in}{0.641615in}}%
-\pgfpathlineto{\pgfqpoint{1.999713in}{0.641615in}}%
+\pgfpathlineto{\pgfqpoint{2.044211in}{0.644917in}}%
+\pgfpathlineto{\pgfqpoint{1.999713in}{0.644917in}}%
 \pgfpathlineto{\pgfqpoint{1.999713in}{0.474111in}}%
 \pgfpathclose%
 \pgfusepath{fill}%
@@ -732,8 +734,8 @@
 \pgfsetdash{}{0pt}%
 \pgfpathmoveto{\pgfqpoint{2.110957in}{0.474111in}}%
 \pgfpathlineto{\pgfqpoint{2.155455in}{0.474111in}}%
-\pgfpathlineto{\pgfqpoint{2.155455in}{0.619784in}}%
-\pgfpathlineto{\pgfqpoint{2.110957in}{0.619784in}}%
+\pgfpathlineto{\pgfqpoint{2.155455in}{0.623472in}}%
+\pgfpathlineto{\pgfqpoint{2.110957in}{0.623472in}}%
 \pgfpathlineto{\pgfqpoint{2.110957in}{0.474111in}}%
 \pgfpathclose%
 \pgfusepath{fill}%
@@ -752,8 +754,8 @@
 \pgfsetdash{}{0pt}%
 \pgfpathmoveto{\pgfqpoint{2.222201in}{0.474111in}}%
 \pgfpathlineto{\pgfqpoint{2.266699in}{0.474111in}}%
-\pgfpathlineto{\pgfqpoint{2.266699in}{0.601518in}}%
-\pgfpathlineto{\pgfqpoint{2.222201in}{0.601518in}}%
+\pgfpathlineto{\pgfqpoint{2.266699in}{0.604798in}}%
+\pgfpathlineto{\pgfqpoint{2.222201in}{0.604798in}}%
 \pgfpathlineto{\pgfqpoint{2.222201in}{0.474111in}}%
 \pgfpathclose%
 \pgfusepath{fill}%
@@ -772,8 +774,8 @@
 \pgfsetdash{}{0pt}%
 \pgfpathmoveto{\pgfqpoint{2.333445in}{0.474111in}}%
 \pgfpathlineto{\pgfqpoint{2.377943in}{0.474111in}}%
-\pgfpathlineto{\pgfqpoint{2.377943in}{0.574007in}}%
-\pgfpathlineto{\pgfqpoint{2.333445in}{0.574007in}}%
+\pgfpathlineto{\pgfqpoint{2.377943in}{0.574592in}}%
+\pgfpathlineto{\pgfqpoint{2.333445in}{0.574592in}}%
 \pgfpathlineto{\pgfqpoint{2.333445in}{0.474111in}}%
 \pgfpathclose%
 \pgfusepath{fill}%
@@ -792,8 +794,8 @@
 \pgfsetdash{}{0pt}%
 \pgfpathmoveto{\pgfqpoint{2.444689in}{0.474111in}}%
 \pgfpathlineto{\pgfqpoint{2.489187in}{0.474111in}}%
-\pgfpathlineto{\pgfqpoint{2.489187in}{0.545398in}}%
-\pgfpathlineto{\pgfqpoint{2.444689in}{0.545398in}}%
+\pgfpathlineto{\pgfqpoint{2.489187in}{0.552914in}}%
+\pgfpathlineto{\pgfqpoint{2.444689in}{0.552914in}}%
 \pgfpathlineto{\pgfqpoint{2.444689in}{0.474111in}}%
 \pgfpathclose%
 \pgfusepath{fill}%
@@ -812,8 +814,8 @@
 \pgfsetdash{}{0pt}%
 \pgfpathmoveto{\pgfqpoint{2.555933in}{0.474111in}}%
 \pgfpathlineto{\pgfqpoint{2.600431in}{0.474111in}}%
-\pgfpathlineto{\pgfqpoint{2.600431in}{0.524680in}}%
-\pgfpathlineto{\pgfqpoint{2.555933in}{0.524680in}}%
+\pgfpathlineto{\pgfqpoint{2.600431in}{0.526613in}}%
+\pgfpathlineto{\pgfqpoint{2.555933in}{0.526613in}}%
 \pgfpathlineto{\pgfqpoint{2.555933in}{0.474111in}}%
 \pgfpathclose%
 \pgfusepath{fill}%
@@ -832,8 +834,8 @@
 \pgfsetdash{}{0pt}%
 \pgfpathmoveto{\pgfqpoint{2.667177in}{0.474111in}}%
 \pgfpathlineto{\pgfqpoint{2.711675in}{0.474111in}}%
-\pgfpathlineto{\pgfqpoint{2.711675in}{0.500460in}}%
-\pgfpathlineto{\pgfqpoint{2.667177in}{0.500460in}}%
+\pgfpathlineto{\pgfqpoint{2.711675in}{0.502147in}}%
+\pgfpathlineto{\pgfqpoint{2.667177in}{0.502147in}}%
 \pgfpathlineto{\pgfqpoint{2.667177in}{0.474111in}}%
 \pgfpathclose%
 \pgfusepath{fill}%
@@ -861,7 +863,7 @@
 \definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=0.442297in,y=0.376889in,,top]{\color{textcolor}\sffamily\fontsize{11.000000}{13.200000}\selectfont 0.00}%
+\pgftext[x=0.442297in,y=0.376889in,,top]{\color{textcolor}{\sffamily\fontsize{11.000000}{13.200000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}0.00}}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \pgfsetbuttcap%
@@ -886,7 +888,7 @@
 \definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=0.998517in,y=0.376889in,,top]{\color{textcolor}\sffamily\fontsize{11.000000}{13.200000}\selectfont 0.25}%
+\pgftext[x=0.998517in,y=0.376889in,,top]{\color{textcolor}{\sffamily\fontsize{11.000000}{13.200000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}0.25}}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \pgfsetbuttcap%
@@ -911,7 +913,7 @@
 \definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=1.554737in,y=0.376889in,,top]{\color{textcolor}\sffamily\fontsize{11.000000}{13.200000}\selectfont 0.50}%
+\pgftext[x=1.554737in,y=0.376889in,,top]{\color{textcolor}{\sffamily\fontsize{11.000000}{13.200000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}0.50}}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \pgfsetbuttcap%
@@ -936,7 +938,7 @@
 \definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=2.110957in,y=0.376889in,,top]{\color{textcolor}\sffamily\fontsize{11.000000}{13.200000}\selectfont 0.75}%
+\pgftext[x=2.110957in,y=0.376889in,,top]{\color{textcolor}{\sffamily\fontsize{11.000000}{13.200000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}0.75}}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \pgfsetbuttcap%
@@ -961,13 +963,13 @@
 \definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=2.667177in,y=0.376889in,,top]{\color{textcolor}\sffamily\fontsize{11.000000}{13.200000}\selectfont 1.00}%
+\pgftext[x=2.667177in,y=0.376889in,,top]{\color{textcolor}{\sffamily\fontsize{11.000000}{13.200000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}1.00}}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=1.576986in,y=0.185667in,,top]{\color{textcolor}\sffamily\fontsize{11.000000}{13.200000}\selectfont \(\displaystyle p\)}%
+\pgftext[x=1.576986in,y=0.185667in,,top]{\color{textcolor}{\sffamily\fontsize{11.000000}{13.200000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}$p$}}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \pgfsetbuttcap%
@@ -992,7 +994,7 @@
 \definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=0.241222in, y=0.421097in, left, base]{\color{textcolor}\sffamily\fontsize{11.000000}{13.200000}\selectfont \(\displaystyle {0}\)}%
+\pgftext[x=0.241222in, y=0.421097in, left, base]{\color{textcolor}{\sffamily\fontsize{11.000000}{13.200000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}$\mathdefault{0}$}}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \pgfsetbuttcap%
@@ -1009,7 +1011,7 @@
 \pgfusepath{stroke,fill}%
 }%
 \begin{pgfscope}%
-\pgfsys@transformshift{0.414486in}{1.133755in}%
+\pgfsys@transformshift{0.414486in}{1.143900in}%
 \pgfsys@useobject{currentmarker}{}%
 \end{pgfscope}%
 \end{pgfscope}%
@@ -1017,13 +1019,13 @@
 \definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=0.241222in, y=1.080741in, left, base]{\color{textcolor}\sffamily\fontsize{11.000000}{13.200000}\selectfont \(\displaystyle {5}\)}%
+\pgftext[x=0.241222in, y=1.090886in, left, base]{\color{textcolor}{\sffamily\fontsize{11.000000}{13.200000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}$\mathdefault{5}$}}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=0.185667in,y=1.051611in,,bottom,rotate=90.000000]{\color{textcolor}\sffamily\fontsize{11.000000}{13.200000}\selectfont Percent of Dataset}%
+\pgftext[x=0.185667in,y=1.051611in,,bottom,rotate=90.000000]{\color{textcolor}{\sffamily\fontsize{11.000000}{13.200000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}Percent of Dataset}}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \pgfsetrectcap%
@@ -1112,7 +1114,7 @@
 \definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=2.355861in,y=1.384666in,left,base]{\color{textcolor}\sffamily\fontsize{11.000000}{13.200000}\selectfont Neg}%
+\pgftext[x=2.355861in,y=1.384666in,left,base]{\color{textcolor}{\sffamily\fontsize{11.000000}{13.200000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}Neg}}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \pgfsetbuttcap%
@@ -1136,7 +1138,7 @@
 \definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=2.355861in,y=1.170014in,left,base]{\color{textcolor}\sffamily\fontsize{11.000000}{13.200000}\selectfont Pos}%
+\pgftext[x=2.355861in,y=1.170014in,left,base]{\color{textcolor}{\sffamily\fontsize{11.000000}{13.200000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}Pos}}%
 \end{pgfscope}%
 \end{pgfpicture}%
 \makeatother%
