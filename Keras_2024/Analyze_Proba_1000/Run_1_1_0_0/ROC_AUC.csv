@@ -1,0 +1,7 @@
+Filename,ROC_AUC
+BRFC_alpha_0_5_1_1_0_0_Hard,0.808331
+BRFC_alpha_0_5_1_1_0_0_Medium,0.730045
+BRFC_alpha_0_5_1_1_0_0_Easy,0.660076
+KBFC_alpha_0_5_gamma_0_0_1_1_0_0_Hard,0.776363
+KBFC_alpha_0_5_gamma_0_0_1_1_0_0_Medium,0.711367
+KBFC_alpha_0_5_gamma_0_0_1_1_0_0_Easy,0.654617

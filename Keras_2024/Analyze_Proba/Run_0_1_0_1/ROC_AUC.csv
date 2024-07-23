@@ -2,3 +2,6 @@ Filename,ROC_AUC
 BRFC_alpha_0_5_0_1_0_1_Hard.csv,0.804142
 BRFC_alpha_0_5_0_1_0_1_Medium.csv,0.732679
 BRFC_alpha_0_5_0_1_0_1_Easy.csv,0.659825
+KBFC_alpha_0_5_gamma_0_0_0_1_0_1_Hard.csv,0.777097
+KBFC_alpha_0_5_gamma_0_0_0_1_0_1_Medium.csv,0.711287
+KBFC_alpha_0_5_gamma_0_0_0_1_0_1_Easy.csv,0.654148
